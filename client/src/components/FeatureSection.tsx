@@ -20,13 +20,22 @@ const Feature = ({ title, subtitle, description, image, ctaText, ctaLink, align 
 
   return (
     <div ref={ref} className="py-40 relative overflow-hidden">
-      {/* Dynamic Background per section */}
-      {bgImage && (
-        <div className="absolute inset-0 z-0">
-          <img src={bgImage} alt="Background" className="w-full h-full object-cover opacity-40 blur-sm" />
-          <div className="absolute inset-0 bg-background/60 mix-blend-multiply" />
-        </div>
-      )}
+      {/* 
+         VIBRANT BACKGROUND REPLACEMENT 
+         No more black void. Each section gets a rich, layered cosmic background.
+      */}
+      <div className="absolute inset-0 z-0">
+         {/* Base Gradient */}
+         <div className="absolute inset-0 bg-gradient-to-b from-[#2d1b4e] via-[#1a0b2e] to-[#2d1b4e]" />
+         
+         {/* Texture Image */}
+         {bgImage && (
+            <img src={bgImage} alt="Background" className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-screen blur-sm" />
+         )}
+         
+         {/* Overlay Gradient for Depth */}
+         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/40" />
+      </div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className={`flex flex-col ${align === "right" ? "lg:flex-row-reverse" : "lg:flex-row"} items-center gap-24`}>
@@ -38,7 +47,7 @@ const Feature = ({ title, subtitle, description, image, ctaText, ctaLink, align 
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <div className="relative p-4 rounded-[2.5rem] bg-gradient-to-br from-white/20 to-transparent border border-white/20 shadow-[0_0_50px_rgba(255,0,255,0.2)]">
+            <div className="relative p-4 rounded-[2.5rem] bg-gradient-to-br from-white/10 to-transparent border border-white/20 shadow-[0_0_60px_rgba(139,92,246,0.15)] backdrop-blur-sm">
               <div className="rounded-[2rem] overflow-hidden">
                 <img 
                   src={image} 
@@ -51,7 +60,7 @@ const Feature = ({ title, subtitle, description, image, ctaText, ctaLink, align 
 
           {/* Text Side - Floating Glass Panel */}
           <motion.div 
-            className="flex-1 text-center lg:text-left glass-card p-12 rounded-3xl"
+            className="flex-1 text-center lg:text-left glass-card p-12 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl"
             initial={{ opacity: 0, x: align === "left" ? 50 : -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -90,7 +99,6 @@ export default function FeatureSection() {
         title="Become a Certified Shankara Master"
         subtitle="Certification Program"
         description="A deep and profound training program. Work directly with Krishna Kalesh (Paul Wagner) to master the oracle, develop your intuitive gifts, and become a certified reader."
-        // Replaced broken image with a working one - using Paul's teaching photo as placeholder if certification image is missing
         image="/images/paultightgroup.png" 
         ctaText="Apply for Certification"
         ctaLink="/certification"
