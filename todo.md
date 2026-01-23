@@ -1,3 +1,6 @@
+- [x] Fix Master Course section on Home page:
+    - [x] Use correct image without crop/overlay issues
+    - [x] Make text readable (high contrast/backing)
 - [x] Update Home page "Certification" section to "The Shankara Master Course" ($197) with correct image
 - [x] Create `MasterTraining.tsx` page with full content
 - [ ] Create `Certification.tsx` page
