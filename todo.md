@@ -1,6 +1,9 @@
 - [x] Update Master Course section on Home page:
     - [x] Replace image with `ShankaraMasterCourse+Cert.png`
     - [x] Reformat section to align with "Master Course + Group Certification" message
+- [x] Redesign Master Course section layout to properly display wide banner image:
+    - [x] Switch to vertical stack layout
+    - [x] Ensure full-width image display without cropping
 - [x] Fix Master Course section on Home page:
     - [x] Use correct image without crop/overlay issues
     - [x] Make text readable (high contrast/backing)
