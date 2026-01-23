@@ -1,3 +1,7 @@
+- [x] Correct Master Course section on Home page:
+    - [x] Remove all "Certification", "Group", "January" text
+    - [x] Focus purely on "The Shankara Master Course" ($197)
+    - [x] Use correct image (check `Shankaramastercourse-3.png`)
 - [x] Update Master Course section on Home page:
     - [x] Replace image with `ShankaraMasterCourse+Cert.png`
     - [x] Reformat section to align with "Master Course + Group Certification" message
