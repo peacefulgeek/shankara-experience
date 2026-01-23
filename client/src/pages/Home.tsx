@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Play, Sparkles, Star, Heart, ArrowRight } from "lucide-react";
+import { Play, Sparkles, ArrowRight } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -8,7 +8,7 @@ import { Link } from "wouter";
 
 export default function Home() {
   return (
-    <div className="min-h-screen text-foreground font-sans selection:bg-primary selection:text-white overflow-x-hidden relative">
+    <div className="min-h-screen font-sans selection:bg-accent selection:text-white overflow-x-hidden relative">
       <SEO 
         title="The Shankara Oracle | Sacred Technology of Consciousness" 
         description="A living technology of consciousness. Awaken your intuition, heal your past, and master your destiny with The Shankara Oracle."
@@ -17,150 +17,139 @@ export default function Home() {
       <Navigation />
 
       <main>
-        {/* HERO SECTION - LIGHT COSMIC */}
-        <section className="pt-32 pb-20 relative overflow-hidden">
-          {/* Cosmic Glow Effects */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-accent/20 rounded-full blur-[120px] pointer-events-none z-0" />
+        {/* HERO SECTION - DARK COSMIC (YIN) */}
+        <section className="bg-cosmic-dark pt-32 pb-24 relative overflow-hidden">
+          {/* Neon Glow Effects */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-purple-900/30 rounded-full blur-[120px] pointer-events-none z-0" />
+          <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[100px] pointer-events-none z-0" />
           
           <div className="container mx-auto px-4 text-center relative z-10">
-            <Badge variant="outline" className="mb-6 border-purple-300 text-purple-700 px-4 py-1 text-sm tracking-widest uppercase bg-white/50 backdrop-blur-sm shadow-sm">
+            <Badge variant="outline" className="mb-8 border-purple-500 text-purple-200 px-4 py-1 text-sm tracking-[0.2em] uppercase bg-purple-900/30 backdrop-blur-md">
               <Sparkles className="w-3 h-3 mr-2 text-accent" /> The Sacred Oracle System
             </Badge>
             
-            <h1 className="text-6xl md:text-8xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-b from-purple-900 via-purple-700 to-purple-900 mb-6 leading-tight drop-shadow-sm">
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-display font-bold text-white mb-6 leading-tight glow-text">
               SHANKARA
             </h1>
             
-            <p className="text-2xl md:text-3xl font-light text-purple-900/80 mb-4 tracking-wide">
+            <p className="text-2xl md:text-3xl font-light text-purple-200 mb-6 tracking-wide">
               A living technology of consciousness.
             </p>
             
-            <p className="text-xl text-purple-800/70 max-w-2xl mx-auto mb-10 leading-relaxed">
+            <p className="text-xl text-purple-300/80 max-w-2xl mx-auto mb-12 leading-relaxed">
               <span className="text-accent font-bold">Awaken your intuition</span>, heal your past, and master your destiny.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-20">
               <Link href="/shop">
-                <Button size="lg" className="bg-purple-600 text-white hover:bg-purple-700 px-10 h-14 text-lg rounded-full font-bold shadow-lg shadow-purple-200 hover:shadow-xl transition-all">
+                <Button size="lg" className="bg-accent text-white hover:bg-accent/90 px-12 h-16 text-lg rounded-full font-bold shadow-[0_0_30px_rgba(255,0,255,0.4)] hover:shadow-[0_0_50px_rgba(255,0,255,0.6)] transition-all transform hover:scale-105">
                   Get the Oracle
                 </Button>
               </Link>
-              <Button variant="outline" size="lg" className="border-purple-200 text-purple-700 hover:bg-purple-50 px-10 h-14 text-lg rounded-full bg-white/50 backdrop-blur-sm">
+              <Button variant="outline" size="lg" className="border-purple-500/50 text-purple-200 hover:bg-purple-900/50 px-12 h-16 text-lg rounded-full backdrop-blur-sm hover:text-white transition-all">
                 <Play className="w-5 h-5 mr-2 fill-current" /> Watch Trailer
               </Button>
             </div>
 
-            {/* HERO IMAGE - ORACLE BOARD */}
-            <div className="relative max-w-5xl mx-auto mt-10 perspective-1000">
-              <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-[0_20px_60px_-15px_rgba(100,0,100,0.2)] border-4 border-white/50 bg-white">
-                <img 
-                  src="/images/oracle-board-hd.png" 
-                  alt="The Shankara Oracle Board" 
-                  className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
-                />
-                
-                {/* Interactive Hotspots (Visual Only for now) */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 border border-white/30 rounded-full animate-ping opacity-20" />
-              </div>
+            {/* HERO IMAGE - ORACLE BOARD (Full Width, No Container) */}
+            <div className="relative max-w-6xl mx-auto perspective-1000">
+              <img 
+                src="/images/oracle-board-hd.png" 
+                alt="The Shankara Oracle Board" 
+                className="w-full h-auto object-cover drop-shadow-[0_20px_100px_rgba(147,51,234,0.3)] transform hover:scale-[1.02] transition-transform duration-1000"
+              />
               
-              {/* Floating Elements */}
-              <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-yellow-300 to-orange-300 rounded-full blur-[60px] opacity-40 animate-pulse" />
-              <div className="absolute -bottom-10 -left-10 w-60 h-60 bg-gradient-to-br from-blue-300 to-purple-300 rounded-full blur-[80px] opacity-40" />
+              {/* Interactive Hotspots (Visual Only) */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 border border-white/20 rounded-full animate-ping opacity-30" />
             </div>
           </div>
         </section>
 
-        {/* FEATURES GRID - LIGHT & AIRY */}
-        <section className="py-24 bg-white relative">
+        {/* FEATURES - LIGHT & CLEAN (YANG) */}
+        <section className="py-32 bg-white relative">
           <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-12 lg:gap-20">
               {[
                 {
                   title: "Clarify Your Path",
                   desc: "Cut through confusion and see your life's trajectory with crystal clear vision.",
-                  gradient: "from-purple-500 to-indigo-600",
-                  bg: "bg-purple-50",
-                  image: "/images/clarify-your-path.png" // Fallback to color if missing
+                  icon: "text-purple-600"
                 },
                 {
                   title: "Heal Deep Patterns",
                   desc: "Identify and release karmic blocks that have been holding you back for lifetimes.",
-                  gradient: "from-pink-500 to-rose-600",
-                  bg: "bg-pink-50",
-                  image: "/images/heal-deep-patterns.png"
+                  icon: "text-accent"
                 },
                 {
                   title: "Empower Your Intuition",
                   desc: "Strengthen your direct connection to Source and trust your inner guidance.",
-                  gradient: "from-blue-500 to-cyan-600",
-                  bg: "bg-blue-50",
-                  image: "/images/empower-your-intuition.png"
+                  icon: "text-blue-500"
                 }
               ].map((feature, i) => (
-                <div key={i} className={`group relative overflow-hidden rounded-3xl p-8 ${feature.bg} hover:shadow-xl transition-all duration-300 border border-white flex flex-col justify-between h-full`}>
-                  <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${feature.gradient} opacity-10 rounded-bl-full`} />
-                  
-                  {/* Content */}
-                  <div className="relative z-10">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">{feature.title}</h3>
-                    <p className="text-gray-600 leading-relaxed mb-6">{feature.desc}</p>
+                <div key={i} className="group text-center">
+                  <div className="mb-8 relative inline-block">
+                    <div className={`w-24 h-24 rounded-full bg-gray-50 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500`}>
+                      <Sparkles className={`w-10 h-10 ${feature.icon}`} />
+                    </div>
                   </div>
-
-                  {/* Visual Indicator */}
-                  <div className={`w-12 h-1 bg-gradient-to-r ${feature.gradient} rounded-full group-hover:w-24 transition-all duration-300 mt-auto`} />
+                  <h3 className="text-3xl font-display font-bold text-gray-900 mb-4">{feature.title}</h3>
+                  <p className="text-lg text-gray-600 leading-relaxed">{feature.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* THE SYSTEM SHOWCASE */}
-        <section className="py-24 bg-gradient-to-b from-white to-purple-50 overflow-hidden">
+        {/* THE SYSTEM - DARK COSMIC (YIN) */}
+        <section className="py-32 bg-cosmic-dark relative overflow-hidden">
+          {/* Background Elements */}
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-purple-600/20 rounded-full blur-[100px] pointer-events-none" />
+          
           <div className="container mx-auto px-4">
-            <div className="flex flex-col md:flex-row items-center gap-16">
+            <div className="flex flex-col md:flex-row items-center gap-20">
               <div className="w-full md:w-1/2 relative">
-                <div className="absolute inset-0 bg-accent/20 blur-[80px] rounded-full" />
+                <div className="absolute inset-0 bg-accent/20 blur-[60px] rounded-full animate-pulse" />
                 <img 
                   src="/images/shakti-cube-transparent.png" 
                   alt="Shakti Cube" 
-                  className="relative z-10 w-full max-w-md mx-auto drop-shadow-2xl transform hover:-translate-y-4 transition-transform duration-500"
+                  className="relative z-10 w-full max-w-lg mx-auto drop-shadow-[0_0_50px_rgba(255,255,255,0.2)]"
                 />
               </div>
               
-              <div className="w-full md:w-1/2 space-y-8">
-                <h2 className="text-4xl md:text-5xl font-bold text-purple-900">
+              <div className="w-full md:w-1/2 space-y-10">
+                <h2 className="text-5xl md:text-7xl font-display font-bold text-white leading-tight">
                   More Than a Deck. <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-orange-500">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-400 glow-text">
                     A Portal.
                   </span>
                 </h2>
                 
-                <p className="text-xl text-purple-800/70 leading-relaxed">
+                <p className="text-xl text-purple-200/80 leading-relaxed font-light">
                   The Shankara Oracle is a complete cosmological system designed to bridge the gap between your human experience and your divine nature.
                 </p>
                 
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-white p-6 rounded-2xl shadow-sm border border-purple-100">
-                    <div className="text-3xl font-bold text-purple-600 mb-1">4</div>
-                    <div className="text-sm text-gray-500 font-bold uppercase tracking-wider">Sacred Decks</div>
+                <div className="grid grid-cols-2 gap-8">
+                  <div>
+                    <div className="text-4xl font-bold text-accent mb-2">4</div>
+                    <div className="text-sm text-purple-300 font-bold uppercase tracking-widest">Sacred Decks</div>
                   </div>
-                  <div className="bg-white p-6 rounded-2xl shadow-sm border border-purple-100">
-                    <div className="text-3xl font-bold text-purple-600 mb-1">300+</div>
-                    <div className="text-sm text-gray-500 font-bold uppercase tracking-wider">Cards</div>
+                  <div>
+                    <div className="text-4xl font-bold text-accent mb-2">300+</div>
+                    <div className="text-sm text-purple-300 font-bold uppercase tracking-widest">Cards</div>
                   </div>
-                  <div className="bg-white p-6 rounded-2xl shadow-sm border border-purple-100">
-                    <div className="text-3xl font-bold text-purple-600 mb-1">18</div>
-                    <div className="text-sm text-gray-500 font-bold uppercase tracking-wider">Obsidian Stones</div>
+                  <div>
+                    <div className="text-4xl font-bold text-accent mb-2">18</div>
+                    <div className="text-sm text-purple-300 font-bold uppercase tracking-widest">Obsidian Stones</div>
                   </div>
-                  <div className="bg-white p-6 rounded-2xl shadow-sm border border-purple-100">
-                    <div className="text-3xl font-bold text-purple-600 mb-1">∞</div>
-                    <div className="text-sm text-gray-500 font-bold uppercase tracking-wider">Possibilities</div>
+                  <div>
+                    <div className="text-4xl font-bold text-accent mb-2">∞</div>
+                    <div className="text-sm text-purple-300 font-bold uppercase tracking-widest">Possibilities</div>
                   </div>
                 </div>
 
                 <Link href="/unboxing">
-                  <Button variant="link" className="text-purple-700 font-bold text-lg p-0 h-auto hover:text-purple-900 mt-4">
-                    See what's inside the box <ArrowRight className="ml-2 w-5 h-5" />
+                  <Button variant="link" className="text-white font-bold text-lg p-0 h-auto hover:text-accent mt-6 group">
+                    See what's inside the box <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </Link>
               </div>
@@ -168,29 +157,26 @@ export default function Home() {
           </div>
         </section>
 
-        {/* MASTER TRAINING CTA */}
-        <section className="py-24 relative overflow-hidden bg-purple-900 text-white">
-          <div className="absolute inset-0 bg-[url('/images/cosmic-stars.png')] opacity-30 mix-blend-overlay" />
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-purple-500 rounded-full blur-[150px] opacity-30" />
-          
-          <div className="container mx-auto px-4 relative z-10 text-center">
-            <Badge className="bg-accent text-purple-900 hover:bg-accent mb-6 px-4 py-1 text-sm font-bold tracking-widest uppercase">
+        {/* MASTER TRAINING - LIGHT (YANG) */}
+        <section className="py-32 bg-gray-50 text-center relative overflow-hidden">
+          <div className="container mx-auto px-4 relative z-10">
+            <Badge className="bg-purple-900 text-white hover:bg-purple-800 mb-8 px-6 py-2 text-sm font-bold tracking-widest uppercase">
               The Master Course
             </Badge>
             
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">
+            <h2 className="text-5xl md:text-7xl font-display font-bold text-purple-900 mb-8">
               Master the Art of <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-purple-300">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-accent">
                 Divine Communication
               </span>
             </h2>
             
-            <p className="text-xl text-purple-100/80 max-w-2xl mx-auto mb-10 leading-relaxed">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12 leading-relaxed">
               Dive deep into the mysteries of the Shankara Oracle with our comprehensive Master Training. Learn to read the cards, interpret the stones, and navigate the sacred geometry of the board.
             </p>
             
             <Link href="/master-training">
-              <Button size="lg" className="bg-white text-purple-900 hover:bg-gray-100 px-10 h-14 text-lg rounded-full font-bold shadow-lg shadow-purple-900/50">
+              <Button size="lg" className="bg-purple-900 text-white hover:bg-purple-800 px-12 h-16 text-lg rounded-full font-bold shadow-xl transition-all hover:-translate-y-1">
                 Explore the Training
               </Button>
             </Link>

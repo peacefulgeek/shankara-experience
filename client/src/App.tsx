@@ -7,6 +7,7 @@ import Certification from "@/pages/Certification";
 import Readers from "@/pages/Readers";
 import Shop from "@/pages/Shop";
 import HowToShankara from "@/pages/HowToShankara";
+import Unboxing from "@/pages/Unboxing";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import Terms from "@/pages/Terms";
@@ -28,6 +29,7 @@ function App() {
         <Route path="/readers" component={Readers} />
         <Route path="/shop" component={Shop} />
         <Route path="/how-to-shankara" component={HowToShankara} />
+        <Route path="/unboxing" component={Unboxing} />
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />
         <Route path="/terms" component={Terms} />

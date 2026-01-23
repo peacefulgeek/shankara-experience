@@ -1,10 +1,5 @@
-- [ ] **Theme & Asset Recovery**
-    - [x] **Extract High-Res Board**: Convert `ShankaraOracleBoard–TheShankaraExperience.pdf` to high-res PNG.
-    - [x] **Fix Broken Images**: Audit `client/public/images` and fix paths for "Clarify Your Path", "Heal Deep Patterns", etc.
-    - [x] **Brighten Theme**: Switch `index.css` and page layouts from Dark Mode to Light Cosmic (White/Gold/Soft Purple).
-    - [x] **Build Unboxing Page**: Create `Unboxing.tsx` with content from `ShankaraOracleUnboxed–TheShankaraExperience.pdf`.
-    - [x] **Update Training Pages**: Refactor `MasterTraining.tsx` and `Certification.tsx` to use Light Cosmic theme.
-    - [x] **Update HowTo Page**: Refactor `HowToShankara.tsx` to use Light Cosmic theme.
-    - [x] **Update Unboxing Page**: Refactor `Unboxing.tsx` to use Light Cosmic theme.
-    - [x] **Update Navigation**: Refactor `Navigation.tsx` to use Light Cosmic theme and include Unboxing link.
-    - [x] **Update Home**: Refactor `Home.tsx` to use Light Cosmic theme, fix feature images, and link to Master Training.
+- [ ] **Design Recovery (Yin Yang Balance)**
+    - [x] **Fix 404**: Add `/unboxing` route to `App.tsx`.
+    - [x] **Theme Restoration**: Update `index.css` to bring back deep purples (`#1a0b2e`) and neon pinks (`#ff00ff`) while keeping white sections for clarity.
+    - [x] **Home Page Fix**: Remove boxy containers in `Home.tsx`, use full-width sections with balanced backgrounds.
+    - [x] **Unboxing Page Polish**: Ensure `Unboxing.tsx` follows the new balanced theme.
