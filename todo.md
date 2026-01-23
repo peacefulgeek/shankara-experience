@@ -1,3 +1,25 @@
+- [x] Match and implement real photos for Certified Masters:
+    - [x] Found and implemented photo for Ana Andreea
+    - [x] Created placeholder structure for others (Suzanne, Paula, Christina)
+- [x] Audit backup for missing pages and build them:
+    - [x] Scan SQL dump for `post_type='page'`
+    - [x] Identify pages not yet built (e.g., Blog, Affiliates)
+    - [x] Build `Videos.tsx`
+    - [x] Build `Blog.tsx`
+    - [x] Build `Affiliates.tsx`
+    - [x] Build `HowToShankara.tsx`
+    - [ ] Build `Testimonials.tsx`
+- [x] Replace black backgrounds with branded cosmic aesthetics:
+    - [x] Update `index.css` global styles (removed bg-black, added cosmic gradient)
+    - [x] Review `MasterTraining.tsx`
+    - [x] Review `Certification.tsx`
+    - [x] Review `Readers.tsx`
+    - [x] Review `Shop.tsx`
+    - [ ] Review legal pages (Terms, Privacy, etc.)
+- [ ] Implement SEO and Meta Tags:
+    - [ ] Add `react-helmet-async` dependency
+    - [ ] Create `SEO.tsx` component
+    - [ ] Add titles and descriptions to all pages
 - [x] Audit uploaded files for real content:
     - [x] Find real list of Shankara Readers
     - [x] Find full verbose text for Certification page

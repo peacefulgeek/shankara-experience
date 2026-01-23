@@ -1,49 +1,38 @@
+import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { AlertCircle, Home } from "lucide-react";
-import { useLocation } from "wouter";
+import { AlertTriangle } from "lucide-react";
+import SEO from "@/components/SEO";
 
 export default function NotFound() {
-  const [, setLocation] = useLocation();
-
-  const handleGoHome = () => {
-    setLocation("/");
-  };
-
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100">
-      <Card className="w-full max-w-lg mx-4 shadow-lg border-0 bg-white/80 backdrop-blur-sm">
-        <CardContent className="pt-8 pb-8 text-center">
-          <div className="flex justify-center mb-6">
-            <div className="relative">
-              <div className="absolute inset-0 bg-red-100 rounded-full animate-pulse" />
-              <AlertCircle className="relative h-16 w-16 text-red-500" />
-            </div>
-          </div>
+    <div className="min-h-screen flex items-center justify-center bg-black text-white relative overflow-hidden">
+      <SEO 
+        title="Page Not Found" 
+        description="The page you are looking for does not exist."
+      />
+      
+      {/* Background - using global cosmic theme from index.css */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/40 via-purple-800/20 to-black/40 mix-blend-overlay" />
+      </div>
 
-          <h1 className="text-4xl font-bold text-slate-900 mb-2">404</h1>
-
-          <h2 className="text-xl font-semibold text-slate-700 mb-4">
-            Page Not Found
-          </h2>
-
-          <p className="text-slate-600 mb-8 leading-relaxed">
-            Sorry, the page you are looking for doesn't exist.
-            <br />
-            It may have been moved or deleted.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button
-              onClick={handleGoHome}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg"
-            >
-              <Home className="w-4 h-4 mr-2" />
-              Go Home
-            </Button>
-          </div>
-        </CardContent>
-      </Card>
+      <div className="text-center relative z-10 p-8">
+        <div className="w-24 h-24 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-8 shadow-[0_0_30px_rgba(255,215,0,0.3)]">
+          <AlertTriangle className="w-12 h-12 text-accent" />
+        </div>
+        
+        <h1 className="text-6xl font-display font-bold mb-4 text-white">404</h1>
+        <p className="text-2xl text-white/80 mb-8 font-light">Page Not Found</p>
+        <p className="text-white/60 mb-12 max-w-md mx-auto">
+          The path you are looking for seems to be lost in the cosmos. Let's guide you back home.
+        </p>
+        
+        <Link href="/">
+          <Button size="lg" className="bg-white text-black hover:bg-accent hover:text-black font-bold rounded-full px-8 h-12 shadow-lg transition-all">
+            Return Home
+          </Button>
+        </Link>
+      </div>
     </div>
   );
 }

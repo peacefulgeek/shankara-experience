@@ -7,11 +7,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-16">
           {/* Brand */}
           <div className="col-span-1 md:col-span-1">
-            <img 
-              src="/images/logo.svg" 
-              alt="The Shankara Experience" 
-              className="h-20 w-auto mb-8 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]" 
-            />
+            <h3 className="text-2xl font-display font-bold text-white tracking-wide mb-8">
+              SHANKARA <span className="text-accent">ORACLE</span>
+            </h3>
             <p className="text-white/60 text-sm leading-relaxed font-light">
               The Shankara Oracle is a combination of channeled predictive and healing tools rooted in ancient wisdom. Designed to guide you on your spiritual journey.
             </p>
@@ -33,10 +31,12 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-bold mb-8 text-accent tracking-widest uppercase drop-shadow-md">Resources</h4>
             <ul className="space-y-4 text-sm text-white/70 font-medium">
+              <li><Link href="/how-to-shankara"><span className="hover:text-primary hover:drop-shadow-[0_0_8px_rgba(255,0,255,0.8)] cursor-pointer transition-all duration-300">How To Use</span></Link></li>
               <li><Link href="/videos"><span className="hover:text-primary hover:drop-shadow-[0_0_8px_rgba(255,0,255,0.8)] cursor-pointer transition-all duration-300">Videos</span></Link></li>
               <li><Link href="/blog"><span className="hover:text-primary hover:drop-shadow-[0_0_8px_rgba(255,0,255,0.8)] cursor-pointer transition-all duration-300">Blog</span></Link></li>
               <li><Link href="/testimonials"><span className="hover:text-primary hover:drop-shadow-[0_0_8px_rgba(255,0,255,0.8)] cursor-pointer transition-all duration-300">Testimonials</span></Link></li>
               <li><Link href="/faq"><span className="hover:text-primary hover:drop-shadow-[0_0_8px_rgba(255,0,255,0.8)] cursor-pointer transition-all duration-300">FAQ</span></Link></li>
+              <li><Link href="/affiliates"><span className="hover:text-primary hover:drop-shadow-[0_0_8px_rgba(255,0,255,0.8)] cursor-pointer transition-all duration-300">Affiliates</span></Link></li>
               <li><Link href="/contact"><span className="hover:text-primary hover:drop-shadow-[0_0_8px_rgba(255,0,255,0.8)] cursor-pointer transition-all duration-300">Contact</span></Link></li>
             </ul>
           </div>
