@@ -1,3 +1,8 @@
+- [x] Update Home page "Certification" section to "The Shankara Master Course" ($197) with correct image
+- [x] Create `MasterTraining.tsx` page with full content
+- [ ] Create `Certification.tsx` page
+- [ ] Create `Readers.tsx` page
+- [ ] Refine `Shop.tsx` page
 - [x] Remove secondary "floating" images behind Paul's portrait in Home.tsx
 - [x] Replace Master Cards image with "All 4 Decks" image
 - [x] Identify and remove the broken "hidden" image
