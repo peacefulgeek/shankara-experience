@@ -66,29 +66,19 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* Product Image - Right Side - THE SINGULARITY EFFECT */}
+          {/* Product Image - Right Side - CLEAN TRANSPARENCY */}
           <motion.div 
             className="flex-1 w-full max-w-2xl relative flex items-center justify-center"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
           >
-            {/* 
-               THE SINGULARITY: 
-               A massive radial gradient that starts pure white at the center 
-               (matching the product background) and fades into gold, then purple, then transparent.
-               This "eats" the white edges of the product image by blending them into the light itself.
-            */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-               <div className="w-[120%] h-[120%] bg-[radial-gradient(circle_at_center,_#FFFFFF_30%,_#FFD700_50%,_#D946EF_70%,_transparent_100%)] opacity-90 blur-[60px]" />
-            </div>
-            
-            {/* The Product Image - Now sitting IN the light, not ON the page */}
+            {/* The Product Image - Now truly transparent */}
             <div className="relative z-10 transform hover:scale-105 transition-transform duration-700">
               <img 
-                src="/images/full-set.png" 
+                src="/images/full-set-transparent.png" 
                 alt="The Shankara Oracle Complete Box Set" 
-                className="w-full h-auto drop-shadow-2xl mix-blend-normal"
+                className="w-full h-auto drop-shadow-2xl"
               />
               
               {/* Floating Badge */}
