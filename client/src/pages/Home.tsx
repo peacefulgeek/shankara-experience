@@ -13,38 +13,113 @@ export default function Home() {
       <main>
         <Hero />
         
-        {/* Introduction / About Snippet - COSMIC THEME */}
-        <section className="py-40 relative z-10 overflow-hidden">
+        {/* Creator Section - Paul Wagner */}
+        <section className="py-32 relative z-10 overflow-hidden">
           <div className="container mx-auto px-4 relative z-10">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+              
+              {/* Left: Paul's Image Collage */}
               <div className="relative group">
-                {/* Glowing Frame */}
-                <div className="absolute inset-0 border-2 border-primary/50 rounded-3xl transform rotate-3 scale-105 blur-sm opacity-70 transition-all duration-500 group-hover:rotate-0 group-hover:scale-100" />
-                <div className="relative rounded-3xl overflow-hidden shadow-[0_0_80px_rgba(255,0,255,0.4)]">
-                  <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-transparent z-10 mix-blend-overlay" />
+                 {/* Main Portrait */}
+                <div className="relative z-20 rounded-[3rem] overflow-hidden shadow-[0_0_80px_rgba(255,0,255,0.3)] border-4 border-white/10 transform transition-transform duration-700 hover:scale-[1.02]">
                   <img 
-                    src="/images/paul-portrait-main.jpg" 
-                    alt="Paul Wagner (Krishna Kalesh)" 
-                    className="w-full h-auto transform transition-transform duration-700 hover:scale-105"
+                    src="/images/paul-2.png" 
+                    alt="Paul Wagner Namaste" 
+                    className="w-full h-auto object-cover"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-80" />
+                  <div className="absolute bottom-8 left-8 text-white">
+                    <p className="text-sm font-bold tracking-widest uppercase text-accent mb-2">The Creator</p>
+                    <h3 className="text-3xl font-light">Paul Wagner</h3>
+                  </div>
+                </div>
+
+                {/* Floating Action Shot 1 */}
+                <div className="absolute -bottom-12 -right-12 z-30 w-48 md:w-64 rounded-2xl overflow-hidden shadow-2xl border-2 border-white/20 transform rotate-6 hover:rotate-0 transition-all duration-500">
+                  <img src="/images/paulreadingredshirt.jpg" alt="Paul Reading" className="w-full h-full object-cover" />
+                </div>
+                
+                {/* Floating Action Shot 2 */}
+                <div className="absolute -top-12 -left-12 z-10 w-40 md:w-56 rounded-2xl overflow-hidden shadow-2xl border-2 border-white/20 transform -rotate-6 hover:rotate-0 transition-all duration-500 opacity-80">
+                  <img src="/images/paulholdingwomanhand.png" alt="Connection" className="w-full h-full object-cover" />
                 </div>
               </div>
               
-              <div className="glass-card p-12 rounded-[3rem]">
-                <h3 className="text-accent tracking-[0.3em] uppercase text-sm font-bold mb-8 drop-shadow-md">The Creator</h3>
-                <h2 className="text-5xl md:text-6xl font-light text-white mb-10 drop-shadow-lg">Krishna Kalesh</h2>
-                <p className="text-white/90 text-xl leading-relaxed mb-8 font-light drop-shadow-md">
-                  "Shankara is for all walks of life, all belief systems, and every religion. I created The Shankara Oracle to help you reduce the possibility of pain and separateness, and achieve your full potential."
+              {/* Right: Content */}
+              <div className="glass-card p-12 rounded-[3rem] relative z-20">
+                <h3 className="text-accent tracking-[0.3em] uppercase text-sm font-bold mb-6 drop-shadow-md">A Message from the Heart</h3>
+                <h2 className="text-4xl md:text-5xl font-light text-white mb-8 drop-shadow-lg leading-tight">
+                  "I created Shankara to help you <span className="text-primary font-normal">remember who you are</span>."
+                </h2>
+                <p className="text-white/90 text-lg leading-relaxed mb-6 font-light drop-shadow-md">
+                  For over 30 years, I've walked the path of devotion as a disciple of Amma. The Shankara Oracle is the culmination of that journey—a bridge between ancient Vedic wisdom and your modern life.
                 </p>
-                <p className="text-white/70 text-lg leading-relaxed mb-12 font-light">
-                  Also known as Paul Wagner, Krishna Kalesh is a spiritual teacher with 30+ years as a devotee of Amma. He merges ancient wisdom with modern intuition.
+                <p className="text-white/70 text-lg leading-relaxed mb-10 font-light">
+                  It's not just a deck of cards. It's a living system that speaks directly to your soul, cutting through the noise to give you the clarity you've been praying for.
                 </p>
                 <Button variant="outline" className="border-2 border-primary text-white hover:bg-primary hover:text-white rounded-full px-10 py-6 text-lg transition-all duration-300 shadow-[0_0_20px_rgba(255,0,255,0.3)] hover:shadow-[0_0_40px_rgba(255,0,255,0.5)]">
-                  Read His Story
+                  Read My Story
                 </Button>
               </div>
             </div>
           </div>
+        </section>
+
+        {/* Community / Social Proof Section */}
+        <section className="py-24 relative overflow-hidden">
+           {/* Background Image */}
+           <div className="absolute inset-0 z-0">
+             <img src="/images/DSC_2054-scaled.jpg" alt="Community Audience" className="w-full h-full object-cover opacity-20 grayscale mix-blend-overlay" />
+             <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background" />
+           </div>
+
+           <div className="container mx-auto px-4 relative z-10 text-center">
+             <h2 className="text-4xl md:text-6xl font-light text-white mb-16 drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">
+               Join the <span className="text-primary font-normal">Global Awakening</span>
+             </h2>
+             
+             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+               {/* Community Card 1 */}
+               <div className="glass-panel p-2 rounded-3xl overflow-hidden group">
+                 <div className="relative h-64 rounded-2xl overflow-hidden mb-6">
+                   <img src="/images/paultightgroup.png" alt="Master Class Group" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" />
+                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                   <div className="absolute bottom-4 left-4 text-left">
+                     <p className="text-white font-bold text-lg">Master Classes</p>
+                     <p className="text-white/70 text-sm">Deep dive workshops</p>
+                   </div>
+                 </div>
+               </div>
+
+               {/* Community Card 2 */}
+               <div className="glass-panel p-2 rounded-3xl overflow-hidden group">
+                 <div className="relative h-64 rounded-2xl overflow-hidden mb-6">
+                   <img src="/images/paulreadingshotelpurpleshirt.jpeg" alt="Intimate Readings" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" />
+                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                   <div className="absolute bottom-4 left-4 text-left">
+                     <p className="text-white font-bold text-lg">Live Events</p>
+                     <p className="text-white/70 text-sm">Experience the energy in person</p>
+                   </div>
+                 </div>
+               </div>
+
+               {/* Community Card 3 */}
+               <div className="glass-panel p-2 rounded-3xl overflow-hidden group">
+                 <div className="relative h-64 rounded-2xl overflow-hidden mb-6">
+                   <img src="/images/DSC_2054-scaled.jpg" alt="Conference" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" />
+                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                   <div className="absolute bottom-4 left-4 text-left">
+                     <p className="text-white font-bold text-lg">Global Community</p>
+                     <p className="text-white/70 text-sm">Connect with thousands of seekers</p>
+                   </div>
+                 </div>
+               </div>
+             </div>
+             
+             <Button size="lg" className="bg-white text-primary hover:bg-white/90 px-12 py-8 rounded-full text-xl font-bold shadow-[0_0_40px_rgba(255,255,255,0.4)] transition-all duration-300">
+               Find an Event Near You
+             </Button>
+           </div>
         </section>
 
         <SystemShowcase />
