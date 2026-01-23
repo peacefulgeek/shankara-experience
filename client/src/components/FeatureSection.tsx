@@ -21,21 +21,15 @@ const Feature = ({ title, subtitle, description, image, ctaText, ctaLink, align 
   return (
     <div ref={ref} className="py-40 relative overflow-hidden">
       {/* 
-         VIBRANT BACKGROUND REPLACEMENT 
-         No more black void. Each section gets a rich, layered cosmic background.
+         TRANSPARENT BACKGROUND 
+         Removed opaque layers. The global fixed background now shows through.
+         Added only subtle texture overlays if specific bgImage is provided.
       */}
-      <div className="absolute inset-0 z-0">
-         {/* Base Gradient */}
-         <div className="absolute inset-0 bg-gradient-to-b from-[#2d1b4e] via-[#1a0b2e] to-[#2d1b4e]" />
-         
-         {/* Texture Image */}
-         {bgImage && (
-            <img src={bgImage} alt="Background" className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-screen blur-sm" />
-         )}
-         
-         {/* Overlay Gradient for Depth */}
-         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/40" />
-      </div>
+      {bgImage && (
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <img src={bgImage} alt="" className="w-full h-full object-cover opacity-20 mix-blend-screen blur-sm" />
+        </div>
+      )}
       
       <div className="container mx-auto px-4 relative z-10">
         <div className={`flex flex-col ${align === "right" ? "lg:flex-row-reverse" : "lg:flex-row"} items-center gap-24`}>

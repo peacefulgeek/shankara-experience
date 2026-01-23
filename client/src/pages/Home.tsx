@@ -8,7 +8,24 @@ import { Play } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#0a0514] text-foreground font-sans selection:bg-primary selection:text-white overflow-x-hidden">
+    <div className="min-h-screen text-foreground font-sans selection:bg-primary selection:text-white overflow-x-hidden relative">
+      {/* 
+         GLOBAL FIXED BACKGROUND 
+         This is the fix. A single, fixed layer that sits behind EVERYTHING.
+         No matter where you scroll, you see this rich cosmic texture.
+         No more black gaps.
+      */}
+      <div className="fixed inset-0 z-[-1]">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#2e1065] via-[#4c1d95] to-[#1e1b4b]" />
+        <img 
+          src="/images/cosmic-nebula.jpg" 
+          alt="" 
+          className="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-screen" 
+        />
+        {/* Animated grain/noise for texture */}
+        <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-20 mix-blend-overlay" />
+      </div>
+
       <Navigation />
       
       <main>
@@ -60,7 +77,7 @@ export default function Home() {
               
               {/* Right: The Message in a Glass Vessel */}
               <div className="lg:col-span-7">
-                <div className="glass-vessel rounded-[3rem] p-12 md:p-16 relative border border-white/10 bg-white/5 backdrop-blur-md">
+                <div className="glass-vessel rounded-[3rem] p-12 md:p-16 relative border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl">
                   {/* Decorative quote mark */}
                   <div className="absolute top-10 left-10 text-9xl leading-none text-primary/20 font-serif">"</div>
 
@@ -102,8 +119,7 @@ export default function Home() {
         <section className="py-32 relative overflow-hidden">
            {/* Cinematic Background */}
            <div className="absolute inset-0 z-0">
-             <img src="/images/DSC_2054-scaled.jpg" alt="Community Audience" className="w-full h-full object-cover opacity-10 grayscale" />
-             <div className="absolute inset-0 bg-gradient-to-b from-[#0a0514] via-[#0a0514]/90 to-[#0a0514]" />
+             <img src="/images/DSC_2054-scaled.jpg" alt="Community Audience" className="w-full h-full object-cover opacity-10 grayscale mix-blend-overlay" />
            </div>
 
            <div className="container mx-auto px-4 relative z-10">
@@ -172,13 +188,12 @@ export default function Home() {
             <img 
               src="/images/cosmic-meditation.png" 
               alt="Background" 
-              className="w-full h-full object-cover opacity-40"
+              className="w-full h-full object-cover opacity-40 mix-blend-screen"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0514] via-transparent to-[#0a0514]" />
           </div>
           
           <div className="container relative z-10 text-center px-4">
-            <div className="glass-vessel max-w-5xl mx-auto p-16 md:p-24 rounded-[4rem] border border-white/10 shadow-2xl bg-black/40 backdrop-blur-xl">
+            <div className="glass-vessel max-w-5xl mx-auto p-16 md:p-24 rounded-[4rem] border border-white/10 shadow-2xl bg-black/20 backdrop-blur-xl">
               <h2 className="text-5xl md:text-8xl font-light text-white mb-10 tracking-tighter">
                 Awaken Your <span className="text-gold-gradient font-normal">Mastery</span>
               </h2>

@@ -35,14 +35,11 @@ export default function SystemShowcase() {
   return (
     <section className="py-32 relative overflow-hidden">
       {/* 
-         VIBRANT NEBULA MESH BACKGROUND 
-         Replaces the "depressing black" with a rich, living cosmic tapestry.
+         TRANSPARENT SECTION BACKGROUND
+         Removed the opaque dark layers so the global fixed background is visible.
+         Just added subtle local glows for readability.
       */}
-      <div className="absolute inset-0 z-0">
-         <div className="absolute inset-0 bg-gradient-to-b from-[#1a0b2e] via-[#2d1b4e] to-[#0a0514]" />
-         <img src="/images/cosmic-nebula.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-screen" />
-         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,_rgba(139,92,246,0.1),_transparent_70%)]" />
-      </div>
+      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,_rgba(139,92,246,0.1),_transparent_70%)] pointer-events-none" />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-24">
