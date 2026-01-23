@@ -15,9 +15,8 @@ export default function MasterTraining() {
       />
 
       {/* BACKGROUND */}
-      <div className="fixed inset-0 z-[-1] bg-black">
-        <div className="absolute inset-0 bg-[url('/images/cosmic-nebula.jpg')] bg-cover bg-center opacity-40" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-purple-900/20 to-black/90" />
+      <div className="fixed inset-0 z-[-1]">
+        {/* Light Cosmic Background handled by global index.css body style */}
       </div>
 
       <Navigation />
@@ -26,26 +25,26 @@ export default function MasterTraining() {
         {/* HERO */}
         <section className="pt-32 pb-20 relative overflow-hidden">
           <div className="container mx-auto px-4 text-center relative z-10">
-            <Badge variant="outline" className="mb-6 border-accent text-accent px-4 py-1 text-sm tracking-widest uppercase backdrop-blur-sm">
+            <Badge variant="outline" className="mb-6 border-purple-300 text-purple-700 px-4 py-1 text-sm tracking-widest uppercase bg-white/50 backdrop-blur-sm">
               The Master Course
             </Badge>
-            <h1 className="text-5xl md:text-7xl font-display font-bold text-white mb-6 leading-tight drop-shadow-[0_0_30px_rgba(255,255,255,0.3)]">
+            <h1 className="text-5xl md:text-7xl font-display font-bold text-purple-900 mb-6 leading-tight">
               Unlock Your <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-600">
                 Inner Wisdom
               </span>
             </h1>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto mb-10 leading-relaxed">
+            <p className="text-xl text-purple-800/80 max-w-3xl mx-auto mb-10 leading-relaxed">
               Elevate your intuitive abilities, discover the pathways to self-mastery, and immerse yourself in divine wisdom.
               <br className="hidden md:block" />
               A complete system to sharpen your clairsentience and live in alignment with your higher purpose.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-accent text-black hover:bg-accent/90 px-8 py-6 text-lg rounded-full font-bold shadow-[0_0_20px_rgba(245,158,11,0.3)]">
+              <Button size="lg" className="bg-accent text-purple-900 hover:bg-accent/90 px-8 py-6 text-lg rounded-full font-bold shadow-lg shadow-yellow-200">
                 Enroll Now for $397
               </Button>
               <Link href="/certification">
-                <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10 px-8 py-6 text-lg rounded-full">
+                <Button variant="outline" size="lg" className="border-purple-200 text-purple-700 hover:bg-white/50 px-8 py-6 text-lg rounded-full backdrop-blur-sm">
                   View Certification
                 </Button>
               </Link>
@@ -54,9 +53,9 @@ export default function MasterTraining() {
         </section>
 
         {/* COURSE MODULES GRID */}
-        <section className="py-20 bg-black/30 backdrop-blur-sm">
+        <section className="py-20 bg-white/40 backdrop-blur-sm">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-center text-white mb-16">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-center text-purple-900 mb-16">
               What You Will Master
             </h2>
             
@@ -93,12 +92,12 @@ export default function MasterTraining() {
                   desc: "Uncover the role of rituals and how they can serve you on your path."
                 }
               ].map((module, i) => (
-                <div key={i} className="bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-colors group">
-                  <div className="mb-6 bg-white/5 w-16 h-16 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                <div key={i} className="bg-white/60 border border-white/50 p-8 rounded-2xl hover:bg-white/80 transition-colors group shadow-sm hover:shadow-md">
+                  <div className="mb-6 bg-purple-50 w-16 h-16 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
                     {module.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{module.title}</h3>
-                  <p className="text-white/70 leading-relaxed">{module.desc}</p>
+                  <h3 className="text-xl font-bold text-purple-900 mb-3">{module.title}</h3>
+                  <p className="text-purple-800/70 leading-relaxed">{module.desc}</p>
                 </div>
               ))}
             </div>
@@ -108,7 +107,7 @@ export default function MasterTraining() {
         {/* VALUE STACK */}
         <section className="py-24 relative overflow-hidden">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto bg-gradient-to-br from-purple-900/40 to-blue-900/40 border border-white/20 rounded-3xl p-8 md:p-12 relative">
+            <div className="max-w-4xl mx-auto bg-gradient-to-br from-purple-900 to-indigo-900 border border-white/20 rounded-3xl p-8 md:p-12 relative text-white shadow-2xl">
               <div className="absolute top-0 right-0 p-4 opacity-20">
                 <Sparkles className="w-32 h-32 text-white" />
               </div>
@@ -116,7 +115,7 @@ export default function MasterTraining() {
               <h2 className="text-3xl font-bold text-white mb-8 text-center">Total Course Value: <span className="line-through text-white/50">$2,500+</span></h2>
               
               <div className="space-y-6 mb-10">
-                <div className="flex items-center gap-4 bg-black/20 p-4 rounded-xl">
+                <div className="flex items-center gap-4 bg-white/10 p-4 rounded-xl">
                   <div className="bg-accent/20 p-2 rounded-full"><Play className="w-5 h-5 text-accent" /></div>
                   <div>
                     <h4 className="text-white font-bold">100 Pre-recorded Video Lessons</h4>
@@ -124,7 +123,7 @@ export default function MasterTraining() {
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-4 bg-black/20 p-4 rounded-xl">
+                <div className="flex items-center gap-4 bg-white/10 p-4 rounded-xl">
                   <div className="bg-accent/20 p-2 rounded-full"><BookOpen className="w-5 h-5 text-accent" /></div>
                   <div>
                     <h4 className="text-white font-bold">Worksheets & Spiritual Resources</h4>
@@ -132,7 +131,7 @@ export default function MasterTraining() {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4 bg-black/20 p-4 rounded-xl border border-accent/30">
+                <div className="flex items-center gap-4 bg-white/10 p-4 rounded-xl border border-accent/30">
                   <div className="bg-accent/20 p-2 rounded-full"><Star className="w-5 h-5 text-accent" /></div>
                   <div>
                     <h4 className="text-accent font-bold">BONUS: Transformational Training Manual</h4>
@@ -144,7 +143,7 @@ export default function MasterTraining() {
               <div className="text-center">
                 <div className="text-sm text-white/60 uppercase tracking-widest mb-2">Get Instant Access Today For Only</div>
                 <div className="text-6xl font-bold text-white mb-8">$397</div>
-                <Button size="lg" className="w-full md:w-auto bg-white text-black hover:bg-gray-200 px-12 py-8 text-xl rounded-full font-bold shadow-[0_0_40px_rgba(255,255,255,0.3)]">
+                <Button size="lg" className="w-full md:w-auto bg-white text-purple-900 hover:bg-gray-100 px-12 py-8 text-xl rounded-full font-bold shadow-lg">
                   Join The Master Course
                 </Button>
                 <p className="mt-4 text-white/50 text-sm">Lifetime access • 30-day money-back guarantee</p>
@@ -158,26 +157,26 @@ export default function MasterTraining() {
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row items-center gap-12">
               <div className="w-full md:w-1/3">
-                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden border border-white/10">
+                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden border-4 border-white shadow-xl">
                   <img src="/images/paul-2.png" alt="Krishna Kalesh" className="w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-purple-900/80 to-transparent" />
                   <div className="absolute bottom-6 left-6">
                     <h3 className="text-2xl font-bold text-white">Krishna Kalesh</h3>
-                    <p className="text-accent">Creator of Shankara</p>
+                    <p className="text-accent font-bold">Creator of Shankara</p>
                   </div>
                 </div>
               </div>
               <div className="w-full md:w-2/3 space-y-6">
-                <h2 className="text-3xl md:text-4xl font-bold text-white">Meet Your Guide</h2>
-                <p className="text-xl text-white/80 leading-relaxed font-light">
+                <h2 className="text-3xl md:text-4xl font-bold text-purple-900">Meet Your Guide</h2>
+                <p className="text-xl text-purple-800/80 leading-relaxed font-light">
                   As a compassionate spiritual mentor, personal guide, clairvoyant, empath, and mystic, Krishna Kalesh (Paul Wagner) has guided thousands of seekers for over 30 years.
                 </p>
-                <p className="text-lg text-white/70 leading-relaxed">
+                <p className="text-lg text-purple-800/70 leading-relaxed">
                   Drawing wisdom from ancient teachings and enlightened masters, Kalesh’s guidance empowers spiritually-minded individuals to connect with their inner Selves, transcend circumstances, and find liberation in every moment.
                 </p>
                 <div className="pt-4">
                   <Link href="/readers">
-                    <Button variant="link" className="text-accent pl-0 text-lg">
+                    <Button variant="link" className="text-purple-600 pl-0 text-lg font-bold hover:text-purple-800">
                       Meet other Certified Masters <ArrowRight className="ml-2 w-4 h-4" />
                     </Button>
                   </Link>

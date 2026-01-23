@@ -1,9 +1,10 @@
-- [x] **Analyze New PDFs**
-    - [x] Read `ShankaraOracleBoard–TheShankaraExperience.pdf`
-    - [x] Read `ShankaraOracleUnboxed–TheShankaraExperience.pdf`
-- [x] **Fix Visual Assets**
-    - [x] Fix Shakti Cube image (remove white background / use blend mode / find better asset)
-    - [x] Fix Oracle Board image size (make it larger/heroic)
-- [x] **Build Missing Pages**
-    - [x] Create `MasterTraining.tsx` with full content
-    - [x] Create `Certification.tsx` with full content
+- [ ] **Theme & Asset Recovery**
+    - [x] **Extract High-Res Board**: Convert `ShankaraOracleBoard–TheShankaraExperience.pdf` to high-res PNG.
+    - [x] **Fix Broken Images**: Audit `client/public/images` and fix paths for "Clarify Your Path", "Heal Deep Patterns", etc.
+    - [x] **Brighten Theme**: Switch `index.css` and page layouts from Dark Mode to Light Cosmic (White/Gold/Soft Purple).
+    - [x] **Build Unboxing Page**: Create `Unboxing.tsx` with content from `ShankaraOracleUnboxed–TheShankaraExperience.pdf`.
+    - [x] **Update Training Pages**: Refactor `MasterTraining.tsx` and `Certification.tsx` to use Light Cosmic theme.
+    - [x] **Update HowTo Page**: Refactor `HowToShankara.tsx` to use Light Cosmic theme.
+    - [x] **Update Unboxing Page**: Refactor `Unboxing.tsx` to use Light Cosmic theme.
+    - [x] **Update Navigation**: Refactor `Navigation.tsx` to use Light Cosmic theme and include Unboxing link.
+    - [x] **Update Home**: Refactor `Home.tsx` to use Light Cosmic theme, fix feature images, and link to Master Training.
