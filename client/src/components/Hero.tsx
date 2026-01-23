@@ -66,26 +66,34 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* Product Image - Right Side */}
+          {/* Product Image - Right Side - THE SINGULARITY EFFECT */}
           <motion.div 
-            className="flex-1 w-full max-w-2xl relative"
-            initial={{ opacity: 0, scale: 0.8, rotate: 5 }}
-            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            className="flex-1 w-full max-w-2xl relative flex items-center justify-center"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
           >
-            {/* Glowing Backdrop behind product */}
-            <div className="absolute inset-0 bg-primary/30 blur-[100px] rounded-full transform scale-75 animate-pulse-slow" />
+            {/* 
+               THE SINGULARITY: 
+               A massive radial gradient that starts pure white at the center 
+               (matching the product background) and fades into gold, then purple, then transparent.
+               This "eats" the white edges of the product image by blending them into the light itself.
+            */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+               <div className="w-[120%] h-[120%] bg-[radial-gradient(circle_at_center,_#FFFFFF_30%,_#FFD700_50%,_#D946EF_70%,_transparent_100%)] opacity-90 blur-[60px]" />
+            </div>
             
+            {/* The Product Image - Now sitting IN the light, not ON the page */}
             <div className="relative z-10 transform hover:scale-105 transition-transform duration-700">
               <img 
                 src="/images/full-set.png" 
                 alt="The Shankara Oracle Complete Box Set" 
-                className="w-full h-auto drop-shadow-[0_20px_60px_rgba(0,0,0,0.5)]"
+                className="w-full h-auto drop-shadow-2xl mix-blend-normal"
               />
               
               {/* Floating Badge */}
               <motion.div 
-                className="absolute -top-10 -right-5 md:top-0 md:right-0 bg-white/10 backdrop-blur-xl border border-white/40 p-4 rounded-2xl shadow-xl"
+                className="absolute -top-10 -right-5 md:top-0 md:right-0 bg-white/10 backdrop-blur-xl border border-white/40 p-4 rounded-2xl shadow-xl z-20"
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               >

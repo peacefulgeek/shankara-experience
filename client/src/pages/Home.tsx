@@ -14,7 +14,7 @@ export default function Home() {
       <main>
         <Hero />
         
-        {/* THE CREATOR: Reimagined as a "Golden Portal" Experience */}
+        {/* THE CREATOR: Reimagined with "Sacred Frame" Mounting */}
         <section className="py-40 relative z-10">
           {/* Subtle connecting line from Hero */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-32 bg-gradient-to-b from-transparent via-primary/50 to-transparent" />
@@ -22,39 +22,45 @@ export default function Home() {
           <div className="container mx-auto px-4 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
               
-              {/* Left: Paul's "Golden Portal" Portrait */}
-              <div className="lg:col-span-5 relative group perspective-1000">
-                {/* The Golden Arch Frame */}
-                <div className="golden-portal aspect-[4/5] relative z-20 transform transition-transform duration-1000 hover:rotate-y-2 hover:scale-[1.01]">
-                  <img 
-                    src="/images/paul-2.png" 
-                    alt="Paul Wagner Namaste" 
-                    className="w-full h-full object-cover"
-                  />
-                  {/* Inner Radiance Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1a0b2e] via-transparent to-transparent opacity-60" />
-                  
-                  {/* Nameplate */}
-                  <div className="absolute bottom-0 left-0 right-0 p-8 text-center bg-gradient-to-t from-[#0a0514] to-transparent">
-                    <h3 className="text-3xl font-light text-white tracking-wide">Paul Wagner</h3>
-                    <p className="text-accent text-sm tracking-[0.3em] uppercase mt-2">The Guide</p>
-                  </div>
+              {/* Left: Paul's "Golden Card" Portrait */}
+              <div className="lg:col-span-5 relative group perspective-1000 flex justify-center lg:justify-end">
+                {/* 
+                   THE SACRED FRAME:
+                   Instead of floating the image, we mount it on a physical "Gold Card".
+                   This turns the white background into a deliberate design feature (the card face).
+                */}
+                <div className="relative z-20 w-full max-w-md aspect-[4/5] bg-gradient-to-br from-[#F5E6CA] via-[#D4AF37] to-[#AA8C2C] p-[2px] rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] transform transition-transform duration-1000 hover:rotate-y-2 hover:scale-[1.01]">
+                   {/* Inner Border (The "Card" edge) */}
+                   <div className="w-full h-full bg-white rounded-[10px] overflow-hidden relative border-4 border-[#D4AF37]/30">
+                      <img 
+                        src="/images/paul-2.png" 
+                        alt="Paul Wagner Namaste" 
+                        className="w-full h-full object-cover"
+                      />
+                      {/* Inner Gold Inset Shadow to make it look recessed */}
+                      <div className="absolute inset-0 shadow-[inset_0_0_20px_rgba(212,175,55,0.4)] pointer-events-none" />
+                      
+                      {/* Nameplate Overlay - elegantly placed at bottom */}
+                      <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+                        <h3 className="text-3xl font-light text-white tracking-wide font-serif">Paul Wagner</h3>
+                        <p className="text-[#D4AF37] text-xs tracking-[0.3em] uppercase mt-1 font-bold">The Guide</p>
+                      </div>
+                   </div>
                 </div>
 
-                {/* Floating "Moments" - Glass shards showing other facets */}
-                <div className="absolute -bottom-10 -right-10 z-30 w-48 aspect-square rounded-2xl overflow-hidden shadow-2xl border border-white/20 rotate-3 hover:rotate-0 transition-all duration-500">
-                  <img src="/images/paulreadingredshirt.jpg" alt="Paul Reading" className="w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-primary/10 mix-blend-overlay" />
+                {/* Secondary Photos - Also Mounted as Cards */}
+                <div className="absolute -bottom-6 -right-6 z-30 w-40 aspect-square bg-white p-1 rounded-lg shadow-2xl rotate-3 hover:rotate-0 transition-all duration-500 border border-gray-200">
+                  <img src="/images/paulreadingredshirt.jpg" alt="Paul Reading" className="w-full h-full object-cover rounded" />
                 </div>
                 
-                <div className="absolute top-10 -left-10 z-10 w-40 aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border border-white/20 -rotate-3 hover:rotate-0 transition-all duration-500 opacity-90">
-                  <img src="/images/paulholdingwomanhand.png" alt="Connection" className="w-full h-full object-cover grayscale-[30%]" />
+                <div className="absolute top-10 -left-6 z-10 w-32 aspect-[3/4] bg-white p-1 rounded-lg shadow-2xl -rotate-3 hover:rotate-0 transition-all duration-500 border border-gray-200">
+                  <img src="/images/paulholdingwomanhand.png" alt="Connection" className="w-full h-full object-cover rounded grayscale-[20%]" />
                 </div>
               </div>
               
               {/* Right: The Message in a Glass Vessel */}
               <div className="lg:col-span-7">
-                <div className="glass-vessel rounded-[3rem] p-12 md:p-16 relative">
+                <div className="glass-vessel rounded-[3rem] p-12 md:p-16 relative border border-white/10 bg-white/5 backdrop-blur-md">
                   {/* Decorative quote mark */}
                   <div className="absolute top-10 left-10 text-9xl leading-none text-primary/20 font-serif">"</div>
 
@@ -92,7 +98,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* COMMUNITY: The "Global Awakening" - High-End Editorial Layout */}
+        {/* COMMUNITY: The "Global Awakening" - Mounted Editorial Cards */}
         <section className="py-32 relative overflow-hidden">
            {/* Cinematic Background */}
            <div className="absolute inset-0 z-0">
@@ -111,42 +117,39 @@ export default function Home() {
              </div>
              
              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-               {/* Editorial Card 1 */}
-               <div className="group relative aspect-[3/4] rounded-[2rem] overflow-hidden cursor-pointer">
-                 <img src="/images/paultightgroup.png" alt="Master Classes" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
-                 <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                   <div className="w-12 h-1 bg-primary mb-6" />
-                   <h3 className="text-2xl text-white font-normal mb-2">Master Classes</h3>
-                   <p className="text-white/70 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                     Deep dive workshops that transform your understanding of the Oracle and yourself.
-                   </p>
+               {/* Editorial Card 1 - Mounted on White Card Stock */}
+               <div className="group relative aspect-[3/4] bg-white p-2 rounded-[1rem] shadow-xl transform transition-transform duration-500 hover:-translate-y-2 cursor-pointer">
+                 <div className="w-full h-full relative overflow-hidden rounded-[0.5rem]">
+                    <img src="/images/paultightgroup.png" alt="Master Classes" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-80" />
+                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                      <h3 className="text-2xl text-white font-normal mb-1">Master Classes</h3>
+                      <p className="text-white/80 text-sm">Deep dive workshops.</p>
+                    </div>
                  </div>
                </div>
 
-               {/* Editorial Card 2 - Center Focus */}
-               <div className="group relative aspect-[3/4] rounded-[2rem] overflow-hidden cursor-pointer md:-mt-12 shadow-[0_0_50px_rgba(255,0,255,0.2)] border border-white/10">
-                 <img src="/images/paulreadingshotelpurpleshirt.jpeg" alt="Live Events" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
-                 <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                   <div className="w-12 h-1 bg-accent mb-6" />
-                   <h3 className="text-2xl text-white font-normal mb-2">Live Events</h3>
-                   <p className="text-white/70 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                     Experience the electric energy of Shankara in person. Readings, healings, and connection.
-                   </p>
+               {/* Editorial Card 2 - Center Focus - Gold Border */}
+               <div className="group relative aspect-[3/4] bg-gradient-to-br from-[#D4AF37] to-[#AA8C2C] p-[3px] rounded-[1rem] shadow-2xl md:-mt-12 transform transition-transform duration-500 hover:-translate-y-2 cursor-pointer z-10">
+                 <div className="w-full h-full relative overflow-hidden rounded-[0.8rem] bg-white">
+                    <img src="/images/paulreadingshotelpurpleshirt.jpeg" alt="Live Events" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-80" />
+                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                      <h3 className="text-2xl text-[#D4AF37] font-normal mb-1">Live Events</h3>
+                      <p className="text-white/80 text-sm">Electric energy in person.</p>
+                    </div>
                  </div>
                </div>
 
-               {/* Editorial Card 3 */}
-               <div className="group relative aspect-[3/4] rounded-[2rem] overflow-hidden cursor-pointer">
-                 <img src="/images/DSC_2054-scaled.jpg" alt="Global Community" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
-                 <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                   <div className="w-12 h-1 bg-primary mb-6" />
-                   <h3 className="text-2xl text-white font-normal mb-2">Global Tribe</h3>
-                   <p className="text-white/70 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                     Join thousands of others on the path. Support, love, and shared wisdom.
-                   </p>
+               {/* Editorial Card 3 - Mounted on White Card Stock */}
+               <div className="group relative aspect-[3/4] bg-white p-2 rounded-[1rem] shadow-xl transform transition-transform duration-500 hover:-translate-y-2 cursor-pointer">
+                 <div className="w-full h-full relative overflow-hidden rounded-[0.5rem]">
+                    <img src="/images/DSC_2054-scaled.jpg" alt="Global Community" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-80" />
+                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                      <h3 className="text-2xl text-white font-normal mb-1">Global Tribe</h3>
+                      <p className="text-white/80 text-sm">Support, love, and wisdom.</p>
+                    </div>
                  </div>
                </div>
              </div>
@@ -175,7 +178,7 @@ export default function Home() {
           </div>
           
           <div className="container relative z-10 text-center px-4">
-            <div className="glass-vessel max-w-5xl mx-auto p-16 md:p-24 rounded-[4rem] border border-white/10 shadow-2xl">
+            <div className="glass-vessel max-w-5xl mx-auto p-16 md:p-24 rounded-[4rem] border border-white/10 shadow-2xl bg-black/40 backdrop-blur-xl">
               <h2 className="text-5xl md:text-8xl font-light text-white mb-10 tracking-tighter">
                 Awaken Your <span className="text-gold-gradient font-normal">Mastery</span>
               </h2>
