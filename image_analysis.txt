@@ -1,0 +1,9 @@
+SystemShowcase.tsx Analysis:
+- Line 22: `image: "/images/shakti-cube-transparent.png"` is the culprit. This is the wireframe image the user hates.
+- Line 15: `image: "/images/oracle-board.png"` is used for the board. I need to make sure this is the high-quality one.
+- Line 8: `image: "/images/stones-enhanced.png"` seems fine, but I should check if it looks "physical" enough.
+
+Action Plan for Code:
+1. Update `SystemShowcase.tsx` to use `shakti-cube-full.png` (the white/gold solid one) instead of the transparent one.
+2. Even `shakti-cube-full.png` might look flat (it's a vector graphic). I should apply CSS filters (drop-shadow) to give it depth, or find a way to make it look more 3D.
+3. For the Hero section redesign, I will need to create a new layout where the board image is MUCH larger, likely spanning the full width or being the background.

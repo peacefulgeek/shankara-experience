@@ -7,28 +7,33 @@ export default function SystemShowcase() {
       description: "Gain insight and align with Dharma with the Shankara oracle stones. Made from polished black obsidian, each stone features a channeled symbol on one side.",
       image: "/images/stones-enhanced.png",
       color: "from-purple-500 to-pink-500",
-      glow: "shadow-[0_0_60px_rgba(236,72,153,0.3)]"
+      glow: "shadow-[0_0_60px_rgba(236,72,153,0.3)]",
+      scale: 1.1 // Stones need to be slightly larger to show detail
     },
     {
       title: "The Oracle Board",
       description: "Source guidance and explore ancient wisdom with the Shankara oracle board. A sacred geometry map that guides your reading, connecting you to Vedic astrology insights.",
-      image: "/images/oracle-board.png", // Corrected from shankaraboardwithstonesandcards.png
+      image: "/images/oracle-board.png",
       color: "from-blue-500 to-cyan-500",
-      glow: "shadow-[0_0_60px_rgba(6,182,212,0.3)]"
+      glow: "shadow-[0_0_60px_rgba(6,182,212,0.3)]",
+      scale: 1.0
     },
     {
       title: "Shakti's Cube",
       description: "Discover the force, energy, and flow of an aspect of your life with this unique divination die. It summons the divine, cosmic feminine energy.",
-      image: "/images/shakti-cube-transparent.png", // Corrected to use the new transparent version
+      // CHANGED: Using the solid full version, not the transparent wireframe
+      image: "/images/shakti-cube-full.png", 
       color: "from-amber-500 to-orange-500",
-      glow: "shadow-[0_0_60px_rgba(245,158,11,0.3)]"
+      glow: "shadow-[0_0_60px_rgba(245,158,11,0.3)]",
+      scale: 0.9 // Cube is naturally large in this image, scaling down slightly to match
     },
     {
       title: "The Master Cards",
       description: "Tap into the highest frequencies of consciousness. These cards represent the ultimate guides and forces shaping your spiritual journey.",
-      image: "/images/master-card-spread.webp", // Corrected from Master-Cards-FINAL-1-4-23_Page_28.webp
+      image: "/images/master-card-spread.webp",
       color: "from-emerald-500 to-teal-500",
-      glow: "shadow-[0_0_60px_rgba(16,185,129,0.3)]"
+      glow: "shadow-[0_0_60px_rgba(16,185,129,0.3)]",
+      scale: 1.0
     }
   ];
 
@@ -70,6 +75,7 @@ export default function SystemShowcase() {
                   <img 
                     src={feature.image} 
                     alt={feature.title} 
+                    style={{ transform: `scale(${feature.scale || 1})` }}
                     className={`w-full max-w-lg object-contain drop-shadow-2xl ${feature.glow}`}
                   />
                 </div>
