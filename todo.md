@@ -1,3 +1,12 @@
+- [x] Build `Certification.tsx` page:
+    - [x] Extract content from uploads
+    - [x] Implement layout with pricing ($1,500) and details
+- [x] Build `Readers.tsx` page:
+    - [x] Extract content from uploads
+    - [x] Implement directory layout
+- [x] Build `Shop.tsx` page:
+    - [x] Extract product details from uploads
+    - [x] Implement product grid with new aesthetic
 - [x] Correct Master Course section on Home page:
     - [x] Remove all "Certification", "Group", "January" text
     - [x] Focus purely on "The Shankara Master Course" ($197)
@@ -13,9 +22,6 @@
     - [x] Make text readable (high contrast/backing)
 - [x] Update Home page "Certification" section to "The Shankara Master Course" ($197) with correct image
 - [x] Create `MasterTraining.tsx` page with full content
-- [ ] Create `Certification.tsx` page
-- [ ] Create `Readers.tsx` page
-- [ ] Refine `Shop.tsx` page
 - [x] Remove secondary "floating" images behind Paul's portrait in Home.tsx
 - [x] Replace Master Cards image with "All 4 Decks" image
 - [x] Identify and remove the broken "hidden" image

@@ -7,6 +7,9 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import HowTo from "./pages/HowTo";
 import MasterTraining from "./pages/MasterTraining";
+import Certification from "./pages/Certification";
+import Readers from "./pages/Readers";
+import Shop from "./pages/Shop";
 
 
 function Router() {
@@ -15,6 +18,9 @@ function Router() {
       <Route path={"/"} component={Home} />
       <Route path={"/how-to-shankara"} component={HowTo} />
       <Route path={"/master-training"} component={MasterTraining} />
+      <Route path={"/certification"} component={Certification} />
+      <Route path={"/readers"} component={Readers} />
+      <Route path={"/shop"} component={Shop} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
