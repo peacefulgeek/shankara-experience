@@ -31,7 +31,7 @@ export default function Shop() {
               <div className="w-full lg:w-1/2 relative group">
                 <div className="absolute -inset-4 bg-accent/20 blur-2xl rounded-full group-hover:bg-accent/30 transition-all duration-700" />
                 <img 
-                  src="/images/shankara-oracle-intimate-less-height.png" 
+                  src="/images/oracle-intimate.png" 
                   alt="Shankara Oracle Box Set" 
                   className="relative rounded-3xl shadow-2xl border border-white/10 w-full transform group-hover:scale-[1.02] transition-transform duration-500"
                 />
@@ -162,7 +162,7 @@ export default function Shop() {
         <section className="py-20">
           <div className="container mx-auto px-4">
             <div className="bg-gradient-to-r from-purple-900/60 to-blue-900/60 rounded-3xl p-12 border border-white/10 text-center relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/stars-texture.png')] opacity-30 mix-blend-overlay" />
+              <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/cosmic-nebula.jpg')] opacity-30 mix-blend-overlay" />
               <div className="relative z-10">
                 <h2 className="text-3xl font-bold text-white mb-4">Want to go deeper?</h2>
                 <p className="text-white/80 max-w-2xl mx-auto mb-8">

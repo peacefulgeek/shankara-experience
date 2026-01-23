@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Play, Sparkles, Star, Quote } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Play, ArrowRight, Check } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -10,13 +11,19 @@ export default function Home() {
   return (
     <div className="min-h-screen text-foreground font-sans selection:bg-primary selection:text-white overflow-x-hidden relative">
       <SEO 
-        title="Home" 
-        description="The Shankara Oracle: A living technology of consciousness. Awaken your intuition, heal your past, and master your destiny."
+        title="The Shankara Experience | A Living Technology of Consciousness" 
+        description="Awaken your intuition, heal your past, and master your destiny with The Shankara Oracle - a complete cosmological system."
       />
       
-      {/* Background - using global cosmic theme from index.css */}
+      {/* Global Background */}
       <div className="fixed inset-0 z-[-1] pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-900/40 via-purple-800/20 to-black/40 mix-blend-overlay" />
+        <img 
+          src="/images/cosmic-nebula.jpg" 
+          alt="Cosmic Background" 
+          className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-screen"
+        />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(168,85,247,0.15),transparent_70%)]" />
       </div>
 
       <Navigation />
@@ -24,148 +31,155 @@ export default function Home() {
       <main>
         {/* HERO SECTION */}
         <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+          {/* Hero Background Image */}
           <div className="absolute inset-0 z-0">
-             <div className="absolute inset-0 bg-[url('/images/purple-nebula.jpg')] bg-cover bg-center opacity-40 mix-blend-screen animate-pulse-slow" />
-             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/20 to-black" />
+             <img 
+              src="/images/hero-new.png" 
+              alt="Shankara Oracle Hero" 
+              className="w-full h-full object-cover opacity-60"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/90" />
           </div>
 
           <div className="container mx-auto px-4 relative z-10 text-center">
-            <div className="animate-fade-in-up">
-              <Badge variant="outline" className="mb-6 border-accent text-accent px-4 py-1 text-sm tracking-widest uppercase backdrop-blur-sm shadow-[0_0_15px_rgba(255,215,0,0.3)]">
-                The Sacred Oracle System
-              </Badge>
-              
-              <h1 className="text-6xl md:text-8xl lg:text-9xl font-display font-bold text-white mb-8 leading-tight drop-shadow-[0_0_30px_rgba(255,0,255,0.4)]">
-                SHANKARA
-              </h1>
-              
-              <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-12 leading-relaxed font-light drop-shadow-md">
-                A living technology of consciousness. <br className="hidden md:block" />
-                Awaken your intuition, heal your past, and master your destiny.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-6 items-center justify-center">
-                <Link href="/shop">
-                  <Button size="lg" className="bg-white text-primary hover:bg-gray-100 px-10 h-16 text-xl rounded-full shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:shadow-[0_0_60px_rgba(255,255,255,0.5)] transition-all duration-300 w-full sm:w-auto font-bold group">
-                    Get the Oracle <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </Link>
-                <Link href="/videos">
-                  <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 px-10 h-16 text-xl rounded-full w-full sm:w-auto font-bold backdrop-blur-sm transition-all">
-                    <Play className="mr-2 w-5 h-5 fill-current" /> Watch Trailer
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </div>
-          
-          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white/50">
-            <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center pt-2">
-              <div className="w-1 h-2 bg-white rounded-full" />
+            <Badge variant="outline" className="mb-6 border-accent text-accent px-4 py-1 text-sm tracking-widest uppercase backdrop-blur-sm">
+              The Sacred Oracle System
+            </Badge>
+            
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-display font-bold text-white mb-6 tracking-tight drop-shadow-[0_0_40px_rgba(255,255,255,0.3)]">
+              S H A N K A R A
+            </h1>
+            
+            <p className="text-xl md:text-3xl text-white/90 font-light tracking-wide mb-8 max-w-4xl mx-auto leading-relaxed">
+              A living technology of consciousness.<br />
+              <span className="text-accent">Awaken your intuition, heal your past, and master your destiny.</span>
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-6 items-center justify-center mt-12">
+              <Link href="/shop">
+                <Button size="lg" className="bg-white text-primary hover:bg-gray-100 px-10 h-16 text-xl rounded-full font-bold shadow-[0_0_30px_rgba(255,255,255,0.2)] transition-all hover:scale-105">
+                  Get the Oracle
+                </Button>
+              </Link>
+              <Link href="/videos">
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 px-10 h-16 text-xl rounded-full font-bold backdrop-blur-sm gap-3">
+                  <Play className="w-6 h-6 fill-current" /> Watch Trailer
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
 
-        {/* INTRODUCTION - EXACT TEXT FROM PDF */}
-        <section className="py-32 relative">
+        {/* MORE THAN A DECK SECTION */}
+        <section className="py-24 relative bg-black/40 backdrop-blur-sm border-t border-white/5">
           <div className="container mx-auto px-4">
-            <div className="grid lg:grid-cols-2 gap-20 items-center">
-              <div className="relative group">
-                <div className="absolute -inset-4 bg-accent/20 blur-xl rounded-2xl group-hover:bg-accent/30 transition-all duration-700" />
+            <div className="flex flex-col lg:flex-row items-center gap-16">
+              <div className="lg:w-1/2 relative">
+                <div className="absolute inset-0 bg-accent/20 blur-[100px] rounded-full" />
                 <img 
-                  src="/images/shankara-oracle-intimate-less-height.png" 
-                  alt="Shankara Oracle Deck" 
-                  className="relative rounded-2xl shadow-2xl border border-white/10 transform group-hover:scale-[1.02] transition-transform duration-500" 
+                  src="/images/shakti-cube-full.png" 
+                  alt="Shankara Oracle Box Set" 
+                  className="relative z-10 w-full drop-shadow-2xl transform hover:scale-105 transition-transform duration-700"
                 />
               </div>
               
-              <div className="space-y-8">
-                <h2 className="text-4xl md:text-5xl font-display font-bold text-white drop-shadow-lg">
-                  More Than a Deck. <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-300">A Portal.</span>
+              <div className="lg:w-1/2 space-y-8 text-center lg:text-left">
+                <h2 className="text-4xl md:text-6xl font-display font-bold text-white leading-tight">
+                  More Than a Deck.<br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-400">A Portal.</span>
                 </h2>
-                <p className="text-lg text-white/80 leading-relaxed">
+                
+                <p className="text-lg md:text-xl text-white/80 leading-relaxed font-light">
                   The Shankara Oracle is a complete cosmological system designed to bridge the gap between your human experience and your divine nature.
                 </p>
-                <p className="text-lg text-white/80 leading-relaxed">
+                
+                <p className="text-lg md:text-xl text-white/80 leading-relaxed font-light">
                   With 300+ cards, sacred geometry boards, and obsidian stones, it offers a depth of guidance that goes beyond traditional tarot. It doesn't just predict the future; it helps you create it.
                 </p>
-                
-                <div className="grid grid-cols-2 gap-6 pt-4">
-                  {[
-                    { label: "Sacred Decks", value: "4" },
-                    { label: "Cards", value: "300+" },
-                    { label: "Obsidian Stones", value: "18" },
-                    { label: "Possibilities", value: "∞" }
-                  ].map((stat, i) => (
-                    <div key={i} className="bg-white/5 border border-white/10 p-4 rounded-xl text-center backdrop-blur-sm">
-                      <div className="text-3xl font-bold text-accent mb-1">{stat.value}</div>
-                      <div className="text-xs uppercase tracking-wider text-white/60">{stat.label}</div>
-                    </div>
-                  ))}
+
+                <div className="grid grid-cols-3 gap-4 pt-8 border-t border-white/10">
+                  <div className="text-center p-4 bg-white/5 rounded-xl border border-white/10">
+                    <div className="text-3xl md:text-4xl font-bold text-accent mb-1">4</div>
+                    <div className="text-xs uppercase tracking-widest text-white/60">Sacred Decks</div>
+                  </div>
+                  <div className="text-center p-4 bg-white/5 rounded-xl border border-white/10">
+                    <div className="text-3xl md:text-4xl font-bold text-accent mb-1">300+</div>
+                    <div className="text-xs uppercase tracking-widest text-white/60">Cards</div>
+                  </div>
+                  <div className="text-center p-4 bg-white/5 rounded-xl border border-white/10">
+                    <div className="text-3xl md:text-4xl font-bold text-accent mb-1">18</div>
+                    <div className="text-xs uppercase tracking-widest text-white/60">Obsidian Stones</div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* FEATURES - EXACT TEXT FROM PDF */}
-        <section className="py-24 bg-purple-900/20 backdrop-blur-md border-y border-white/10">
+        {/* AWAKEN YOUR INNER MASTER */}
+        <section className="py-24 relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent" />
+          
           <div className="container mx-auto px-4">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-4xl font-display font-bold text-white mb-6">Awaken Your Inner Master</h2>
-              <p className="text-white/70 text-lg">
+            <div className="text-center max-w-4xl mx-auto mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Awaken Your Inner Master</h2>
+              <p className="text-xl text-white/80">
                 Whether you are a beginner or an advanced practitioner, Shankara meets you where you are and takes you deeper.
               </p>
             </div>
-            
+
             <div className="grid md:grid-cols-3 gap-8">
               {[
                 {
                   title: "Clarify Your Path",
                   desc: "Cut through confusion and see your life's trajectory with crystal clear vision.",
-                  icon: Sparkles
+                  image: "/images/cosmic-bg-1.webp"
                 },
                 {
                   title: "Heal Deep Patterns",
                   desc: "Identify and release karmic blocks that have been holding you back for lifetimes.",
-                  icon: Star
+                  image: "/images/cosmic-bg-2.webp"
                 },
                 {
                   title: "Empower Your Intuition",
                   desc: "Strengthen your direct connection to Source and trust your inner guidance.",
-                  icon: Play
+                  image: "/images/cosmic-smoke.jpg"
                 }
-              ].map((feature, i) => (
-                <div key={i} className="glass-panel p-10 rounded-3xl border border-white/10 hover:bg-white/5 transition-all duration-300 group hover:-translate-y-2">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-accent to-purple-600 flex items-center justify-center mb-8 shadow-lg group-hover:scale-110 transition-transform">
-                    <feature.icon className="w-8 h-8 text-white" />
+              ].map((item, i) => (
+                <Card key={i} className="bg-black/40 border-white/10 overflow-hidden group hover:border-accent/50 transition-colors">
+                  <div className="h-48 overflow-hidden relative">
+                    <div className="absolute inset-0 bg-accent/20 group-hover:bg-transparent transition-colors z-10" />
+                    <img 
+                      src={item.image} 
+                      alt={item.title} 
+                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                    />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-4">{feature.title}</h3>
-                  <p className="text-white/70 leading-relaxed">
-                    {feature.desc}
-                  </p>
-                </div>
+                  <CardContent className="p-8 text-center relative z-20">
+                    <h3 className="text-2xl font-bold text-white mb-4">{item.title}</h3>
+                    <p className="text-white/70 leading-relaxed">{item.desc}</p>
+                  </CardContent>
+                </Card>
               ))}
             </div>
           </div>
         </section>
 
-        {/* MASTER TRAINING - EXACT TEXT FROM PDF */}
-        <section className="py-32 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-black via-purple-900/20 to-black z-0" />
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <div className="order-2 lg:order-1 space-y-8">
-                <Badge variant="outline" className="border-accent text-accent">The Master Course</Badge>
+        {/* MASTER COURSE SECTION */}
+        <section className="py-24 bg-gradient-to-b from-purple-900/20 to-black/80 relative">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col-reverse lg:flex-row items-center gap-16">
+              <div className="lg:w-1/2 space-y-8">
+                <Badge className="bg-accent text-black hover:bg-white px-4 py-1">The Master Course</Badge>
                 <h2 className="text-4xl md:text-6xl font-display font-bold text-white leading-tight">
                   Master the Art of <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Divine Communication</span>
+                  <span className="text-accent">Divine Communication</span>
                 </h2>
+                
                 <p className="text-lg text-white/80 leading-relaxed">
-                  Dive deep into the mysteries of the Shankara Oracle with our comprehensive Master Training. 
-                  Learn to read the cards, interpret the stones, and navigate the sacred geometry of the board.
+                  Dive deep into the mysteries of the Shankara Oracle with our comprehensive Master Training. Learn to read the cards, interpret the stones, and navigate the sacred geometry of the board.
                 </p>
+
                 <ul className="space-y-4">
                   {[
                     "In-depth video lessons with Master Teachers",
@@ -173,120 +187,128 @@ export default function Home() {
                     "Comprehensive study materials and guidebooks",
                     "Certification upon completion"
                   ].map((item, i) => (
-                    <li key={i} className="flex items-center text-white/90">
-                      <div className="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center mr-4 border border-accent/50">
-                        <span className="text-accent text-sm">✓</span>
+                    <li key={i} className="flex items-center gap-3 text-white/90">
+                      <div className="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center text-accent">
+                        <Check className="w-4 h-4" />
                       </div>
                       {item}
                     </li>
                   ))}
                 </ul>
-                <div className="pt-6">
-                  <Link href="/training">
-                    <Button size="lg" className="bg-accent text-primary hover:bg-accent/90 px-8 py-6 text-lg rounded-full font-bold">
-                      Explore the Training
-                    </Button>
-                  </Link>
-                </div>
+
+                <Link href="/certification">
+                  <Button size="lg" className="bg-white text-primary hover:bg-gray-100 rounded-full px-8 mt-4 font-bold">
+                    Explore the Training
+                  </Button>
+                </Link>
               </div>
-              <div className="order-1 lg:order-2 relative">
-                <div className="absolute -inset-10 bg-accent/10 blur-3xl rounded-full" />
+              
+              <div className="lg:w-1/2 relative">
                 <img 
-                  src="/images/MasterCards.png" 
-                  alt="Master Training Materials" 
-                  className="relative z-10 rounded-2xl shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-transform duration-500" 
+                  src="/images/Shankaramastercourse-3.png" 
+                  alt="Shankara Master Course" 
+                  className="w-full rounded-2xl shadow-2xl border border-white/10"
                 />
               </div>
             </div>
           </div>
         </section>
 
-        {/* SYSTEM SHOWCASE - EXACT TEXT FROM PDF */}
-        <section className="py-24 bg-black/40 backdrop-blur-sm">
-          <div className="container mx-auto px-4 text-center">
-             <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-16">The Sacred Technology</h2>
-             <div className="relative max-w-5xl mx-auto">
-               <div className="absolute -inset-20 bg-purple-600/20 blur-[100px] rounded-full" />
-               <img 
-                 src="/images/OracleBoard.png" 
-                 alt="The Shankara Oracle Board" 
-                 className="relative z-10 w-full drop-shadow-[0_0_50px_rgba(168,85,247,0.4)]"
-               />
-               
-               {/* Floating Features from PDF */}
-               <div className="absolute top-1/4 left-0 md:-left-10 bg-black/80 backdrop-blur-md p-4 rounded-xl border border-white/20 max-w-xs text-left hidden md:block animate-fade-in-up delay-300">
-                 <h4 className="text-accent font-bold mb-1">The 4 Realms</h4>
-                 <p className="text-xs text-white/70">Navigate through Earth, Water, Fire, and Air to find balance.</p>
-               </div>
-               
-               <div className="absolute bottom-1/4 right-0 md:-right-10 bg-black/80 backdrop-blur-md p-4 rounded-xl border border-white/20 max-w-xs text-left hidden md:block animate-fade-in-up delay-500">
-                 <h4 className="text-accent font-bold mb-1">Obsidian Stones</h4>
-                 <p className="text-xs text-white/70">Cast the stones to reveal the hidden influences shaping your reality.</p>
-               </div>
-             </div>
+        {/* THE SACRED TECHNOLOGY */}
+        <section className="py-24 relative">
+          <div className="container mx-auto px-4 text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">The Sacred Technology</h2>
           </div>
-        </section>
-
-        {/* TESTIMONIALS - FROM MASTER CERTIFICATION PDF */}
-        <section className="py-24 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-black z-0" />
-          <div className="container mx-auto px-4 relative z-10 max-w-4xl text-center">
-            <Quote className="w-12 h-12 text-accent mx-auto mb-8 opacity-50" />
-            <blockquote className="text-2xl md:text-3xl font-display font-medium text-white mb-8 leading-relaxed">
-              "So grateful I had a chance to review this course. It is exactly what I was hoping for to help me on my journey. There is truly no other course out there that has this kind of depth. If you implement the teachings, it is incredible what happens. I am so grateful. I will go back to it over and over again."
-            </blockquote>
-            <cite className="text-accent font-bold text-lg not-italic block">— Andrea D.</cite>
-          </div>
-        </section>
-
-        {/* CERTIFICATION - EXACT TEXT FROM PDF */}
-        <section className="py-32 relative">
+          
           <div className="container mx-auto px-4">
-            <div className="bg-gradient-to-br from-purple-900/60 to-black p-12 md:p-20 rounded-[3rem] border border-white/10 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-full h-full bg-[url('/images/purple-nebula.jpg')] bg-cover opacity-20 mix-blend-overlay" />
-              
-              <div className="relative z-10 text-center max-w-4xl mx-auto space-y-8">
-                <h2 className="text-4xl md:text-6xl font-display font-bold text-white">
-                  Become a Certified Reader
-                </h2>
-                <p className="text-xl text-white/80 leading-relaxed">
-                  Join an elite lineage of wisdom keepers. Our certification program empowers you to share the gift of Shankara with the world professionally.
-                </p>
-                <div className="flex flex-wrap justify-center gap-4 pt-4">
-                  <Link href="/certification">
-                    <Button size="lg" className="bg-white text-primary hover:bg-gray-100 px-10 py-6 text-xl rounded-full font-bold">
-                      Get Certified
-                    </Button>
-                  </Link>
-                  <Link href="/readers">
-                    <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 px-10 py-6 text-xl rounded-full font-bold">
-                      Find a Reader
-                    </Button>
-                  </Link>
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="relative group">
+                <div className="absolute inset-0 bg-accent/10 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                <img 
+                  src="/images/oracle-board.png" 
+                  alt="Shankara Oracle Board" 
+                  className="relative z-10 rounded-2xl shadow-2xl border border-white/10"
+                />
+              </div>
+              <div className="space-y-8">
+                <div className="bg-white/5 p-8 rounded-2xl border border-white/10">
+                  <h3 className="text-2xl font-bold text-white mb-4">The Oracle Board</h3>
+                  <p className="text-white/70 leading-relaxed">
+                    A sacred geometry grid that maps the cosmos. Place your cards and cast your stones to reveal the hidden patterns of your life.
+                  </p>
+                </div>
+                <div className="bg-white/5 p-8 rounded-2xl border border-white/10">
+                  <h3 className="text-2xl font-bold text-white mb-4">The Obsidian Stones</h3>
+                  <p className="text-white/70 leading-relaxed">
+                    18 hand-engraved obsidian stones that connect you to the earth's wisdom. Cast them onto the board to receive direct guidance.
+                  </p>
+                </div>
+                <div className="bg-white/5 p-8 rounded-2xl border border-white/10">
+                  <h3 className="text-2xl font-bold text-white mb-4">Shakti's Cube</h3>
+                  <p className="text-white/70 leading-relaxed">
+                    A unique divination tool that brings the element of divine chance into your readings. Roll the cube for clarity and direction.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* CTA - EXACT TEXT FROM PDF */}
+        {/* TESTIMONIALS */}
+        <section className="py-24 bg-black/40 backdrop-blur-sm">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl md:text-5xl font-bold text-center text-white mb-16">What Seekers Are Saying</h2>
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                {
+                  text: "Shankara has completely transformed my spiritual practice. The depth of insight I get from this system is unlike anything else.",
+                  author: "Sarah J.",
+                  role: "Intuitive Healer"
+                },
+                {
+                  text: "The Master Course gave me the confidence to start my own reading business. I'm now helping others find their path.",
+                  author: "Michael R.",
+                  role: "Certified Shankara Master"
+                },
+                {
+                  text: "Beautifully crafted and incredibly powerful. You can feel the energy of this oracle the moment you open the box.",
+                  author: "Elena T.",
+                  role: "Yoga Teacher"
+                }
+              ].map((t, i) => (
+                <Card key={i} className="bg-white/5 border-white/10 p-8 relative">
+                  <div className="text-accent text-6xl font-serif absolute top-4 left-4 opacity-20">"</div>
+                  <p className="text-white/80 leading-relaxed mb-6 relative z-10 italic">
+                    {t.text}
+                  </p>
+                  <div>
+                    <div className="font-bold text-white">{t.author}</div>
+                    <div className="text-sm text-accent">{t.role}</div>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FINAL CTA */}
         <section className="py-32 text-center relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-t from-accent/10 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-accent/20 via-purple-900/20 to-transparent" />
           <div className="container mx-auto px-4 relative z-10">
-            <h2 className="text-5xl md:text-7xl font-display font-bold text-white mb-8 drop-shadow-[0_0_20px_rgba(255,0,255,0.3)]">
-              Begin Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-400">Journey</span>
+            <h2 className="text-5xl md:text-7xl font-display font-bold text-white mb-8">
+              Begin Your Journey
             </h2>
-            <p className="text-2xl text-white/80 max-w-2xl mx-auto mb-12 drop-shadow-md">
-              The Oracle is waiting to speak to you. Are you ready to listen?
+            <p className="text-xl text-white/80 max-w-2xl mx-auto mb-12">
+              The Shankara Oracle is waiting to reveal its secrets to you. Are you ready to listen?
             </p>
             <Link href="/shop">
-              <Button size="lg" className="bg-white text-primary hover:bg-gray-100 px-16 py-8 text-2xl rounded-full shadow-[0_0_60px_rgba(255,255,255,0.2)] hover:shadow-[0_0_100px_rgba(255,255,255,0.4)] transition-all duration-300 font-bold">
-                Shop the Collection
+              <Button size="lg" className="bg-white text-primary hover:bg-gray-100 px-12 py-8 text-2xl rounded-full font-bold shadow-[0_0_50px_rgba(255,255,255,0.4)] hover:scale-105 transition-transform">
+                Get The Oracle
               </Button>
             </Link>
           </div>
         </section>
-
       </main>
 
       <Footer />

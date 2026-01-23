@@ -51,7 +51,7 @@ export default function HowToShankara() {
               <div className="w-full md:w-1/2">
                 <div className="relative group">
                    <div className="absolute -inset-4 bg-accent/20 blur-xl rounded-2xl group-hover:bg-accent/30 transition-all duration-700" />
-                   <img src="/images/OracleBoard.png" alt="Shankara Oracle Board" className="relative rounded-2xl shadow-2xl border border-white/10" />
+                   <img src="/images/oracle-board.png" alt="Shankara Oracle Board" className="relative rounded-2xl shadow-2xl border border-white/10" />
                 </div>
               </div>
               <div className="w-full md:w-1/2 space-y-8">

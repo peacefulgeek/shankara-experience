@@ -1,6 +1,11 @@
-- [ ] **Restart Server & Inject All Content**:
-    - [ ] **RESTART SERVER**: Fix EMFILE error and ensure Home page updates.
-    - [ ] Extract text from `FAQ–TheShankaraExperience.pdf` and rebuild `FAQ.tsx`
-    - [ ] Extract text from `ShankaraOracleBoard–TheShankaraExperience.pdf` and update `HowToShankara.tsx`
-    - [ ] Extract text from `ShankaraHowToPlay–TheShankaraExperience.pdf` and update `HowToShankara.tsx`
-    - [ ] Extract text from `ShankaraOracleUnboxed–TheShankaraExperience.pdf` and update `Shop.tsx` / Create `Unboxed` section
+- [x] **Content Gap Analysis**:
+    - [x] Compared `ShankaraHowToPlay...pdf` vs `HowToShankara.tsx` (found it matches perfectly with detailed steps and symbolism).
+    - [x] Compared `ShankaraMasterCertification...pdf` vs `Certification.tsx` (found it includes all 9 modules, pricing, and bio).
+    - [x] Compared `ShankaraCertifiedMasters...pdf` vs `Readers.tsx` (found it includes all 5 readers with full bios).
+    - [x] Compared `FAQ–TheShankaraExperience.pdf` vs `FAQ.tsx` (found it includes all key questions).
+    - [x] **Image Audit & Fix**:
+        - [x] Audited `client/public/images` to get exact filenames.
+        - [x] Fixed `Home.tsx` image paths (hero-new.png, shakti-cube-full.png, Shankaramastercourse-3.png, oracle-board.png, cosmic backgrounds).
+        - [x] Fixed `HowToShankara.tsx` image paths (oracle-board.png).
+        - [x] Fixed `Shop.tsx` image paths (oracle-intimate.png).
+        - [x] Fixed `Readers.tsx` image paths (stones-transparent.png).

@@ -39,7 +39,7 @@ const readers = [
     name: "Paula Londono",
     location: "Bilingual (English/Spanish)",
     specialty: "Empowerment & Cultural Bridging",
-    image: "/images/stones.png", 
+    image: "/images/stones-transparent.png", 
     bio: "Paula Londoño is a standout bilingual Shankara master, known for her life-changing Shankara Oracle readings. Her ability to empower clients and bridge cultures in both English and Spanish has made her services transformative. Recognized for her profound impact, Paula is a guiding light for those seeking healing and spiritual growth. (Paula Londoño es una destacada maestra bilingüe de Shankara, conocida por sus lecturas transformadoras del Oráculo Shankara. Su habilidad para empoderar a los clientes y unir culturas tanto en inglés como en español ha hecho que sus servicios sean transformadores.)",
     website: "mailto:paula@example.com", 
     contactType: "email"
@@ -48,7 +48,7 @@ const readers = [
     name: "Christina Jackson",
     location: "Intuitive Healer",
     specialty: "Deep Intuitive Readings",
-    image: "/images/stones.png", 
+    image: "/images/stones-transparent.png", 
     bio: "Christina is the essence of a deep and radiant soul, delivering profound and deeply intuitive readings that not only facilitate healing but also invite you on an exploratory voyage into the boundless potentials awaiting your path. She is lovely and compassionate with all the academic degrees to back it up.",
     website: "mailto:christina@example.com", 
     contactType: "email"

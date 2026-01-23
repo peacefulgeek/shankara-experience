@@ -190,7 +190,7 @@ export default defineConfig({
         "**/dist/**",
         "**/.manus-logs/**",
         "**/coverage/**",
-        "**/public/**",
+        // "**/public/**", // REMOVED THIS LINE
         "/home/ubuntu/temp_backup/**",
         "/home/ubuntu/upload/**"
       ],
