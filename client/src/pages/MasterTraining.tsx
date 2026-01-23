@@ -1,106 +1,101 @@
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Check, Play, BookOpen, Users, Star } from "lucide-react";
+import { Check, Star, Play, Lock, BookOpen, Users, Lightbulb, Zap, ArrowRight } from "lucide-react";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import { Link } from "wouter";
 
 export default function MasterTraining() {
   return (
     <div className="min-h-screen text-foreground font-sans selection:bg-primary selection:text-white overflow-x-hidden relative">
       <SEO 
-        title="Master Training Course" 
-        description="Deep dive into the Shankara Oracle system with our comprehensive video training course."
+        title="Shankara Master Training | Unlock Your Inner Wisdom" 
+        description="A comprehensive 8-module course to master The Shankara Oracle, awaken your intuition, and serve humanity."
       />
-      
-      {/* Background - using global cosmic theme from index.css */}
-      <div className="fixed inset-0 z-[-1] pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/40 via-purple-800/20 to-black/40 mix-blend-overlay" />
+
+      {/* BACKGROUND */}
+      <div className="fixed inset-0 z-[-1] bg-black">
+        <div className="absolute inset-0 bg-[url('/images/cosmic-nebula.jpg')] bg-cover bg-center opacity-40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-purple-900/20 to-black/90" />
       </div>
 
       <Navigation />
 
       <main>
-        {/* HERO SECTION */}
-        <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <div className="animate-fade-in-up">
-                <Badge variant="outline" className="mb-6 border-accent text-accent px-4 py-1 text-sm tracking-widest uppercase backdrop-blur-sm">
-                  Online Video Course
-                </Badge>
-                
-                <h1 className="text-5xl lg:text-7xl font-display font-light text-white leading-[1.1] mb-8 drop-shadow-[0_2px_10px_rgba(255,0,255,0.5)]">
-                  Master the <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-400 font-bold">
-                    Shankara Oracle
-                  </span>
-                </h1>
-                
-                <p className="text-xl text-white/90 leading-relaxed mb-10 drop-shadow-md">
-                  A comprehensive journey into the heart of the system. Learn the meanings, the layouts, and the intuition techniques directly from the creator.
-                </p>
-
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Button size="lg" className="bg-white text-primary hover:bg-gray-100 px-8 h-14 text-lg rounded-full shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_50px_rgba(255,255,255,0.5)] transition-all font-bold">
-                    Enroll Now - $197
-                  </Button>
-                  <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white hover:text-black px-8 h-14 text-lg rounded-full font-bold transition-all">
-                    Watch Free Preview
-                  </Button>
-                </div>
-              </div>
-
-              <div className="relative group">
-                <div className="absolute -inset-4 bg-accent/20 blur-xl rounded-2xl group-hover:bg-accent/30 transition-all duration-700" />
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20 aspect-video group-hover:scale-[1.02] transition-transform duration-500">
-                  <img 
-                    src="/images/master-course-banner-1.png" 
-                    alt="Master Course Preview" 
-                    className="w-full h-full object-cover" 
-                  />
-                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-colors cursor-pointer">
-                    <div className="w-20 h-20 rounded-full bg-accent/90 flex items-center justify-center shadow-[0_0_30px_rgba(255,215,0,0.5)] group-hover:scale-110 transition-transform duration-300">
-                      <Play className="w-8 h-8 text-black fill-black ml-1" />
-                    </div>
-                  </div>
-                </div>
-              </div>
+        {/* HERO */}
+        <section className="pt-32 pb-20 relative overflow-hidden">
+          <div className="container mx-auto px-4 text-center relative z-10">
+            <Badge variant="outline" className="mb-6 border-accent text-accent px-4 py-1 text-sm tracking-widest uppercase backdrop-blur-sm">
+              The Master Course
+            </Badge>
+            <h1 className="text-5xl md:text-7xl font-display font-bold text-white mb-6 leading-tight drop-shadow-[0_0_30px_rgba(255,255,255,0.3)]">
+              Unlock Your <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-400">
+                Inner Wisdom
+              </span>
+            </h1>
+            <p className="text-xl text-white/80 max-w-3xl mx-auto mb-10 leading-relaxed">
+              Elevate your intuitive abilities, discover the pathways to self-mastery, and immerse yourself in divine wisdom.
+              <br className="hidden md:block" />
+              A complete system to sharpen your clairsentience and live in alignment with your higher purpose.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-accent text-black hover:bg-accent/90 px-8 py-6 text-lg rounded-full font-bold shadow-[0_0_20px_rgba(245,158,11,0.3)]">
+                Enroll Now for $397
+              </Button>
+              <Link href="/certification">
+                <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10 px-8 py-6 text-lg rounded-full">
+                  View Certification
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
 
-        {/* CURRICULUM */}
-        <section className="py-24 bg-purple-900/20 backdrop-blur-md border-y border-white/10">
+        {/* COURSE MODULES GRID */}
+        <section className="py-20 bg-black/30 backdrop-blur-sm">
           <div className="container mx-auto px-4">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-4xl font-display font-bold text-white mb-6">What You Will Learn</h2>
-              <p className="text-white/70 text-lg">
-                Over 10 hours of high-definition video content, broken down into easy-to-digest modules.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-center text-white mb-16">
+              What You Will Master
+            </h2>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
-                  icon: BookOpen,
-                  title: "The 4 Decks",
-                  desc: "Deep dive into the symbolism and meaning of every card in the Alchemy, Tantra, Shakti, and Shiva decks."
+                  icon: <Star className="w-8 h-8 text-accent" />,
+                  title: "Awaken Inner Master",
+                  desc: "Connect with your inner wisdom and release what no longer serves you."
                 },
                 {
-                  icon: Star,
-                  title: "Sacred Geometry",
-                  desc: "Understand the layout of the Oracle Board and how to navigate the cosmic grid."
+                  icon: <Zap className="w-8 h-8 text-accent" />,
+                  title: "Unlock Intuition",
+                  desc: "Replace triggers with profound insight and move beyond limited identity."
                 },
                 {
-                  icon: Users,
-                  title: "Reading for Others",
-                  desc: "Learn ethical guidelines, how to hold space, and how to deliver powerful, transformative readings."
+                  icon: <Lightbulb className="w-8 h-8 text-accent" />,
+                  title: "Become an Alchemist",
+                  desc: "Discover transformative alchemy principles that turn challenges into opportunities."
+                },
+                {
+                  icon: <BookOpen className="w-8 h-8 text-accent" />,
+                  title: "Ancient Wisdom",
+                  desc: "Dive into pure teachings about Karma, Dharma, and Vedic Astrology basics."
+                },
+                {
+                  icon: <Users className="w-8 h-8 text-accent" />,
+                  title: "Serve Humanity",
+                  desc: "Enhance your abilities to offer new perspectives and guide others toward healing."
+                },
+                {
+                  icon: <Lock className="w-8 h-8 text-accent" />,
+                  title: "Lead Rituals",
+                  desc: "Uncover the role of rituals and how they can serve you on your path."
                 }
               ].map((module, i) => (
-                <div key={i} className="glass-panel p-8 rounded-2xl border border-white/10 hover:bg-white/5 transition-all duration-300 group">
-                  <div className="w-12 h-12 rounded-lg bg-accent/10 text-accent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <module.icon size={24} />
+                <div key={i} className="bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-colors group">
+                  <div className="mb-6 bg-white/5 w-16 h-16 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                    {module.icon}
                   </div>
                   <h3 className="text-xl font-bold text-white mb-3">{module.title}</h3>
                   <p className="text-white/70 leading-relaxed">{module.desc}</p>
@@ -110,41 +105,110 @@ export default function MasterTraining() {
           </div>
         </section>
 
-        {/* TESTIMONIAL */}
+        {/* VALUE STACK */}
         <section className="py-24 relative overflow-hidden">
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="glass-panel p-12 rounded-3xl border border-white/10 backdrop-blur-md max-w-4xl mx-auto text-center relative">
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-accent text-black p-4 rounded-full shadow-lg">
-                <Star className="w-8 h-8 fill-current" />
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto bg-gradient-to-br from-purple-900/40 to-blue-900/40 border border-white/20 rounded-3xl p-8 md:p-12 relative">
+              <div className="absolute top-0 right-0 p-4 opacity-20">
+                <Sparkles className="w-32 h-32 text-white" />
               </div>
               
-              <blockquote className="text-2xl md:text-3xl font-display font-light text-white leading-relaxed mb-8 mt-4">
-                "This course changed everything for me. It wasn't just about learning a system; it was a deep initiation into my own intuition. Paul is a master teacher."
-              </blockquote>
+              <h2 className="text-3xl font-bold text-white mb-8 text-center">Total Course Value: <span className="line-through text-white/50">$2,500+</span></h2>
               
-              <div className="font-bold text-accent uppercase tracking-wider">
-                — Sarah Jenkins, Certified Master
+              <div className="space-y-6 mb-10">
+                <div className="flex items-center gap-4 bg-black/20 p-4 rounded-xl">
+                  <div className="bg-accent/20 p-2 rounded-full"><Play className="w-5 h-5 text-accent" /></div>
+                  <div>
+                    <h4 className="text-white font-bold">100 Pre-recorded Video Lessons</h4>
+                    <p className="text-white/60 text-sm">A $2,000 Value</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-center gap-4 bg-black/20 p-4 rounded-xl">
+                  <div className="bg-accent/20 p-2 rounded-full"><BookOpen className="w-5 h-5 text-accent" /></div>
+                  <div>
+                    <h4 className="text-white font-bold">Worksheets & Spiritual Resources</h4>
+                    <p className="text-white/60 text-sm">A $500 Value</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4 bg-black/20 p-4 rounded-xl border border-accent/30">
+                  <div className="bg-accent/20 p-2 rounded-full"><Star className="w-5 h-5 text-accent" /></div>
+                  <div>
+                    <h4 className="text-accent font-bold">BONUS: Transformational Training Manual</h4>
+                    <p className="text-white/60 text-sm">Exclusive eBook Guide (A $108 Value)</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="text-center">
+                <div className="text-sm text-white/60 uppercase tracking-widest mb-2">Get Instant Access Today For Only</div>
+                <div className="text-6xl font-bold text-white mb-8">$397</div>
+                <Button size="lg" className="w-full md:w-auto bg-white text-black hover:bg-gray-200 px-12 py-8 text-xl rounded-full font-bold shadow-[0_0_40px_rgba(255,255,255,0.3)]">
+                  Join The Master Course
+                </Button>
+                <p className="mt-4 text-white/50 text-sm">Lifetime access • 30-day money-back guarantee</p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-32 text-center relative overflow-hidden">
-           <div className="absolute inset-0 bg-gradient-to-t from-accent/10 to-transparent pointer-events-none" />
-          <div className="container mx-auto px-4 relative z-10">
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-8 drop-shadow-[0_0_20px_rgba(255,0,255,0.3)]">
-              Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-400">Master</span> the Oracle?
-            </h2>
-            <Button size="lg" className="bg-white text-primary hover:bg-gray-100 px-12 py-6 text-xl rounded-full shadow-[0_0_40px_rgba(255,255,255,0.2)] hover:shadow-[0_0_60px_rgba(255,255,255,0.4)] transition-all duration-300 font-bold">
-              Enroll in the Master Course
-            </Button>
+        {/* MEET THE GUIDE */}
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col md:flex-row items-center gap-12">
+              <div className="w-full md:w-1/3">
+                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden border border-white/10">
+                  <img src="/images/paul-2.png" alt="Krishna Kalesh" className="w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                  <div className="absolute bottom-6 left-6">
+                    <h3 className="text-2xl font-bold text-white">Krishna Kalesh</h3>
+                    <p className="text-accent">Creator of Shankara</p>
+                  </div>
+                </div>
+              </div>
+              <div className="w-full md:w-2/3 space-y-6">
+                <h2 className="text-3xl md:text-4xl font-bold text-white">Meet Your Guide</h2>
+                <p className="text-xl text-white/80 leading-relaxed font-light">
+                  As a compassionate spiritual mentor, personal guide, clairvoyant, empath, and mystic, Krishna Kalesh (Paul Wagner) has guided thousands of seekers for over 30 years.
+                </p>
+                <p className="text-lg text-white/70 leading-relaxed">
+                  Drawing wisdom from ancient teachings and enlightened masters, Kalesh’s guidance empowers spiritually-minded individuals to connect with their inner Selves, transcend circumstances, and find liberation in every moment.
+                </p>
+                <div className="pt-4">
+                  <Link href="/readers">
+                    <Button variant="link" className="text-accent pl-0 text-lg">
+                      Meet other Certified Masters <ArrowRight className="ml-2 w-4 h-4" />
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
       </main>
-
       <Footer />
     </div>
+  );
+}
+
+function Sparkles({ className }: { className?: string }) {
+  return (
+    <svg 
+      className={className} 
+      viewBox="0 0 24 24" 
+      fill="none" 
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path 
+        d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" 
+        fill="currentColor" 
+        stroke="currentColor" 
+        strokeWidth="1" 
+        strokeLinecap="round" 
+        strokeLinejoin="round"
+      />
+    </svg>
   );
 }

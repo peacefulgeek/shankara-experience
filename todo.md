@@ -1,11 +1,9 @@
-- [x] **Content Gap Analysis**:
-    - [x] Compared `ShankaraHowToPlay...pdf` vs `HowToShankara.tsx` (found it matches perfectly with detailed steps and symbolism).
-    - [x] Compared `ShankaraMasterCertification...pdf` vs `Certification.tsx` (found it includes all 9 modules, pricing, and bio).
-    - [x] Compared `ShankaraCertifiedMasters...pdf` vs `Readers.tsx` (found it includes all 5 readers with full bios).
-    - [x] Compared `FAQ–TheShankaraExperience.pdf` vs `FAQ.tsx` (found it includes all key questions).
-    - [x] **Image Audit & Fix**:
-        - [x] Audited `client/public/images` to get exact filenames.
-        - [x] Fixed `Home.tsx` image paths (hero-new.png, shakti-cube-full.png, Shankaramastercourse-3.png, oracle-board.png, cosmic backgrounds).
-        - [x] Fixed `HowToShankara.tsx` image paths (oracle-board.png).
-        - [x] Fixed `Shop.tsx` image paths (oracle-intimate.png).
-        - [x] Fixed `Readers.tsx` image paths (stones-transparent.png).
+- [x] **Analyze New PDFs**
+    - [x] Read `ShankaraOracleBoard–TheShankaraExperience.pdf`
+    - [x] Read `ShankaraOracleUnboxed–TheShankaraExperience.pdf`
+- [x] **Fix Visual Assets**
+    - [x] Fix Shakti Cube image (remove white background / use blend mode / find better asset)
+    - [x] Fix Oracle Board image size (make it larger/heroic)
+- [x] **Build Missing Pages**
+    - [x] Create `MasterTraining.tsx` with full content
+    - [x] Create `Certification.tsx` with full content
