@@ -12,21 +12,21 @@ export default function SystemShowcase() {
     {
       title: "The Oracle Board",
       description: "Source guidance and explore ancient wisdom with the Shankara oracle board. A sacred geometry map that guides your reading, connecting you to Vedic astrology insights.",
-      image: "/images/shankaraboardwithstonesandcards.png",
+      image: "/images/oracle-board.png", // Corrected from shankaraboardwithstonesandcards.png
       color: "from-blue-500 to-cyan-500",
       glow: "shadow-[0_0_60px_rgba(6,182,212,0.3)]"
     },
     {
       title: "Shakti's Cube",
       description: "Discover the force, energy, and flow of an aspect of your life with this unique divination die. It summons the divine, cosmic feminine energy.",
-      image: "/images/shakti-cube-full.png",
+      image: "/images/shakti-cube-transparent.png", // Corrected to use the new transparent version
       color: "from-amber-500 to-orange-500",
       glow: "shadow-[0_0_60px_rgba(245,158,11,0.3)]"
     },
     {
       title: "The Master Cards",
       description: "Tap into the highest frequencies of consciousness. These cards represent the ultimate guides and forces shaping your spiritual journey.",
-      image: "/images/Master-Cards-FINAL-1-4-23_Page_28.webp",
+      image: "/images/master-card-spread.webp", // Corrected from Master-Cards-FINAL-1-4-23_Page_28.webp
       color: "from-emerald-500 to-teal-500",
       glow: "shadow-[0_0_60px_rgba(16,185,129,0.3)]"
     }
