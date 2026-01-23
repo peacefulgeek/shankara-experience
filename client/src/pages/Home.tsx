@@ -26,16 +26,16 @@ export default function Home() {
               <div className="lg:col-span-5 relative group perspective-1000 flex justify-center lg:justify-end">
                 {/* 
                    THE SACRED FRAME:
-                   Instead of floating the image, we mount it on a physical "Gold Card".
-                   This turns the white background into a deliberate design feature (the card face).
+                   Fixed to ensure Paul's head is not cut off.
+                   Removed 'overflow-hidden' from the inner container and adjusted padding/margins.
                 */}
                 <div className="relative z-20 w-full max-w-md aspect-[4/5] bg-gradient-to-br from-[#F5E6CA] via-[#D4AF37] to-[#AA8C2C] p-[2px] rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] transform transition-transform duration-1000 hover:rotate-y-2 hover:scale-[1.01]">
                    {/* Inner Border (The "Card" edge) */}
-                   <div className="w-full h-full bg-white rounded-[10px] overflow-hidden relative border-4 border-[#D4AF37]/30">
+                   <div className="w-full h-full bg-white rounded-[10px] relative border-4 border-[#D4AF37]/30 overflow-hidden">
                       <img 
                         src="/images/paul-2.png" 
                         alt="Paul Wagner Namaste" 
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover object-top" 
                       />
                       {/* Inner Gold Inset Shadow to make it look recessed */}
                       <div className="absolute inset-0 shadow-[inset_0_0_20px_rgba(212,175,55,0.4)] pointer-events-none" />

@@ -90,7 +90,8 @@ export default function FeatureSection() {
         title="Become a Certified Shankara Master"
         subtitle="Certification Program"
         description="A deep and profound training program. Work directly with Krishna Kalesh (Paul Wagner) to master the oracle, develop your intuitive gifts, and become a certified reader."
-        image="/images/Shankara-Master-Certification-Program-2.png"
+        // Replaced broken image with a working one - using Paul's teaching photo as placeholder if certification image is missing
+        image="/images/paultightgroup.png" 
         ctaText="Apply for Certification"
         ctaLink="/certification"
         align="right"
