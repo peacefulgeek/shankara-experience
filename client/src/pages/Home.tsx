@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Star, Play, Sparkles, BookOpen, Users, Award } from "lucide-react";
+import { ArrowRight, Play, Sparkles, Star, Quote } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -12,7 +11,7 @@ export default function Home() {
     <div className="min-h-screen text-foreground font-sans selection:bg-primary selection:text-white overflow-x-hidden relative">
       <SEO 
         title="Home" 
-        description="The Shankara Oracle: A sacred technology for self-mastery and divine connection. Discover your path with ancient wisdom."
+        description="The Shankara Oracle: A living technology of consciousness. Awaken your intuition, heal your past, and master your destiny."
       />
       
       {/* Background - using global cosmic theme from index.css */}
@@ -25,7 +24,6 @@ export default function Home() {
       <main>
         {/* HERO SECTION */}
         <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-          {/* Hero Background Video or Image Placeholder */}
           <div className="absolute inset-0 z-0">
              <div className="absolute inset-0 bg-[url('/images/purple-nebula.jpg')] bg-cover bg-center opacity-40 mix-blend-screen animate-pulse-slow" />
              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/20 to-black" />
@@ -61,7 +59,6 @@ export default function Home() {
             </div>
           </div>
           
-          {/* Scroll Indicator */}
           <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white/50">
             <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center pt-2">
               <div className="w-1 h-2 bg-white rounded-full" />
@@ -69,7 +66,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* INTRODUCTION */}
+        {/* INTRODUCTION - EXACT TEXT FROM PDF */}
         <section className="py-32 relative">
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-20 items-center">
@@ -112,7 +109,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* FEATURES */}
+        {/* FEATURES - EXACT TEXT FROM PDF */}
         <section className="py-24 bg-purple-900/20 backdrop-blur-md border-y border-white/10">
           <div className="container mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto mb-16">
@@ -154,7 +151,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* MASTER TRAINING SECTION - RESTORED */}
+        {/* MASTER TRAINING - EXACT TEXT FROM PDF */}
         <section className="py-32 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-black via-purple-900/20 to-black z-0" />
           <div className="container mx-auto px-4 relative z-10">
@@ -204,7 +201,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* SYSTEM SHOWCASE - RESTORED */}
+        {/* SYSTEM SHOWCASE - EXACT TEXT FROM PDF */}
         <section className="py-24 bg-black/40 backdrop-blur-sm">
           <div className="container mx-auto px-4 text-center">
              <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-16">The Sacred Technology</h2>
@@ -216,7 +213,7 @@ export default function Home() {
                  className="relative z-10 w-full drop-shadow-[0_0_50px_rgba(168,85,247,0.4)]"
                />
                
-               {/* Floating Features */}
+               {/* Floating Features from PDF */}
                <div className="absolute top-1/4 left-0 md:-left-10 bg-black/80 backdrop-blur-md p-4 rounded-xl border border-white/20 max-w-xs text-left hidden md:block animate-fade-in-up delay-300">
                  <h4 className="text-accent font-bold mb-1">The 4 Realms</h4>
                  <p className="text-xs text-white/70">Navigate through Earth, Water, Fire, and Air to find balance.</p>
@@ -230,16 +227,25 @@ export default function Home() {
           </div>
         </section>
 
-        {/* CERTIFICATION SECTION - RESTORED */}
+        {/* TESTIMONIALS - FROM MASTER CERTIFICATION PDF */}
+        <section className="py-24 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-black z-0" />
+          <div className="container mx-auto px-4 relative z-10 max-w-4xl text-center">
+            <Quote className="w-12 h-12 text-accent mx-auto mb-8 opacity-50" />
+            <blockquote className="text-2xl md:text-3xl font-display font-medium text-white mb-8 leading-relaxed">
+              "So grateful I had a chance to review this course. It is exactly what I was hoping for to help me on my journey. There is truly no other course out there that has this kind of depth. If you implement the teachings, it is incredible what happens. I am so grateful. I will go back to it over and over again."
+            </blockquote>
+            <cite className="text-accent font-bold text-lg not-italic block">— Andrea D.</cite>
+          </div>
+        </section>
+
+        {/* CERTIFICATION - EXACT TEXT FROM PDF */}
         <section className="py-32 relative">
           <div className="container mx-auto px-4">
             <div className="bg-gradient-to-br from-purple-900/60 to-black p-12 md:p-20 rounded-[3rem] border border-white/10 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-full h-full bg-[url('/images/purple-nebula.jpg')] bg-cover opacity-20 mix-blend-overlay" />
               
               <div className="relative z-10 text-center max-w-4xl mx-auto space-y-8">
-                <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-accent/20 mb-4 border border-accent/50">
-                  <Award className="w-10 h-10 text-accent" />
-                </div>
                 <h2 className="text-4xl md:text-6xl font-display font-bold text-white">
                   Become a Certified Reader
                 </h2>
@@ -263,7 +269,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* CTA */}
+        {/* CTA - EXACT TEXT FROM PDF */}
         <section className="py-32 text-center relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-t from-accent/10 to-transparent pointer-events-none" />
           <div className="container mx-auto px-4 relative z-10">

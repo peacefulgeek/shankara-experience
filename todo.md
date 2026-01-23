@@ -1,53 +1,10 @@
-- [x] Match and implement real photos for Certified Masters:
-    - [x] Found and implemented photo for Ana Andreea
-    - [x] Created placeholder structure for others (Suzanne, Paula, Christina)
-- [x] Audit backup for missing pages and build them:
-    - [x] Scan SQL dump for `post_type='page'`
-    - [x] Identify pages not yet built (e.g., Blog, Affiliates)
-    - [x] Build `Videos.tsx`
-    - [x] Build `Blog.tsx`
-    - [x] Build `Affiliates.tsx`
-    - [x] Build `HowToShankara.tsx`
-    - [x] Build `Testimonials.tsx`
-- [x] Replace black backgrounds with branded cosmic aesthetics:
-    - [x] Update `index.css` global styles (removed bg-black, added cosmic gradient)
-    - [x] Review `MasterTraining.tsx`
-    - [x] Review `Certification.tsx`
-    - [x] Review `Readers.tsx`
-    - [x] Review `Shop.tsx`
-    - [x] Review legal pages (Terms, Privacy, etc.)
-- [x] Implement SEO and Meta Tags:
-    - [x] Add `react-helmet-async` dependency
-    - [x] Create `SEO.tsx` component
-    - [x] Add titles and descriptions to all pages
-- [x] Audit uploaded files for real content:
-    - [x] Find real list of Shankara Readers
-    - [x] Find full verbose text for Certification page
-    - [x] Find full verbose text for Master Training page
-    - [x] Find content for About, Contact, Terms, Privacy, Returns, FAQ
-- [x] Update `Readers.tsx` with real people (no fake profiles)
-- [x] Update `Certification.tsx` with 10x more content
-- [x] Update `MasterTraining.tsx` with 10x more content
-- [x] Build `About.tsx`
-- [x] Build `Contact.tsx`
-- [x] Build `Terms.tsx`
-- [x] Build `Privacy.tsx`
-- [x] Build `Returns.tsx`
-- [x] Build `FAQ.tsx`
-- [x] Build `Certification.tsx` page (initial structure)
-- [x] Build `Readers.tsx` page (initial structure)
-- [x] Build `Shop.tsx` page (initial structure)
-- [x] Correct Master Course section on Home page
-- [x] Update Master Course section on Home page
-- [x] Redesign Master Course section layout
-- [x] Fix Master Course section on Home page
-- [x] Update Home page "Certification" section
-- [x] Create `MasterTraining.tsx` page
-- [x] Remove secondary "floating" images
-- [x] Replace Master Cards image
-- [x] Identify and remove broken "hidden" image
-- [x] Remove "Find an Event Near You" button
-- [x] Increase size of Oracle Board
-- [x] Improve text contrast/readability
-- [x] Restart dev server and troubleshoot startup failure
-- [ ] Investigate missing content on Home page and restore it
+- [x] **Emergency Content Injection & Image Fix**:
+    - [x] Extract text from `HomeTheShankaraExperience.pdf`
+    - [x] Extract text from `ShankaraCertifiedMasters–TheShankaraExperience.pdf`
+    - [x] Extract text from `ShankaraMasterCertificationProgram–TheShankaraExperience.pdf`
+    - [x] Rebuild `Home.tsx` with exact text from PDF
+    - [x] Rebuild `Readers.tsx` with exact text from PDF
+    - [x] Rebuild `Certification.tsx` with exact text from PDF
+    - [ ] Identify all broken images on the site
+    - [ ] Locate correct images in backup or generate/placeholder properly if absolutely missing
+    - [ ] Ensure NO placeholders remain in text or images
