@@ -170,11 +170,7 @@ export default function Home() {
                </div>
              </div>
              
-             <div className="text-center">
-               <Button size="lg" className="bg-white text-black hover:bg-white/90 px-12 py-8 rounded-full text-xl font-bold shadow-[0_0_40px_rgba(255,255,255,0.3)] transition-all duration-300 hover:scale-105">
-                 Find an Event Near You
-               </Button>
-             </div>
+             {/* REMOVED: "Find an Event Near You" button as requested */}
            </div>
         </section>
 

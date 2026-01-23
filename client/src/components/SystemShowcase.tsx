@@ -8,7 +8,7 @@ export default function SystemShowcase() {
       image: "/images/stones-enhanced.png",
       color: "from-purple-500 to-pink-500",
       glow: "shadow-[0_0_60px_rgba(236,72,153,0.3)]",
-      scale: 1.1 // Stones need to be slightly larger to show detail
+      scale: 1.1
     },
     {
       title: "The Oracle Board",
@@ -16,21 +16,20 @@ export default function SystemShowcase() {
       image: "/images/oracle-board.png",
       color: "from-blue-500 to-cyan-500",
       glow: "shadow-[0_0_60px_rgba(6,182,212,0.3)]",
-      scale: 1.0
+      scale: 1.5 // Increased scale significantly as requested
     },
     {
       title: "Shakti's Cube",
       description: "Discover the force, energy, and flow of an aspect of your life with this unique divination die. It summons the divine, cosmic feminine energy.",
-      // CHANGED: Using the solid full version, not the transparent wireframe
       image: "/images/shakti-cube-full.png", 
       color: "from-amber-500 to-orange-500",
       glow: "shadow-[0_0_60px_rgba(245,158,11,0.3)]",
-      scale: 0.9 // Cube is naturally large in this image, scaling down slightly to match
+      scale: 0.9 
     },
     {
-      title: "The Master Cards",
+      title: "The 4 Oracle Decks", // Renamed to reflect all 4 decks
       description: "Tap into the highest frequencies of consciousness. These cards represent the ultimate guides and forces shaping your spiritual journey.",
-      image: "/images/master-card-spread.webp",
+      image: "/images/cards-spread-table.webp", // Updated to the correct image showing all 4 decks
       color: "from-emerald-500 to-teal-500",
       glow: "shadow-[0_0_60px_rgba(16,185,129,0.3)]",
       scale: 1.0
@@ -51,9 +50,11 @@ export default function SystemShowcase() {
           <h2 className="text-4xl md:text-6xl font-light text-white mb-6 drop-shadow-lg">
             A Complete <span className="text-gold-gradient font-normal">Ecosystem</span>
           </h2>
-          <p className="text-xl text-white/80 font-light drop-shadow-md">
-            The Shankara Oracle is more than just cards. It is a comprehensive technology of consciousness designed to help you master your life.
-          </p>
+          <div className="bg-black/40 backdrop-blur-sm p-6 rounded-xl border border-white/10 inline-block">
+            <p className="text-xl text-white font-light drop-shadow-md">
+              The Shankara Oracle is more than just cards. It is a comprehensive technology of consciousness designed to help you master your life.
+            </p>
+          </div>
         </div>
 
         <div className="space-y-32">
@@ -76,7 +77,7 @@ export default function SystemShowcase() {
                     src={feature.image} 
                     alt={feature.title} 
                     style={{ transform: `scale(${feature.scale || 1})` }}
-                    className={`w-full max-w-lg object-contain drop-shadow-2xl ${feature.glow}`}
+                    className={`w-full max-w-2xl object-contain drop-shadow-2xl ${feature.glow}`} // Increased max-width for larger images
                   />
                 </div>
               </div>
@@ -85,9 +86,11 @@ export default function SystemShowcase() {
               <div className="flex-1 text-center lg:text-left">
                 <div className={`inline-block w-16 h-1 bg-gradient-to-r ${feature.color} mb-6 shadow-[0_0_10px_rgba(255,255,255,0.5)]`} />
                 <h3 className="text-4xl md:text-5xl font-light text-white mb-6 drop-shadow-lg">{feature.title}</h3>
-                <p className="text-lg text-white/80 leading-relaxed font-light drop-shadow-md">
-                  {feature.description}
-                </p>
+                <div className="bg-black/40 backdrop-blur-sm p-6 rounded-xl border border-white/10">
+                  <p className="text-lg text-white leading-relaxed font-light">
+                    {feature.description}
+                  </p>
+                </div>
               </div>
             </motion.div>
           ))}
