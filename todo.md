@@ -8,18 +8,18 @@
     - [x] Build `Blog.tsx`
     - [x] Build `Affiliates.tsx`
     - [x] Build `HowToShankara.tsx`
-    - [ ] Build `Testimonials.tsx`
+    - [x] Build `Testimonials.tsx`
 - [x] Replace black backgrounds with branded cosmic aesthetics:
     - [x] Update `index.css` global styles (removed bg-black, added cosmic gradient)
     - [x] Review `MasterTraining.tsx`
     - [x] Review `Certification.tsx`
     - [x] Review `Readers.tsx`
     - [x] Review `Shop.tsx`
-    - [ ] Review legal pages (Terms, Privacy, etc.)
-- [ ] Implement SEO and Meta Tags:
-    - [ ] Add `react-helmet-async` dependency
-    - [ ] Create `SEO.tsx` component
-    - [ ] Add titles and descriptions to all pages
+    - [x] Review legal pages (Terms, Privacy, etc.)
+- [x] Implement SEO and Meta Tags:
+    - [x] Add `react-helmet-async` dependency
+    - [x] Create `SEO.tsx` component
+    - [x] Add titles and descriptions to all pages
 - [x] Audit uploaded files for real content:
     - [x] Find real list of Shankara Readers
     - [x] Find full verbose text for Certification page
@@ -49,3 +49,5 @@
 - [x] Remove "Find an Event Near You" button
 - [x] Increase size of Oracle Board
 - [x] Improve text contrast/readability
+- [x] Restart dev server and troubleshoot startup failure
+- [ ] Investigate missing content on Home page and restore it

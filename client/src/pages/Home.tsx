@@ -1,10 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Star, Play, Sparkles } from "lucide-react";
+import { ArrowRight, Star, Play, Sparkles, BookOpen, Users, Award } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import { Link } from "wouter";
 
 export default function Home() {
   return (
@@ -46,12 +47,16 @@ export default function Home() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-6 items-center justify-center">
-                <Button size="lg" className="bg-white text-primary hover:bg-gray-100 px-10 h-16 text-xl rounded-full shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:shadow-[0_0_60px_rgba(255,255,255,0.5)] transition-all duration-300 w-full sm:w-auto font-bold group">
-                  Get the Oracle <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-                <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 px-10 h-16 text-xl rounded-full w-full sm:w-auto font-bold backdrop-blur-sm transition-all">
-                  <Play className="mr-2 w-5 h-5 fill-current" /> Watch Trailer
-                </Button>
+                <Link href="/shop">
+                  <Button size="lg" className="bg-white text-primary hover:bg-gray-100 px-10 h-16 text-xl rounded-full shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:shadow-[0_0_60px_rgba(255,255,255,0.5)] transition-all duration-300 w-full sm:w-auto font-bold group">
+                    Get the Oracle <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
+                <Link href="/videos">
+                  <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 px-10 h-16 text-xl rounded-full w-full sm:w-auto font-bold backdrop-blur-sm transition-all">
+                    <Play className="mr-2 w-5 h-5 fill-current" /> Watch Trailer
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -149,6 +154,115 @@ export default function Home() {
           </div>
         </section>
 
+        {/* MASTER TRAINING SECTION - RESTORED */}
+        <section className="py-32 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-black via-purple-900/20 to-black z-0" />
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="order-2 lg:order-1 space-y-8">
+                <Badge variant="outline" className="border-accent text-accent">The Master Course</Badge>
+                <h2 className="text-4xl md:text-6xl font-display font-bold text-white leading-tight">
+                  Master the Art of <br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Divine Communication</span>
+                </h2>
+                <p className="text-lg text-white/80 leading-relaxed">
+                  Dive deep into the mysteries of the Shankara Oracle with our comprehensive Master Training. 
+                  Learn to read the cards, interpret the stones, and navigate the sacred geometry of the board.
+                </p>
+                <ul className="space-y-4">
+                  {[
+                    "In-depth video lessons with Master Teachers",
+                    "Live Q&A sessions and community support",
+                    "Comprehensive study materials and guidebooks",
+                    "Certification upon completion"
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-center text-white/90">
+                      <div className="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center mr-4 border border-accent/50">
+                        <span className="text-accent text-sm">✓</span>
+                      </div>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <div className="pt-6">
+                  <Link href="/training">
+                    <Button size="lg" className="bg-accent text-primary hover:bg-accent/90 px-8 py-6 text-lg rounded-full font-bold">
+                      Explore the Training
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+              <div className="order-1 lg:order-2 relative">
+                <div className="absolute -inset-10 bg-accent/10 blur-3xl rounded-full" />
+                <img 
+                  src="/images/MasterCards.png" 
+                  alt="Master Training Materials" 
+                  className="relative z-10 rounded-2xl shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-transform duration-500" 
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SYSTEM SHOWCASE - RESTORED */}
+        <section className="py-24 bg-black/40 backdrop-blur-sm">
+          <div className="container mx-auto px-4 text-center">
+             <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-16">The Sacred Technology</h2>
+             <div className="relative max-w-5xl mx-auto">
+               <div className="absolute -inset-20 bg-purple-600/20 blur-[100px] rounded-full" />
+               <img 
+                 src="/images/OracleBoard.png" 
+                 alt="The Shankara Oracle Board" 
+                 className="relative z-10 w-full drop-shadow-[0_0_50px_rgba(168,85,247,0.4)]"
+               />
+               
+               {/* Floating Features */}
+               <div className="absolute top-1/4 left-0 md:-left-10 bg-black/80 backdrop-blur-md p-4 rounded-xl border border-white/20 max-w-xs text-left hidden md:block animate-fade-in-up delay-300">
+                 <h4 className="text-accent font-bold mb-1">The 4 Realms</h4>
+                 <p className="text-xs text-white/70">Navigate through Earth, Water, Fire, and Air to find balance.</p>
+               </div>
+               
+               <div className="absolute bottom-1/4 right-0 md:-right-10 bg-black/80 backdrop-blur-md p-4 rounded-xl border border-white/20 max-w-xs text-left hidden md:block animate-fade-in-up delay-500">
+                 <h4 className="text-accent font-bold mb-1">Obsidian Stones</h4>
+                 <p className="text-xs text-white/70">Cast the stones to reveal the hidden influences shaping your reality.</p>
+               </div>
+             </div>
+          </div>
+        </section>
+
+        {/* CERTIFICATION SECTION - RESTORED */}
+        <section className="py-32 relative">
+          <div className="container mx-auto px-4">
+            <div className="bg-gradient-to-br from-purple-900/60 to-black p-12 md:p-20 rounded-[3rem] border border-white/10 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-full h-full bg-[url('/images/purple-nebula.jpg')] bg-cover opacity-20 mix-blend-overlay" />
+              
+              <div className="relative z-10 text-center max-w-4xl mx-auto space-y-8">
+                <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-accent/20 mb-4 border border-accent/50">
+                  <Award className="w-10 h-10 text-accent" />
+                </div>
+                <h2 className="text-4xl md:text-6xl font-display font-bold text-white">
+                  Become a Certified Reader
+                </h2>
+                <p className="text-xl text-white/80 leading-relaxed">
+                  Join an elite lineage of wisdom keepers. Our certification program empowers you to share the gift of Shankara with the world professionally.
+                </p>
+                <div className="flex flex-wrap justify-center gap-4 pt-4">
+                  <Link href="/certification">
+                    <Button size="lg" className="bg-white text-primary hover:bg-gray-100 px-10 py-6 text-xl rounded-full font-bold">
+                      Get Certified
+                    </Button>
+                  </Link>
+                  <Link href="/readers">
+                    <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 px-10 py-6 text-xl rounded-full font-bold">
+                      Find a Reader
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="py-32 text-center relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-t from-accent/10 to-transparent pointer-events-none" />
@@ -159,9 +273,11 @@ export default function Home() {
             <p className="text-2xl text-white/80 max-w-2xl mx-auto mb-12 drop-shadow-md">
               The Oracle is waiting to speak to you. Are you ready to listen?
             </p>
-            <Button size="lg" className="bg-white text-primary hover:bg-gray-100 px-16 py-8 text-2xl rounded-full shadow-[0_0_60px_rgba(255,255,255,0.2)] hover:shadow-[0_0_100px_rgba(255,255,255,0.4)] transition-all duration-300 font-bold">
-              Shop the Collection
-            </Button>
+            <Link href="/shop">
+              <Button size="lg" className="bg-white text-primary hover:bg-gray-100 px-16 py-8 text-2xl rounded-full shadow-[0_0_60px_rgba(255,255,255,0.2)] hover:shadow-[0_0_100px_rgba(255,255,255,0.4)] transition-all duration-300 font-bold">
+                Shop the Collection
+              </Button>
+            </Link>
           </div>
         </section>
 
