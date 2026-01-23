@@ -1,30 +1,29 @@
-- [x] Build `Certification.tsx` page:
-    - [x] Extract content from uploads
-    - [x] Implement layout with pricing ($1,500) and details
-- [x] Build `Readers.tsx` page:
-    - [x] Extract content from uploads
-    - [x] Implement directory layout
-- [x] Build `Shop.tsx` page:
-    - [x] Extract product details from uploads
-    - [x] Implement product grid with new aesthetic
-- [x] Correct Master Course section on Home page:
-    - [x] Remove all "Certification", "Group", "January" text
-    - [x] Focus purely on "The Shankara Master Course" ($197)
-    - [x] Use correct image (check `Shankaramastercourse-3.png`)
-- [x] Update Master Course section on Home page:
-    - [x] Replace image with `ShankaraMasterCourse+Cert.png`
-    - [x] Reformat section to align with "Master Course + Group Certification" message
-- [x] Redesign Master Course section layout to properly display wide banner image:
-    - [x] Switch to vertical stack layout
-    - [x] Ensure full-width image display without cropping
-- [x] Fix Master Course section on Home page:
-    - [x] Use correct image without crop/overlay issues
-    - [x] Make text readable (high contrast/backing)
-- [x] Update Home page "Certification" section to "The Shankara Master Course" ($197) with correct image
-- [x] Create `MasterTraining.tsx` page with full content
-- [x] Remove secondary "floating" images behind Paul's portrait in Home.tsx
-- [x] Replace Master Cards image with "All 4 Decks" image
-- [x] Identify and remove the broken "hidden" image
+- [x] Audit uploaded files for real content:
+    - [x] Find real list of Shankara Readers
+    - [x] Find full verbose text for Certification page
+    - [x] Find full verbose text for Master Training page
+    - [x] Find content for About, Contact, Terms, Privacy, Returns, FAQ
+- [x] Update `Readers.tsx` with real people (no fake profiles)
+- [x] Update `Certification.tsx` with 10x more content
+- [x] Update `MasterTraining.tsx` with 10x more content
+- [x] Build `About.tsx`
+- [x] Build `Contact.tsx`
+- [x] Build `Terms.tsx`
+- [x] Build `Privacy.tsx`
+- [x] Build `Returns.tsx`
+- [x] Build `FAQ.tsx`
+- [x] Build `Certification.tsx` page (initial structure)
+- [x] Build `Readers.tsx` page (initial structure)
+- [x] Build `Shop.tsx` page (initial structure)
+- [x] Correct Master Course section on Home page
+- [x] Update Master Course section on Home page
+- [x] Redesign Master Course section layout
+- [x] Fix Master Course section on Home page
+- [x] Update Home page "Certification" section
+- [x] Create `MasterTraining.tsx` page
+- [x] Remove secondary "floating" images
+- [x] Replace Master Cards image
+- [x] Identify and remove broken "hidden" image
 - [x] Remove "Find an Event Near You" button
-- [x] Increase size of Oracle Board in System Showcase
+- [x] Increase size of Oracle Board
 - [x] Improve text contrast/readability

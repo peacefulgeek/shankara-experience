@@ -10,7 +10,12 @@ import MasterTraining from "./pages/MasterTraining";
 import Certification from "./pages/Certification";
 import Readers from "./pages/Readers";
 import Shop from "./pages/Shop";
-
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Terms from "./pages/Terms";
+import Privacy from "./pages/Privacy";
+import Returns from "./pages/Returns";
+import FAQ from "./pages/FAQ";
 
 function Router() {
   return (
@@ -21,6 +26,12 @@ function Router() {
       <Route path={"/certification"} component={Certification} />
       <Route path={"/readers"} component={Readers} />
       <Route path={"/shop"} component={Shop} />
+      <Route path={"/about"} component={About} />
+      <Route path={"/contact"} component={Contact} />
+      <Route path={"/terms"} component={Terms} />
+      <Route path={"/privacy"} component={Privacy} />
+      <Route path={"/returns"} component={Returns} />
+      <Route path={"/faq"} component={FAQ} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
