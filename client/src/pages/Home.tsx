@@ -64,15 +64,8 @@ export default function Home() {
                       </div>
                    </div>
                 </div>
-
-                {/* Secondary Photos - Also Mounted as Cards */}
-                <div className="absolute -bottom-6 -right-6 z-30 w-40 aspect-square bg-white p-1 rounded-lg shadow-2xl rotate-3 hover:rotate-0 transition-all duration-500 border border-gray-200">
-                  <img src="/images/paulreadingredshirt.jpg" alt="Paul Reading" className="w-full h-full object-cover rounded" />
-                </div>
                 
-                <div className="absolute top-10 -left-6 z-10 w-32 aspect-[3/4] bg-white p-1 rounded-lg shadow-2xl -rotate-3 hover:rotate-0 transition-all duration-500 border border-gray-200">
-                  <img src="/images/paulholdingwomanhand.png" alt="Connection" className="w-full h-full object-cover rounded grayscale-[20%]" />
-                </div>
+                {/* REMOVED: Secondary floating photos that were causing clutter behind the main portrait */}
               </div>
               
               {/* Right: The Message in a Glass Vessel */}

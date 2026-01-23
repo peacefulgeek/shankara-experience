@@ -1,5 +1,6 @@
-- [x] Replace Master Cards image with "All 4 Decks" image (check filename first)
-- [x] Identify and remove the broken "hidden" image (likely in System Showcase or Home)
-- [x] Remove "Find an Event Near You" button from Home page
+- [x] Remove secondary "floating" images behind Paul's portrait in Home.tsx
+- [x] Replace Master Cards image with "All 4 Decks" image
+- [x] Identify and remove the broken "hidden" image
+- [x] Remove "Find an Event Near You" button
 - [x] Increase size of Oracle Board in System Showcase
-- [x] Improve text contrast/readability on all sections (add backgrounds/shadows)
+- [x] Improve text contrast/readability
