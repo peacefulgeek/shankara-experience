@@ -6,9 +6,9 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden">
       {/* 
-         FULL SYSTEM HERO COMPOSITION 
-         Replacing the "2 booklets" with the entire ecosystem.
-         Using CSS positioning to create a 3D scene from individual assets.
+         BOARD-FIRST HERO COMPOSITION 
+         Prioritizing the System (Board, Stones, Cube) over the Books.
+         100% Solid opacity. No ghosts. No blur.
       */}
       
       <div className="container mx-auto px-4 relative z-10">
@@ -59,63 +59,73 @@ export default function Hero() {
           </motion.div>
 
           {/* 
-             THE FULL SYSTEM COMPOSITION 
-             This replaces the single image.
-             We stack images to show the Board, Decks, Stones, Cube, and Box.
+             THE BOARD-FIRST COMPOSITION 
+             Solid. Majestic. Grounded.
+             Board is the foundation. Stones/Cube are the heroes. Books are background.
           */}
           <motion.div 
-            initial={{ opacity: 0, scale: 0.8, y: 50 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
             className="relative order-1 lg:order-2 h-[600px] w-full flex items-center justify-center perspective-1000"
           >
-             {/* 1. The Foundation: Oracle Board (Back Layer) */}
+             {/* 1. THE FOUNDATION: The Oracle Board (Massive, Solid, Angled) */}
              <motion.div 
-               animate={{ rotateX: 20, rotateZ: -5 }}
-               className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[120%] max-w-none opacity-90 z-0"
+               animate={{ rotateX: 15, rotateZ: -2 }}
+               className="absolute top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[130%] max-w-none z-10"
              >
-                <img src="/images/oracle-board.png" alt="Oracle Board" className="w-full h-auto drop-shadow-2xl opacity-60 blur-[1px]" />
+                <img 
+                  src="/images/oracle-board.png" 
+                  alt="The Shankara Oracle Board" 
+                  className="w-full h-auto drop-shadow-[0_30px_60px_rgba(0,0,0,0.8)]" 
+                />
              </motion.div>
 
-             {/* 2. The Core: The Booklets & Box (Middle Layer) */}
-             <div className="relative z-10 transform scale-110 hover:scale-115 transition-transform duration-700">
-                <div className="absolute inset-0 bg-white/20 blur-[60px] rounded-full animate-pulse-slow" />
+             {/* 2. THE BACKGROUND: The Box Set (Supporting Role) */}
+             <div className="absolute top-[10%] left-[20%] z-0 transform scale-75 -rotate-6 opacity-90 hover:opacity-100 transition-opacity">
                 <img 
                   src="/images/full-set-transparent.png" 
                   alt="Shankara Box Set" 
-                  className="relative w-full max-w-lg mx-auto drop-shadow-[0_20px_60px_rgba(0,0,0,0.6)]" 
+                  className="w-full max-w-md drop-shadow-2xl" 
                 />
              </div>
 
-             {/* 3. The Magic: Stones & Cube (Front Layer - Floating) */}
+             {/* 3. THE HEROES: Stones & Cube (Front & Center, Floating above Board) */}
              <motion.div 
-               animate={{ y: [0, -15, 0] }}
+               animate={{ y: [0, -10, 0] }}
                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-               className="absolute bottom-0 right-0 z-20 w-48"
+               className="absolute bottom-[15%] right-[10%] z-30 w-56"
              >
-                <img src="/images/stones-enhanced.png" alt="Sacred Stones" className="w-full drop-shadow-[0_0_30px_rgba(255,255,255,0.4)]" />
+                <img 
+                  src="/images/stones-enhanced.png" 
+                  alt="18 Sacred Stones" 
+                  className="w-full drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)]" 
+                />
              </motion.div>
 
              <motion.div 
-               animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
+               animate={{ y: [0, -15, 0], rotate: [0, 5, 0] }}
                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-               className="absolute top-10 right-10 z-20 w-32"
+               className="absolute bottom-[25%] left-[10%] z-30 w-40"
              >
-                <img src="/images/shakti-cube-transparent.png" alt="Shakti's Cube" className="w-full drop-shadow-[0_0_40px_rgba(253,185,49,0.6)]" />
+                <img 
+                  src="/images/shakti-cube-transparent.png" 
+                  alt="Shakti's Cube" 
+                  className="w-full drop-shadow-[0_20px_40px_rgba(253,185,49,0.4)]" 
+                />
              </motion.div>
 
-             {/* 4. The Abundance: Cards Spread (Front Left) */}
-             <motion.div 
-               initial={{ x: -50, opacity: 0 }}
-               animate={{ x: 0, opacity: 1 }}
-               transition={{ delay: 0.5 }}
-               className="absolute bottom-10 left-0 z-20 w-56 transform -rotate-12"
-             >
-                <img src="/images/master-card-spread.webp" alt="Master Cards" className="w-full drop-shadow-2xl rounded-xl border border-white/20" />
-             </motion.div>
+             {/* 4. THE MAGIC: Master Cards (Scattered on Board) */}
+             <div className="absolute bottom-[10%] left-[30%] z-20 w-64 transform rotate-12">
+                <img 
+                  src="/images/master-card-spread.webp" 
+                  alt="Master Cards" 
+                  className="w-full drop-shadow-xl" 
+                />
+             </div>
 
              {/* Badge */}
-             <div className="absolute top-0 right-0 z-30 bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-2xl shadow-[0_0_30px_rgba(255,255,255,0.2)] animate-float">
+             <div className="absolute top-10 right-0 z-40 bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-2xl shadow-[0_0_30px_rgba(255,255,255,0.2)] animate-float">
                <div className="text-center">
                  <span className="block text-4xl font-bold text-white drop-shadow-md">300+</span>
                  <span className="text-xs font-bold text-gold uppercase tracking-wider">Cards Included</span>
