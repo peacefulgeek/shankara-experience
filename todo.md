@@ -1,10 +1,6 @@
-- [x] **Emergency Content Injection & Image Fix**:
-    - [x] Extract text from `HomeTheShankaraExperience.pdf`
-    - [x] Extract text from `ShankaraCertifiedMasters–TheShankaraExperience.pdf`
-    - [x] Extract text from `ShankaraMasterCertificationProgram–TheShankaraExperience.pdf`
-    - [x] Rebuild `Home.tsx` with exact text from PDF
-    - [x] Rebuild `Readers.tsx` with exact text from PDF
-    - [x] Rebuild `Certification.tsx` with exact text from PDF
-    - [ ] Identify all broken images on the site
-    - [ ] Locate correct images in backup or generate/placeholder properly if absolutely missing
-    - [ ] Ensure NO placeholders remain in text or images
+- [ ] **Restart Server & Inject All Content**:
+    - [ ] **RESTART SERVER**: Fix EMFILE error and ensure Home page updates.
+    - [ ] Extract text from `FAQ–TheShankaraExperience.pdf` and rebuild `FAQ.tsx`
+    - [ ] Extract text from `ShankaraOracleBoard–TheShankaraExperience.pdf` and update `HowToShankara.tsx`
+    - [ ] Extract text from `ShankaraHowToPlay–TheShankaraExperience.pdf` and update `HowToShankara.tsx`
+    - [ ] Extract text from `ShankaraOracleUnboxed–TheShankaraExperience.pdf` and update `Shop.tsx` / Create `Unboxed` section
