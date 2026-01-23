@@ -1,115 +1,82 @@
+import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
-
-interface FeatureProps {
-  title: string;
-  subtitle: string;
-  description: string;
-  image: string;
-  ctaText: string;
-  ctaLink: string;
-  align?: "left" | "right";
-  bgImage?: string;
-}
-
-const Feature = ({ title, subtitle, description, image, ctaText, ctaLink, align = "left", bgImage }: FeatureProps) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  return (
-    <div ref={ref} className="py-40 relative overflow-hidden">
-      {/* 
-         TRANSPARENT BACKGROUND 
-         Removed opaque layers. The global fixed background now shows through.
-         Added only subtle texture overlays if specific bgImage is provided.
-      */}
-      {bgImage && (
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <img src={bgImage} alt="" className="w-full h-full object-cover opacity-20 mix-blend-screen blur-sm" />
-        </div>
-      )}
-      
-      <div className="container mx-auto px-4 relative z-10">
-        <div className={`flex flex-col ${align === "right" ? "lg:flex-row-reverse" : "lg:flex-row"} items-center gap-24`}>
-          
-          {/* Image Side - Glass Frame */}
-          <motion.div 
-            className="flex-1 w-full"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="relative p-4 rounded-[2.5rem] bg-gradient-to-br from-white/10 to-transparent border border-white/20 shadow-[0_0_60px_rgba(139,92,246,0.15)] backdrop-blur-sm">
-              <div className="rounded-[2rem] overflow-hidden">
-                <img 
-                  src={image} 
-                  alt={title} 
-                  className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700" 
-                />
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Text Side - Floating Glass Panel */}
-          <motion.div 
-            className="flex-1 text-center lg:text-left glass-card p-12 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl"
-            initial={{ opacity: 0, x: align === "left" ? 50 : -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <h3 className="text-accent tracking-[0.3em] uppercase text-sm font-bold mb-6 drop-shadow-md">{subtitle}</h3>
-            <h2 className="text-5xl lg:text-6xl font-light text-white mb-10 leading-tight drop-shadow-lg">{title}</h2>
-            <p className="text-white/80 text-xl leading-relaxed mb-12 font-light max-w-xl mx-auto lg:mx-0 drop-shadow-md">
-              {description}
-            </p>
-            <Button size="lg" className="bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 text-white px-12 py-8 rounded-full text-xl shadow-[0_0_30px_rgba(255,0,255,0.4)] transition-all duration-300 border border-white/20">
-              {ctaText}
-            </Button>
-          </motion.div>
-
-        </div>
-      </div>
-    </div>
-  );
-};
+import { Award, CheckCircle } from "lucide-react";
 
 export default function FeatureSection() {
   return (
-    <section className="relative">
-      <Feature 
-        title="Heal Deeply & Embrace Ancient Teachings"
-        subtitle="The Master Course"
-        description="The most immersive and comprehensive course on becoming an illuminating intuitive reader & healer available. Dive deep into the ancient wisdom of Shankara."
-        image="/images/master-course-banner-1.png"
-        ctaText="Join The Master Course"
-        ctaLink="/master-training"
-        align="left"
-        bgImage="/images/cosmic-bg-1.webp"
-      />
+    <section className="py-24 relative overflow-hidden">
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          
+          {/* Text Content */}
+          <div className="space-y-8 animate-fade-in-left">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20">
+              <Award className="w-5 h-5 text-accent" />
+              <span className="text-sm font-bold text-accent tracking-wider uppercase">Master Certification</span>
+            </div>
+            
+            <h2 className="text-4xl lg:text-5xl font-display font-bold text-white leading-tight">
+              Become a Certified <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-400">
+                Shankara Master
+              </span>
+            </h2>
+            
+            <p className="text-lg text-gray-300 leading-relaxed">
+              A deep and profound training program. Work directly with Krishna Kalesh (Paul Wagner) to master the oracle, develop your intuitive gifts, and become a certified reader.
+            </p>
+            
+            <ul className="space-y-4">
+              {[
+                "Deep dive into the 300+ card meanings",
+                "Master the Sacred Geometry Board layouts",
+                "Learn to channel guidance for others",
+                "Join an exclusive community of healers"
+              ].map((item, i) => (
+                <li key={i} className="flex items-center gap-3 text-gray-200">
+                  <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
 
-      <Feature 
-        title="Become a Certified Shankara Master"
-        subtitle="Certification Program"
-        description="A deep and profound training program. Work directly with Krishna Kalesh (Paul Wagner) to master the oracle, develop your intuitive gifts, and become a certified reader."
-        image="/images/paultightgroup.png" 
-        ctaText="Apply for Certification"
-        ctaLink="/certification"
-        align="right"
-        bgImage="/images/cosmic-bg-2.webp"
-      />
+            <div className="pt-4">
+              <Link href="/certification">
+                <Button size="lg" className="bg-white text-primary hover:bg-gray-100 px-8 h-14 text-lg rounded-full shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                  Apply for Certification
+                </Button>
+              </Link>
+            </div>
+          </div>
 
-      <Feature 
-        title="The Book of Meanings"
-        subtitle="In-Depth Guide"
-        description="The complete guide to the Shankara Sacred Stones, Shakti's Cube, planets, stars, creatures, archangels, deities, and more found on the board."
-        image="/images/ebook-cover.png"
-        ctaText="Get the E-Book"
-        ctaLink="/shop"
-        align="left"
-        bgImage="/images/cosmic-smoke.jpg"
-      />
+          {/* Image Content - New Certification Image */}
+          <div className="relative animate-fade-in-right delay-200">
+            <div className="absolute inset-0 bg-gradient-to-tr from-accent/30 to-purple-600/30 rounded-3xl blur-[60px] -z-10" />
+            <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl group">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 z-10" />
+              <img 
+                src="/images/certification-new.png" 
+                alt="Shankara Master Certification Program" 
+                className="w-full h-auto transform group-hover:scale-105 transition-transform duration-700"
+              />
+              
+              {/* Overlay Badge */}
+              <div className="absolute bottom-6 left-6 right-6 z-20">
+                <div className="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl">
+                  <p className="text-white font-medium text-sm">
+                    "This training changed my life. I now read for clients globally."
+                  </p>
+                  <div className="flex items-center gap-2 mt-2">
+                    <div className="w-6 h-6 rounded-full bg-accent/50" />
+                    <span className="text-xs text-gray-300">— Sarah J., Certified Master</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </section>
   );
 }

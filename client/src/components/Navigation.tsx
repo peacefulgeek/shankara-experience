@@ -19,7 +19,7 @@ export default function Navigation() {
 
   const navLinks = [
     { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
+    { href: "/how-to-shankara", label: "How To Shankara" },
     { href: "/master-training", label: "Master Training" },
     { href: "/certification", label: "Certification" },
     { href: "/readers", label: "Readers" },
@@ -66,16 +66,18 @@ export default function Navigation() {
               </span>
             </Link>
           ))}
-          <Button 
-            className={cn(
-              "rounded-full px-8 py-6 transition-all shadow-[0_0_20px_rgba(255,0,255,0.4)] hover:shadow-[0_0_30px_rgba(255,0,255,0.6)] text-lg font-bold border border-white/20",
-              scrolled 
-                ? "bg-primary text-white hover:bg-primary/80" 
-                : "bg-white/10 backdrop-blur-md text-white hover:bg-white/20"
-            )}
-          >
-            Buy Oracle
-          </Button>
+          <Link href="/shop">
+            <Button 
+              className={cn(
+                "rounded-full px-8 py-6 transition-all shadow-[0_0_20px_rgba(255,0,255,0.4)] hover:shadow-[0_0_30px_rgba(255,0,255,0.6)] text-lg font-bold border border-white/20",
+                scrolled 
+                  ? "bg-primary text-white hover:bg-primary/80" 
+                  : "bg-white/10 backdrop-blur-md text-white hover:bg-white/20"
+              )}
+            >
+              Buy Oracle
+            </Button>
+          </Link>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -102,9 +104,11 @@ export default function Navigation() {
               </span>
             </Link>
           ))}
-          <Button className="w-full max-w-xs bg-primary text-white rounded-full py-8 text-xl mt-8 shadow-[0_0_30px_rgba(255,0,255,0.5)]">
-            Buy Oracle
-          </Button>
+          <Link href="/shop">
+            <Button className="w-full max-w-xs bg-primary text-white rounded-full py-8 text-xl mt-8 shadow-[0_0_30px_rgba(255,0,255,0.5)]">
+              Buy Oracle
+            </Button>
+          </Link>
         </div>
       )}
     </nav>
