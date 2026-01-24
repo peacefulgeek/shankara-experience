@@ -120,19 +120,61 @@ export default function MasterTraining() {
           
           <div className="container mx-auto px-4 relative z-10">
             {/* Engaging Header */}
-            <div className="text-center mb-20">
+            <div className="text-center mb-16">
               <div className="inline-block mb-6 px-6 py-2 rounded-full border border-[#ffd700]/40 bg-[#ffd700]/10 backdrop-blur-sm">
                 <span className="text-[#ffd700] font-bold tracking-widest uppercase text-sm">100+ Videos & Workshops</span>
               </div>
               
-              <h2 className="text-5xl md:text-6xl font-display font-bold text-white mb-8 leading-tight">
-                Heal To Your Core.<br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff00ff] via-[#ff66ff] to-[#ffd700] drop-shadow-[0_0_30px_rgba(255,0,255,0.5)]">Transform Your Entire Life.</span>
+              <h2 className="text-5xl md:text-6xl font-display font-bold text-white mb-6 leading-tight">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff00ff] via-[#ff66ff] to-[#ffd700] drop-shadow-[0_0_30px_rgba(255,0,255,0.5)]">Unlock Your Soul's Potential</span>
               </h2>
               
-              <p className="text-2xl text-purple-100/90 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-2xl text-purple-100/90 max-w-4xl mx-auto leading-relaxed mb-12">
                 The Shankara Master Course is a <span className="text-[#ff00ff] font-semibold">complete healing journey</span> with over 100 video lessons and transformational worksheets designed to help you release deep wounds, awaken your gifts, and step into your highest Self.
               </p>
+              
+              {/* Checklist with pink/purple checkmarks */}
+              <div className="max-w-3xl mx-auto text-left">
+                <h3 className="text-2xl font-bold text-white text-center mb-8">The Shankara Master Course will help you…</h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="flex items-start gap-3 p-4 rounded-xl bg-[#ff00ff]/10 border border-[#ff00ff]/30">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#ff00ff] flex items-center justify-center mt-0.5">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
+                    </div>
+                    <p className="text-purple-100 text-lg"><span className="font-semibold text-white">Release</span> what no longer serves you to unlock your intuitive knowing.</p>
+                  </div>
+                  <div className="flex items-start gap-3 p-4 rounded-xl bg-purple-500/10 border border-purple-400/30">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-purple-500 flex items-center justify-center mt-0.5">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
+                    </div>
+                    <p className="text-purple-100 text-lg"><span className="font-semibold text-white">Inspire</span> transformation in your Self, your life, and those of others.</p>
+                  </div>
+                  <div className="flex items-start gap-3 p-4 rounded-xl bg-purple-500/10 border border-purple-400/30">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-purple-500 flex items-center justify-center mt-0.5">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
+                    </div>
+                    <p className="text-purple-100 text-lg"><span className="font-semibold text-white">Resolve</span> karmic ties and live in alignment with your higher purpose.</p>
+                  </div>
+                  <div className="flex items-start gap-3 p-4 rounded-xl bg-[#ff00ff]/10 border border-[#ff00ff]/30">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#ff00ff] flex items-center justify-center mt-0.5">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
+                    </div>
+                    <p className="text-purple-100 text-lg"><span className="font-semibold text-white">Explore</span> the ancient teachings to uplift your life.</p>
+                  </div>
+                  <div className="flex items-start gap-3 p-4 rounded-xl bg-[#ff00ff]/10 border border-[#ff00ff]/30">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#ff00ff] flex items-center justify-center mt-0.5">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
+                    </div>
+                    <p className="text-purple-100 text-lg"><span className="font-semibold text-white">Navigate</span> life's challenges with confidence.</p>
+                  </div>
+                  <div className="flex items-start gap-3 p-4 rounded-xl bg-purple-500/10 border border-purple-400/30">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-purple-500 flex items-center justify-center mt-0.5">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
+                    </div>
+                    <p className="text-purple-100 text-lg"><span className="font-semibold text-white">Deliver</span> the most illuminating intuitive & psychic readings.</p>
+                  </div>
+                </div>
+              </div>
             </div>
             
             {/* Cards with gold outlines and neon accents */}
