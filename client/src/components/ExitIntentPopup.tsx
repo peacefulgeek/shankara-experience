@@ -8,14 +8,9 @@ import { toast } from "sonner";
 // Define Decks and Cards
 type DeckType = "alchemy" | "master" | "release";
 
-interface Card {
-  front: string;
-  deck: DeckType;
-}
-
 const DECKS: Record<DeckType, { back: string; fronts: string[] }> = {
   alchemy: {
-    back: "/images/cards/alchemy-back.webp",
+    back: "/images/cards/alchemy-back-landscape.webp",
     fronts: [
       "alchemy-gods-hands.webp", "alchemy-frequency.webp", "alchemy-calmness.webp",
       "alchemy-environment.webp", "alchemy-say-yes.webp", "alchemy-sensible.webp",
@@ -24,7 +19,7 @@ const DECKS: Record<DeckType, { back: string; fronts: string[] }> = {
     ]
   },
   master: {
-    back: "/images/cards/master-back.webp",
+    back: "/images/cards/master-back-landscape.webp",
     fronts: [
       "master-authenticity.webp", "master-opinions.webp", "master-own-your-life.webp",
       "master-comfort.webp", "master-harvest.webp", "master-fear.webp",
@@ -33,7 +28,7 @@ const DECKS: Record<DeckType, { back: string; fronts: string[] }> = {
     ]
   },
   release: {
-    back: "/images/cards/release-back.webp",
+    back: "/images/cards/release-back-landscape.webp",
     fronts: [
       "release-overthinking.webp", "release-mirrors.webp", "release-coping.webp",
       "release-outcome.webp", "release-shadows.webp", "release-sentiment.webp",
@@ -120,8 +115,8 @@ export default function ExitIntentPopup() {
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogContent className="sm:max-w-[950px] p-0 overflow-hidden bg-[#1a0b2e] border-purple-500/30 text-white [&>button]:hidden shadow-2xl">
-        <div className="flex flex-col md:flex-row h-full relative min-h-[550px]">
+      <DialogContent className="sm:max-w-[1000px] p-0 overflow-hidden bg-[#1a0b2e] border-purple-500/30 text-white [&>button]:hidden shadow-2xl">
+        <div className="flex flex-col md:flex-row h-full relative min-h-[600px]">
           
           {/* Custom Close Button */}
           <button 
@@ -137,21 +132,24 @@ export default function ExitIntentPopup() {
             <div className="absolute inset-0 bg-[url('https://shankara-pull.b-cdn.net/images/stars-pattern.webp')] opacity-30 mix-blend-screen" />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-purple-500/20 rounded-full blur-[80px]" />
             
-            {/* STAGE 1: INVITE (No Card) */}
+            {/* STAGE 1: INVITE (Generic Symbol) */}
             {stage === "INVITE" && (
-              <div className="text-center space-y-4 animate-fade-in relative z-10">
-                <div className="w-24 h-24 bg-white/5 rounded-full flex items-center justify-center mx-auto border border-white/10 shadow-[0_0_30px_rgba(139,92,246,0.3)]">
-                  <Sparkles className="w-10 h-10 text-[#ff00ff] animate-pulse" />
+              <div className="text-center space-y-6 animate-fade-in relative z-10">
+                <div className="w-32 h-32 bg-white/5 rounded-full flex items-center justify-center mx-auto border border-white/10 shadow-[0_0_40px_rgba(139,92,246,0.3)]">
+                  <img src="/images/logo.png" alt="Shankara Symbol" className="w-20 h-20 opacity-80" />
                 </div>
-                <h3 className="text-2xl font-display font-bold text-white/90">
-                  A Divine Message<br/>For You
-                </h3>
+                <div className="space-y-2">
+                  <h3 className="text-2xl font-display font-bold text-white/90">
+                    Your Shankara Oracle<br/>Card Guidance
+                  </h3>
+                  <p className="text-sm text-purple-200/60 uppercase tracking-widest">Awaits You</p>
+                </div>
               </div>
             )}
 
             {/* STAGE 2 & 3: CARD DISPLAY (Back -> Front) */}
             {(stage === "DECK_SELECTED" || stage === "CARD_REVEALED") && (
-              <div className="relative w-80 aspect-[3/2] perspective-1000 animate-in zoom-in duration-500"> {/* Increased size by ~20% (w-72 -> w-80) */}
+              <div className="relative w-[90%] aspect-[1.45/1] perspective-1000 animate-in zoom-in duration-500">
                 <div className={`relative w-full h-full transition-transform duration-1000 transform-style-3d ${isFlipped ? "rotate-y-180" : ""}`}>
                   
                   {/* CARD BACK (Front Face) */}
@@ -161,9 +159,6 @@ export default function ExitIntentPopup() {
                       alt="Card Back" 
                       className="w-full h-full object-contain rounded-xl shadow-[0_0_40px_rgba(139,92,246,0.4)] border border-white/10"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-xl flex items-end justify-center pb-6">
-                      <span className="text-white/80 font-display tracking-widest text-sm uppercase animate-pulse">Ready To Reveal</span>
-                    </div>
                   </div>
 
                   {/* CARD FRONT (Back Face) */}

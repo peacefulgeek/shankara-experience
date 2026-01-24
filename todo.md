@@ -109,3 +109,12 @@
     - [x] **Styling**
       - [x] Increase card image container size by 20%.
       - [x] Ensure text on card is legible.
+- [ ] **Popup Correction**
+  - [x] **Image Processing**
+    - [x] Process new landscape card backs: `ALCHEMYDeckBack.png`, `MASTERDeckBack.png`, `RELEASEDeckBack.png` -> `*-back-landscape.webp`.
+    - [x] Verify aspect ratio of existing card fronts (Confirmed Landscape ~1.45:1).
+  - [x] **Logic Update**
+    - [x] **Stage 1:** Show generic "Shankara Oracle" symbol/placeholder.
+    - [x] **Stage 2:** Show Landscape Card Back (after "Draw" click).
+    - [x] **Stage 3:** Flip to Landscape Card Front (after "Flip" click).
+    - [x] Update CSS to support landscape aspect ratio (approx 4:3 or 3:2).
