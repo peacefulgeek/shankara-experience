@@ -36,3 +36,7 @@
   - [ ] Update `How.tsx`: Add `loading="lazy"` to all images below the hero section.
   - [ ] Update `Unboxing.tsx`: Add `loading="lazy"` to all images below the hero section.
   - [ ] Ensure hero images (above the fold) retain `loading="eager"` (default) to prevent layout shift.
+- [ ] **Image Audit & Resize**
+  - [ ] Resize `decks-overview.webp` container in `How.tsx` (reduce width by 20%, center align).
+  - [ ] Search codebase for `manuscdn` or other external image domains.
+  - [ ] Verify all `img` src attributes point to `/images/` (Railway) or `shankara-pull.b-cdn.net` (Bunny).

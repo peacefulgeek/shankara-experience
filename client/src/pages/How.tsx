@@ -255,7 +255,7 @@ export default function How() {
                 </p>
              </div>
 
-             <div className="mb-16 rounded-3xl overflow-hidden shadow-2xl border border-white/10">
+             <div className="mb-16 rounded-3xl overflow-hidden shadow-2xl border border-white/10 max-w-[80%] mx-auto">
                <img 
                  src="/images/decks-overview.webp" 
                  loading="lazy" 
