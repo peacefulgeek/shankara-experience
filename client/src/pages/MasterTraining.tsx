@@ -100,9 +100,11 @@ export default function MasterTraining() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-[#ff00ff] hover:bg-[#d900d9] text-white px-8 py-6 text-lg rounded-full font-bold shadow-[0_0_30px_rgba(255,0,255,0.4)] hover:shadow-[0_0_50px_rgba(255,0,255,0.6)] transition-all transform hover:-translate-y-1">
-                Enroll Now for $397
-              </Button>
+              <a href="https://shankara.thrivecart.com/shankara-master-course-training-main/" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="bg-[#ff00ff] hover:bg-[#d900d9] text-white px-8 py-6 text-lg rounded-full font-bold shadow-[0_0_30px_rgba(255,0,255,0.4)] hover:shadow-[0_0_50px_rgba(255,0,255,0.6)] transition-all transform hover:-translate-y-1">
+                  Enroll Now for $197
+                </Button>
+              </a>
               <Link href="/the-ancients">
                 <Button variant="outline" size="lg" className="border-purple-400/50 text-purple-200 hover:bg-purple-900/50 px-8 py-6 text-lg rounded-full backdrop-blur-sm hover:text-white transition-all group">
                   Explore The Ancients <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -252,10 +254,12 @@ export default function MasterTraining() {
 
               <div className="text-center">
                 <div className="text-sm text-purple-300/60 uppercase tracking-widest mb-2">Get Instant Access Today For Only</div>
-                <div className="text-6xl font-bold text-white mb-8 drop-shadow-lg">$397</div>
-                <Button size="lg" className="w-full md:w-auto bg-white text-purple-900 hover:bg-gray-100 px-12 py-8 text-xl rounded-full font-bold shadow-lg transition-transform hover:-translate-y-1">
-                  Join The Master Course
-                </Button>
+                <div className="text-6xl font-bold text-white mb-8 drop-shadow-lg">$197</div>
+                <a href="https://shankara.thrivecart.com/shankara-master-course-training-main/" target="_blank" rel="noopener noreferrer" className="w-full md:w-auto">
+                  <Button size="lg" className="w-full md:w-auto bg-white text-purple-900 hover:bg-gray-100 px-12 py-8 text-xl rounded-full font-bold shadow-lg transition-transform hover:-translate-y-1">
+                    Join The Master Course
+                  </Button>
+                </a>
                 <p className="mt-4 text-purple-300/40 text-sm">Lifetime access • 30-day money-back guarantee</p>
               </div>
             </div>
