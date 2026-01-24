@@ -123,63 +123,65 @@
   - [x] **Sounds:** Source and implement 3 distinct sounds (Alchemy, Master, Release).
   - [x] **Mobile:** Stack layout vertically on small screens.
   - [x] **Shimmer:** Add CSS-based holographic shimmer overlay on reveal.
-  - [ ] **PUSH:** Force push changes to GitHub upon completion.
+  - [x] **PUSH:** Force push changes to GitHub upon completion.
 - [x] **Deck Selection Feature**
   - [x] **UI Update:** Add a new "Choose Your Deck" stage between "Invite" and "Reveal".
   - [x] **Deck Options:** Display 3 clickable deck options (Alchemy, Master, Release) with their back images.
   - [x] **Logic:** Update state machine to handle `DECK_SELECTION` stage.
-  - [ ] **PUSH:** Force push changes to GitHub upon completion.
+  - [x] **PUSH:** Force push changes to GitHub upon completion.
 - [x] **Popup Fixes**
   - [x] **CSS Fix:** Ensure `backface-visibility: hidden` and `transform-style: preserve-3d` are correctly applied so card is NOT revealed early.
   - [x] **Selection UI:** Change Deck Selection to show 3 large vertical Card Back images side-by-side (or stacked on mobile) for direct selection.
   - [x] **Flow Check:** Verify Invite -> Select -> Back (Wait) -> Flip (Reveal) sequence.
-  - [ ] **PUSH:** Force push changes to GitHub upon completion.
+  - [x] **PUSH:** Force push changes to GitHub upon completion.
 - [x] **Popup Enhancements II**
   - [x] **Tooltips:** Add hover tooltips to deck selection buttons with detailed descriptions.
   - [x] **Sound Preload:** Implement `Audio` preloading for all 3 deck sounds when popup mounts.
-  - [ ] **PUSH:** Force push changes to GitHub upon completion.
+  - [x] **PUSH:** Force push changes to GitHub upon completion.
 - [x] **Popup Fixes III**
   - [x] **Generate Image:** Create `cosmic-flower.webp` - a glowing, mystical lotus.
   - [x] **Code Update:** Replace broken `/images/logo.png` reference with the new flower image.
-  - [ ] **PUSH:** Force push changes to GitHub upon completion.
+  - [x] **PUSH:** Force push changes to GitHub upon completion.
 - [x] **Popup Design Refinements**
   - [x] **Gold Borders:** Add `border-amber-400/50` (gold) to card images to hide white edges and add elegance.
   - [x] **UX Improvement:** Add "Awaiting Selection" state to left panel.
   - [x] **Visual Hierarchy:** Increase font size of "Choose Your Path" and add pulsing animation to deck buttons to guide user attention.
-  - [ ] **PUSH:** Force push changes to GitHub upon completion.
+  - [x] **PUSH:** Force push changes to GitHub upon completion.
 - [x] **Advanced Interactivity**
   - [x] **Shimmer Animation:** Add continuous `shimmer-subtle` animation to card backs in the selection list.
   - [x] **Mobile Carousel:** Convert deck list to a horizontal scroll snap container (carousel) on mobile (`md:hidden`).
   - [x] **Desktop Consistency:** Maintain vertical stack layout on desktop (`hidden md:flex`).
-  - [ ] **PUSH:** Force push changes to GitHub upon completion.
+  - [x] **PUSH:** Force push changes to GitHub upon completion.
 - [x] **Stone Box Redesign**
   - [x] **Image Resize:** Scale down stone image by 25% (`w-48` -> `w-36` approx).
   - [x] **Divine Button:** Replace plain text trigger with a styled button (gradient border, glow, elegant font).
   - [x] **Stone Name:** Add prominent text above the stone (2pt larger than button text).
-  - [ ] **PUSH:** Force push changes to GitHub upon completion.
+  - [x] **PUSH:** Force push changes to GitHub upon completion.
 - [ ] **Popup Left Panel Overhaul**
   - [ ] **Remove Image:** Delete the "blank card box" image/container entirely.
   - [ ] **CSS Energy Vortex:** Create a large, colorful, animated radial gradient/vortex using pure CSS.
   - [ ] **Massive Text:** Increase "Select a deck" text size by 3x, make it bright white (`text-white font-bold`).
   - [ ] **Divine Arrow:** Add a huge, pulsing SVG arrow pointing right (`w-16 h-16` or larger).
-  - [ ] **PUSH:** Force push changes to GitHub upon completion.
+  - [x] **PUSH:** Force push changes to GitHub upon completion.
 - [x] **URGENT UI OVERHAUL**
   - [x] **Delete Image:** Remove `cosmic-flower.png` and its container from the left panel.
   - [x] **CSS Explosion:** Implement a complex radial gradient animation (`conic-gradient` + `blur`) to create a "nebula" effect.
   - [x] **Text Scale:** Increase font size to `text-4xl` or `text-5xl` for "Awaits You".
   - [x] **Arrow:** Add a massive `ArrowRight` icon (`w-24 h-24`) with a pulse animation.
-  - [ ] **PUSH:** Force push changes to GitHub upon completion.
+  - [x] **PUSH:** Force push changes to GitHub upon completion.
 - [x] **Video Popup Integration**
   - [x] **Component:** Create `VideoModal.tsx` using Dialog component to host the Vimeo embed (`https://vimeo.com/833058091`).
   - [x] **Home Page:** Connect existing "Watch Trailer" button in header/hero to open `VideoModal`.
   - [x] **HOW Page:** Add new button under "Awaken" subtitle:
     - [x] **Style:** Neon pink background (`bg-[#ff00ff]`), Gold border (`border-amber-400`), Glow effect.
     - [x] **Action:** Opens the same `VideoModal`.
-  - [ ] **PUSH:** Force push changes to GitHub upon completion.
+  - [x] **PUSH:** Force push changes to GitHub upon completion.
 - [x] **HOW Page Design Detail**
   - [x] **Golden Line:** Add a `h-px` div with `bg-gradient-to-r from-transparent via-amber-400 to-transparent` and a shadow glow at the bottom of the Hero section.
-  - [ ] **PUSH:** Force push changes to GitHub upon completion.
+  - [x] **PUSH:** Force push changes to GitHub upon completion.
 - [x] **HOW Page Animation**
   - [x] **CSS Animation:** Add `@keyframes divine-pulse` to `index.css` (opacity 0.6 <-> 1.0, shadow blur expansion).
   - [x] **Apply Animation:** Add `animate-divine-pulse` class to the golden line in `How.tsx`.
-  - [ ] **PUSH:** Force push changes to GitHub upon completion.
+  - [x] **PUSH:** Force push changes to GitHub upon completion.
+- [x] **MANUAL PUSH REQUEST**
+  - [x] **Action:** Execute git push command to ensure remote is up to date.

@@ -130,15 +130,7 @@ export default function How() {
                   </div>
                 </div>
 
-                <div 
-                  className="aspect-video bg-black/40 rounded-2xl border border-white/10 flex items-center justify-center relative overflow-hidden group cursor-pointer shadow-[0_0_40px_rgba(168,85,247,0.2)]"
-                  onClick={() => setIsVideoOpen(true)}
-                >
-                  <div className="absolute inset-0 bg-accent/10 group-hover:bg-accent/20 transition-colors" />
-                  <Play className="w-16 h-16 text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]" />
-                  <span className="absolute bottom-4 right-4 text-xs font-mono text-white/60 bg-black/50 px-2 py-1 rounded">04:44</span>
-                </div>
-                
+
                 <div className="space-y-6 text-lg text-purple-200/80 leading-relaxed">
                   <div className="flex items-start gap-4 p-4 rounded-xl bg-purple-900/20 border border-purple-500/20 hover:border-accent/40 transition-colors">
                     <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold shrink-0">1</div>
@@ -152,10 +144,7 @@ export default function How() {
                     <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold shrink-0">3</div>
                     <p>Setup your Shankara Oracle Board.</p>
                   </div>
-                  <div className="flex items-start gap-4 p-4 rounded-xl bg-purple-900/20 border border-purple-500/20 hover:border-accent/40 transition-colors">
-                    <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold shrink-0">4</div>
-                    <p>Watch Our Video above.</p>
-                  </div>
+
                 </div>
               </div>
 
