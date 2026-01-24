@@ -15,3 +15,12 @@
   - [ ] Stage all changes (Readers.tsx, How.tsx, new images).
   - [ ] Commit with a descriptive message.
   - [ ] Push to `main` branch on GitHub.
+- [ ] **Update How It Works Page**
+  - [ ] Add "The Three Sacred Decks" section with `decks-overview.png` and descriptions for Master, Alchemy, and Release decks.
+  - [ ] Add "Sacred Action Cards" section with `sacred-action-cards.jpg` explaining habits and virtue.
+  - [ ] Add "The Guidance System" section with `board-guidance-arrows.png` showing how arrows point to answers.
+  - [ ] Update "Setup" section with `board-full-setup.jpg`.
+- [ ] **Update Unboxing Page**
+  - [ ] Create "The Shankara Box" section.
+  - [ ] Add a 4-column row for the box images (`box-top.jpg`, `box-side-1.jpg`, `box-side-2.jpg`, `box-bottom.jpg`).
+  - [ ] Write description about the box's design and sacred nature.

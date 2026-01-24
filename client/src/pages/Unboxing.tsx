@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Box, Check, ArrowRight } from "lucide-react";
+import { Box, Check, ArrowRight, Package } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -181,6 +181,60 @@ export default function Unboxing() {
 
             </div>
           </div>
+        </section>
+
+        {/* THE SHANKARA BOX SECTION */}
+        <section className="py-24 bg-[#1a0b2e] relative overflow-hidden border-t border-white/10">
+           {/* Background decorative elements */}
+           <div className="absolute top-0 left-0 w-full h-full bg-purple-900/10 mix-blend-overlay" />
+           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[300px] bg-purple-500/5 rounded-full blur-[100px] pointer-events-none" />
+
+           <div className="container mx-auto px-4 relative z-10">
+             <div className="text-center mb-16 max-w-4xl mx-auto">
+               <Badge variant="outline" className="border-pink-400 text-pink-200 px-4 py-1 text-sm tracking-[0.2em] uppercase bg-pink-900/30 backdrop-blur-md mb-6">
+                 <Package className="w-3 h-3 mr-2 text-pink-400" /> The Vessel
+               </Badge>
+               <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">The Shankara Box</h2>
+               <p className="text-lg text-purple-200/80 leading-relaxed">
+                 More than just packaging, the Shankara Box is a sacred vessel designed to hold the high vibrations of your Oracle. Adorned with channeled symbols and vibrant cosmic art, it serves as a beautiful altar piece in your home, protecting your tools and inviting divine energy into your space.
+               </p>
+             </div>
+
+             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+               {/* Box Image 1: Top */}
+               <div className="rounded-2xl overflow-hidden shadow-lg border border-white/10 group bg-black/20">
+                 <img 
+                   src="/images/box-top.jpg" 
+                   alt="Shankara Box Top View" 
+                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                 />
+               </div>
+               {/* Box Image 2: Side 1 */}
+               <div className="rounded-2xl overflow-hidden shadow-lg border border-white/10 group bg-black/20">
+                 <img 
+                   src="/images/box-side-1.jpg" 
+                   alt="Shankara Box Side Detail" 
+                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                 />
+               </div>
+               {/* Box Image 3: Side 2 */}
+               <div className="rounded-2xl overflow-hidden shadow-lg border border-white/10 group bg-black/20">
+                 <img 
+                   src="/images/box-side-2.jpg" 
+                   alt="Shankara Box Side Art" 
+                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                 />
+               </div>
+               {/* Box Image 4: Bottom */}
+               <div className="rounded-2xl overflow-hidden shadow-lg border border-white/10 group bg-black/20">
+                 <img 
+                   src="/images/box-bottom.jpg" 
+                   alt="Shankara Box Bottom Information" 
+                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                 />
+               </div>
+             </div>
+           </div>
         </section>
 
         {/* CTA - DARK COSMIC */}
