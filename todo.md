@@ -100,3 +100,12 @@
   - [x] **Marketing Features**
     - [x] Add Email Capture form ("Save your daily reading") in Stage 3.
     - [x] Add "Buy Shankara Oracle" upsell card with lavish button in Stage 3.
+  - [x] **Popup Refinement**
+    - [x] **Logic Refactoring**
+      - [x] Implement 3-stage flow: `INVITE` -> `DECK_SELECTED` -> `CARD_REVEALED`.
+      - [x] **Stage 1 (INVITE):** No image, text "A Divine Message For You", button "Draw Your Card".
+      - [x] **Stage 2 (DECK):** Show random Deck Back, button "Flip Your Card".
+      - [x] **Stage 3 (REVEAL):** Show Card Front, Email Form.
+    - [x] **Styling**
+      - [x] Increase card image container size by 20%.
+      - [x] Ensure text on card is legible.
