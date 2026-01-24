@@ -40,3 +40,7 @@
   - [ ] Resize `decks-overview.webp` container in `How.tsx` (reduce width by 20%, center align).
   - [ ] Search codebase for `manuscdn` or other external image domains.
   - [ ] Verify all `img` src attributes point to `/images/` (Railway) or `shankara-pull.b-cdn.net` (Bunny).
+- [ ] **Final Deployment Push**
+  - [ ] Commit all changes (image resizing, source cleanup).
+  - [ ] Push to `main` branch on GitHub.
+  - [ ] Verify deployment triggers on Railway.
