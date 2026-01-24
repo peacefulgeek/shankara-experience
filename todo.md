@@ -1,24 +1,2 @@
-- [ ] **User Feedback Updates (Jan 24 - Part 3)**
-    - [x] **Global Styling**:
-        - [x] **Logo**: Make "Shankara" text 2x larger and Neon Pink (`#ff00ff`).
-    - [x] **Unboxing Page**:
-        - [x] **4 Sacred Decks**: Add 4-square image grid (using new deck uploads) to the *left* of the text.
-        - [x] **18 Obsidian Stones**: Place stones image (`170323-Andreea-Plesea-176-scaled.webp`) to the *right* of the text.
-        - [x] **Oracle Board**: Place board image (`170323-Andreea-Plesea-041-scaled.webp`) to the *left* of the text (replacing broken image).
-    - [x] **Training Page**:
-        - [x] **Header/Bio**: Lighten background (mysterious, not dark). Use purple background from Readers/Videos pages.
-        - [x] **What You Will Master**: Clean up to match "Ancient Mystical" style (circular images, centered text, no gray).
-    - [x] **Certification Page**:
-        - [x] **Updates**: Apply same updates as Training page (Lighten header, "Ancient Mystical" features, background fix).
-    - [x] **Shop Page**:
-        - [x] **Price**: Update to **$167** (Sale: **$99**).
-    - [x] **Interactive Features**:
-        - [x] **Daily Card Draw**: Implement interactive "Draw a Card" feature on Home page.
-        - [x] **Motion Backgrounds**: Add mystical particles/fog animations to hero sections.
-        - [x] **Social Proof**: Add "Recent Purchase" popup notifications.
-
-- [ ] **Wisdom Section Overhaul (New Request)**
-    - [ ] **Navigation**: Rename "Blog" to "**Wisdom**" in menu.
-    - [ ] **Design Template**: Analyze PDF to replicate layout (typography, pull quotes, special boxes, author bio).
-    - [ ] **Images**: Generate 3 unique, grounded, slightly mystical images matching article titles.
-    - [ ] **Content**: Apply new template and images to all 3 articles.
+- [ ] **Home Page Layout Update**
+    - [ ] Move `DailyCardDraw` component to the bottom of the page, immediately before the `<Footer />`.

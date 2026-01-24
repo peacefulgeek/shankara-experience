@@ -81,9 +81,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* DAILY CARD DRAW */}
-        <DailyCardDraw />
-
         {/* FEATURES - LIGHT & CLEAN (YANG) */}
         <section className="py-32 bg-white relative">
           <div className="container mx-auto px-4">
@@ -226,6 +223,9 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* DAILY CARD DRAW - MOVED TO BOTTOM */}
+        <DailyCardDraw />
 
       </main>
       <Footer />

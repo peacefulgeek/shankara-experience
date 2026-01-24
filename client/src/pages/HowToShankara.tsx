@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Play, BookOpen, Star, HelpCircle, ArrowRight, Layers, Box, Compass } from "lucide-react";
+import { Play, Sparkles, ArrowRight, Download } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -8,217 +8,168 @@ import { Link } from "wouter";
 
 export default function HowToShankara() {
   return (
-    <div className="min-h-screen text-foreground font-sans selection:bg-primary selection:text-white overflow-x-hidden relative">
+    <div className="min-h-screen font-sans selection:bg-accent selection:text-white overflow-x-hidden relative bg-[#2a1b3d]">
       <SEO 
-        title="How To Use Shankara" 
-        description="Discover the symbolism of the Shankara Oracle Board and learn how to play."
+        title="How to Use The Shankara Oracle | Sacred Instructions" 
+        description="Learn the sacred rituals and mechanics of The Shankara Oracle. A step-by-step guide to casting the stones, reading the cards, and interpreting the board."
       />
-      
-      {/* Background handled by global index.css */}
-      <div className="fixed inset-0 z-[-1] pointer-events-none" />
 
       <Navigation />
 
       <main>
-        {/* HERO */}
-        <section className="pt-32 pb-20 relative overflow-hidden">
-          <div className="container mx-auto px-4 text-center relative z-10">
-            <Badge variant="outline" className="mb-6 border-purple-300 text-purple-700 px-4 py-1 text-sm tracking-widest uppercase bg-white/50 backdrop-blur-sm">
-              The Sacred Guide
-            </Badge>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-purple-900 mb-8 leading-tight">
-              Discover The Symbolism of <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-600">The Shankara Oracle Board</span>
-            </h1>
-            <p className="text-xl text-purple-800/90 max-w-4xl mx-auto mb-12 leading-relaxed font-light">
-              "I channeled Shankara during early morning dreams and sessions with my guides... Years in the making, brought into the world with the support of the spiritual community, I promise that The Shankara Oracle will nourish, inform, and uplift you!" — Shri Krishna Kalesh
-            </p>
-            
-            <div className="flex justify-center">
-              <Button size="lg" className="bg-purple-900 text-white hover:bg-purple-800 px-10 h-16 text-xl rounded-full font-bold shadow-lg shadow-purple-200">
-                <Play className="mr-2 w-5 h-5 fill-current" /> Watch Tutorial (04:44)
-              </Button>
+        {/* HERO SECTION - LIGHTER PURPLE BACKGROUND (Matches Readers/Videos) */}
+        <section className="pt-32 pb-24 relative overflow-hidden min-h-[90vh] flex items-center bg-[#2a1b3d]">
+          {/* Background Elements */}
+          <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/sacred-geometry-bg.png')] opacity-10 mix-blend-overlay" />
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-purple-500/10 rounded-full blur-[120px] pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[100px] pointer-events-none" />
+
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="flex flex-col lg:flex-row items-center gap-16">
+              
+              {/* Text Content - Left Side */}
+              <div className="w-full lg:w-1/2 text-left space-y-8">
+                <Badge variant="outline" className="border-purple-400 text-purple-200 px-4 py-1 text-sm tracking-[0.2em] uppercase bg-purple-900/30 backdrop-blur-md">
+                  <Sparkles className="w-3 h-3 mr-2 text-accent" /> Sacred Instructions
+                </Badge>
+                
+                <h1 className="text-5xl md:text-7xl font-display font-bold text-white leading-tight">
+                  Discover the <br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-300 glow-text">
+                    Symbolism
+                  </span>
+                </h1>
+                
+                <p className="text-xl text-purple-200/90 leading-relaxed font-light max-w-xl">
+                  The Shankara Board is a map of the cosmos. Every circle, line, and color is a frequency designed to align your intuition with the heartbeat of the Universe.
+                </p>
+                
+                <div className="flex flex-wrap gap-4 pt-4">
+                  <Button size="lg" className="bg-accent text-white hover:bg-accent/90 px-8 rounded-full font-bold shadow-[0_0_20px_rgba(255,0,255,0.3)]">
+                    <Play className="w-4 h-4 mr-2 fill-current" /> Watch Tutorial
+                  </Button>
+                  <Button variant="outline" size="lg" className="border-purple-400/30 text-purple-200 hover:bg-purple-900/30 px-8 rounded-full backdrop-blur-sm">
+                    <Download className="w-4 h-4 mr-2" /> Download Guide PDF
+                  </Button>
+                </div>
+              </div>
+
+              {/* Header Image - Right Side - Gold Border & 15% Larger */}
+              <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
+                <div className="relative w-full max-w-2xl transform scale-115 origin-center">
+                   {/* Elegant Container with Gold Border */}
+                   <div className="relative rounded-3xl p-1 bg-gradient-to-br from-[#d4af37] via-[#f9e59e] to-[#d4af37] shadow-[0_0_40px_rgba(212,175,55,0.3)]">
+                      <div className="rounded-[22px] overflow-hidden bg-[#1a0b2e] relative">
+                        <div className="absolute inset-0 bg-gradient-to-tr from-purple-900/20 to-transparent mix-blend-overlay z-10" />
+                        <img 
+                          src="/images/170323-Andreea-Plesea-041-scaled.webp" 
+                          alt="Shankara Board Detail" 
+                          className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-1000"
+                        />
+                      </div>
+                   </div>
+                   
+                   {/* Decorative Elements */}
+                   <div className="absolute -top-6 -right-6 w-12 h-12 border border-[#d4af37]/50 rounded-full animate-spin-slow" />
+                   <div className="absolute -bottom-8 -left-8 w-16 h-16 border border-[#d4af37]/30 rounded-full animate-spin-reverse-slow" />
+                </div>
+              </div>
+
             </div>
           </div>
         </section>
 
-        {/* HOW TO PLAY STEPS */}
-        <section className="py-20 bg-white/40 backdrop-blur-sm">
+        {/* SACRED ELEMENTS - ANCIENT STYLE (NO GRAY) */}
+        <section className="py-32 bg-[#251836] relative">
           <div className="container mx-auto px-4">
-            <div className="flex flex-col md:flex-row gap-12 items-center">
-              <div className="w-full md:w-1/2">
-                <div className="relative group">
-                   <div className="absolute -inset-4 bg-accent/20 blur-xl rounded-2xl group-hover:bg-accent/30 transition-all duration-700" />
-                   <img src="/images/oracle-board.png" alt="Shankara Oracle Board" className="relative rounded-2xl shadow-2xl border-4 border-white" />
+            <div className="text-center mb-20">
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">The Sacred Elements</h2>
+              <p className="text-purple-200/80 max-w-2xl mx-auto text-lg">
+                The board is divided into five elemental zones plus the cosmos. Where your stones land reveals the energies at play in your life.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+              {[
+                { name: "Earth", img: "/images/element-earth.png", desc: "Grounding, Stability, Body" },
+                { name: "Water", img: "/images/element-water.png", desc: "Emotion, Flow, Intuition" },
+                { name: "Fire", img: "/images/element-fire.png", desc: "Action, Passion, Will" },
+                { name: "Air", img: "/images/element-air.png", desc: "Intellect, Communication" },
+                { name: "Ether", img: "/images/element-ether.png", desc: "Space, Spirit, Potential" },
+                { name: "Cosmos", img: "/images/element-cosmos.png", desc: "Divine Order, Destiny" }
+              ].map((el, i) => (
+                <div key={i} className="flex flex-col items-center group">
+                  {/* Circular Ancient Icon Frame */}
+                  <div className="w-32 h-32 rounded-full border border-purple-500/30 bg-purple-900/20 flex items-center justify-center mb-6 relative overflow-hidden group-hover:border-accent/50 group-hover:shadow-[0_0_30px_rgba(255,0,255,0.2)] transition-all duration-500">
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-purple-900/50 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <img src={el.img} alt={el.name} className="w-20 h-20 object-contain relative z-10 transform group-hover:scale-110 transition-transform duration-500" />
+                  </div>
+                  
+                  <h3 className="text-xl font-display font-bold text-white mb-2 tracking-wide">{el.name}</h3>
+                  <p className="text-sm text-purple-300/70 text-center font-light">{el.desc}</p>
                 </div>
-              </div>
-              <div className="w-full md:w-1/2 space-y-8">
-                <h2 className="text-3xl md:text-4xl font-bold text-purple-900">How To Use The Shankara Oracle</h2>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* TIPS & SWAPS - BEAUTIFIED & ENLARGED */}
+        <section className="py-32 bg-[#2a1b3d] relative overflow-hidden">
+          <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent" />
+          
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="flex flex-col lg:flex-row items-center gap-20">
+              
+              {/* Content - Left */}
+              <div className="w-full lg:w-1/2 space-y-8">
+                <h2 className="text-4xl md:text-6xl font-display font-bold text-white leading-tight">
+                  Shankara <br />
+                  <span className="text-accent">Tips & Swaps</span>
+                </h2>
                 
                 <div className="space-y-6">
-                  {[
-                    { step: 1, title: "Prepare Your Space", desc: "Find a peaceful place in your home. Open The Shankara Setup & Play Booklet." },
-                    { step: 2, title: "Setup The Board", desc: "Unfold the board. Place the three decks (Master, Alchemy, Release) in their designated spots." },
-                    { step: 3, title: "Cast The Stones", desc: "Hold your questions in your heart. Intuitively select stones from the pouch and drop them in the center." },
-                    { step: 4, title: "Interpret The Messages", desc: "Some stones show symbols; others point arrows to elements on the board or cards. Look up meanings in The Book of Meanings." },
-                    { step: 5, title: "Connect The Dots", desc: "Use your own spiritual vocabulary to interpret all that emerges. As you connect the messages, you will earn the answer to your questions." }
-                  ].map((item, i) => (
-                    <div key={i} className="flex gap-4">
-                      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-accent text-purple-900 font-bold flex items-center justify-center text-lg shadow-md">
-                        {item.step}
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold text-purple-900 mb-1">{item.title}</h3>
-                        <p className="text-purple-800/70">{item.desc}</p>
-                      </div>
-                    </div>
-                  ))}
+                  <div className="bg-purple-900/20 border border-purple-500/20 p-8 rounded-2xl hover:border-accent/30 transition-colors">
+                    <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
+                      <Sparkles className="w-5 h-5 text-accent mr-3" /> The Puja Ritual
+                    </h3>
+                    <p className="text-purple-200/80 leading-relaxed">
+                      Transform your board into an altar. Place fresh flowers on the lotus petals, light a candle in the center (Bindu), and offer your intentions before you even cast a stone. This charges the board with your unique frequency.
+                    </p>
+                  </div>
+
+                  <div className="bg-purple-900/20 border border-purple-500/20 p-8 rounded-2xl hover:border-accent/30 transition-colors">
+                    <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
+                      <Sparkles className="w-5 h-5 text-accent mr-3" /> Stone Swaps
+                    </h3>
+                    <p className="text-purple-200/80 leading-relaxed">
+                      While Obsidian is the master stone, you can swap it for Rose Quartz when asking about love, or Amethyst for higher spiritual guidance. The board welcomes all crystalline energies.
+                    </p>
+                  </div>
                 </div>
               </div>
+
+              {/* Image - Right - Puja Board */}
+              <div className="w-full lg:w-1/2">
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl transform hover:scale-[1.01] transition-transform duration-700 group">
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#2a1b3d] via-transparent to-transparent opacity-50 z-10" />
+                  <img 
+                    src="/images/ShankaraPujaMay23-2023.jpg" 
+                    alt="Shankara Puja Ritual" 
+                    className="w-full h-auto object-cover"
+                  />
+                  <div className="absolute bottom-8 left-8 right-8 z-20">
+                    <p className="text-white/90 font-serif italic text-lg text-center">
+                      "The board is a temple. Enter with reverence."
+                    </p>
+                  </div>
+                </div>
+              </div>
+
             </div>
-          </div>
-        </section>
-
-        {/* BOARD SYMBOLISM GRID */}
-        <section className="py-20 relative">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-5xl font-bold text-center text-purple-900 mb-16">The Sacred Elements</h2>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* Words & Numbers */}
-              <div className="bg-white/60 p-8 rounded-2xl border border-white/50 hover:bg-white/80 transition-all shadow-sm hover:shadow-md">
-                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
-                  <BookOpen className="w-6 h-6 text-purple-600" />
-                </div>
-                <h3 className="text-xl font-bold text-purple-900 mb-4">Words & Numbers</h3>
-                <p className="text-purple-800/70 text-sm leading-relaxed mb-4">
-                  Do you notice certain numbers repeating in your life? Arrows pointing to specific numbers illuminate aspects highly active in your life.
-                </p>
-                <p className="text-purple-800/70 text-sm leading-relaxed">
-                  Words like Gratitude, Discern, Forgive, Pray, or Release call you to focus on this aspect of your life.
-                </p>
-              </div>
-
-              {/* The Four Elements */}
-              <div className="bg-white/60 p-8 rounded-2xl border border-white/50 hover:bg-white/80 transition-all shadow-sm hover:shadow-md">
-                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
-                  <Compass className="w-6 h-6 text-blue-600" />
-                </div>
-                <h3 className="text-xl font-bold text-purple-900 mb-4">The Four Elements</h3>
-                <ul className="space-y-2 text-sm text-purple-800/70">
-                  <li><strong className="text-blue-600">Water:</strong> Inspire great flow, softness, and patience.</li>
-                  <li><strong className="text-purple-900">Air:</strong> Our connection to the All-That-Is.</li>
-                  <li><strong className="text-yellow-600">Soil:</strong> Infused with stardust to nourish body and soul.</li>
-                  <li><strong className="text-orange-500">Fire:</strong> Essential to the circle of life; your life-force.</li>
-                </ul>
-              </div>
-
-              {/* Divine Beings */}
-              <div className="bg-white/60 p-8 rounded-2xl border border-white/50 hover:bg-white/80 transition-all shadow-sm hover:shadow-md">
-                <div className="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center mb-6">
-                  <Star className="w-6 h-6 text-yellow-600" />
-                </div>
-                <h3 className="text-xl font-bold text-purple-900 mb-4">Divine Beings & Archangels</h3>
-                <p className="text-purple-800/70 text-sm leading-relaxed">
-                  Includes Divine Mother, Buddha, Kali, Shiva, and Archangels Michael, Seraphina, Raphael, and Uriel.
-                </p>
-                <p className="text-purple-800/70 text-sm leading-relaxed mt-2">
-                  Each represents a host of deities found across the world's most sacred writings. Even if you don't resonate with specific deities, you can align with their attributes.
-                </p>
-              </div>
-
-              {/* The Noble Species */}
-              <div className="bg-white/60 p-8 rounded-2xl border border-white/50 hover:bg-white/80 transition-all shadow-sm hover:shadow-md">
-                <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-6">
-                  <Layers className="w-6 h-6 text-green-600" />
-                </div>
-                <h3 className="text-xl font-bold text-purple-900 mb-4">The Noble Species</h3>
-                <ul className="space-y-2 text-sm text-purple-800/70">
-                  <li><strong className="text-purple-900">Animal (Lion):</strong> Reminds us of our intergalactic citizenship.</li>
-                  <li><strong className="text-purple-900">Flower:</strong> Explosions of goodness; light transcending vessels.</li>
-                  <li><strong className="text-purple-900">Fungi:</strong> Recycle nutrients; remind us of temporary attributes.</li>
-                  <li><strong className="text-purple-900">Water Beings:</strong> Remind us to look deeply within for answers.</li>
-                </ul>
-              </div>
-
-              {/* Playful Protectors */}
-              <div className="bg-white/60 p-8 rounded-2xl border border-white/50 hover:bg-white/80 transition-all shadow-sm hover:shadow-md">
-                <div className="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center mb-6">
-                  <Box className="w-6 h-6 text-pink-600" />
-                </div>
-                <h3 className="text-xl font-bold text-purple-900 mb-4">The Playful Protectors</h3>
-                <ul className="space-y-2 text-sm text-purple-800/70">
-                  <li><strong className="text-purple-900">Butterfly:</strong> Teach us to honor the sweetest aspects of Being.</li>
-                  <li><strong className="text-purple-900">Hummingbird:</strong> Joy, vulnerability, inspiration, and trust.</li>
-                  <li><strong className="text-purple-900">BumbleBee:</strong> Reminds you to enjoy the present moment.</li>
-                  <li><strong className="text-purple-900">Dragonfly:</strong> The Alchemist; transformative tonics.</li>
-                </ul>
-              </div>
-
-              {/* Vedic Astrology */}
-              <div className="bg-white/60 p-8 rounded-2xl border border-white/50 hover:bg-white/80 transition-all shadow-sm hover:shadow-md">
-                <div className="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mb-6">
-                  <Star className="w-6 h-6 text-indigo-600" />
-                </div>
-                <h3 className="text-xl font-bold text-purple-900 mb-4">Vedic Astrology</h3>
-                <p className="text-purple-800/70 text-sm leading-relaxed mb-4">
-                  The planets are placed in counter-clockwise order to mirror the way a shaman would open a chakra to cleanse and heal it.
-                </p>
-                <div className="grid grid-cols-3 gap-2 text-xs text-purple-600 text-center font-mono font-bold">
-                  <div>RAHU</div><div>MANGALA</div><div>SHUKRA</div>
-                  <div>SOMA</div><div>BUDHA</div><div>KETU</div>
-                  <div>SHANI</div><div>BRIHASPATI</div><div>SURYA</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* TIPS & SWAPS */}
-        <section className="py-20 bg-gradient-to-r from-purple-100 to-white">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <div className="bg-white p-10 rounded-3xl border border-purple-100 shadow-xl">
-              <h2 className="text-3xl font-bold text-purple-900 mb-8 text-center">Shankara Tips & Swaps</h2>
-              <div className="grid md:grid-cols-2 gap-8">
-                <ul className="space-y-4 text-purple-800/80">
-                  <li className="flex gap-3">
-                    <Star className="w-5 h-5 text-accent shrink-0" />
-                    <span>You can use your favorite Tarot and Oracle Decks instead of the Shankara decks.</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <Star className="w-5 h-5 text-accent shrink-0" />
-                    <span>Roll Shakti’s Cube at any point for clarity or a loving nudge.</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <Star className="w-5 h-5 text-accent shrink-0" />
-                    <span>Invite your spirit guides and ancestors into your sessions.</span>
-                  </li>
-                </ul>
-                <div className="bg-purple-50 p-6 rounded-xl border border-purple-100">
-                  <h3 className="text-xl font-bold text-purple-900 mb-2">Solo & With Friends</h3>
-                  <p className="text-purple-800/70 text-sm leading-relaxed">
-                    Shankara is a wonderful solo or group experience. The maximum ideal number of players is four, although you can include up to 8 participants. Each side of the board has a placeholder for each player.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="py-20 text-center">
-          <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-bold text-purple-900 mb-8">Ready to Play?</h2>
-            <Link href="/shop">
-              <Button size="lg" className="bg-accent text-purple-900 hover:bg-accent/90 px-12 py-6 text-xl rounded-full font-bold shadow-lg hover:shadow-xl transition-all">
-                Get Your Shankara Oracle
-              </Button>
-            </Link>
           </div>
         </section>
 
       </main>
-
       <Footer />
     </div>
   );

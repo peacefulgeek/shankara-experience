@@ -16,7 +16,8 @@ import Privacy from "@/pages/Privacy";
 import Returns from "@/pages/Returns";
 import FAQ from "@/pages/FAQ";
 import Videos from "@/pages/Videos";
-import Blog from "@/pages/Blog";
+import Blog from "./pages/Blog";
+import ArticlePage from "./pages/ArticlePage";
 import Affiliates from "@/pages/Affiliates";
 import Testimonials from "@/pages/Testimonials";
 
@@ -40,6 +41,7 @@ function App() {
         <Route path="/faq" component={FAQ} />
         <Route path="/videos" component={Videos} />
         <Route path="/wisdom" component={Blog} />
+      <Route path="/wisdom/:slug" component={ArticlePage} />
         <Route path="/affiliates" component={Affiliates} />
         <Route path="/testimonials" component={Testimonials} />
         <Route>404 Page Not Found</Route>
