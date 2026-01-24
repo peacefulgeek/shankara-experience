@@ -142,3 +142,8 @@
   - [x] **Generate Image:** Create `cosmic-flower.webp` - a glowing, mystical lotus.
   - [x] **Code Update:** Replace broken `/images/logo.png` reference with the new flower image.
   - [ ] **PUSH:** Force push changes to GitHub upon completion.
+- [x] **Popup Design Refinements**
+  - [x] **Gold Borders:** Add `border-amber-400/50` (gold) to card images to hide white edges and add elegance.
+  - [x] **UX Improvement:** Add "Awaiting Selection" state to left panel.
+  - [x] **Visual Hierarchy:** Increase font size of "Choose Your Path" and add pulsing animation to deck buttons to guide user attention.
+  - [ ] **PUSH:** Force push changes to GitHub upon completion.

@@ -3,7 +3,7 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { Sparkles, Mail, X, RefreshCw, Lock, Info } from "lucide-react";
+import { Sparkles, Mail, X, RefreshCw, Lock, Info, ArrowRight } from "lucide-react";
 import { toast } from "sonner";
 
 // Define Decks and Cards
@@ -225,15 +225,18 @@ export default function ExitIntentPopup() {
               <div className="relative z-10 w-full max-w-sm md:max-w-none">
                 <div className="grid grid-cols-1 gap-4 place-items-center">
                    <div className="text-center space-y-4">
-                      <div className="relative w-48 aspect-[1.45/1] mx-auto perspective-1000">
+                      <div className="relative w-48 aspect-[1.45/1] mx-auto perspective-1000 opacity-50 grayscale transition-all duration-500">
                         {/* Stacked cards effect */}
                         <div className="absolute top-0 left-0 w-full h-full bg-white/5 rounded-xl rotate-[-6deg] scale-90 border border-white/10"></div>
                         <div className="absolute top-0 left-0 w-full h-full bg-white/10 rounded-xl rotate-[6deg] scale-95 border border-white/10"></div>
-                        <div className="relative w-full h-full bg-[#1a0b2e] rounded-xl border border-[#ff00ff]/30 flex items-center justify-center shadow-[0_0_30px_rgba(255,0,255,0.2)]">
-                           <Sparkles className="w-12 h-12 text-[#ff00ff] animate-pulse" />
+                        <div className="relative w-full h-full bg-[#1a0b2e] rounded-xl border border-white/20 flex items-center justify-center shadow-none">
+                           <div className="text-center p-4">
+                              <Sparkles className="w-8 h-8 text-white/30 mx-auto mb-2" />
+                              <p className="text-xs text-white/30 uppercase tracking-widest">Awaiting Selection</p>
+                           </div>
                         </div>
                       </div>
-                      <p className="text-sm text-purple-200/60 font-medium">Select a deck to reveal its power</p>
+                      <p className="text-sm text-purple-200/40 font-medium animate-pulse">Select a deck on the right to begin &rarr;</p>
                    </div>
                 </div>
               </div>
@@ -249,17 +252,17 @@ export default function ExitIntentPopup() {
                     <img 
                       src={DECKS[selectedDeck].back}
                       alt="Card Back" 
-                      className="w-full h-full object-contain rounded-xl shadow-[0_0_40px_rgba(139,92,246,0.4)] border border-white/10"
+                      className="w-full h-full object-contain rounded-xl shadow-[0_0_40px_rgba(139,92,246,0.4)] border-2 border-amber-400/50 bg-[#1a0b2e]"
                     />
                   </div>
 
                   {/* CARD FRONT (Back Face - Visible after flip) */}
                   <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 group" style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}>
-                    <div className="relative w-full h-full overflow-hidden rounded-xl">
+                    <div className="relative w-full h-full overflow-hidden rounded-xl border-2 border-amber-400/50 bg-[#1a0b2e]">
                       <img 
                         src={`/images/cards/${selectedCardFront}`}
                         alt="Card Reveal" 
-                        className="w-full h-full object-contain shadow-[0_0_50px_rgba(255,255,255,0.3)] border border-white/20"
+                        className="w-full h-full object-contain shadow-[0_0_50px_rgba(255,255,255,0.3)]"
                       />
                       {/* Holographic Shimmer Effect */}
                       <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/30 to-transparent -translate-x-full animate-[shimmer_2s_infinite] pointer-events-none" />
@@ -303,28 +306,29 @@ export default function ExitIntentPopup() {
 
             {/* STAGE 2: DECK SELECTION */}
             {stage === "DECK_SELECTION" && (
-              <div className="space-y-6 animate-in fade-in slide-in-from-right-4 duration-500 h-full overflow-y-auto pr-2">
-                 <div className="space-y-2 text-center md:text-left">
-                  <h2 className="text-2xl md:text-3xl font-display font-bold text-white leading-tight">
-                    Choose Your Path
+              <div className="space-y-8 animate-in fade-in slide-in-from-right-4 duration-500 h-full overflow-y-auto pr-2 flex flex-col justify-center">
+                 <div className="space-y-3 text-center md:text-left">
+                  <h2 className="text-3xl md:text-5xl font-display font-bold text-white leading-none tracking-tight">
+                    Choose Your <br/>
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff00ff] to-purple-200">Path</span>
                   </h2>
-                  <p className="text-purple-200/70 text-sm md:text-base">
-                    Select the deck that resonates with your energy right now.
+                  <p className="text-purple-200/70 text-base md:text-lg">
+                    Which energy calls to you? Select a deck below.
                   </p>
                 </div>
 
-                <div className="grid grid-cols-1 gap-3">
+                <div className="grid grid-cols-1 gap-4">
                   <TooltipProvider delayDuration={0}>
                     {(Object.keys(DECKS) as DeckType[]).map((deckKey) => (
                       <Tooltip key={deckKey}>
                         <TooltipTrigger asChild>
                           <button
                             onClick={() => handleSelectDeck(deckKey)}
-                            className="group relative flex items-center p-3 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all hover:scale-[1.02] text-left overflow-hidden w-full"
+                            className="group relative flex items-center p-4 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(255,0,255,0.2)] text-left overflow-hidden w-full animate-pulse-subtle"
                           >
                             <div className={`absolute inset-0 bg-gradient-to-r ${DECKS[deckKey].color} opacity-0 group-hover:opacity-10 transition-opacity`} />
                             
-                            <div className="relative w-24 aspect-[1.45/1] rounded-lg overflow-hidden shadow-lg mr-4 shrink-0 border border-white/10">
+                            <div className="relative w-28 aspect-[1.45/1] rounded-lg overflow-hidden shadow-lg mr-5 shrink-0 border-2 border-amber-400/50">
                                <img 
                                 src={DECKS[deckKey].back} 
                                 alt={DECKS[deckKey].name}
@@ -333,17 +337,17 @@ export default function ExitIntentPopup() {
                             </div>
                             
                             <div className="flex-1 min-w-0">
-                              <h3 className="text-lg font-bold text-white group-hover:text-[#ff00ff] transition-colors flex items-center gap-2">
+                              <h3 className="text-xl font-bold text-white group-hover:text-[#ff00ff] transition-colors flex items-center gap-2">
                                 {DECKS[deckKey].name}
-                                <Info className="w-4 h-4 text-white/30" />
+                                <ArrowRight className="w-5 h-5 text-white/30 group-hover:text-[#ff00ff] group-hover:translate-x-1 transition-all" />
                               </h3>
-                              <p className="text-xs text-purple-200/60 truncate">
+                              <p className="text-sm text-purple-200/60 truncate">
                                 {DECKS[deckKey].description}
                               </p>
                             </div>
                           </button>
                         </TooltipTrigger>
-                        <TooltipContent side="right" className="bg-[#2a1b4e] border-purple-500/30 text-white max-w-xs p-4 shadow-xl">
+                        <TooltipContent side="right" className="bg-[#2a1b4e] border-purple-500/30 text-white max-w-xs p-4 shadow-xl z-[60]">
                           <p className="font-bold text-[#ff00ff] mb-1">{DECKS[deckKey].name} Deck</p>
                           <p className="text-sm leading-relaxed">{DECKS[deckKey].specialty}</p>
                         </TooltipContent>
