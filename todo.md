@@ -1,2 +1,2 @@
-- [ ] **Correct Bio Text**
-  - [ ] Update Paula Londoño's bio to the exact provided text, removing parentheses and ensuring correct line breaks.
+- [ ] **Update Ana's Bio**
+  - [ ] Replace Ana Andreea Guidance's bio with the new English/Romanian text, ensuring correct formatting and line breaks.
