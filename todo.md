@@ -124,3 +124,8 @@
   - [x] **Mobile:** Stack layout vertically on small screens.
   - [x] **Shimmer:** Add CSS-based holographic shimmer overlay on reveal.
   - [ ] **PUSH:** Force push changes to GitHub upon completion.
+- [x] **Deck Selection Feature**
+  - [x] **UI Update:** Add a new "Choose Your Deck" stage between "Invite" and "Reveal".
+  - [x] **Deck Options:** Display 3 clickable deck options (Alchemy, Master, Release) with their back images.
+  - [x] **Logic:** Update state machine to handle `DECK_SELECTION` stage.
+  - [ ] **PUSH:** Force push changes to GitHub upon completion.

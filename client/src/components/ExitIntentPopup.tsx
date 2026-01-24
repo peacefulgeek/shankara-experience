@@ -2,13 +2,13 @@ import { useState, useEffect, useRef } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Sparkles, Mail, X, RefreshCw, Lock } from "lucide-react";
+import { Sparkles, Mail, X, RefreshCw, Lock, ArrowRight } from "lucide-react";
 import { toast } from "sonner";
 
 // Define Decks and Cards
 type DeckType = "alchemy" | "master" | "release";
 
-const DECKS: Record<DeckType, { back: string; fronts: string[] }> = {
+const DECKS: Record<DeckType, { back: string; fronts: string[]; name: string; description: string; color: string }> = {
   alchemy: {
     back: "/images/cards/alchemy-back-landscape.webp",
     fronts: [
@@ -16,7 +16,10 @@ const DECKS: Record<DeckType, { back: string; fronts: string[] }> = {
       "alchemy-environment.webp", "alchemy-say-yes.webp", "alchemy-sensible.webp",
       "alchemy-presence.webp", "alchemy-playfulness.webp", "alchemy-charisma.webp",
       "alchemy-friendship.webp"
-    ]
+    ],
+    name: "Alchemy",
+    description: "Transformation & Magic",
+    color: "from-amber-400 to-orange-500"
   },
   master: {
     back: "/images/cards/master-back-landscape.webp",
@@ -25,7 +28,10 @@ const DECKS: Record<DeckType, { back: string; fronts: string[] }> = {
       "master-comfort.webp", "master-harvest.webp", "master-fear.webp",
       "master-protect.webp", "master-replenish.webp", "master-villains.webp",
       "master-hunger.webp", "master-vetting.webp"
-    ]
+    ],
+    name: "Master",
+    description: "Wisdom & Presence",
+    color: "from-red-500 to-rose-600"
   },
   release: {
     back: "/images/cards/release-back-landscape.webp",
@@ -34,11 +40,14 @@ const DECKS: Record<DeckType, { back: string; fronts: string[] }> = {
       "release-outcome.webp", "release-shadows.webp", "release-sentiment.webp",
       "release-restrictions.webp", "release-cycles.webp", "release-micro-release.webp",
       "release-blame-shame.webp", "release-forgiveness.webp"
-    ]
+    ],
+    name: "Release",
+    description: "Freedom & Letting Go",
+    color: "from-cyan-400 to-blue-500"
   }
 };
 
-type PopupStage = "INVITE" | "DECK_SELECTED" | "CARD_REVEALED" | "LIMIT_REACHED";
+type PopupStage = "INVITE" | "DECK_SELECTION" | "DECK_SELECTED" | "CARD_REVEALED" | "LIMIT_REACHED";
 
 export default function ExitIntentPopup() {
   const [isOpen, setIsOpen] = useState(false);
@@ -53,7 +62,7 @@ export default function ExitIntentPopup() {
   
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  // Check daily limit and select deck
+  // Check daily limit
   useEffect(() => {
     if (isOpen) {
       // Check Daily Limit
@@ -74,20 +83,8 @@ export default function ExitIntentPopup() {
           return;
         }
       }
-
-      // Initialize Deck if not limited
-      if (stage === "INVITE") {
-        const deckKeys = Object.keys(DECKS) as DeckType[];
-        const randomDeckKey = deckKeys[Math.floor(Math.random() * deckKeys.length)];
-        const randomDeck = DECKS[randomDeckKey];
-        const randomFront = randomDeck.fronts[Math.floor(Math.random() * randomDeck.fronts.length)];
-        
-        setSelectedDeck(randomDeckKey);
-        setSelectedCardFront(randomFront);
-        setIsFlipped(false);
-      }
     }
-  }, [isOpen, stage]);
+  }, [isOpen]);
 
   // Exit Intent Logic
   useEffect(() => {
@@ -118,7 +115,17 @@ export default function ExitIntentPopup() {
     };
   }, [hasShown]);
 
-  const handleDrawCard = () => {
+  const handleStartDraw = () => {
+    setStage("DECK_SELECTION");
+  };
+
+  const handleSelectDeck = (deck: DeckType) => {
+    const randomDeck = DECKS[deck];
+    const randomFront = randomDeck.fronts[Math.floor(Math.random() * randomDeck.fronts.length)];
+    
+    setSelectedDeck(deck);
+    setSelectedCardFront(randomFront);
+    setIsFlipped(false);
     setStage("DECK_SELECTED");
   };
 
@@ -177,18 +184,22 @@ export default function ExitIntentPopup() {
             <div className="absolute inset-0 bg-[url('https://shankara-pull.b-cdn.net/images/stars-pattern.webp')] opacity-30 mix-blend-screen" />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 md:w-64 md:h-64 bg-purple-500/20 rounded-full blur-[60px] md:blur-[80px]" />
             
-            {/* STAGE 1 & 4: INVITE / LIMIT (Generic Symbol) */}
-            {(stage === "INVITE" || stage === "LIMIT_REACHED") && (
+            {/* STAGE 1 & 4 & 5: INVITE / SELECTION / LIMIT (Generic Symbol) */}
+            {(stage === "INVITE" || stage === "LIMIT_REACHED" || stage === "DECK_SELECTION") && (
               <div className="text-center space-y-4 md:space-y-6 animate-fade-in relative z-10">
                 <div className="w-24 h-24 md:w-32 md:h-32 bg-white/5 rounded-full flex items-center justify-center mx-auto border border-white/10 shadow-[0_0_40px_rgba(139,92,246,0.3)]">
                   <img src="/images/logo.png" alt="Shankara Symbol" className="w-16 h-16 md:w-20 md:h-20 opacity-80" />
                 </div>
                 <div className="space-y-2">
                   <h3 className="text-xl md:text-2xl font-display font-bold text-white/90">
-                    {stage === "LIMIT_REACHED" ? "Daily Guidance Limit" : "Your Shankara Oracle\nCard Guidance"}
+                    {stage === "LIMIT_REACHED" ? "Daily Guidance Limit" : 
+                     stage === "DECK_SELECTION" ? "Choose Your Path" :
+                     "Your Shankara Oracle\nCard Guidance"}
                   </h3>
                   <p className="text-xs md:text-sm text-purple-200/60 uppercase tracking-widest">
-                    {stage === "LIMIT_REACHED" ? "Return Tomorrow" : "Awaits You"}
+                    {stage === "LIMIT_REACHED" ? "Return Tomorrow" : 
+                     stage === "DECK_SELECTION" ? "Select a deck to draw from" :
+                     "Awaits You"}
                   </p>
                 </div>
               </div>
@@ -248,11 +259,56 @@ export default function ExitIntentPopup() {
                   </p>
                 </div>
                 <Button 
-                  onClick={handleDrawCard}
+                  onClick={handleStartDraw}
                   className="w-full h-12 md:h-14 text-base md:text-lg font-bold bg-[#ff00ff] hover:bg-[#d900d9] text-white shadow-[0_0_20px_rgba(255,0,255,0.3)] hover:shadow-[0_0_30px_rgba(255,0,255,0.5)] transition-all rounded-full"
                 >
                   Draw Your Card
                 </Button>
+              </div>
+            )}
+
+            {/* STAGE 2: DECK SELECTION */}
+            {stage === "DECK_SELECTION" && (
+              <div className="space-y-6 animate-in fade-in slide-in-from-right-4 duration-500 h-full overflow-y-auto pr-2">
+                 <div className="space-y-2 text-center md:text-left">
+                  <h2 className="text-2xl md:text-3xl font-display font-bold text-white leading-tight">
+                    Choose Your Path
+                  </h2>
+                  <p className="text-purple-200/70 text-sm md:text-base">
+                    Select the deck that resonates with your energy right now.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 gap-3">
+                  {(Object.keys(DECKS) as DeckType[]).map((deckKey) => (
+                    <button
+                      key={deckKey}
+                      onClick={() => handleSelectDeck(deckKey)}
+                      className="group relative flex items-center p-3 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all hover:scale-[1.02] text-left overflow-hidden"
+                    >
+                      <div className={`absolute inset-0 bg-gradient-to-r ${DECKS[deckKey].color} opacity-0 group-hover:opacity-10 transition-opacity`} />
+                      
+                      <div className="relative w-24 aspect-[1.45/1] rounded-lg overflow-hidden shadow-lg mr-4 shrink-0">
+                         <img 
+                          src={DECKS[deckKey].back} 
+                          alt={DECKS[deckKey].name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      
+                      <div className="flex-1">
+                        <h3 className="text-lg font-bold text-white group-hover:text-[#ff00ff] transition-colors">
+                          {DECKS[deckKey].name}
+                        </h3>
+                        <p className="text-xs text-purple-200/60">
+                          {DECKS[deckKey].description}
+                        </p>
+                      </div>
+                      
+                      <ArrowRight className="w-5 h-5 text-white/30 group-hover:text-white group-hover:translate-x-1 transition-all" />
+                    </button>
+                  ))}
+                </div>
               </div>
             )}
 
@@ -284,14 +340,14 @@ export default function ExitIntentPopup() {
               </div>
             )}
 
-            {/* STAGE 2: EMAIL CAPTURE (Before Flip) */}
+            {/* STAGE 3: EMAIL CAPTURE (Before Flip) */}
             {stage === "DECK_SELECTED" && (
               <div className="space-y-6 md:space-y-8 animate-in fade-in slide-in-from-right-4 duration-500">
                 <div className="space-y-3 text-center md:text-left">
                   <h2 className="text-2xl md:text-4xl font-display font-bold text-white leading-tight">
-                    Your Card Is <br className="hidden md:block" />
+                    Your <span className="text-[#ff00ff]">{DECKS[selectedDeck].name}</span> Card<br className="hidden md:block" />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff00ff] to-purple-200">
-                      Waiting...
+                      Is Waiting...
                     </span>
                   </h2>
                   <p className="text-purple-200/70 text-base md:text-lg leading-relaxed">
@@ -327,7 +383,7 @@ export default function ExitIntentPopup() {
               </div>
             )}
 
-            {/* STAGE 3: REVEALED CONTENT */}
+            {/* STAGE 5: REVEALED CONTENT */}
             {stage === "CARD_REVEALED" && (
               <div className="space-y-6 text-center animate-in fade-in zoom-in duration-500">
                 <div className="w-16 h-16 bg-[#ff00ff]/20 rounded-full flex items-center justify-center mx-auto mb-4">
