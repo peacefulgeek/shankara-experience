@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Play, Download, Star, Sparkles, Heart, ArrowRight, Hexagon, Droplets, Flame, Wind, Globe, Circle } from "lucide-react";
+import { ArrowLeft, Play, Download, Star, Sparkles, Heart, ArrowRight } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -74,37 +74,6 @@ export default function HowTo() {
                   Download Guide
                 </Button>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* SACRED ELEMENTS - REDESIGNED PREMIUM STRIP */}
-        <section className="py-24 border-y border-white/5 bg-white/5 backdrop-blur-lg">
-          <div className="container mx-auto px-4">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-4xl font-display font-bold text-white mb-6">The Sacred Elements</h2>
-              <p className="text-lg text-purple-200/60 font-light">
-                The board is a map of consciousness, divided into five elemental zones plus the cosmos. Where your stones land reveals the subtle energies shaping your reality.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-              {[
-                { icon: Hexagon, name: "Earth", desc: "Grounding, Stability, Body", color: "text-emerald-300", bg: "bg-emerald-500/10", border: "border-emerald-500/20" },
-                { icon: Droplets, name: "Water", desc: "Emotion, Flow, Intuition", color: "text-blue-300", bg: "bg-blue-500/10", border: "border-blue-500/20" },
-                { icon: Flame, name: "Fire", desc: "Action, Passion, Will", color: "text-orange-300", bg: "bg-orange-500/10", border: "border-orange-500/20" },
-                { icon: Wind, name: "Air", desc: "Intellect, Communication", color: "text-sky-300", bg: "bg-sky-500/10", border: "border-sky-500/20" },
-                { icon: Globe, name: "Ether", desc: "Space, Spirit, Potential", color: "text-purple-300", bg: "bg-purple-500/10", border: "border-purple-500/20" },
-                { icon: Circle, name: "Cosmos", desc: "Divine Order, Destiny", color: "text-pink-300", bg: "bg-pink-500/10", border: "border-pink-500/20" }
-              ].map((el, i) => (
-                <div key={i} className={`group relative p-6 rounded-2xl ${el.bg} ${el.border} border hover:-translate-y-2 transition-transform duration-300`}>
-                  <div className={`w-12 h-12 rounded-full ${el.bg} flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300`}>
-                    <el.icon className={`w-6 h-6 ${el.color}`} />
-                  </div>
-                  <h3 className="text-xl font-bold text-white text-center mb-2">{el.name}</h3>
-                  <p className={`text-xs text-center font-medium opacity-70 ${el.color}`}>{el.desc}</p>
-                </div>
-              ))}
             </div>
           </div>
         </section>
