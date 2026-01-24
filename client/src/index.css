@@ -96,3 +96,11 @@
 .font-sans {
   font-family: 'Inter', sans-serif;
 }
+
+@layer utilities {
+  @keyframes shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+}

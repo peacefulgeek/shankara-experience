@@ -118,3 +118,9 @@
     - [x] **Stage 2:** Show Landscape Card Back (after "Draw" click).
     - [x] **Stage 3:** Flip to Landscape Card Front (after "Flip" click).
     - [x] Update CSS to support landscape aspect ratio (approx 4:3 or 3:2).
+- [ ] **Popup Enhancements**
+  - [x] **Daily Limit:** Implement 24h lockout using `localStorage`.
+  - [x] **Sounds:** Source and implement 3 distinct sounds (Alchemy, Master, Release).
+  - [x] **Mobile:** Stack layout vertically on small screens.
+  - [x] **Shimmer:** Add CSS-based holographic shimmer overlay on reveal.
+  - [ ] **PUSH:** Force push changes to GitHub upon completion.
