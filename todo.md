@@ -91,3 +91,12 @@
     - [x] Add "Share Guidance" button to the revealed state.
     - [x] Implement `navigator.share` API for mobile native sharing.
     - [x] Add fallback (copy link/text) for desktop.
+- [ ] **Stone Guidance Refinement**
+  - [x] **Interaction Logic**
+    - [x] Refactor state to 3 stages: `IDLE` -> `STONE_REVEALED` -> `MESSAGE_REVEALED`.
+    - [x] **Stage 1 (IDLE):** Purple placeholder with "CLICK TO REVEAL YOUR SECRET STONE".
+    - [x] **Stage 2 (STONE):** Flash animation -> Show Stone Image -> "CLICK TO REVEAL YOUR STONE'S MESSAGE".
+    - [x] **Stage 3 (MESSAGE):** Flash animation -> Show Guidance Text.
+  - [x] **Marketing Features**
+    - [x] Add Email Capture form ("Save your daily reading") in Stage 3.
+    - [x] Add "Buy Shankara Oracle" upsell card with lavish button in Stage 3.

@@ -1,39 +1,74 @@
 import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { Sparkles, RefreshCw, Share2 } from "lucide-react";
+import { Sparkles, RefreshCw, Share2, ArrowRight, Mail } from "lucide-react";
 import stonesData from "@/lib/stones-data.json";
 import { toast } from "sonner";
+import { Input } from "@/components/ui/input";
+import { Link } from "wouter";
+
+type RevealStage = "IDLE" | "STONE_REVEALED" | "MESSAGE_REVEALED";
 
 export default function StoneGuidance() {
-  const [isRevealed, setIsRevealed] = useState(false);
+  const [stage, setStage] = useState<RevealStage>("IDLE");
   const [currentStone, setCurrentStone] = useState(stonesData[0]);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   
   // Audio ref for the chime sound
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  const drawStone = () => {
-    setIsAnimating(true);
-    setIsRevealed(false);
-    
-    // Small delay to allow the card to flip back if it was revealed
-    setTimeout(() => {
-      const randomIndex = Math.floor(Math.random() * stonesData.length);
-      setCurrentStone(stonesData[randomIndex]);
-      setIsAnimating(false);
-    }, 300);
+  const playSound = () => {
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0;
+      audioRef.current.play().catch(e => console.log("Audio play failed:", e));
+    }
   };
 
-  const handleReveal = () => {
-    if (!isRevealed) {
-      setIsRevealed(true);
+  const handleInitialClick = () => {
+    if (stage === "IDLE") {
+      setIsAnimating(true);
+      playSound();
       
-      // Play sound effect
-      if (audioRef.current) {
-        audioRef.current.currentTime = 0;
-        audioRef.current.play().catch(e => console.log("Audio play failed:", e));
-      }
+      // Randomly select stone
+      const randomIndex = Math.floor(Math.random() * stonesData.length);
+      setCurrentStone(stonesData[randomIndex]);
+      
+      setTimeout(() => {
+        setStage("STONE_REVEALED");
+        setIsAnimating(false);
+      }, 800); // Animation duration
     }
+  };
+
+  const handleStoneClick = () => {
+    if (stage === "STONE_REVEALED") {
+      setIsAnimating(true);
+      playSound();
+      
+      setTimeout(() => {
+        setStage("MESSAGE_REVEALED");
+        setIsAnimating(false);
+      }, 600);
+    }
+  };
+
+  const handleReset = () => {
+    setStage("IDLE");
+    setIsAnimating(false);
+  };
+
+  const handleEmailSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+    
+    setIsSubmitting(true);
+    // Simulate API call
+    setTimeout(() => {
+      setIsSubmitting(false);
+      toast.success("Reading saved! Check your inbox.");
+      setEmail("");
+    }, 1000);
   };
 
   const handleShare = async () => {
@@ -51,7 +86,6 @@ export default function StoneGuidance() {
         console.log("Error sharing:", err);
       }
     } else {
-      // Fallback to clipboard
       try {
         await navigator.clipboard.writeText(`${shareData.title}\n\n${shareData.text}\n\n${shareData.url}`);
         toast.success("Copied to clipboard!");
@@ -83,99 +117,158 @@ export default function StoneGuidance() {
             </span>
           </h2>
           <p className="text-xl text-purple-200/60 leading-relaxed">
-            Focus on a question or situation in your life. When you are ready, click the stone to reveal its message for you.
+            Focus on a question or situation in your life. When you are ready, click below to reveal your secret stone.
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-20">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-20">
             
-            {/* Stone Display Container */}
-            <div className="relative group perspective-1000 w-full max-w-md mx-auto md:mx-0">
-              <div 
-                onClick={handleReveal}
-                className={`relative w-full aspect-square cursor-pointer transition-all duration-700 transform-style-3d ${isRevealed ? "rotate-y-180" : ""} ${isAnimating ? "scale-95 opacity-50" : "scale-100 opacity-100"}`}
-              >
-                
-                {/* FRONT: Stone Image */}
-                <div className="absolute inset-0 backface-hidden">
-                  <div className="relative w-full h-full bg-white/5 backdrop-blur-md rounded-[2rem] border border-white/10 flex items-center justify-center p-12 shadow-[0_0_50px_rgba(139,92,246,0.15)] group-hover:shadow-[0_0_80px_rgba(139,92,246,0.3)] transition-all duration-500">
+            {/* INTERACTIVE REVEAL CONTAINER */}
+            <div className="relative group perspective-1000 w-full max-w-md mx-auto lg:mx-0">
+              
+              {/* STAGE 1: IDLE (Purple Void) */}
+              {stage === "IDLE" && (
+                <div 
+                  onClick={handleInitialClick}
+                  className={`relative w-full aspect-square cursor-pointer transition-all duration-700 ${isAnimating ? "scale-95 opacity-50" : "scale-100 opacity-100 hover:scale-105"}`}
+                >
+                  <div className="relative w-full h-full bg-gradient-to-br from-purple-900 to-cosmic-dark rounded-[2rem] border border-white/10 flex items-center justify-center p-12 shadow-[0_0_50px_rgba(139,92,246,0.15)] overflow-hidden">
+                    <div className="absolute inset-0 bg-[url('https://shankara-pull.b-cdn.net/images/stars-pattern.webp')] opacity-30 mix-blend-screen animate-pulse" />
+                    <div className="relative z-10 text-center space-y-4">
+                      <Sparkles className="w-12 h-12 text-accent mx-auto animate-spin-slow" />
+                      <span className="block text-white/80 text-sm uppercase tracking-[0.3em] font-bold">Click To Reveal<br/>Your Secret Stone</span>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* STAGE 2: STONE REVEALED (Image Only) */}
+              {stage === "STONE_REVEALED" && (
+                <div 
+                  onClick={handleStoneClick}
+                  className={`relative w-full aspect-square cursor-pointer transition-all duration-700 ${isAnimating ? "scale-95 opacity-0 blur-md" : "scale-100 opacity-100 blur-0 hover:scale-105"}`}
+                >
+                  <div className="relative w-full h-full bg-white/5 backdrop-blur-md rounded-[2rem] border border-white/10 flex items-center justify-center p-12 shadow-[0_0_50px_rgba(139,92,246,0.25)]">
                     {/* Glowing orb behind stone */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-accent/20 rounded-full blur-[60px] animate-pulse" />
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-accent/20 rounded-full blur-[80px] animate-pulse" />
                     
                     <img 
                       src={currentStone.image} 
                       alt={currentStone.name}
-                      className="relative z-10 w-full h-full object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)] transform group-hover:scale-105 transition-transform duration-700"
+                      className="relative z-10 w-full h-full object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)] animate-float"
                     />
                     
-                    <div className="absolute bottom-8 left-0 right-0 text-center">
-                      <span className="text-white/40 text-sm uppercase tracking-[0.3em] font-medium">Click to Reveal</span>
+                    <div className="absolute bottom-8 left-0 right-0 text-center z-20">
+                      <span className="text-white/60 text-sm uppercase tracking-[0.2em] font-bold bg-black/30 px-4 py-2 rounded-full backdrop-blur-sm border border-white/10">Click to Reveal Message</span>
                     </div>
                   </div>
                 </div>
+              )}
 
-                {/* BACK: Guidance Text */}
-                <div className="absolute inset-0 backface-hidden rotate-y-180">
-                  <div className="w-full h-full bg-gradient-to-br from-purple-900/90 to-cosmic-dark/90 backdrop-blur-xl rounded-[2rem] border border-accent/30 flex flex-col items-center justify-center p-8 md:p-12 text-center shadow-[0_0_50px_rgba(255,20,147,0.2)]">
-                    <Sparkles className="w-8 h-8 text-accent mb-6 animate-pulse" />
+              {/* STAGE 3: MESSAGE REVEALED (Text + Guidance) */}
+              {stage === "MESSAGE_REVEALED" && (
+                <div className={`relative w-full aspect-square transition-all duration-700 ${isAnimating ? "opacity-0 scale-95" : "opacity-100 scale-100"}`}>
+                  <div className="w-full h-full bg-gradient-to-br from-purple-900/95 to-cosmic-dark/95 backdrop-blur-xl rounded-[2rem] border border-accent/30 flex flex-col items-center justify-center p-8 text-center shadow-[0_0_60px_rgba(255,20,147,0.25)] overflow-y-auto custom-scrollbar">
                     
-                    <h3 className="text-3xl font-display font-bold text-white mb-2">
+                    <h3 className="text-3xl font-display font-bold text-white mb-1 mt-2">
                       {currentStone.name}
                     </h3>
-                    <div className="text-accent font-medium uppercase tracking-widest text-sm mb-6">
+                    <div className="text-accent font-medium uppercase tracking-widest text-xs mb-6">
                       {currentStone.title}
                     </div>
                     
-                    <p className="text-lg md:text-xl text-purple-100 leading-relaxed font-light italic mb-6">
+                    <p className="text-lg text-purple-100 leading-relaxed font-light italic mb-8 px-2">
                       "{currentStone.desc}"
                     </p>
 
-                    {/* Share Button (Only visible on back) */}
-                    <Button 
-                      onClick={(e) => {
-                        e.stopPropagation(); // Prevent flipping back when clicking share
-                        handleShare();
-                      }}
-                      variant="ghost" 
-                      size="sm"
-                      className="text-purple-300 hover:text-white hover:bg-white/10 rounded-full px-4"
-                    >
-                      <Share2 className="w-4 h-4 mr-2" />
-                      Share Guidance
-                    </Button>
+                    <div className="flex gap-3 w-full justify-center">
+                      <Button 
+                        onClick={handleShare}
+                        variant="ghost" 
+                        size="sm"
+                        className="text-purple-300 hover:text-white hover:bg-white/10 rounded-full"
+                      >
+                        <Share2 className="w-4 h-4 mr-2" />
+                        Share
+                      </Button>
+                      <Button 
+                        onClick={handleReset}
+                        variant="ghost" 
+                        size="sm"
+                        className="text-purple-300 hover:text-white hover:bg-white/10 rounded-full"
+                      >
+                        <RefreshCw className="w-4 h-4 mr-2" />
+                        New Draw
+                      </Button>
+                    </div>
                   </div>
+                </div>
+              )}
+            </div>
+
+            {/* MARKETING & UPSELL SECTION (Visible only in Stage 3) */}
+            {stage === "MESSAGE_REVEALED" ? (
+              <div className="flex flex-col gap-6 w-full max-w-md animate-fade-in-up">
+                
+                {/* Email Capture */}
+                <div className="bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10">
+                  <h4 className="text-white font-bold mb-2 flex items-center gap-2">
+                    <Mail className="w-4 h-4 text-accent" /> Save Your Reading
+                  </h4>
+                  <p className="text-sm text-purple-200/60 mb-4">
+                    Enter your email to receive this guidance and a weekly digest of oracle wisdom.
+                  </p>
+                  <form onSubmit={handleEmailSubmit} className="flex gap-2">
+                    <Input 
+                      type="email" 
+                      placeholder="your@email.com" 
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="bg-black/20 border-white/10 text-white placeholder:text-white/30"
+                      required
+                    />
+                    <Button type="submit" disabled={isSubmitting} className="bg-accent hover:bg-accent/90 text-white font-bold">
+                      {isSubmitting ? "Saving..." : "Save"}
+                    </Button>
+                  </form>
+                </div>
+
+                {/* Product Upsell */}
+                <div className="bg-gradient-to-br from-accent/20 to-purple-900/40 backdrop-blur-md rounded-2xl p-8 border border-accent/30 text-center relative overflow-hidden group">
+                  <div className="absolute inset-0 bg-accent/5 group-hover:bg-accent/10 transition-colors" />
+                  
+                  <h3 className="text-2xl font-display font-bold text-white mb-2 relative z-10">
+                    The Shankara Oracle
+                  </h3>
+                  <p className="text-purple-100/80 mb-6 relative z-10">
+                    Unlock the full power of the 18 Obsidian Stones and Sacred Geometry board.
+                  </p>
+                  
+                  <Link href="/shop/oracle-deck">
+                    <Button size="lg" className="w-full bg-white text-purple-900 hover:bg-gray-100 font-bold text-lg h-14 rounded-full shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-all relative z-10">
+                      Get The Oracle <ArrowRight className="ml-2 w-5 h-5" />
+                    </Button>
+                  </Link>
                 </div>
 
               </div>
-            </div>
-
-            {/* Controls / Instructions (Desktop: Right side, Mobile: Bottom) */}
-            <div className="flex flex-col items-center md:items-start gap-8 text-center md:text-left max-w-sm">
-              <div className="space-y-4">
-                <h3 className="text-2xl font-bold text-white">
-                  {isRevealed ? "Your Guidance" : "Ask the Oracle"}
-                </h3>
-                <p className="text-purple-200/70 leading-relaxed">
-                  {isRevealed 
-                    ? "Reflect on this message. How does it apply to your current situation? The stones speak the language of the earth and the soul."
-                    : "Take a deep breath. Center yourself. Hold your question in your mind, then interact with the stone to receive your answer."
-                  }
-                </p>
+            ) : (
+              // Instructions (Visible in Stage 1 & 2)
+              <div className="flex flex-col items-center lg:items-start gap-8 text-center lg:text-left max-w-sm animate-fade-in">
+                <div className="space-y-4">
+                  <h3 className="text-2xl font-bold text-white">
+                    {stage === "IDLE" ? "Ask the Oracle" : "Your Stone Awaits"}
+                  </h3>
+                  <p className="text-purple-200/70 leading-relaxed">
+                    {stage === "IDLE" 
+                      ? "Take a deep breath. Center yourself. Hold your question in your mind, then click the void to summon your stone."
+                      : "The universe has selected a stone for you. Observe its form. When you are ready to receive its wisdom, click to reveal the message."
+                    }
+                  </p>
+                </div>
               </div>
-
-              <div className="flex flex-col gap-4 w-full sm:w-auto">
-                <Button 
-                  onClick={drawStone}
-                  size="lg" 
-                  variant="outline"
-                  className="border-accent text-accent hover:bg-accent hover:text-white h-14 px-8 rounded-full text-lg font-bold transition-all shadow-[0_0_20px_rgba(255,20,147,0.1)] hover:shadow-[0_0_30px_rgba(255,20,147,0.4)]"
-                >
-                  <RefreshCw className={`w-5 h-5 mr-3 ${isAnimating ? "animate-spin" : ""}`} />
-                  Draw Another Stone
-                </Button>
-              </div>
-            </div>
+            )}
 
           </div>
         </div>
