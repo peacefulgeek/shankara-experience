@@ -25,7 +25,7 @@ export default function Navigation() {
     { href: "/certification", label: "Certification" },
     { href: "/readers", label: "Readers" },
     { href: "/videos", label: "Videos" },
-    { href: "/blog", label: "Blog" },
+    { href: "/wisdom", label: "Wisdom" },
     { href: "/testimonials", label: "Stories" },
     { href: "/shop", label: "Shop" },
   ];

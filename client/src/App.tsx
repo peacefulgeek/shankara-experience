@@ -39,7 +39,7 @@ function App() {
         <Route path="/returns" component={Returns} />
         <Route path="/faq" component={FAQ} />
         <Route path="/videos" component={Videos} />
-        <Route path="/blog" component={Blog} />
+        <Route path="/wisdom" component={Blog} />
         <Route path="/affiliates" component={Affiliates} />
         <Route path="/testimonials" component={Testimonials} />
         <Route>404 Page Not Found</Route>
