@@ -46,13 +46,70 @@ export default function How() {
           </div>
         </section>
 
-        {/* SETUP & PROCESS (User's First Block) */}
-        <section className="py-24 bg-[#1a0b2e] relative border-t border-white/5">
+        {/* IMAGE GALLERY STRIP */}
+        <section className="py-12 bg-[#1a0b2e]/50 overflow-hidden">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="aspect-[4/5] rounded-2xl overflow-hidden relative group">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
+                <img 
+                  src="/images/how-community-1.png" 
+                  alt="Friends sharing a Shankara moment" 
+                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                />
+              </div>
+              <div className="aspect-[4/5] rounded-2xl overflow-hidden relative group translate-y-8 md:translate-y-12">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
+                <img 
+                  src="/images/how-community-3.jpg" 
+                  alt="Deep connection over the board" 
+                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                />
+              </div>
+              <div className="aspect-[4/5] rounded-2xl overflow-hidden relative group">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
+                <img 
+                  src="/images/how-rachel.jpg" 
+                  alt="Joyful discovery with Shankara" 
+                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                />
+              </div>
+              <div className="aspect-[4/5] rounded-2xl overflow-hidden relative group translate-y-8 md:translate-y-12">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
+                <img 
+                  src="/images/how-musa-1.jpg" 
+                  alt="Intimate moment with the Oracle" 
+                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SETUP & PROCESS */}
+        <section className="py-32 bg-[#1a0b2e] relative border-t border-white/5">
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-16 items-start">
               
-              {/* Left Column: Video & Setup */}
+              {/* Left Column: Layout Image & Video */}
               <div className="space-y-12">
+                {/* Featured Layout Image */}
+                <div className="rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(168,85,247,0.15)] border border-white/10 group relative">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-accent/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
+                  <img 
+                    src="/images/how-layout.jpg" 
+                    alt="The Shankara Oracle Board Layout" 
+                    className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute bottom-4 left-4 right-4 z-20">
+                    <div className="bg-black/60 backdrop-blur-md rounded-xl p-4 border border-white/10">
+                      <p className="text-white/90 text-sm font-medium text-center">
+                        "The board is a temple. Enter with reverence."
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
                 <div className="aspect-video bg-black/40 rounded-2xl border border-white/10 flex items-center justify-center relative overflow-hidden group cursor-pointer shadow-[0_0_40px_rgba(168,85,247,0.2)]">
                   <div className="absolute inset-0 bg-accent/10 group-hover:bg-accent/20 transition-colors" />
                   <Play className="w-16 h-16 text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]" />

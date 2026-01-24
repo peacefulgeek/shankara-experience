@@ -5,3 +5,9 @@
   - [ ] Re-implement "lovely card headers with various colors" design pattern.
   - [ ] Add a prominent button/section linking to "The Ancients" page.
   - [ ] Ensure the page has the premium, mystical aesthetic requested.
+- [ ] **Integrate Images into How Page**
+  - [ ] Move uploaded images to `client/public/images/` and rename for consistency.
+  - [ ] Create a "Community Gallery" section to display the 3-4 images of people playing (series layout).
+  - [ ] Replace or enhance the "Setup" section with the detailed board layout image (`Shankaralayoutnice.jpg`).
+  - [ ] Add a featured image (e.g., `RachelShankara.jpg` or `Musashankara1.jpeg`) to the "Guidance" section.
+  - [ ] Ensure all images are responsive and fit their containers beautifully with rounded corners and shadows.
