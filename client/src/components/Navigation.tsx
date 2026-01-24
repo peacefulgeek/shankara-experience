@@ -35,7 +35,7 @@ export default function Navigation() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out py-6",
         scrolled 
-          ? "bg-white/80 backdrop-blur-xl shadow-sm py-4 border-b border-purple-100" 
+          ? "bg-[#1a0b2e]/90 backdrop-blur-xl shadow-lg py-4 border-b border-purple-500/30" 
           : "bg-transparent"
       )}
     >
@@ -57,11 +57,14 @@ export default function Navigation() {
               }}
             />
             {/* Fallback Text Logo */}
-            <span className="hidden md:block font-display font-bold text-2xl tracking-wider text-purple-900 group-hover:text-accent transition-colors">
+            <span className={cn(
+              "hidden md:block font-display font-bold text-2xl tracking-wider transition-colors",
+              scrolled ? "text-white" : "text-purple-300 group-hover:text-white"
+            )}>
               SHANKARA
             </span>
             {/* Mobile Logo Text */}
-            <span className="md:hidden font-display font-bold text-xl tracking-wider text-purple-900">
+            <span className="md:hidden font-display font-bold text-xl tracking-wider text-white">
               SHANKARA
             </span>
           </div>
@@ -73,23 +76,26 @@ export default function Navigation() {
             <Link key={link.href} href={link.href}>
               <span 
                 className={cn(
-                  "text-[10px] font-bold tracking-[0.15em] uppercase hover:text-purple-600 transition-all duration-300 cursor-pointer relative group",
-                  scrolled ? "text-purple-900" : "text-purple-900",
-                  location === link.href && "text-purple-600"
+                  "text-[12px] font-bold tracking-[0.15em] uppercase hover:text-accent transition-all duration-300 cursor-pointer relative group",
+                  scrolled ? "text-white/80" : "text-white/80",
+                  location === link.href ? "text-[#ff00ff] drop-shadow-[0_0_8px_rgba(255,0,255,0.8)]" : ""
                 )}
               >
                 {link.label}
-                <span className="absolute -bottom-2 left-0 w-0 h-[2px] bg-purple-600 transition-all duration-300 group-hover:w-full" />
+                <span className={cn(
+                  "absolute -bottom-2 left-0 w-0 h-[2px] transition-all duration-300 group-hover:w-full",
+                  location === link.href ? "w-full bg-[#ff00ff]" : "bg-accent"
+                )} />
               </span>
             </Link>
           ))}
           <Link href="/shop">
             <Button 
               className={cn(
-                "rounded-full px-6 py-5 transition-all shadow-md hover:shadow-lg text-sm font-bold border border-purple-100",
+                "rounded-full px-6 py-5 transition-all shadow-md hover:shadow-lg text-sm font-bold border border-white/20",
                 scrolled 
-                  ? "bg-purple-900 text-white hover:bg-purple-800" 
-                  : "bg-white/50 backdrop-blur-md text-purple-900 hover:bg-white/80"
+                  ? "bg-white/10 backdrop-blur-md text-white hover:bg-white/20 hover:border-accent" 
+                  : "bg-white/10 backdrop-blur-md text-white hover:bg-white/20 hover:border-accent"
               )}
             >
               Buy Oracle
@@ -101,7 +107,7 @@ export default function Navigation() {
         <div className="xl:hidden">
           <button 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="text-purple-900 p-2 hover:text-purple-600 transition-colors"
+            className="text-white p-2 hover:text-accent transition-colors"
           >
             {mobileMenuOpen ? <X size={32} /> : <Menu size={32} />}
           </button>
@@ -110,19 +116,22 @@ export default function Navigation() {
 
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 top-[80px] bg-white/95 backdrop-blur-xl z-40 xl:hidden flex flex-col items-center justify-center gap-8 p-8 animate-in slide-in-from-top-10 fade-in duration-300 border-t border-purple-100 overflow-y-auto">
+        <div className="fixed inset-0 top-[80px] bg-[#1a0b2e]/95 backdrop-blur-xl z-40 xl:hidden flex flex-col items-center justify-center gap-8 p-8 animate-in slide-in-from-top-10 fade-in duration-300 border-t border-purple-500/30 overflow-y-auto">
           {navLinks.map((link) => (
             <Link key={link.href} href={link.href}>
               <span 
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-2xl font-light text-purple-900 hover:text-purple-600 hover:scale-110 transition-all duration-300 cursor-pointer"
+                className={cn(
+                  "text-2xl font-light hover:scale-110 transition-all duration-300 cursor-pointer",
+                  location === link.href ? "text-[#ff00ff] drop-shadow-[0_0_10px_rgba(255,0,255,0.6)]" : "text-white hover:text-accent"
+                )}
               >
                 {link.label}
               </span>
             </Link>
           ))}
           <Link href="/shop">
-            <Button className="w-full max-w-xs bg-purple-900 text-white rounded-full py-6 text-lg mt-4 shadow-lg">
+            <Button className="w-full max-w-xs bg-accent text-white rounded-full py-6 text-lg mt-4 shadow-lg hover:bg-accent/80">
               Buy Oracle
             </Button>
           </Link>

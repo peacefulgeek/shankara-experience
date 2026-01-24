@@ -3,3 +3,10 @@
     - [x] **Theme Restoration**: Update `index.css` to bring back deep purples (`#1a0b2e`) and neon pinks (`#ff00ff`) while keeping white sections for clarity.
     - [x] **Home Page Fix**: Remove boxy containers in `Home.tsx`, use full-width sections with balanced backgrounds.
     - [x] **Unboxing Page Polish**: Ensure `Unboxing.tsx` follows the new balanced theme.
+- [ ] **User Feedback Updates (Jan 24)**
+    - [ ] **Header Image**: Replace hero image with `170323-Andreea-Plesea-027-1-scaled.webp`
+    - [ ] **Navigation**:
+        - [ ] Increase text size by 2pts
+        - [ ] Default color: White
+        - [ ] Active color: Neon Pink
+    - [ ] **System Section**: Place `170323-Andreea-Plesea-016-scaled.webp` to the left of "More than a deck" text

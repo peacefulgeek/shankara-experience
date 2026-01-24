@@ -58,16 +58,16 @@ export default function Home() {
               </div>
             </div>
 
-            {/* HERO IMAGE - CLEAN ORACLE BOARD ASSET (No Screenshot) */}
+            {/* HERO IMAGE - UPDATED WITH USER PROVIDED ASSET */}
             <div className="relative perspective-1000 flex justify-center lg:justify-end">
               <div className="relative w-full max-w-xl aspect-square">
                 {/* Rotating glow behind board */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-purple-600/30 to-accent/30 rounded-full blur-[80px] animate-pulse" />
                 
                 <img 
-                  src="/images/oracle-board-clean.png" 
-                  alt="The Shankara Oracle Board" 
-                  className="relative z-10 w-full h-full object-contain drop-shadow-[0_20px_60px_rgba(0,0,0,0.5)] transform hover:scale-[1.02] transition-transform duration-1000"
+                  src="/images/hero-board-detail.webp" 
+                  alt="The Shankara Oracle Board Detail" 
+                  className="relative z-10 w-full h-full object-contain drop-shadow-[0_20px_60px_rgba(0,0,0,0.5)] transform hover:scale-[1.02] transition-transform duration-1000 rounded-3xl"
                 />
                 
                 {/* Floating Elements Animation */}
@@ -123,9 +123,9 @@ export default function Home() {
               <div className="w-full md:w-1/2 relative">
                 <div className="absolute inset-0 bg-accent/20 blur-[60px] rounded-full animate-pulse" />
                 <img 
-                  src="/images/shakti-cube-clean.png" 
-                  alt="Shakti Cube" 
-                  className="relative z-10 w-full max-w-lg mx-auto drop-shadow-[0_0_50px_rgba(255,255,255,0.2)] animate-float"
+                  src="/images/full-system.webp" 
+                  alt="Shankara Oracle Full System" 
+                  className="relative z-10 w-full max-w-lg mx-auto drop-shadow-[0_0_50px_rgba(255,255,255,0.2)] animate-float rounded-2xl"
                 />
               </div>
               
