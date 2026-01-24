@@ -11,3 +11,7 @@
   - [ ] Replace or enhance the "Setup" section with the detailed board layout image (`Shankaralayoutnice.jpg`).
   - [ ] Add a featured image (e.g., `RachelShankara.jpg` or `Musashankara1.jpeg`) to the "Guidance" section.
   - [ ] Ensure all images are responsive and fit their containers beautifully with rounded corners and shadows.
+- [ ] **Deploy Updates**
+  - [ ] Stage all changes (Readers.tsx, How.tsx, new images).
+  - [ ] Commit with a descriptive message.
+  - [ ] Push to `main` branch on GitHub.
