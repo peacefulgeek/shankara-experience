@@ -17,3 +17,10 @@
         - [ ] Create "Digital Card Draw" offer design
         - [ ] Add email capture form
         - [ ] Use local storage to prevent showing too frequently
+- [ ] **Fix Critical Regressions**
+    - [ ] **How To Page**: Fix broken element images (restore or replace with available assets)
+    - [ ] **Article Page**: Fix "crammed" layout and broken author image
+        - [ ] Update Paul Wagner image source
+        - [ ] Widen content container
+        - [ ] Improve spacing to match "PDF template" style
+    - [ ] **Home Page**: Review and update Hero/Header image based on feedback

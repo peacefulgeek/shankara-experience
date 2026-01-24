@@ -20,7 +20,7 @@ export default function HowToShankara() {
         {/* HERO SECTION - LIGHTER PURPLE BACKGROUND (Matches Readers/Videos) */}
         <section className="pt-32 pb-24 relative overflow-hidden min-h-[90vh] flex items-center bg-[#2a1b3d]">
           {/* Background Elements */}
-          <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/sacred-geometry-bg.png')] opacity-10 mix-blend-overlay" />
+          <div className="absolute top-0 left-0 w-full h-full bg-purple-900/10 mix-blend-overlay" />
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-purple-500/10 rounded-full blur-[120px] pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[100px] pointer-events-none" />
 
@@ -62,7 +62,7 @@ export default function HowToShankara() {
                       <div className="rounded-[22px] overflow-hidden bg-[#1a0b2e] relative">
                         <div className="absolute inset-0 bg-gradient-to-tr from-purple-900/20 to-transparent mix-blend-overlay z-10" />
                         <img 
-                          src="/images/170323-Andreea-Plesea-041-scaled.webp" 
+                          src="/images/reading-preparation.jpg" 
                           alt="Shankara Board Detail" 
                           className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-1000"
                         />
@@ -91,18 +91,18 @@ export default function HowToShankara() {
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
               {[
-                { name: "Earth", img: "/images/element-earth.png", desc: "Grounding, Stability, Body" },
-                { name: "Water", img: "/images/element-water.png", desc: "Emotion, Flow, Intuition" },
-                { name: "Fire", img: "/images/element-fire.png", desc: "Action, Passion, Will" },
-                { name: "Air", img: "/images/element-air.png", desc: "Intellect, Communication" },
-                { name: "Ether", img: "/images/element-ether.png", desc: "Space, Spirit, Potential" },
-                { name: "Cosmos", img: "/images/element-cosmos.png", desc: "Divine Order, Destiny" }
+                { name: "Earth", desc: "Grounding, Stability, Body" },
+                { name: "Water", desc: "Emotion, Flow, Intuition" },
+                { name: "Fire", desc: "Action, Passion, Will" },
+                { name: "Air", desc: "Intellect, Communication" },
+                { name: "Ether", desc: "Space, Spirit, Potential" },
+                { name: "Cosmos", desc: "Divine Order, Destiny" }
               ].map((el, i) => (
                 <div key={i} className="flex flex-col items-center group">
-                  {/* Circular Ancient Icon Frame */}
+                  {/* Circular Ancient Icon Frame - Using text/icon fallback until images restored */}
                   <div className="w-32 h-32 rounded-full border border-purple-500/30 bg-purple-900/20 flex items-center justify-center mb-6 relative overflow-hidden group-hover:border-accent/50 group-hover:shadow-[0_0_30px_rgba(255,0,255,0.2)] transition-all duration-500">
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent to-purple-900/50 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <img src={el.img} alt={el.name} className="w-20 h-20 object-contain relative z-10 transform group-hover:scale-110 transition-transform duration-500" />
+                    <Sparkles className="w-12 h-12 text-accent/50 group-hover:text-accent transition-colors" />
                   </div>
                   
                   <h3 className="text-xl font-display font-bold text-white mb-2 tracking-wide">{el.name}</h3>
@@ -153,7 +153,7 @@ export default function HowToShankara() {
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl transform hover:scale-[1.01] transition-transform duration-700 group">
                   <div className="absolute inset-0 bg-gradient-to-t from-[#2a1b3d] via-transparent to-transparent opacity-50 z-10" />
                   <img 
-                    src="/images/ShankaraPujaMay23-2023.jpg" 
+                    src="/images/puja-board.jpg" 
                     alt="Shankara Puja Ritual" 
                     className="w-full h-auto object-cover"
                   />
