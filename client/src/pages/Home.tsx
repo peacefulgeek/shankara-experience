@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Play, Sparkles, ArrowRight } from "lucide-react";
+import DailyCardDraw from "@/components/DailyCardDraw";
+import MysticalBackground from "@/components/MysticalBackground";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -20,6 +22,7 @@ export default function Home() {
         {/* HERO SECTION - DARK COSMIC (YIN) */}
         <section className="bg-cosmic-dark pt-32 pb-24 relative overflow-hidden min-h-screen flex items-center">
           {/* Neon Glow Effects */}
+          <MysticalBackground />
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-purple-900/30 rounded-full blur-[120px] pointer-events-none z-0" />
           <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[100px] pointer-events-none z-0" />
           
@@ -77,6 +80,9 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* DAILY CARD DRAW */}
+        <DailyCardDraw />
 
         {/* FEATURES - LIGHT & CLEAN (YANG) */}
         <section className="py-32 bg-white relative">

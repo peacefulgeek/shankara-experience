@@ -1,14 +1,21 @@
 - [ ] **User Feedback Updates (Jan 24 - Part 3)**
     - [ ] **Global Styling**:
-        - [ ] **Logo**: Make "Shankara" text 2x larger and Neon Pink (`#ff00ff`).
+        - [x] **Logo**: Make "Shankara" text 2x larger and Neon Pink (`#ff00ff`).
     - [ ] **Unboxing Page**:
-        - [ ] **4 Sacred Decks**: Add 4-square image grid (using new deck uploads) to the *left* of the text.
-        - [ ] **18 Obsidian Stones**: Place stones image (`170323-Andreea-Plesea-176-scaled.webp`) to the *right* of the text.
-        - [ ] **Oracle Board**: Place board image (`170323-Andreea-Plesea-041-scaled.webp`) to the *left* of the text (replacing broken image).
+        - [x] **4 Sacred Decks**: Add 4-square image grid (using new deck uploads) to the *left* of the text.
+        - [x] **18 Obsidian Stones**: Place stones image (`170323-Andreea-Plesea-176-scaled.webp`) to the *right* of the text.
+        - [x] **Oracle Board**: Place board image (`170323-Andreea-Plesea-041-scaled.webp`) to the *left* of the text (replacing broken image).
     - [ ] **Training Page**:
-        - [ ] **Header/Bio**: Lighten background (mysterious, not dark). Use purple background from Readers/Videos pages.
-        - [ ] **What You Will Master**: Clean up to match "Ancient Mystical" style (circular images, centered text, no gray).
+        - [x] **Header/Bio**: Lighten background (mysterious, not dark). Use purple background from Readers/Videos pages.
+        - [x] **What You Will Master**: Clean up to match "Ancient Mystical" style (circular images, centered text, no gray).
     - [ ] **Certification Page**:
-        - [ ] Apply same updates as Training page (Lighten header, "Ancient Mystical" features, background fix).
+        - [x] **Updates**: Apply same updates as Training page (Lighten header, "Ancient Mystical" features, background fix).
     - [ ] **Shop Page**:
-        - [ ] Update Price: **$167** (Sale: **$99**).
+        - [x] **Price**: Update to **$167** (Sale: **$99**).
+
+- [ ] **Interactive Features (New Request)**
+    - [ ] **Daily Card Draw**: Implement interactive "Draw a Card" feature on Home page.
+    - [ ] **Motion Backgrounds**: Add mystical particles/fog animations to hero sections.
+    - [ ] **Social Proof**: Add "Recent Purchase" popup notifications.
+- [ ] **Strategy**
+    - [ ] Brainstorm 10 additional high-impact feature ideas.

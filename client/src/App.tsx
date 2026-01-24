@@ -1,6 +1,7 @@
 import { Switch, Route } from "wouter";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
+import SocialProof from "@/components/SocialProof";
 import Home from "@/pages/Home";
 import MasterTraining from "@/pages/MasterTraining";
 import Certification from "@/pages/Certification";
@@ -22,6 +23,7 @@ import Testimonials from "@/pages/Testimonials";
 function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <SocialProof />
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/master-training" component={MasterTraining} />
