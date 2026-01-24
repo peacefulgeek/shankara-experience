@@ -192,44 +192,7 @@ export default function Videos() {
         </div>
       </section>
 
-      <section className="pb-24">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center gap-4 mb-8 max-w-4xl mx-auto">
-             <div className="h-[1px] bg-white/20 flex-grow" />
-             <h3 className="text-xl font-display font-bold text-white text-center uppercase tracking-widest">Featured Series</h3>
-             <div className="h-[1px] bg-white/20 flex-grow" />
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {videos.map((video, i) => (
-              <div key={i} className="group glass-panel rounded-2xl overflow-hidden hover:border-accent/50 transition-all duration-300 flex flex-col backdrop-blur-md">
-                <div className="aspect-video relative overflow-hidden bg-black/40 group-hover:bg-black/30 transition-colors">
-                  <img 
-                    src={video.thumbnail} 
-                    alt={video.title} 
-                    className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-16 h-16 rounded-full bg-accent/20 border border-accent/50 flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-300">
-                      <Play className="w-8 h-8 text-accent fill-accent ml-1" />
-                    </div>
-                  </div>
-                  <div className="absolute bottom-4 right-4 bg-black/60 px-2 py-1 rounded text-xs font-mono">
-                    {video.duration}
-                  </div>
-                </div>
-                
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold font-display mb-2 text-white group-hover:text-accent transition-colors">{video.title}</h3>
-                  <p className="text-white/70 leading-relaxed">
-                    {video.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       <Footer />
       <VideoModal isOpen={isVideoOpen} onClose={() => setIsVideoOpen(false)} videoUrl={activeVideo || ""} />
