@@ -21,7 +21,7 @@ export default function Blog() {
       date: "Oct 12, 2025",
       author: "Paul Wagner",
       category: "Tools",
-      image: "/images/obsidian-divination.jpg",
+      image: "https://shankara-pull.b-cdn.net/images/obsidian-divination.webp",
       readTime: "5 min read"
     },
     {
@@ -32,7 +32,7 @@ export default function Blog() {
       date: "Sep 28, 2025",
       author: "Paul Wagner",
       category: "Wisdom",
-      image: "/images/sacred-geometry-grid.jpg",
+      image: "https://shankara-pull.b-cdn.net/images/sacred-geometry-grid.webp",
       readTime: "8 min read"
     },
     {
@@ -43,7 +43,7 @@ export default function Blog() {
       date: "Sep 15, 2025",
       author: "Ana Andreea",
       category: "Practice",
-      image: "/images/reading-preparation.jpg",
+      image: "https://shankara-pull.b-cdn.net/images/reading-preparation.webp",
       readTime: "6 min read"
     }
   ];
@@ -133,7 +133,7 @@ export default function Blog() {
                   <div className="flex items-center justify-between pt-6 border-t border-gray-100 mt-auto">
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 rounded-full bg-gray-200 overflow-hidden">
-                         <img src="/images/paul-wagner-avatar.jpg" alt={post.author} className="w-full h-full object-cover" />
+                         <img src="https://shankara-pull.b-cdn.net/images/paul-wagner-avatar.webp" alt={post.author} className="w-full h-full object-cover" />
                       </div>
                       <span className="text-xs font-bold text-gray-700 uppercase tracking-wide">{post.author}</span>
                     </div>

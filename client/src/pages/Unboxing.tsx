@@ -44,7 +44,7 @@ export default function Unboxing() {
               {/* Left Side - 4 Decks Image */}
               <div className="w-full md:w-1/2">
                 <div className="rounded-2xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-500 border-4 border-purple-50">
-                  <img src="/images/Shankara4Decks.webp" alt="The 4 Sacred Decks" className="w-full h-full object-cover" />
+                  <img src="https://shankara-pull.b-cdn.net/images/Shankara4Decks.webp" alt="The 4 Sacred Decks" className="w-full h-full object-cover" />
                 </div>
               </div>
 
@@ -94,7 +94,7 @@ export default function Unboxing() {
                 
                 <div className="relative rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(147,51,234,0.3)] border border-white/10 aspect-[4/3] flex items-center justify-center bg-black/40 group mb-6">
                    <img 
-                     src="/images/ShankaraStones.webp" 
+                     src="https://shankara-pull.b-cdn.net/images/ShankaraStones.webp" 
                      alt="18 Obsidian Stones" 
                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                    />
@@ -111,7 +111,7 @@ export default function Unboxing() {
                  
                 <div className="relative rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(255,20,147,0.3)] border border-white/10 aspect-[4/3] flex items-center justify-center bg-black/40 group mb-6">
                    <img 
-                     src="/images/ShaktisCube.png" 
+                     src="https://shankara-pull.b-cdn.net/images/ShaktisCube.webp" 
                      alt="Shakti's Cube" 
                      className="w-full h-full object-contain p-8 transform group-hover:scale-105 transition-transform duration-700"
                    />
@@ -141,7 +141,7 @@ export default function Unboxing() {
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white aspect-square flex items-center justify-center p-0 group border-4 border-purple-50 mb-6">
                   <div className="absolute inset-0 bg-gradient-to-tr from-purple-100/50 to-blue-100/50 opacity-50" />
                   <img 
-                    src="/images/ShankaraBoard.webp" 
+                    src="https://shankara-pull.b-cdn.net/images/ShankaraBoard.webp" 
                     alt="Oracle Board" 
                     className="relative z-10 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 drop-shadow-xl"
                   />
@@ -158,7 +158,7 @@ export default function Unboxing() {
 
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white aspect-square flex items-center justify-center p-0 group border-4 border-purple-50 mb-6">
                   <img 
-                    src="/images/ShankaraBOOKSTWO.webp" 
+                    src="https://shankara-pull.b-cdn.net/images/ShankaraBOOKSTWO.webp" 
                     alt="Shankara Books" 
                     className="relative z-10 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />

@@ -62,7 +62,7 @@ export default function HowToShankara() {
                       <div className="rounded-[22px] overflow-hidden bg-[#1a0b2e] relative">
                         <div className="absolute inset-0 bg-gradient-to-tr from-purple-900/20 to-transparent mix-blend-overlay z-10" />
                         <img 
-                          src="/images/reading-preparation.jpg" 
+                          src="https://shankara-pull.b-cdn.net/images/reading-preparation.webp" 
                           alt="Shankara Board Detail" 
                           className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-1000"
                         />
@@ -91,18 +91,28 @@ export default function HowToShankara() {
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
               {[
-                { name: "Earth", desc: "Grounding, Stability, Body" },
-                { name: "Water", desc: "Emotion, Flow, Intuition" },
-                { name: "Fire", desc: "Action, Passion, Will" },
-                { name: "Air", desc: "Intellect, Communication" },
-                { name: "Ether", desc: "Space, Spirit, Potential" },
-                { name: "Cosmos", desc: "Divine Order, Destiny" }
+                { name: "Earth", img: "https://shankara-pull.b-cdn.net/images/element-earth.webp", desc: "Grounding, Stability, Body" },
+                { name: "Water", img: "https://shankara-pull.b-cdn.net/images/element-water.webp", desc: "Emotion, Flow, Intuition" },
+                { name: "Fire", img: "https://shankara-pull.b-cdn.net/images/element-fire.webp", desc: "Action, Passion, Will" },
+                { name: "Air", img: "https://shankara-pull.b-cdn.net/images/element-air.webp", desc: "Intellect, Communication" },
+                { name: "Ether", img: "https://shankara-pull.b-cdn.net/images/element-ether.webp", desc: "Space, Spirit, Potential" },
+                { name: "Cosmos", img: "https://shankara-pull.b-cdn.net/images/element-cosmos.webp", desc: "Divine Order, Destiny" }
               ].map((el, i) => (
                 <div key={i} className="flex flex-col items-center group">
-                  {/* Circular Ancient Icon Frame - Using text/icon fallback until images restored */}
+                  {/* Circular Ancient Icon Frame */}
                   <div className="w-32 h-32 rounded-full border border-purple-500/30 bg-purple-900/20 flex items-center justify-center mb-6 relative overflow-hidden group-hover:border-accent/50 group-hover:shadow-[0_0_30px_rgba(255,0,255,0.2)] transition-all duration-500">
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent to-purple-900/50 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <Sparkles className="w-12 h-12 text-accent/50 group-hover:text-accent transition-colors" />
+                    {/* Fallback to Sparkles if image load fails, but attempt to load image first */}
+                    <img 
+                      src={el.img} 
+                      alt={el.name}
+                      className="w-20 h-20 object-contain relative z-10 transform group-hover:scale-110 transition-transform duration-500"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                        e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                      }}
+                    />
+                    <Sparkles className="w-12 h-12 text-accent/50 group-hover:text-accent transition-colors hidden absolute" />
                   </div>
                   
                   <h3 className="text-xl font-display font-bold text-white mb-2 tracking-wide">{el.name}</h3>
@@ -153,7 +163,7 @@ export default function HowToShankara() {
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl transform hover:scale-[1.01] transition-transform duration-700 group">
                   <div className="absolute inset-0 bg-gradient-to-t from-[#2a1b3d] via-transparent to-transparent opacity-50 z-10" />
                   <img 
-                    src="/images/puja-board.jpg" 
+                    src="https://shankara-pull.b-cdn.net/images/puja-board.webp" 
                     alt="Shankara Puja Ritual" 
                     className="w-full h-auto object-cover"
                   />

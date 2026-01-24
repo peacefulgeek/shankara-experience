@@ -44,7 +44,7 @@ export default function Navigation() {
         <Link href="/">
           <div className="flex items-center gap-4 cursor-pointer group">
             <img 
-              src="/images/logo.svg" 
+              src="https://shankara-pull.b-cdn.net/images/logo.svg" 
               alt="Shankara Logo" 
               className={cn(
                 "transition-all duration-500",

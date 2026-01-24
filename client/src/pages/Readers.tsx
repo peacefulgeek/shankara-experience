@@ -12,7 +12,7 @@ const readers = [
     name: "Paul Wagner (also Krishna Kalesh)",
     location: "Global",
     specialty: "Creator of The Shankara Oracle",
-    image: "/images/paul-2.png", 
+    image: "https://shankara-pull.b-cdn.net/images/paul-2.webp", 
     bio: "Welcome! I am Paul Wagner, also known as Krishna Kalesh. I channeled and created The Shankara Oracle over 10 years – my heart’s offering to your awakening. Born from decades of mystical practice, psychic intuition, and profound love for the human spirit, this profound Oracle is a map to your soul’s liberation. Every card is a living transmission – encoded with insights from the sages, truths from ancient lineages, and the wild breath of the Divine. My readings will not coddle you – they’ll embrace you and walk you into the most empowered version of yourself. I created Shankara for seekers, visionaries, lovers, and those ready to shatter illusions and remember who they truly are. This divine tool will not worship your ego – it’s raw, real, and radiant with fire and grace. It will challenge you, change you – adore you – and show you the mirrors you’ve been avoiding. If you’re craving clarity, truth, and connection to your deeper Self, you’ve found the sacred tool. And my readings will give you great confidence to finally heal and transform your life.",
     website: "https://paulwagner.com",
     contactType: "website"
@@ -21,7 +21,7 @@ const readers = [
     name: "Ana Andreea Guidance",
     location: "Bilingual (English/Romanian)",
     specialty: "Content Director & Business Partner",
-    image: "/images/AndreeaPleseaImage.png", 
+    image: "https://shankara-pull.b-cdn.net/images/AndreeaPleseaImage.webp", 
     bio: "Ana Andrea Guidance is a warm, deeply intuitive spiritual guide. She is also the content director and business partner for Shankara. Ana’s readings offer profound healing, touching clients’ hearts deeply. With exceptional intuition and compassion, Ana stands out, connecting personally with those she guides. Her sessions provide a peaceful sanctuary, uplifting and aligning individuals with their paths. Ana’s work showcases the transformative power of empathy and intuition. (Ana Andrea Guidance este un ghid spiritual cald și profund intuitiv. Lecturile sale oferă vindecare profundă, atingând profund inimile clienților. Cu intuiție excepțională și compasiune, Ana se distinge, conectându-se personal cu cei pe care îi ghidează.)",
     website: "https://anaguidance.com",
     contactType: "website"
@@ -30,7 +30,7 @@ const readers = [
     name: "Suzanne D. McMurray",
     location: "Medicine Woman & Crone",
     specialty: "Holistic Healing & Reiki",
-    image: "/images/SuzanneMcMurrayimage.jpg", 
+    image: "https://shankara-pull.b-cdn.net/images/SuzanneMcMurrayimage.webp", 
     bio: "Suzanne DeGraw McMurray, a revered Medicine Woman and Crone, is devoted to guiding individuals on their journey to uncover the radiant light that resides within them. As a spiritual healer, teacher, and protector, she combines her extensive knowledge of essential oils, herbalism, and flower essences with the transformative practices of divine channeling, the Shankara Oracle, and Reiki. Suzanne’s holistic approach ensures a personalized experience for each person, fostering deep healing and empowerment. With ongoing training as a reiki master/sensei and as a Shankara Master, Suzanne stands as a beacon of wisdom in her community, committed to assisting others in awakening their inner brilliance and embracing their unique paths.",
     website: "https://suzannemcmurray.com", 
     contactType: "website"
@@ -39,7 +39,7 @@ const readers = [
     name: "Paula Londoño",
     location: "Bilingual (English/Spanish)",
     specialty: "Empowerment & Cultural Bridging",
-    image: "/images/PaulaLondonoImage.png", 
+    image: "https://shankara-pull.b-cdn.net/images/PaulaLondonoImage.webp", 
     bio: "Paula Londoño is a standout bilingual Shankara master, known for her life-changing Shankara Oracle readings. Her ability to empower clients and bridge cultures in both English and Spanish has made her services transformative. Recognized for her profound impact, Paula is a guiding light for those seeking healing and spiritual growth. (Paula Londoño es una destacada maestra bilingüe de Shankara, conocida por sus lecturas transformadoras del Oráculo Shankara. Su habilidad para empoderar a los clientes y unir culturas tanto en inglés como en español ha hecho que sus servicios sean transformadores.)",
     website: "mailto:paula@example.com", 
     contactType: "email"
@@ -48,7 +48,7 @@ const readers = [
     name: "Kristina Jackson",
     location: "Intuitive Healer",
     specialty: "Deep Intuitive Readings",
-    image: "/images/KristinaJacksonImage.png", 
+    image: "https://shankara-pull.b-cdn.net/images/KristinaJacksonImage.webp", 
     bio: "Christina is the essence of a deep and radiant soul, delivering profound and deeply intuitive readings that not only facilitate healing but also invite you on an exploratory voyage into the boundless potentials awaiting your path. She is lovely and compassionate with all the academic degrees to back it up.",
     website: "mailto:christina@example.com", 
     contactType: "email"

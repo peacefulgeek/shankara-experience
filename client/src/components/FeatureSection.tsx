@@ -32,7 +32,7 @@ export default function FeatureSection() {
             <div className="absolute inset-0 bg-gradient-to-tr from-accent/30 to-purple-600/30 rounded-3xl blur-[80px] -z-10" />
             <div className="relative rounded-3xl overflow-hidden border-2 border-[#D4AF37]/50 shadow-[0_0_60px_rgba(212,175,55,0.2)] group">
               <img 
-                src="/images/Shankaramastercourse-3.png" 
+                src="https://shankara-pull.b-cdn.net/images/Shankaramastercourse-3.webp" 
                 alt="The Shankara Master Course" 
                 className="w-full h-auto object-cover transform group-hover:scale-[1.02] transition-transform duration-700"
               />

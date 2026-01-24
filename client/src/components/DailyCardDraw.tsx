@@ -8,35 +8,35 @@ const CARDS = [
     id: 1,
     name: "The Void",
     meaning: "Embrace the unknown. In emptiness, all potential exists.",
-    image: "/images/card-front-template.png",
+    image: "https://shankara-pull.b-cdn.net/images/card-front-template.webp",
     element: "Ether"
   },
   {
     id: 2,
     name: "Inner Fire",
     meaning: "Your passion is your compass. Let it burn away doubt.",
-    image: "/images/card-front-template.png",
+    image: "https://shankara-pull.b-cdn.net/images/card-front-template.webp",
     element: "Fire"
   },
   {
     id: 3,
     name: "Flow State",
     meaning: "Surrender to the current. Resistance creates suffering.",
-    image: "/images/card-front-template.png",
+    image: "https://shankara-pull.b-cdn.net/images/card-front-template.webp",
     element: "Water"
   },
   {
     id: 4,
     name: "Rooted Wisdom",
     meaning: "Stand firm in your truth. You are supported.",
-    image: "/images/card-front-template.png",
+    image: "https://shankara-pull.b-cdn.net/images/card-front-template.webp",
     element: "Earth"
   },
   {
     id: 5,
     name: "Sacred Breath",
     meaning: "Pause. Breathe. The answer is in the silence.",
-    image: "/images/card-front-template.png",
+    image: "https://shankara-pull.b-cdn.net/images/card-front-template.webp",
     element: "Air"
   }
 ];
@@ -90,7 +90,7 @@ export default function DailyCardDraw() {
               {/* Card Back */}
               <div className="absolute inset-0 backface-hidden rounded-xl shadow-[0_0_30px_rgba(168,85,247,0.4)] group-hover:shadow-[0_0_50px_rgba(168,85,247,0.6)] transition-shadow">
                 <img 
-                  src="/images/card-back-mystical.png" 
+                  src="https://shankara-pull.b-cdn.net/images/card-back-mystical.webp" 
                   alt="Card Back" 
                   className="w-full h-full object-cover rounded-xl border border-white/10"
                 />
@@ -105,7 +105,7 @@ export default function DailyCardDraw() {
 
               {/* Card Front */}
               <div className="absolute inset-0 backface-hidden rotate-y-180 rounded-xl bg-gradient-to-br from-gray-900 to-black border border-accent/50 shadow-[0_0_40px_rgba(255,0,255,0.3)] overflow-hidden">
-                <div className="absolute inset-0 bg-[url('/images/card-front-template.png')] bg-cover bg-center opacity-50 mix-blend-overlay" />
+                <div className="absolute inset-0 bg-[url('https://shankara-pull.b-cdn.net/images/card-front-template.webp')] bg-cover bg-center opacity-50 mix-blend-overlay" />
                 <div className="relative z-10 h-full flex flex-col items-center justify-center p-6 text-center">
                   <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center mb-4 border border-accent/50">
                     <Sparkles className="w-6 h-6 text-accent" />

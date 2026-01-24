@@ -56,7 +56,7 @@ export default function Hero() {
            
            <div className="relative transform transition-transform duration-1000 hover:scale-[1.02] hover:rotate-x-2">
               <img 
-                src="/images/hero-new.png" 
+                src="https://shankara-pull.b-cdn.net/images/hero-new.webp" 
                 alt="The Shankara Experience Oracle Board" 
                 className="w-full h-auto drop-shadow-2xl rounded-xl border border-white/5"
               />

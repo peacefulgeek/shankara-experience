@@ -24,3 +24,22 @@
         - [ ] Widen content container
         - [ ] Improve spacing to match "PDF template" style
     - [ ] **Home Page**: Review and update Hero/Header image based on feedback
+- [ ] **Deployment & Backup**
+    - [ ] Push latest code to existing GitHub repository `shankara-experience`
+- [ ] **GitHub SSH Setup**
+    - [ ] Generate SSH key pair
+    - [ ] Provide public key to user
+    - [ ] Configure git remote to use SSH
+    - [ ] Push code to `shankara-experience` via SSH
+- [ ] **Bunny CDN Migration**
+    - [ ] Wait for GitHub push to complete
+    - [ ] Install `lftp` or `ncftp` for FTP upload (if needed) or use `curl` for API
+    - [ ] Compress/Optimize images before upload (if not already done)
+    - [ ] Upload `client/public/images` to `shankara-assets` storage zone
+    - [ ] Replace local image paths in code with `https://shankara-pull.b-cdn.net/...`
+    - [ ] Verify site loads assets from CDN
+- [ ] **CDN Integration**
+    - [ ] Replace all `/images/` references in code with `https://shankara-pull.b-cdn.net/images/`
+    - [ ] Update file extensions in code (e.g., `.png` -> `.webp`) where optimization occurred
+    - [ ] Delete local `client/public/images` folder to free up space
+    - [ ] Verify site functionality with CDN assets

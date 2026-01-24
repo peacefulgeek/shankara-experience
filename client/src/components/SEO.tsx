@@ -10,7 +10,7 @@ interface SEOProps {
 export default function SEO({ title, description, image, url }: SEOProps) {
   const siteTitle = "The Shankara Experience";
   const fullTitle = `${title} | ${siteTitle}`;
-  const defaultImage = "/images/share-image.jpg"; // Need to ensure this exists or use a fallback
+  const defaultImage = "https://shankara-pull.b-cdn.net/images/share-image.webp"; // Need to ensure this exists or use a fallback
   const siteUrl = "https://theshankaraexperience.com"; // Or the current deployment URL
 
   return (

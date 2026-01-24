@@ -68,7 +68,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-tr from-purple-600/30 to-accent/30 rounded-full blur-[80px] animate-pulse" />
                 
                 <img 
-                  src="/images/hero-board-detail.webp" 
+                  src="https://shankara-pull.b-cdn.net/images/hero-board-detail.webp" 
                   alt="The Shankara Oracle Board Detail" 
                   className="relative z-10 w-full h-full object-contain drop-shadow-[0_20px_60px_rgba(0,0,0,0.5)] transform hover:scale-[1.02] transition-transform duration-1000 rounded-3xl"
                 />
@@ -126,7 +126,7 @@ export default function Home() {
               <div className="w-full md:w-1/2 relative">
                 <div className="absolute inset-0 bg-accent/20 blur-[60px] rounded-full animate-pulse" />
                 <img 
-                  src="/images/full-system.webp" 
+                  src="https://shankara-pull.b-cdn.net/images/full-system.webp" 
                   alt="Shankara Oracle Full System" 
                   className="relative z-10 w-full max-w-lg mx-auto drop-shadow-[0_0_50px_rgba(255,255,255,0.2)] animate-float rounded-2xl"
                 />
@@ -206,16 +206,16 @@ export default function Home() {
               <div className="w-full lg:w-1/2">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="aspect-square rounded-2xl overflow-hidden shadow-lg transform hover:scale-[1.02] transition-transform duration-500">
-                    <img src="/images/board-full-flat.webp" alt="Oracle Board Flat" className="w-full h-full object-cover" />
+                    <img src="https://shankara-pull.b-cdn.net/images/board-full-flat.webp" alt="Oracle Board Flat" className="w-full h-full object-cover" />
                   </div>
                   <div className="aspect-square rounded-2xl overflow-hidden shadow-lg transform translate-y-8 hover:translate-y-6 transition-transform duration-500">
-                    <img src="/images/cards-spread.webp" alt="Oracle Cards" className="w-full h-full object-cover" />
+                    <img src="https://shankara-pull.b-cdn.net/images/cards-spread.webp" alt="Oracle Cards" className="w-full h-full object-cover" />
                   </div>
                   <div className="aspect-square rounded-2xl overflow-hidden shadow-lg transform hover:scale-[1.02] transition-transform duration-500">
-                    <img src="/images/stones-bag.webp" alt="Obsidian Stones" className="w-full h-full object-cover" />
+                    <img src="https://shankara-pull.b-cdn.net/images/stones-bag.webp" alt="Obsidian Stones" className="w-full h-full object-cover" />
                   </div>
                   <div className="aspect-square rounded-2xl overflow-hidden shadow-lg transform translate-y-8 hover:translate-y-6 transition-transform duration-500">
-                    <img src="/images/guidebooks.webp" alt="Guidebooks" className="w-full h-full object-cover" />
+                    <img src="https://shankara-pull.b-cdn.net/images/guidebooks.webp" alt="Guidebooks" className="w-full h-full object-cover" />
                   </div>
                 </div>
               </div>

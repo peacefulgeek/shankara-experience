@@ -16,7 +16,7 @@ export default function HowTo() {
 
       {/* Fixed Cosmic Background */}
       <div className="fixed inset-0 z-0 pointer-events-none">
-        <div className="absolute inset-0 bg-[url('/images/cosmic-bg-1.webp')] bg-cover bg-center opacity-30 mix-blend-screen" />
+        <div className="absolute inset-0 bg-[url('https://shankara-pull.b-cdn.net/images/cosmic-bg-1.webp')] bg-cover bg-center opacity-30 mix-blend-screen" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a0514] via-transparent to-[#0a0514]" />
       </div>
 
@@ -36,7 +36,7 @@ export default function HowTo() {
                <div className="relative w-[140%] -ml-[20%] lg:w-[150%] lg:-ml-[25%] aspect-square animate-float-slow">
                  <div className="absolute inset-0 bg-accent/10 blur-[100px] rounded-full" />
                  <img 
-                   src="/images/board-full-flat.webp" 
+                   src="https://shankara-pull.b-cdn.net/images/board-full-flat.webp" 
                    alt="The Shankara Oracle Board" 
                    className="relative z-10 w-full h-full object-contain drop-shadow-[0_0_80px_rgba(168,85,247,0.3)] transform rotate-12 hover:rotate-0 transition-transform duration-[2s] ease-in-out"
                  />
@@ -92,12 +92,12 @@ export default function HowTo() {
 
             <div className="grid grid-cols-2 md:grid-cols-3 gap-12 lg:gap-16 max-w-5xl mx-auto">
               {[
-                { name: "Earth", img: "/images/element-earth.png", desc: "Grounding & Stability" },
-                { name: "Water", img: "/images/element-water.png", desc: "Flow & Emotion" },
-                { name: "Fire", img: "/images/element-fire.png", desc: "Action & Passion" },
-                { name: "Air", img: "/images/element-air.png", desc: "Intellect & Clarity" },
-                { name: "Ether", img: "/images/element-ether.png", desc: "Spirit & Connection" },
-                { name: "Cosmos", img: "/images/element-cosmos.png", desc: "Universal Laws" },
+                { name: "Earth", img: "https://shankara-pull.b-cdn.net/images/element-earth.webp", desc: "Grounding & Stability" },
+                { name: "Water", img: "https://shankara-pull.b-cdn.net/images/element-water.webp", desc: "Flow & Emotion" },
+                { name: "Fire", img: "https://shankara-pull.b-cdn.net/images/element-fire.webp", desc: "Action & Passion" },
+                { name: "Air", img: "https://shankara-pull.b-cdn.net/images/element-air.webp", desc: "Intellect & Clarity" },
+                { name: "Ether", img: "https://shankara-pull.b-cdn.net/images/element-ether.webp", desc: "Spirit & Connection" },
+                { name: "Cosmos", img: "https://shankara-pull.b-cdn.net/images/element-cosmos.webp", desc: "Universal Laws" },
               ].map((el, i) => (
                 <div key={i} className="flex flex-col items-center group">
                   <div className="w-40 h-40 md:w-48 md:h-48 relative mb-6 transition-transform duration-700 group-hover:scale-110 group-hover:rotate-[360deg]">
@@ -162,7 +162,7 @@ export default function HowTo() {
                 <div className="absolute inset-0 bg-pink-500/20 blur-[80px] rounded-full animate-pulse" />
                 <div className="relative rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(236,72,153,0.3)] border border-white/10 transform rotate-3 hover:rotate-0 transition-transform duration-700">
                   <img 
-                    src="/images/puja-board.jpg" 
+                    src="https://shankara-pull.b-cdn.net/images/puja-board.webp" 
                     alt="Shankara Puja Board with Rose Petals" 
                     className="w-full h-auto object-cover"
                   />

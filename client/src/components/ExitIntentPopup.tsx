@@ -66,7 +66,7 @@ export default function ExitIntentPopup() {
           <div className="w-full md:w-1/2 relative min-h-[200px] md:min-h-[400px]">
             <div className="absolute inset-0 bg-accent/20 mix-blend-overlay z-10" />
             <img 
-              src="/images/master-card-spread.webp" 
+              src="https://shankara-pull.b-cdn.net/images/master-card-spread.webp" 
               alt="Shankara Card Spread" 
               className="absolute inset-0 w-full h-full object-cover"
             />

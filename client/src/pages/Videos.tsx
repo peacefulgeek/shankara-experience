@@ -8,25 +8,25 @@ export default function Videos() {
     {
       title: "Unboxing The Shankara Oracle",
       description: "Watch as we reveal the sacred components of the Shankara system.",
-      thumbnail: "/images/full-set.png",
+      thumbnail: "https://shankara-pull.b-cdn.net/images/full-set.webp",
       duration: "12:45"
     },
     {
       title: "How to Use the Oracle Board",
       description: "A step-by-step guide to the sacred geometry grid.",
-      thumbnail: "/images/shankara-oracle-intimate-less-height.png",
+      thumbnail: "https://shankara-pull.b-cdn.net/images/shankara-oracle-intimate-less-height.webp",
       duration: "08:30"
     },
     {
       title: "Student Testimonials",
       description: "Hear from our certified masters about their journey.",
-      thumbnail: "/images/paul-2.png",
+      thumbnail: "https://shankara-pull.b-cdn.net/images/paul-2.webp",
       duration: "15:20"
     },
     {
       title: "The Meaning of the 4 Decks",
       description: "Deep dive into the symbolism of each deck.",
-      thumbnail: "/images/master-course-banner-1.png",
+      thumbnail: "https://shankara-pull.b-cdn.net/images/master-course-banner-1.webp",
       duration: "22:10"
     }
   ];

@@ -45,7 +45,7 @@ export default function About() {
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <img 
-              src="/images/paul-2.png" 
+              src="https://shankara-pull.b-cdn.net/images/paul-2.webp" 
               alt="Paul Wagner" 
               className="rounded-2xl shadow-2xl border border-white/10 hover:scale-[1.02] transition-transform duration-500"
             />

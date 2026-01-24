@@ -15,7 +15,7 @@ const articles = {
     readTime: "5 min read",
     author: "Paul Wagner",
     authorBio: "Paul Wagner is the creator of The Shankara Oracle, a spiritual guide, and a 5-time EMMY® Award winner. He has spent decades exploring the intersection of consciousness, ritual, and personal transformation.",
-    image: "/images/obsidian-divination.jpg",
+    image: "https://shankara-pull.b-cdn.net/images/obsidian-divination.webp",
     content: (
       <>
         <p className="lead-paragraph">
@@ -50,7 +50,7 @@ const articles = {
     readTime: "8 min read",
     author: "Paul Wagner",
     authorBio: "Paul Wagner is the creator of The Shankara Oracle, a spiritual guide, and a 5-time EMMY® Award winner. He has spent decades exploring the intersection of consciousness, ritual, and personal transformation.",
-    image: "/images/sacred-geometry-grid.jpg",
+    image: "https://shankara-pull.b-cdn.net/images/sacred-geometry-grid.webp",
     content: (
       <>
         <p className="lead-paragraph">
@@ -85,7 +85,7 @@ const articles = {
     readTime: "6 min read",
     author: "Ana Andreea",
     authorBio: "Ana Andreea is a Shankara Master and intuitive guide. She specializes in creating sacred spaces and helping others connect with their inner wisdom through ritual and meditation.",
-    image: "/images/reading-preparation.jpg",
+    image: "https://shankara-pull.b-cdn.net/images/reading-preparation.webp",
     content: (
       <>
         <p className="lead-paragraph">
@@ -190,7 +190,7 @@ export default function ArticlePage() {
           <aside className="lg:w-1/4 sticky top-32">
             <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm text-center">
               <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-6 border-4 border-white shadow-lg ring-1 ring-gray-100">
-                 <img src="/images/paul-wagner.jpg" alt={article.author} className="w-full h-full object-cover" />
+                 <img src="https://shankara-pull.b-cdn.net/images/paul-wagner.webp" alt={article.author} className="w-full h-full object-cover" />
               </div>
               
               <div className="mb-6">

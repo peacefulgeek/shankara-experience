@@ -17,7 +17,7 @@ export default function MasterTraining() {
       {/* BACKGROUND - Purple style from Readers/Videos */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-b from-[#1a0b2e] via-[#2d1b4e] to-[#1a0b2e]" />
-        <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/stars-pattern.png')] opacity-20 mix-blend-screen" />
+        <div className="absolute top-0 left-0 w-full h-full bg-[url('https://shankara-pull.b-cdn.net/images/stars-pattern.webp')] opacity-20 mix-blend-screen" />
       </div>
 
       <Navigation />
@@ -164,7 +164,7 @@ export default function MasterTraining() {
             <div className="flex flex-col md:flex-row items-center gap-12 bg-white/5 rounded-3xl p-8 border border-white/10 backdrop-blur-sm">
               <div className="w-full md:w-1/3">
                 <div className="relative aspect-[3/4] rounded-2xl overflow-hidden border-2 border-purple-500/30 shadow-2xl">
-                  <img src="/images/paul-2.png" alt="Krishna Kalesh" className="w-full h-full object-cover" />
+                  <img src="https://shankara-pull.b-cdn.net/images/paul-2.webp" alt="Krishna Kalesh" className="w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                   <div className="absolute bottom-6 left-6">
                     <h3 className="text-2xl font-bold text-white">Krishna Kalesh</h3>

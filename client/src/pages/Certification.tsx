@@ -17,7 +17,7 @@ export default function Certification() {
       {/* BACKGROUND - Purple style from Readers/Videos */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-b from-[#1a0b2e] via-[#2d1b4e] to-[#1a0b2e]" />
-        <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/stars-pattern.png')] opacity-20 mix-blend-screen" />
+        <div className="absolute top-0 left-0 w-full h-full bg-[url('https://shankara-pull.b-cdn.net/images/stars-pattern.webp')] opacity-20 mix-blend-screen" />
       </div>
 
       <Navigation />
