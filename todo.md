@@ -28,3 +28,7 @@
   - [ ] Create and run Python script to batch convert images in `client/public/images/` to WebP.
   - [ ] Update `How.tsx` and `Unboxing.tsx` to use `.webp` extensions.
   - [ ] Verify `package.json` and build settings for Railway/Bunny compatibility.
+- [ ] **Final Deployment Push**
+  - [ ] Stage all image optimizations and code changes.
+  - [ ] Commit with message "Optimize images to WebP for performance".
+  - [ ] Push to `main` branch to trigger Railway deployment.
