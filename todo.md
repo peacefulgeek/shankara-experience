@@ -196,3 +196,8 @@
 - [x] Upload all local images from client/public/images/ to Bunny CDN
 - [x] Update all code references to use Bunny URLs
 - [x] Remove local images from GitHub repo
+
+## Videos & Training Page Updates
+- [x] Videos page: Change "Latest Teachings" to "Shankara Readings & Reviews"
+- [x] Videos page: Move Excerpts section below the Shankara Readings & Reviews videos
+- [x] Training page: Add Excerpts block above "What You Will Master" section

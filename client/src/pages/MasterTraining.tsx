@@ -5,8 +5,36 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { Link } from "wouter";
+import VideoModal from "@/components/VideoModal";
+import { useState } from "react";
 
 export default function MasterTraining() {
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const [activeVideo, setActiveVideo] = useState<string | null>(null);
+
+  const openVideo = (url: string) => {
+    setActiveVideo(url);
+    setIsVideoOpen(true);
+  };
+
+  const masterCourseVideos = [
+    {
+      id: "1099419776",
+      title: "Mantras & Sanskrit Extract",
+      thumbnail: "https://vumbnail.com/1099419776.jpg"
+    },
+    {
+      id: "1099420466",
+      title: "Triggers Extract",
+      thumbnail: "https://vumbnail.com/1099420466.jpg"
+    },
+    {
+      id: "1099420040",
+      title: "Spiritual Bypass Extract",
+      thumbnail: "https://vumbnail.com/1099420040.jpg"
+    }
+  ];
+
   return (
     <div className="min-h-screen text-foreground font-sans selection:bg-primary selection:text-white overflow-x-hidden relative bg-[#1a0b2e]">
       <SEO 
@@ -54,6 +82,37 @@ export default function MasterTraining() {
                   Explore The Ancients <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* MASTER COURSE EXCERPTS - ABOVE WHAT YOU WILL MASTER */}
+        <section className="py-16 relative">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto mb-8 text-center">
+              <h3 className="text-3xl font-display font-bold text-white mb-2">Excerpts From The Shankara Master Course</h3>
+              <p className="text-purple-200/80 italic">Just A Few Selections From The 100+ Videos & Worksheets</p>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              {masterCourseVideos.map((video, i) => (
+                 <div key={i} className="flex flex-col gap-3 group">
+                    <div 
+                      className="aspect-video bg-black/40 rounded-xl border border-white/10 flex items-center justify-center relative overflow-hidden cursor-pointer shadow-[0_0_30px_rgba(168,85,247,0.15)] hover:border-accent/50 transition-all"
+                      onClick={() => openVideo(`https://vimeo.com/${video.id}`)}
+                    >
+                      <div className="absolute inset-0 bg-accent/10 group-hover:bg-accent/20 transition-colors" />
+                      <img 
+                        src={video.thumbnail} 
+                        loading="lazy" 
+                        alt={video.title} 
+                        className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" 
+                      />
+                      <Play className="w-12 h-12 text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] z-10" />
+                    </div>
+                    <h4 className="text-white font-bold text-lg text-center group-hover:text-accent transition-colors">{video.title}</h4>
+                 </div>
+              ))}
             </div>
           </div>
         </section>
@@ -159,7 +218,7 @@ export default function MasterTraining() {
                   As a compassionate spiritual mentor, personal guide, clairvoyant, empath, and mystic, Krishna Kalesh (Paul Wagner) has guided thousands of seekers for over 30 years.
                 </p>
                 <p className="text-lg text-purple-200/70 leading-relaxed font-light">
-                  Drawing wisdom from ancient teachings and enlightened masters, Kalesh’s guidance empowers spiritually-minded individuals to connect with their inner Selves, transcend circumstances, and find liberation in every moment.
+                  Drawing wisdom from ancient teachings and enlightened masters, Kalesh's guidance empowers spiritually-minded individuals to connect with their inner Selves, transcend circumstances, and find liberation in every moment.
                 </p>
                 <div className="pt-4">
                   <Link href="/readers">
@@ -175,6 +234,7 @@ export default function MasterTraining() {
 
       </main>
       <Footer />
+      <VideoModal isOpen={isVideoOpen} onClose={() => setIsVideoOpen(false)} videoUrl={activeVideo || ""} />
     </div>
   );
 }

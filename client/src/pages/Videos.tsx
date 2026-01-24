@@ -41,7 +41,7 @@ export default function Videos() {
       thumbnail: "https://vumbnail.com/1157972228.jpg"
     },
     {
-      id: "1157972251", // Note: This was a duplicate link in the request, keeping it as requested
+      id: "1157972251",
       title: "TSE Video page 6 (Duplicate)",
       thumbnail: "https://vumbnail.com/1157972251.jpg"
     }
@@ -62,33 +62,6 @@ export default function Videos() {
       id: "1099420040",
       title: "Spiritual Bypass Extract",
       thumbnail: "https://vumbnail.com/1099420040.jpg"
-    }
-  ];
-
-  const videos = [
-    {
-      title: "Unboxing The Shankara Oracle",
-      description: "Watch as we reveal the sacred components of the Shankara system.",
-      thumbnail: "https://shankara-pull.b-cdn.net/images/full-set.webp",
-      duration: "12:45"
-    },
-    {
-      title: "How to Use the Oracle Board",
-      description: "A step-by-step guide to the sacred geometry grid.",
-      thumbnail: "https://shankara-pull.b-cdn.net/images/shankara-oracle-intimate-less-height.webp",
-      duration: "08:30"
-    },
-    {
-      title: "Student Testimonials",
-      description: "Hear from our certified masters about their journey.",
-      thumbnail: "https://shankara-pull.b-cdn.net/images/paul-2.webp",
-      duration: "15:20"
-    },
-    {
-      title: "The Meaning of the 4 Decks",
-      description: "Deep dive into the symbolism of each deck.",
-      thumbnail: "https://shankara-pull.b-cdn.net/images/master-course-banner-1.webp",
-      duration: "22:10"
     }
   ];
 
@@ -132,7 +105,38 @@ export default function Videos() {
         </div>
       </section>
 
-      {/* MASTER COURSE EXCERPTS */}
+      {/* SHANKARA READINGS & REVIEWS - 2 PER ROW */}
+      <section className="pb-16 container mx-auto px-4">
+        <div className="flex items-center gap-4 mb-8 max-w-4xl mx-auto">
+          <div className="h-[1px] bg-white/20 flex-grow" />
+          <h3 className="text-xl font-display font-bold text-white text-center uppercase tracking-widest">Shankara Readings & Reviews</h3>
+          <div className="h-[1px] bg-white/20 flex-grow" />
+        </div>
+        
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {newVideos.map((video, i) => (
+             <div 
+                key={i}
+                className="aspect-video bg-black/40 rounded-xl border border-white/10 flex items-center justify-center relative overflow-hidden group cursor-pointer shadow-[0_0_30px_rgba(168,85,247,0.15)]"
+                onClick={() => openVideo(`https://vimeo.com/${video.id}`)}
+              >
+                <div className="absolute inset-0 bg-accent/10 group-hover:bg-accent/20 transition-colors" />
+                <img 
+                  src={video.thumbnail} 
+                  loading="lazy" 
+                  alt={video.title} 
+                  className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" 
+                />
+                <Play className="w-12 h-12 text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] z-10" />
+                <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/90 to-transparent">
+                  <p className="text-white font-bold text-sm truncate">{video.title}</p>
+                </div>
+              </div>
+          ))}
+        </div>
+      </section>
+
+      {/* MASTER COURSE EXCERPTS - NOW BELOW READINGS & REVIEWS */}
       <section className="pb-16 container mx-auto px-4">
         <div className="max-w-6xl mx-auto mb-8 text-center">
           <h3 className="text-3xl font-display font-bold text-white mb-2">Excerpts From The Shankara Master Course</h3>
@@ -160,39 +164,6 @@ export default function Videos() {
           ))}
         </div>
       </section>
-
-      {/* NEW VIDEO GRID: 2 PER ROW */}
-      <section className="pb-16 container mx-auto px-4">
-        <div className="flex items-center gap-4 mb-8 max-w-4xl mx-auto">
-          <div className="h-[1px] bg-white/20 flex-grow" />
-          <h3 className="text-xl font-display font-bold text-white text-center uppercase tracking-widest">Latest Teachings</h3>
-          <div className="h-[1px] bg-white/20 flex-grow" />
-        </div>
-        
-        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          {newVideos.map((video, i) => (
-             <div 
-                key={i}
-                className="aspect-video bg-black/40 rounded-xl border border-white/10 flex items-center justify-center relative overflow-hidden group cursor-pointer shadow-[0_0_30px_rgba(168,85,247,0.15)]"
-                onClick={() => openVideo(`https://vimeo.com/${video.id}`)}
-              >
-                <div className="absolute inset-0 bg-accent/10 group-hover:bg-accent/20 transition-colors" />
-                <img 
-                  src={video.thumbnail} 
-                  loading="lazy" 
-                  alt={video.title} 
-                  className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" 
-                />
-                <Play className="w-12 h-12 text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] z-10" />
-                <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/90 to-transparent">
-                  <p className="text-white font-bold text-sm truncate">{video.title}</p>
-                </div>
-              </div>
-          ))}
-        </div>
-      </section>
-
-
 
       <Footer />
       <VideoModal isOpen={isVideoOpen} onClose={() => setIsVideoOpen(false)} videoUrl={activeVideo || ""} />
