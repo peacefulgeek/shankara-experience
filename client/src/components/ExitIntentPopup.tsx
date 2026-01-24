@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Sparkles, Mail } from "lucide-react";
+import { Sparkles, Mail, X } from "lucide-react";
 import { toast } from "sonner";
 
 export default function ExitIntentPopup() {
@@ -62,18 +62,21 @@ export default function ExitIntentPopup() {
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      {/* Removed the default Close button from DialogContent by adding specific CSS or relying on the DialogPrimitive if needed. 
-          The shadcn DialogContent usually includes a Close button by default. 
-          We will hide it via CSS class [&>button]:hidden if we want to completely control it, 
-          OR we rely on the default one and remove our custom one. 
-          User complained about "Double Xs", so likely the default one + our custom one were both showing.
-          I will remove OUR custom X button and let the Dialog's default one handle it, 
-          OR hide the default one and keep ours. 
-          Let's keep the default accessible one provided by Radix/Shadcn and remove our manual one.
+      {/* 
+        We hide the default Dialog close button using [&>button]:hidden 
+        and provide our own custom styled close button for better control and visibility.
       */}
-      <DialogContent className="sm:max-w-[800px] p-0 overflow-hidden bg-cosmic-dark border-purple-500/30 text-white">
-        <div className="flex flex-col md:flex-row h-full">
+      <DialogContent className="sm:max-w-[800px] p-0 overflow-hidden bg-cosmic-dark border-purple-500/30 text-white [&>button]:hidden">
+        <div className="flex flex-col md:flex-row h-full relative">
           
+          {/* Custom Close Button */}
+          <button 
+            onClick={() => setIsOpen(false)}
+            className="absolute top-4 right-4 z-50 p-2 bg-black/20 hover:bg-black/40 rounded-full text-white/70 hover:text-white transition-all backdrop-blur-sm"
+          >
+            <X size={20} />
+          </button>
+
           {/* Image Side - Card Back */}
           <div className="w-full md:w-1/2 relative min-h-[300px] md:min-h-[400px] bg-black/20 flex items-center justify-center p-8">
              {/* Background glow */}
@@ -101,7 +104,6 @@ export default function ExitIntentPopup() {
 
           {/* Content Side */}
           <div className="w-full md:w-1/2 p-8 md:p-10 flex flex-col justify-center relative bg-cosmic-dark">
-            {/* Removed manual X button to avoid double X issue */}
             
             <div className="space-y-6">
               <div className="space-y-2">
