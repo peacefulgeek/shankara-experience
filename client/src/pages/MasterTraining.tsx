@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Check, Star, Play, Lock, BookOpen, Users, Lightbulb, Zap, ArrowRight, Sparkles } from "lucide-react";
+import { Check, Star, Play, Lock, BookOpen, Users, Lightbulb, Zap, ArrowRight, Sparkles, Crown } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -58,52 +58,33 @@ export default function MasterTraining() {
           </div>
         </section>
 
-        {/* COURSE MODULES GRID - ANCIENT MYSTICAL STYLE */}
+        {/* COURSE MODULES GRID - REDESIGNED ELEGANT GLASSMORPHISM */}
         <section className="py-24 relative">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-center text-white mb-16 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
               What You Will Master
             </h2>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                {
-                  icon: <Star className="w-8 h-8 text-yellow-200" />,
-                  title: "Awaken Inner Master",
-                  desc: "Connect with your inner wisdom and release what no longer serves you."
-                },
-                {
-                  icon: <Zap className="w-8 h-8 text-blue-200" />,
-                  title: "Unlock Intuition",
-                  desc: "Replace triggers with profound insight and move beyond limited identity."
-                },
-                {
-                  icon: <Lightbulb className="w-8 h-8 text-purple-200" />,
-                  title: "Become an Alchemist",
-                  desc: "Discover transformative alchemy principles that turn challenges into opportunities."
-                },
-                {
-                  icon: <BookOpen className="w-8 h-8 text-pink-200" />,
-                  title: "Ancient Wisdom",
-                  desc: "Dive into pure teachings about Karma, Dharma, and Vedic Astrology basics."
-                },
-                {
-                  icon: <Users className="w-8 h-8 text-green-200" />,
-                  title: "Serve Humanity",
-                  desc: "Enhance your abilities to offer new perspectives and guide others toward healing."
-                },
-                {
-                  icon: <Lock className="w-8 h-8 text-orange-200" />,
-                  title: "Lead Rituals",
-                  desc: "Uncover the role of rituals and how they can serve you on your path."
-                }
-              ].map((module, i) => (
-                <div key={i} className="bg-purple-900/20 border border-purple-500/20 p-8 rounded-full aspect-square flex flex-col items-center justify-center text-center hover:bg-purple-800/30 transition-all duration-500 group shadow-[0_0_30px_rgba(139,92,246,0.1)] hover:shadow-[0_0_50px_rgba(139,92,246,0.3)]">
-                  <div className="mb-6 bg-white/5 w-20 h-20 rounded-full flex items-center justify-center border border-white/10 group-hover:scale-110 group-hover:border-white/30 transition-all duration-500">
-                    {module.icon}
+                { icon: Crown, title: "Awaken Inner Master", desc: "Connect with your inner wisdom and release what no longer serves you." },
+                { icon: Zap, title: "Unlock Intuition", desc: "Replace triggers with profound insight and move beyond limited identity." },
+                { icon: Lightbulb, title: "Become an Alchemist", desc: "Discover transformative alchemy principles that turn challenges into opportunities." },
+                { icon: BookOpen, title: "Ancient Wisdom", desc: "Dive into pure teachings about Karma, Dharma, and Vedic Astrology basics." },
+                { icon: Users, title: "Serve Humanity", desc: "Enhance your abilities to offer new perspectives and guide others toward healing." },
+                { icon: Lock, title: "Lead Rituals", desc: "Uncover the role of rituals and how they can serve you on your path." }
+              ].map((feature, i) => (
+                <div key={i} className="group relative p-8 rounded-3xl bg-purple-900/10 border border-white/5 hover:bg-purple-900/20 hover:border-white/10 transition-all duration-500 overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  <div className="relative z-10">
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500/20 to-blue-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 border border-white/10">
+                      <feature.icon className="w-7 h-7 text-purple-200" />
+                    </div>
+                    
+                    <h3 className="text-xl font-bold text-white mb-3 tracking-wide">{feature.title}</h3>
+                    <p className="text-purple-200/60 leading-relaxed font-light text-sm">{feature.desc}</p>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3 tracking-wide">{module.title}</h3>
-                  <p className="text-purple-200/70 leading-relaxed font-light text-sm max-w-[80%]">{module.desc}</p>
                 </div>
               ))}
             </div>
