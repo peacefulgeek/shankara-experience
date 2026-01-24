@@ -205,7 +205,7 @@ export default function ExitIntentPopup() {
             {(stage === "INVITE" || stage === "LIMIT_REACHED") && (
               <div className="text-center space-y-4 md:space-y-6 animate-fade-in relative z-10">
                 <div className="w-24 h-24 md:w-32 md:h-32 bg-white/5 rounded-full flex items-center justify-center mx-auto border border-white/10 shadow-[0_0_40px_rgba(139,92,246,0.3)]">
-                  <img src="/images/logo.png" alt="Shankara Symbol" className="w-16 h-16 md:w-20 md:h-20 opacity-80" />
+                  <img src="/images/cosmic-flower.png" alt="Cosmic Lotus" className="w-24 h-24 md:w-32 md:h-32 object-contain drop-shadow-[0_0_15px_rgba(255,0,255,0.5)] animate-pulse-slow" />
                 </div>
                 <div className="space-y-2">
                   <h3 className="text-xl md:text-2xl font-display font-bold text-white/90">

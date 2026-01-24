@@ -138,3 +138,7 @@
   - [x] **Tooltips:** Add hover tooltips to deck selection buttons with detailed descriptions.
   - [x] **Sound Preload:** Implement `Audio` preloading for all 3 deck sounds when popup mounts.
   - [ ] **PUSH:** Force push changes to GitHub upon completion.
+- [x] **Popup Fixes III**
+  - [x] **Generate Image:** Create `cosmic-flower.webp` - a glowing, mystical lotus.
+  - [x] **Code Update:** Replace broken `/images/logo.png` reference with the new flower image.
+  - [ ] **PUSH:** Force push changes to GitHub upon completion.
