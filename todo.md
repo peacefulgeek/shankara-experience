@@ -24,3 +24,7 @@
   - [ ] Create "The Shankara Box" section.
   - [ ] Add a 4-column row for the box images (`box-top.jpg`, `box-side-1.jpg`, `box-side-2.jpg`, `box-bottom.jpg`).
   - [ ] Write description about the box's design and sacred nature.
+- [ ] **Technical Optimization**
+  - [ ] Create and run Python script to batch convert images in `client/public/images/` to WebP.
+  - [ ] Update `How.tsx` and `Unboxing.tsx` to use `.webp` extensions.
+  - [ ] Verify `package.json` and build settings for Railway/Bunny compatibility.

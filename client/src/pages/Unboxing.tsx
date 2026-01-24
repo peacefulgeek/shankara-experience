@@ -204,7 +204,7 @@ export default function Unboxing() {
                {/* Box Image 1: Top */}
                <div className="rounded-2xl overflow-hidden shadow-lg border border-white/10 group bg-black/20">
                  <img 
-                   src="/images/box-top.jpg" 
+                   src="/images/box-top.webp" 
                    alt="Shankara Box Top View" 
                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                  />
@@ -212,7 +212,7 @@ export default function Unboxing() {
                {/* Box Image 2: Side 1 */}
                <div className="rounded-2xl overflow-hidden shadow-lg border border-white/10 group bg-black/20">
                  <img 
-                   src="/images/box-side-1.jpg" 
+                   src="/images/box-side-1.webp" 
                    alt="Shankara Box Side Detail" 
                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                  />
@@ -220,7 +220,7 @@ export default function Unboxing() {
                {/* Box Image 3: Side 2 */}
                <div className="rounded-2xl overflow-hidden shadow-lg border border-white/10 group bg-black/20">
                  <img 
-                   src="/images/box-side-2.jpg" 
+                   src="/images/box-side-2.webp" 
                    alt="Shankara Box Side Art" 
                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                  />
@@ -228,7 +228,7 @@ export default function Unboxing() {
                {/* Box Image 4: Bottom */}
                <div className="rounded-2xl overflow-hidden shadow-lg border border-white/10 group bg-black/20">
                  <img 
-                   src="/images/box-bottom.jpg" 
+                   src="/images/box-bottom.webp" 
                    alt="Shankara Box Bottom Information" 
                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                  />
