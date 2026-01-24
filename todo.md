@@ -1,4 +1,6 @@
-- [ ] **Verify & Insert Full Content on 'HOW' Page**
-  - [ ] Ensure "Find a peaceful place..." through "...embedded in The Dharma" is fully present.
-  - [ ] Ensure "The Shankara Book of Meanings contains..." through "...blocked your illumination" is fully present.
-  - [ ] Verify no sentences are skipped or summarized.
+- [ ] **Update Readers Page Content**
+  - [ ] Change "Kristina" to "Christina" and update email to `jacksoncm.unk@gmail.com`.
+  - [ ] Update Suzanne's email to `suzanneavision@gmail.com`.
+  - [ ] Update Paula Londono's email to `psusi@me.com`.
+  - [ ] Replace Paula Londono's bio with the provided bilingual text.
+  - [ ] Remove quotation marks from ALL reader bios.

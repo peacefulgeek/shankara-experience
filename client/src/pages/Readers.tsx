@@ -32,25 +32,25 @@ const readers = [
     specialty: "Holistic Healing & Reiki",
     image: "https://shankara-pull.b-cdn.net/images/SuzanneMcMurrayimage.webp", 
     bio: "Suzanne DeGraw McMurray, a revered Medicine Woman and Crone, is devoted to guiding individuals on their journey to uncover the radiant light that resides within them. As a spiritual healer, teacher, and protector, she combines her extensive knowledge of essential oils, herbalism, and flower essences with the transformative practices of divine channeling, the Shankara Oracle, and Reiki. Suzanne’s holistic approach ensures a personalized experience for each person, fostering deep healing and empowerment. With ongoing training as a reiki master/sensei and as a Shankara Master, Suzanne stands as a beacon of wisdom in her community, committed to assisting others in awakening their inner brilliance and embracing their unique paths.",
-    website: "https://suzannemcmurray.com", 
-    contactType: "website"
+    website: "mailto:suzanneavision@gmail.com", 
+    contactType: "email"
   },
   {
     name: "Paula Londoño",
     location: "Bilingual (English/Spanish)",
     specialty: "Empowerment & Cultural Bridging",
     image: "https://shankara-pull.b-cdn.net/images/PaulaLondonoImage.webp", 
-    bio: "Paula Londoño is a standout bilingual Shankara master, known for her life-changing Shankara Oracle readings. Her ability to empower clients and bridge cultures in both English and Spanish has made her services transformative. Recognized for her profound impact, Paula is a guiding light for those seeking healing and spiritual growth. (Paula Londoño es una destacada maestra bilingüe de Shankara, conocida por sus lecturas transformadoras del Oráculo Shankara. Su habilidad para empoderar a los clientes y unir culturas tanto en inglés como en español ha hecho que sus servicios sean transformadores.)",
-    website: "mailto:paula@example.com", 
+    bio: "Paula Londoño is a standout bilingual Shankara master, known for her life-changing Shankara Oracle readings. Her ability to empower clients and bridge cultures in both English and Spanish has made her services transformative. Recognized for her profound impact, Paula is a guiding light for those seeking healing and spiritual growth. (Paula Londoño es una destacada maestra bilingüe de Shankara, conocida por sus lecturas transformadoras del Oráculo Shankara. Su habilidad para empoderar a los clientes y unir culturas tanto en inglés como en español ha hecho que sus servicios sean transformadores. Reconocida por su profundo impacto, Paula es una luz guía para aquellos que buscan sanación y crecimiento espiritual.)",
+    website: "mailto:psusi@me.com", 
     contactType: "email"
   },
   {
-    name: "Kristina Jackson",
+    name: "Christina Jackson",
     location: "Intuitive Healer",
     specialty: "Deep Intuitive Readings",
     image: "https://shankara-pull.b-cdn.net/images/KristinaJacksonImage.webp", 
     bio: "Christina is the essence of a deep and radiant soul, delivering profound and deeply intuitive readings that not only facilitate healing but also invite you on an exploratory voyage into the boundless potentials awaiting your path. She is lovely and compassionate with all the academic degrees to back it up.",
-    website: "mailto:christina@example.com", 
+    website: "mailto:jacksoncm.unk@gmail.com", 
     contactType: "email"
   }
 ];
@@ -122,7 +122,7 @@ export default function Readers() {
                   </div>
                   
                   <p className="text-white/80 text-sm leading-relaxed flex-grow whitespace-pre-wrap">
-                    "{reader.bio}"
+                    {reader.bio}
                   </p>
                   
                   <a href={reader.website} target="_blank" rel="noopener noreferrer" className="mt-auto pt-4">
