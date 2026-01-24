@@ -2,8 +2,51 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Play } from "lucide-react";
 import SEO from "@/components/SEO";
+import VideoModal from "@/components/VideoModal";
+import { useState } from "react";
 
 export default function Videos() {
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const [activeVideo, setActiveVideo] = useState<string | null>(null);
+
+  const openVideo = (url: string) => {
+    setActiveVideo(url);
+    setIsVideoOpen(true);
+  };
+
+  const newVideos = [
+    {
+      id: "1157972251",
+      title: "TSE Video page 6",
+      thumbnail: "https://vumbnail.com/1157972251.jpg"
+    },
+    {
+      id: "1157972065",
+      title: "TSE Video page 5",
+      thumbnail: "https://vumbnail.com/1157972065.jpg"
+    },
+    {
+      id: "1157972114",
+      title: "TSE Video page 4",
+      thumbnail: "https://vumbnail.com/1157972114.jpg"
+    },
+    {
+      id: "1157972186",
+      title: "TSE Video page 3",
+      thumbnail: "https://vumbnail.com/1157972186.jpg"
+    },
+    {
+      id: "1157972228",
+      title: "TSE Video page 2",
+      thumbnail: "https://vumbnail.com/1157972228.jpg"
+    },
+    {
+      id: "1157972251", // Note: This was a duplicate link in the request, keeping it as requested
+      title: "TSE Video page 6 (Duplicate)",
+      thumbnail: "https://vumbnail.com/1157972251.jpg"
+    }
+  ];
+
   const videos = [
     {
       title: "Unboxing The Shankara Oracle",
@@ -71,9 +114,46 @@ export default function Videos() {
         </div>
       </section>
 
+      {/* NEW VIDEO GRID: 2 PER ROW */}
+      <section className="pb-16 container mx-auto px-4">
+        <div className="flex items-center gap-4 mb-8 max-w-4xl mx-auto">
+          <div className="h-[1px] bg-white/20 flex-grow" />
+          <h3 className="text-xl font-display font-bold text-white text-center uppercase tracking-widest">Latest Teachings</h3>
+          <div className="h-[1px] bg-white/20 flex-grow" />
+        </div>
+        
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {newVideos.map((video, i) => (
+             <div 
+                key={i}
+                className="aspect-video bg-black/40 rounded-xl border border-white/10 flex items-center justify-center relative overflow-hidden group cursor-pointer shadow-[0_0_30px_rgba(168,85,247,0.15)]"
+                onClick={() => openVideo(`https://vimeo.com/${video.id}`)}
+              >
+                <div className="absolute inset-0 bg-accent/10 group-hover:bg-accent/20 transition-colors" />
+                <img 
+                  src={video.thumbnail} 
+                  loading="lazy" 
+                  alt={video.title} 
+                  className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" 
+                />
+                <Play className="w-12 h-12 text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] z-10" />
+                <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/90 to-transparent">
+                  <p className="text-white font-bold text-sm truncate">{video.title}</p>
+                </div>
+              </div>
+          ))}
+        </div>
+      </section>
+
       <section className="pb-24">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="flex items-center gap-4 mb-8 max-w-4xl mx-auto">
+             <div className="h-[1px] bg-white/20 flex-grow" />
+             <h3 className="text-xl font-display font-bold text-white text-center uppercase tracking-widest">Featured Series</h3>
+             <div className="h-[1px] bg-white/20 flex-grow" />
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {videos.map((video, i) => (
               <div key={i} className="group glass-panel rounded-2xl overflow-hidden hover:border-accent/50 transition-all duration-300 flex flex-col backdrop-blur-md">
                 <div className="aspect-video relative overflow-hidden bg-black/40 group-hover:bg-black/30 transition-colors">
@@ -105,6 +185,7 @@ export default function Videos() {
       </section>
 
       <Footer />
+      <VideoModal isOpen={isVideoOpen} onClose={() => setIsVideoOpen(false)} videoUrl={activeVideo || ""} />
     </div>
   );
 }
