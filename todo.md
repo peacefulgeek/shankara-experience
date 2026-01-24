@@ -77,3 +77,13 @@
     - [ ] Run `git gc --prune=now --aggressive` again
     - [ ] Verify final size reduction
     - [ ] Save checkpoint
+- [ ] **Unboxing Page Refinement**
+    - [ ] Resize "Stones & Cube" and "Board & Books" images to be smaller and balanced
+    - [ ] Ensure side-by-side layout matches the width of the "4 Decks" image
+- [ ] **Article Page Navigation**
+    - [ ] Add `<Navigation />` component to `ArticlePage.tsx`
+- [ ] **How-To Page Overhaul**
+    - [ ] Remove "Sacred Elements" icon section
+    - [ ] Generate "Ancient Illuminated Sanskrit Text" image
+    - [ ] Create "Ancient Wisdom & Sanskrit" section with new copy
+    - [ ] Upload new image to Bunny CDN

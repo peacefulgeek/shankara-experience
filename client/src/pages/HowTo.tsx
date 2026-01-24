@@ -78,40 +78,61 @@ export default function HowTo() {
           </div>
         </section>
 
-        {/* SACRED ELEMENTS - ANCIENT & MYSTICAL */}
+        {/* ANCIENT WISDOM & SANSKRIT SECTION */}
         <section className="py-32 relative">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-20">
-              <h2 className="text-4xl md:text-6xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-white to-yellow-200 mb-6 drop-shadow-[0_0_15px_rgba(253,224,71,0.3)]">
-                The Sacred Elements
-              </h2>
-              <p className="text-xl text-purple-200/60 max-w-2xl mx-auto font-light">
-                The language of the universe speaks through these primordial forces.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-12 lg:gap-16 max-w-5xl mx-auto">
-              {[
-                { name: "Earth", img: "https://shankara-pull.b-cdn.net/images/element-earth.webp", desc: "Grounding & Stability" },
-                { name: "Water", img: "https://shankara-pull.b-cdn.net/images/element-water.webp", desc: "Flow & Emotion" },
-                { name: "Fire", img: "https://shankara-pull.b-cdn.net/images/element-fire.webp", desc: "Action & Passion" },
-                { name: "Air", img: "https://shankara-pull.b-cdn.net/images/element-air.webp", desc: "Intellect & Clarity" },
-                { name: "Ether", img: "https://shankara-pull.b-cdn.net/images/element-ether.webp", desc: "Spirit & Connection" },
-                { name: "Cosmos", img: "https://shankara-pull.b-cdn.net/images/element-cosmos.webp", desc: "Universal Laws" },
-              ].map((el, i) => (
-                <div key={i} className="flex flex-col items-center group">
-                  <div className="w-40 h-40 md:w-48 md:h-48 relative mb-6 transition-transform duration-700 group-hover:scale-110 group-hover:rotate-[360deg]">
-                    <div className="absolute inset-0 bg-accent/20 blur-[40px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                    <img 
-                      src={el.img} 
-                      alt={`${el.name} Element`} 
-                      className="w-full h-full object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]"
-                    />
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              
+              {/* Left Side - Image */}
+              <div className="relative group">
+                <div className="absolute -inset-4 bg-gradient-to-r from-yellow-500/20 to-purple-600/20 rounded-2xl blur-xl opacity-75 group-hover:opacity-100 transition duration-1000"></div>
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+                  <img 
+                    src="https://shankara-pull.b-cdn.net/images/sanskrit-wisdom.jpg" 
+                    alt="Ancient Illuminated Sanskrit Text" 
+                    className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <p className="text-yellow-200 font-display text-lg italic tracking-wide">
+                      "Knowledge that transcends time..."
+                    </p>
                   </div>
-                  <h3 className="text-2xl font-display font-bold text-white mb-2 tracking-widest uppercase">{el.name}</h3>
-                  <p className="text-purple-300/60 text-sm font-medium uppercase tracking-wider">{el.desc}</p>
                 </div>
-              ))}
+              </div>
+
+              {/* Right Side - Content */}
+              <div className="space-y-8">
+                <Badge className="bg-yellow-900/30 text-yellow-200 border border-yellow-500/30 px-4 py-1 text-sm tracking-widest uppercase backdrop-blur-md">
+                  <Star className="w-3 h-3 mr-2 fill-current" /> 5,000 Year Lineage
+                </Badge>
+
+                <h2 className="text-4xl md:text-5xl font-display font-bold text-white leading-tight">
+                  Ancient Wisdom, <br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-orange-200 to-yellow-400">
+                    Sanskrit, And More
+                  </span>
+                </h2>
+
+                <div className="space-y-6 text-lg text-purple-100/80 font-light leading-relaxed">
+                  <p>
+                    The Shankara Oracle is deeply rooted in the 5,000-year-old traditions of Vedic wisdom. It is not merely a divination tool but a sacred technology designed to align your consciousness with universal truths.
+                  </p>
+                  <p>
+                    Every card and symbol is infused with the vibrational power of <strong className="text-yellow-200 font-medium">Sanskrit mantras and sutras</strong>. These ancient sounds are keys that unlock dormant emotions, clear energetic blockages, and elevate your personal frequency.
+                  </p>
+                  <p>
+                    By engaging with these sacred texts and symbols, you are participating in a timeless lineage of seekers, connecting directly to the source of divine knowledge that has guided humanity for millennia.
+                  </p>
+                </div>
+
+                <div className="pt-4">
+                  <Button variant="outline" className="border-yellow-500/50 text-yellow-200 hover:bg-yellow-500/10 px-8 h-12 rounded-full group">
+                    Explore the Lineage <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </div>
+              </div>
+
             </div>
           </div>
         </section>

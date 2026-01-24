@@ -92,15 +92,16 @@ export default function Unboxing() {
                   <h2 className="text-4xl font-display font-bold text-white">Stones & Cube</h2>
                 </div>
                 
-                <div className="relative rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(147,51,234,0.3)] border border-white/10 aspect-[4/3] flex items-center justify-center bg-black/40 group mb-6">
+                {/* Updated: Smaller container to match visual weight */}
+                <div className="relative rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(147,51,234,0.3)] border border-white/10 aspect-video w-full max-w-lg mx-auto flex items-center justify-center bg-black/40 group mb-6">
                    <img 
                      src="https://shankara-pull.b-cdn.net/images/ShankaraStones.webp" 
                      alt="18 Obsidian Stones" 
-                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                     className="w-full h-full object-contain p-4 transform group-hover:scale-105 transition-transform duration-700"
                    />
                 </div>
                 
-                <p className="text-lg text-purple-200/80 leading-relaxed">
+                <p className="text-lg text-purple-200/80 leading-relaxed text-center md:text-left">
                   18 Hand-engraved obsidian stones connect you to deep earth wisdom. Cast them onto the board to receive direct guidance on timing, elements, and planetary influences.
                 </p>
               </div>
@@ -109,7 +110,8 @@ export default function Unboxing() {
               <div className="w-full md:w-1/2 space-y-6">
                  <div className="h-[88px] hidden md:block"></div> {/* Spacer to align with left title */}
                  
-                <div className="relative rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(255,20,147,0.3)] border border-white/10 aspect-[4/3] flex items-center justify-center bg-black/40 group mb-6">
+                {/* Updated: Smaller container to match visual weight */}
+                <div className="relative rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(255,20,147,0.3)] border border-white/10 aspect-video w-full max-w-lg mx-auto flex items-center justify-center bg-black/40 group mb-6">
                    <img 
                      src="https://shankara-pull.b-cdn.net/images/ShaktisCube.webp" 
                      alt="Shakti's Cube" 
@@ -117,7 +119,7 @@ export default function Unboxing() {
                    />
                 </div>
                 
-                <p className="text-lg text-purple-200/80 leading-relaxed">
+                <p className="text-lg text-purple-200/80 leading-relaxed text-center md:text-left">
                   Shakti's Cube adds a dimension of divine feminine power, unlocking deeper layers of intuition and creative force within your readings.
                 </p>
               </div>
@@ -138,7 +140,8 @@ export default function Unboxing() {
                   <h2 className="text-4xl font-display font-bold text-purple-900">Board & Wisdom</h2>
                 </div>
 
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white aspect-square flex items-center justify-center p-0 group border-4 border-purple-50 mb-6">
+                {/* Updated: Smaller container to match visual weight */}
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white aspect-video w-full max-w-lg mx-auto flex items-center justify-center p-0 group border-4 border-purple-50 mb-6">
                   <div className="absolute inset-0 bg-gradient-to-tr from-purple-100/50 to-blue-100/50 opacity-50" />
                   <img 
                     src="https://shankara-pull.b-cdn.net/images/ShankaraBoard.webp" 
@@ -147,7 +150,7 @@ export default function Unboxing() {
                   />
                 </div>
 
-                <p className="text-lg text-gray-600 leading-relaxed">
+                <p className="text-lg text-gray-600 leading-relaxed text-center md:text-left">
                   The Oracle Board is a sacred geometry grid mapping the cosmos. It's an energetic field where your stones land to reveal hidden patterns.
                 </p>
               </div>
@@ -156,7 +159,8 @@ export default function Unboxing() {
               <div className="w-full md:w-1/2 space-y-6">
                 <div className="h-[88px] hidden md:block"></div> {/* Spacer */}
 
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white aspect-square flex items-center justify-center p-0 group border-4 border-purple-50 mb-6">
+                {/* Updated: Smaller container to match visual weight */}
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white aspect-video w-full max-w-lg mx-auto flex items-center justify-center p-0 group border-4 border-purple-50 mb-6">
                   <img 
                     src="https://shankara-pull.b-cdn.net/images/ShankaraBOOKSTWO.webp" 
                     alt="Shankara Books" 
@@ -164,12 +168,12 @@ export default function Unboxing() {
                   />
                 </div>
 
-                <p className="text-lg text-gray-600 leading-relaxed">
+                <p className="text-lg text-gray-600 leading-relaxed text-center md:text-left">
                   Comprehensive guidebooks provide deep insights into every card, stone, and board position, empowering you to interpret messages with clarity and confidence.
                 </p>
                 
                 <Link href="/how-to-shankara">
-                  <Button variant="outline" className="border-purple-200 text-purple-700 hover:bg-purple-50 mt-2 rounded-full px-8 h-12 w-full md:w-auto">
+                  <Button variant="outline" className="border-purple-200 text-purple-700 hover:bg-purple-50 mt-2 rounded-full px-8 h-12 w-full md:w-auto mx-auto md:mx-0 block">
                     Learn how to use the board <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
                 </Link>

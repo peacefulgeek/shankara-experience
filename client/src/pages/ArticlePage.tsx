@@ -2,7 +2,7 @@ import { useParams } from "wouter";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Calendar, Clock, Share2, Sparkles } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, Share2, Sparkles, ArrowRight } from "lucide-react";
 import SEO from "@/components/SEO";
 import { Link } from "wouter";
 
@@ -195,64 +195,58 @@ export default function ArticlePage() {
                    <h3 className="text-3xl font-display font-bold text-white mb-4">
                      Dive Deeper with Paul Wagner
                    </h3>
-                   <p className="text-purple-200 text-lg mb-6 leading-relaxed">
-                     Ready to experience the Shankara Oracle firsthand? Book a private session with Paul or bring the magic home today.
+                   <p className="text-purple-200/80 mb-6 text-lg">
+                     Join the Shankara Master Training and learn to read the oracle like a professional. Unlock your intuition and start your certification journey today.
                    </p>
-                   <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                     <Link href="/shop">
-                       <Button size="lg" className="bg-accent text-white hover:bg-accent/90 rounded-full px-8 font-bold text-base h-12">
-                         Buy The Oracle
-                       </Button>
-                     </Link>
-                     <a href="https://paulwagner.com/book" target="_blank" rel="noopener noreferrer">
-                       <Button variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10 rounded-full px-8 font-bold text-base h-12">
-                         Book a Session
-                       </Button>
-                     </a>
-                   </div>
-                 </div>
-                 <div className="w-32 h-32 md:w-40 md:h-40 flex-shrink-0 bg-white/10 rounded-full flex items-center justify-center border border-white/20 backdrop-blur-sm">
-                    <Sparkles className="w-16 h-16 text-accent animate-pulse" />
+                   <Link href="/training">
+                     <Button size="lg" className="bg-accent text-white hover:bg-accent/90 px-8 rounded-full shadow-[0_0_20px_rgba(255,0,255,0.4)]">
+                       Explore Training <ArrowRight className="ml-2 w-5 h-5" />
+                     </Button>
+                   </Link>
                  </div>
                </div>
              </div>
           </article>
 
-          {/* Sidebar - Author Bio - CORRECT IMAGE & STYLING */}
-          <aside className="lg:w-1/4 sticky top-32">
-            <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm text-center">
-              <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-6 border-4 border-white shadow-lg ring-1 ring-gray-100">
-                 <img src="https://shankara-pull.b-cdn.net/images/paul-wagner.webp" alt={article.author} className="w-full h-full object-cover" />
+          {/* Sidebar - ELEGANT & MINIMAL */}
+          <aside className="lg:w-1/4 sticky top-32 space-y-12 hidden lg:block">
+            
+            {/* Author Widget */}
+            <div className="text-center">
+              <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-2 border-accent p-1">
+                 <img src="https://shankara-pull.b-cdn.net/images/paul-wagner-profile.webp" alt={article.author} className="w-full h-full object-cover rounded-full" />
               </div>
-              
-              <div className="mb-6">
-                <h3 className="font-display font-bold text-[#1a0b2e] text-lg">Written by</h3>
-                <p className="text-accent font-bold uppercase text-xs tracking-widest mt-1">{article.author}</p>
-              </div>
-              
-              <p className="text-gray-500 text-sm leading-relaxed italic mb-8">
+              <h4 className="font-display font-bold text-[#1a0b2e] text-lg">{article.author}</h4>
+              <p className="text-xs text-gray-400 uppercase tracking-widest mb-4">Author & Creator</p>
+              <p className="text-sm text-gray-600 leading-relaxed font-serif italic">
                 {article.authorBio}
               </p>
-              
-              <div className="border-t border-gray-100 pt-6">
-                <h4 className="font-bold text-xs uppercase tracking-widest text-gray-400 mb-4">Share</h4>
-                <div className="flex justify-center gap-2">
-                  <Button variant="ghost" size="icon" className="rounded-full hover:bg-purple-50 text-purple-900">
-                    <Share2 size={18} />
-                  </Button>
-                </div>
+            </div>
+
+            <div className="w-full h-px bg-gray-200" />
+
+            {/* Share Widget */}
+            <div>
+              <h4 className="font-display font-bold text-[#1a0b2e] mb-4 flex items-center gap-2">
+                <Share2 size={18} className="text-accent" /> Share this Wisdom
+              </h4>
+              <div className="flex gap-2">
+                <Button variant="outline" size="icon" className="rounded-full hover:bg-accent hover:text-white hover:border-accent transition-colors">
+                  <span className="sr-only">Facebook</span>
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" /></svg>
+                </Button>
+                <Button variant="outline" size="icon" className="rounded-full hover:bg-accent hover:text-white hover:border-accent transition-colors">
+                  <span className="sr-only">Twitter</span>
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg>
+                </Button>
+                <Button variant="outline" size="icon" className="rounded-full hover:bg-accent hover:text-white hover:border-accent transition-colors">
+                   <span className="sr-only">LinkedIn</span>
+                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fillRule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clipRule="evenodd" /></svg>
+                </Button>
               </div>
             </div>
-            
-            <div className="mt-8 text-center">
-               <Link href="/wisdom">
-                <a className="inline-flex items-center text-gray-400 hover:text-accent font-bold uppercase tracking-widest text-xs transition-colors">
-                  <ArrowLeft size={14} className="mr-2" /> Back to Wisdom
-                </a>
-              </Link>
-            </div>
-          </aside>
 
+          </aside>
         </div>
       </div>
 
