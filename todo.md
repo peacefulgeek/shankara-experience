@@ -32,3 +32,7 @@
   - [ ] Stage all image optimizations and code changes.
   - [ ] Commit with message "Optimize images to WebP for performance".
   - [ ] Push to `main` branch to trigger Railway deployment.
+- [ ] **Implement Lazy Loading**
+  - [ ] Update `How.tsx`: Add `loading="lazy"` to all images below the hero section.
+  - [ ] Update `Unboxing.tsx`: Add `loading="lazy"` to all images below the hero section.
+  - [ ] Ensure hero images (above the fold) retain `loading="eager"` (default) to prevent layout shift.

@@ -54,6 +54,7 @@ export default function How() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
                 <img 
                   src="/images/how-community-4.webp" 
+                  loading="lazy" 
                   alt="Friends sharing a Shankara moment" 
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                 />
@@ -62,6 +63,7 @@ export default function How() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
                 <img 
                   src="/images/how-community-2.webp" 
+                  loading="lazy" 
                   alt="Deep connection over the board" 
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                 />
@@ -70,6 +72,7 @@ export default function How() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
                 <img 
                   src="/images/how-musa-1.webp" 
+                  loading="lazy" 
                   alt="Joyful discovery with Shankara" 
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                 />
@@ -78,6 +81,7 @@ export default function How() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
                 <img 
                   src="/images/how-layout.webp" 
+                  loading="lazy" 
                   alt="Intimate moment with the Oracle" 
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                 />
@@ -98,6 +102,7 @@ export default function How() {
                   <div className="absolute inset-0 bg-gradient-to-tr from-accent/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
                   <img 
                     src="/images/board-full-setup.webp" 
+                    loading="lazy" 
                     alt="The Shankara Oracle Board Full Setup" 
                     className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
                   />
@@ -226,6 +231,7 @@ export default function How() {
               <div className="order-1 md:order-2 rounded-2xl overflow-hidden shadow-[0_0_60px_rgba(34,211,238,0.2)] border border-white/10">
                 <img 
                   src="/images/board-guidance-arrows.webp" 
+                  loading="lazy" 
                   alt="Shankara Board Guidance Arrows" 
                   className="w-full h-auto object-cover"
                 />
@@ -252,6 +258,7 @@ export default function How() {
              <div className="mb-16 rounded-3xl overflow-hidden shadow-2xl border border-white/10">
                <img 
                  src="/images/decks-overview.webp" 
+                 loading="lazy" 
                  alt="The Master, Alchemy, and Release Decks" 
                  className="w-full h-auto"
                />
@@ -295,6 +302,7 @@ export default function How() {
               <div className="rounded-2xl overflow-hidden shadow-[0_0_60px_rgba(236,72,153,0.2)] border border-white/10">
                 <img 
                   src="/images/sacred-action-cards.webp" 
+                  loading="lazy" 
                   alt="Sacred Action Cards" 
                   className="w-full h-auto object-cover"
                 />

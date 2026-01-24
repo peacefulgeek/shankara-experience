@@ -44,7 +44,8 @@ export default function Unboxing() {
               {/* Left Side - 4 Decks Image */}
               <div className="w-full md:w-1/2">
                 <div className="rounded-2xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-500 border-4 border-purple-50 aspect-[4/3]">
-                  <img src="https://shankara-pull.b-cdn.net/images/Shankara4Decks.webp" alt="The 4 Sacred Decks" className="w-full h-full object-cover" />
+                  <img src="https://shankara-pull.b-cdn.net/images/Shankara4Decks.webp" 
+                  loading="lazy" alt="The 4 Sacred Decks" className="w-full h-full object-cover" />
                 </div>
               </div>
 
@@ -95,6 +96,7 @@ export default function Unboxing() {
                 <div className="relative rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(147,51,234,0.3)] border border-white/10 aspect-[4/3] w-full bg-black/40 group">
                    <img 
                      src="https://shankara-pull.b-cdn.net/images/ShankaraStones.webp" 
+                     loading="lazy" 
                      alt="18 Obsidian Stones" 
                      className="w-full h-full object-contain p-8 transform group-hover:scale-105 transition-transform duration-700"
                    />
@@ -111,6 +113,7 @@ export default function Unboxing() {
                 <div className="relative rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(255,20,147,0.3)] border border-white/10 aspect-[4/3] w-full bg-black/40 group">
                    <img 
                      src="https://shankara-pull.b-cdn.net/images/ShaktisCube.webp" 
+                     loading="lazy" 
                      alt="Shakti's Cube" 
                      className="w-full h-full object-contain p-12 transform group-hover:scale-105 transition-transform duration-700"
                    />
@@ -141,6 +144,7 @@ export default function Unboxing() {
                   <div className="absolute inset-0 bg-gradient-to-tr from-purple-100/50 to-blue-100/50 opacity-50" />
                   <img 
                     src="https://shankara-pull.b-cdn.net/images/ShankaraBoard.webp" 
+                    loading="lazy" 
                     alt="Oracle Board" 
                     className="relative z-10 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 drop-shadow-xl"
                   />
@@ -157,6 +161,7 @@ export default function Unboxing() {
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white aspect-[4/3] w-full group border-4 border-purple-50">
                   <img 
                     src="https://shankara-pull.b-cdn.net/images/ShankaraBOOKSTWO.webp" 
+                    loading="lazy" 
                     alt="Shankara Books" 
                     className="relative z-10 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
@@ -205,6 +210,7 @@ export default function Unboxing() {
                <div className="rounded-2xl overflow-hidden shadow-lg border border-white/10 group bg-black/20">
                  <img 
                    src="/images/box-top.webp" 
+                   loading="lazy" 
                    alt="Shankara Box Top View" 
                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                  />
@@ -213,6 +219,7 @@ export default function Unboxing() {
                <div className="rounded-2xl overflow-hidden shadow-lg border border-white/10 group bg-black/20">
                  <img 
                    src="/images/box-side-1.webp" 
+                   loading="lazy" 
                    alt="Shankara Box Side Detail" 
                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                  />
@@ -221,6 +228,7 @@ export default function Unboxing() {
                <div className="rounded-2xl overflow-hidden shadow-lg border border-white/10 group bg-black/20">
                  <img 
                    src="/images/box-side-2.webp" 
+                   loading="lazy" 
                    alt="Shankara Box Side Art" 
                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                  />
@@ -229,6 +237,7 @@ export default function Unboxing() {
                <div className="rounded-2xl overflow-hidden shadow-lg border border-white/10 group bg-black/20">
                  <img 
                    src="/images/box-bottom.webp" 
+                   loading="lazy" 
                    alt="Shankara Box Bottom Information" 
                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                  />
