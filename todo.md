@@ -129,3 +129,8 @@
   - [x] **Deck Options:** Display 3 clickable deck options (Alchemy, Master, Release) with their back images.
   - [x] **Logic:** Update state machine to handle `DECK_SELECTION` stage.
   - [ ] **PUSH:** Force push changes to GitHub upon completion.
+- [x] **Popup Fixes**
+  - [x] **CSS Fix:** Ensure `backface-visibility: hidden` and `transform-style: preserve-3d` are correctly applied so card is NOT revealed early.
+  - [x] **Selection UI:** Change Deck Selection to show 3 large vertical Card Back images side-by-side (or stacked on mobile) for direct selection.
+  - [x] **Flow Check:** Verify Invite -> Select -> Back (Wait) -> Flip (Reveal) sequence.
+  - [ ] **PUSH:** Force push changes to GitHub upon completion.

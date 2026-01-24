@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Sparkles, Mail, X, RefreshCw, Lock, ArrowRight } from "lucide-react";
+import { Sparkles, Mail, X, RefreshCw, Lock } from "lucide-react";
 import { toast } from "sonner";
 
 // Define Decks and Cards
@@ -125,7 +125,7 @@ export default function ExitIntentPopup() {
     
     setSelectedDeck(deck);
     setSelectedCardFront(randomFront);
-    setIsFlipped(false);
+    setIsFlipped(false); // CRITICAL: Ensure card starts showing BACK
     setStage("DECK_SELECTED");
   };
 
@@ -151,7 +151,7 @@ export default function ExitIntentPopup() {
     setTimeout(() => {
       setIsSubmitting(false);
       setStage("CARD_REVEALED");
-      setIsFlipped(true); // Trigger the flip animation
+      setIsFlipped(true); // Trigger the flip animation to FRONT
       
       // Play Sound Effect
       playDeckSound();
@@ -184,8 +184,8 @@ export default function ExitIntentPopup() {
             <div className="absolute inset-0 bg-[url('https://shankara-pull.b-cdn.net/images/stars-pattern.webp')] opacity-30 mix-blend-screen" />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 md:w-64 md:h-64 bg-purple-500/20 rounded-full blur-[60px] md:blur-[80px]" />
             
-            {/* STAGE 1 & 4 & 5: INVITE / SELECTION / LIMIT (Generic Symbol) */}
-            {(stage === "INVITE" || stage === "LIMIT_REACHED" || stage === "DECK_SELECTION") && (
+            {/* STAGE 1 & 5: INVITE / LIMIT (Generic Symbol) */}
+            {(stage === "INVITE" || stage === "LIMIT_REACHED") && (
               <div className="text-center space-y-4 md:space-y-6 animate-fade-in relative z-10">
                 <div className="w-24 h-24 md:w-32 md:h-32 bg-white/5 rounded-full flex items-center justify-center mx-auto border border-white/10 shadow-[0_0_40px_rgba(139,92,246,0.3)]">
                   <img src="/images/logo.png" alt="Shankara Symbol" className="w-16 h-16 md:w-20 md:h-20 opacity-80" />
@@ -193,25 +193,47 @@ export default function ExitIntentPopup() {
                 <div className="space-y-2">
                   <h3 className="text-xl md:text-2xl font-display font-bold text-white/90">
                     {stage === "LIMIT_REACHED" ? "Daily Guidance Limit" : 
-                     stage === "DECK_SELECTION" ? "Choose Your Path" :
                      "Your Shankara Oracle\nCard Guidance"}
                   </h3>
                   <p className="text-xs md:text-sm text-purple-200/60 uppercase tracking-widest">
                     {stage === "LIMIT_REACHED" ? "Return Tomorrow" : 
-                     stage === "DECK_SELECTION" ? "Select a deck to draw from" :
                      "Awaits You"}
                   </p>
                 </div>
               </div>
             )}
 
-            {/* STAGE 2 & 3: CARD DISPLAY (Back -> Front) */}
+            {/* STAGE 2: DECK SELECTION (VISUAL CARDS) */}
+            {stage === "DECK_SELECTION" && (
+              <div className="relative z-10 w-full max-w-sm md:max-w-none">
+                <div className="grid grid-cols-1 gap-4 place-items-center">
+                  {/* We only show a placeholder or single deck back here to represent choice, 
+                      the actual choice happens in the right panel or we can put choice here.
+                      Let's put the choice VISUALLY here for better UX if space permits, 
+                      but given layout, let's keep selection buttons on right and show generic 'Choose' visual on left.
+                   */}
+                   <div className="text-center space-y-4">
+                      <div className="relative w-48 aspect-[1.45/1] mx-auto perspective-1000">
+                        {/* Stacked cards effect */}
+                        <div className="absolute top-0 left-0 w-full h-full bg-white/5 rounded-xl rotate-[-6deg] scale-90 border border-white/10"></div>
+                        <div className="absolute top-0 left-0 w-full h-full bg-white/10 rounded-xl rotate-[6deg] scale-95 border border-white/10"></div>
+                        <div className="relative w-full h-full bg-[#1a0b2e] rounded-xl border border-[#ff00ff]/30 flex items-center justify-center shadow-[0_0_30px_rgba(255,0,255,0.2)]">
+                           <Sparkles className="w-12 h-12 text-[#ff00ff] animate-pulse" />
+                        </div>
+                      </div>
+                      <p className="text-sm text-purple-200/60 font-medium">Select a deck to reveal its power</p>
+                   </div>
+                </div>
+              </div>
+            )}
+
+            {/* STAGE 3 & 4: CARD DISPLAY (Back -> Front) */}
             {(stage === "DECK_SELECTED" || stage === "CARD_REVEALED") && (
               <div className="relative w-[85%] md:w-[90%] aspect-[1.45/1] perspective-1000 animate-in zoom-in duration-500">
                 <div className={`relative w-full h-full transition-transform duration-1000 transform-style-3d ${isFlipped ? "rotate-y-180" : ""}`}>
                   
-                  {/* CARD BACK (Front Face) */}
-                  <div className="absolute inset-0 w-full h-full backface-hidden">
+                  {/* CARD BACK (Front Face - Visible initially) */}
+                  <div className="absolute inset-0 w-full h-full backface-hidden" style={{ backfaceVisibility: 'hidden' }}>
                     <img 
                       src={DECKS[selectedDeck].back}
                       alt="Card Back" 
@@ -219,8 +241,8 @@ export default function ExitIntentPopup() {
                     />
                   </div>
 
-                  {/* CARD FRONT (Back Face) */}
-                  <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 group">
+                  {/* CARD FRONT (Back Face - Visible after flip) */}
+                  <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 group" style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}>
                     <div className="relative w-full h-full overflow-hidden rounded-xl">
                       <img 
                         src={`/images/cards/${selectedCardFront}`}
@@ -288,7 +310,7 @@ export default function ExitIntentPopup() {
                     >
                       <div className={`absolute inset-0 bg-gradient-to-r ${DECKS[deckKey].color} opacity-0 group-hover:opacity-10 transition-opacity`} />
                       
-                      <div className="relative w-24 aspect-[1.45/1] rounded-lg overflow-hidden shadow-lg mr-4 shrink-0">
+                      <div className="relative w-24 aspect-[1.45/1] rounded-lg overflow-hidden shadow-lg mr-4 shrink-0 border border-white/10">
                          <img 
                           src={DECKS[deckKey].back} 
                           alt={DECKS[deckKey].name}
@@ -304,8 +326,6 @@ export default function ExitIntentPopup() {
                           {DECKS[deckKey].description}
                         </p>
                       </div>
-                      
-                      <ArrowRight className="w-5 h-5 text-white/30 group-hover:text-white group-hover:translate-x-1 transition-all" />
                     </button>
                   ))}
                 </div>
