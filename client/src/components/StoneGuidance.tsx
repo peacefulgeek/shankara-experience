@@ -1,12 +1,16 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { Sparkles, RefreshCw } from "lucide-react";
+import { Sparkles, RefreshCw, Share2 } from "lucide-react";
 import stonesData from "@/lib/stones-data.json";
+import { toast } from "sonner";
 
 export default function StoneGuidance() {
   const [isRevealed, setIsRevealed] = useState(false);
   const [currentStone, setCurrentStone] = useState(stonesData[0]);
   const [isAnimating, setIsAnimating] = useState(false);
+  
+  // Audio ref for the chime sound
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const drawStone = () => {
     setIsAnimating(true);
@@ -23,11 +27,45 @@ export default function StoneGuidance() {
   const handleReveal = () => {
     if (!isRevealed) {
       setIsRevealed(true);
+      
+      // Play sound effect
+      if (audioRef.current) {
+        audioRef.current.currentTime = 0;
+        audioRef.current.play().catch(e => console.log("Audio play failed:", e));
+      }
+    }
+  };
+
+  const handleShare = async () => {
+    const shareData = {
+      title: `Guidance from The Shankara Oracle: ${currentStone.name}`,
+      text: `I drew the ${currentStone.name} stone (${currentStone.title}): "${currentStone.desc}"`,
+      url: window.location.href
+    };
+
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+        toast.success("Shared successfully!");
+      } catch (err) {
+        console.log("Error sharing:", err);
+      }
+    } else {
+      // Fallback to clipboard
+      try {
+        await navigator.clipboard.writeText(`${shareData.title}\n\n${shareData.text}\n\n${shareData.url}`);
+        toast.success("Copied to clipboard!");
+      } catch (err) {
+        toast.error("Failed to copy to clipboard");
+      }
     }
   };
 
   return (
     <section className="py-32 bg-cosmic-dark relative overflow-hidden">
+      {/* Hidden Audio Element */}
+      <audio ref={audioRef} src="/sounds/reveal-chime.mp3" preload="auto" />
+
       {/* Background Elements */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute inset-0 bg-[url('https://shankara-pull.b-cdn.net/images/stars-pattern.webp')] opacity-20 mix-blend-screen" />
@@ -89,9 +127,23 @@ export default function StoneGuidance() {
                       {currentStone.title}
                     </div>
                     
-                    <p className="text-lg md:text-xl text-purple-100 leading-relaxed font-light italic">
+                    <p className="text-lg md:text-xl text-purple-100 leading-relaxed font-light italic mb-6">
                       "{currentStone.desc}"
                     </p>
+
+                    {/* Share Button (Only visible on back) */}
+                    <Button 
+                      onClick={(e) => {
+                        e.stopPropagation(); // Prevent flipping back when clicking share
+                        handleShare();
+                      }}
+                      variant="ghost" 
+                      size="sm"
+                      className="text-purple-300 hover:text-white hover:bg-white/10 rounded-full px-4"
+                    >
+                      <Share2 className="w-4 h-4 mr-2" />
+                      Share Guidance
+                    </Button>
                   </div>
                 </div>
 
@@ -112,15 +164,17 @@ export default function StoneGuidance() {
                 </p>
               </div>
 
-              <Button 
-                onClick={drawStone}
-                size="lg" 
-                variant="outline"
-                className="border-accent text-accent hover:bg-accent hover:text-white h-14 px-8 rounded-full text-lg font-bold transition-all shadow-[0_0_20px_rgba(255,20,147,0.1)] hover:shadow-[0_0_30px_rgba(255,20,147,0.4)]"
-              >
-                <RefreshCw className={`w-5 h-5 mr-3 ${isAnimating ? "animate-spin" : ""}`} />
-                Draw Another Stone
-              </Button>
+              <div className="flex flex-col gap-4 w-full sm:w-auto">
+                <Button 
+                  onClick={drawStone}
+                  size="lg" 
+                  variant="outline"
+                  className="border-accent text-accent hover:bg-accent hover:text-white h-14 px-8 rounded-full text-lg font-bold transition-all shadow-[0_0_20px_rgba(255,20,147,0.1)] hover:shadow-[0_0_30px_rgba(255,20,147,0.4)]"
+                >
+                  <RefreshCw className={`w-5 h-5 mr-3 ${isAnimating ? "animate-spin" : ""}`} />
+                  Draw Another Stone
+                </Button>
+              </div>
             </div>
 
           </div>

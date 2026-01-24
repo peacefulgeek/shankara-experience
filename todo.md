@@ -77,3 +77,17 @@
     - [x] Update UI to display Stone Image initially.
     - [x] Add interaction (click/flip) to reveal the Stone Description.
     - [x] Ensure responsive design and correct aspect ratio.
+- [ ] **Author Profile Updates**
+  - [x] **Image Processing**
+    - [x] Process `Headshot.png` (Paul) -> `paul-wagner.webp` (square crop, resized).
+    - [x] Process `AndreeaPleseaImage.png` (Ana) -> `ana-andreea.webp` (square crop, resized).
+  - [x] **Component Update**
+    - [x] Update blog/article listing components to use these new images based on author name.
+- [ ] **Stone Guidance Enhancements**
+  - [x] **Sound Effect**
+    - [x] Find/Generate a subtle "chime" or "clink" sound file.
+    - [x] Implement `useSound` or HTML5 Audio to play on stone reveal.
+  - [x] **Social Sharing**
+    - [x] Add "Share Guidance" button to the revealed state.
+    - [x] Implement `navigator.share` API for mobile native sharing.
+    - [x] Add fallback (copy link/text) for desktop.
