@@ -10,6 +10,12 @@ import VideoModal from "@/components/VideoModal";
 
 export default function How() {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const [activeVideo, setActiveVideo] = useState<string | null>(null);
+
+  const openVideo = (url: string) => {
+    setActiveVideo(url);
+    setIsVideoOpen(true);
+  };
 
   return (
     <div className="min-h-screen font-sans selection:bg-accent selection:text-white overflow-x-hidden relative bg-[#2a1b3d]">
@@ -46,7 +52,7 @@ export default function How() {
 
                 {/* NEW STYLED BUTTON */}
                 <Button 
-                  onClick={() => setIsVideoOpen(true)}
+                  onClick={() => openVideo("https://vimeo.com/1050726877")}
                   className="bg-[#ff00ff] hover:bg-[#d900d9] text-white border-2 border-amber-400 px-8 py-6 h-auto text-lg rounded-full font-bold shadow-[0_0_20px_rgba(255,0,255,0.4)] hover:shadow-[0_0_30px_rgba(255,0,255,0.6)] transition-all group animate-pulse-slow"
                 >
                   <Play className="w-5 h-5 mr-3 fill-current" />
@@ -111,7 +117,7 @@ export default function How() {
             <div className="grid lg:grid-cols-2 gap-16 items-start">
               
               {/* Left Column: Layout Image & Video */}
-              <div className="space-y-12">
+              <div className="space-y-12 flex flex-col h-full">
                 {/* Featured Layout Image */}
                 <div className="rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(168,85,247,0.15)] border border-white/10 group relative">
                   <div className="absolute inset-0 bg-gradient-to-tr from-accent/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
@@ -131,18 +137,26 @@ export default function How() {
                 </div>
 
 
-                <div className="space-y-6 text-lg text-purple-200/80 leading-relaxed">
+                <div className="space-y-4 text-lg text-purple-200/80 leading-relaxed flex-grow flex flex-col justify-between">
                   <div className="flex items-start gap-4 p-4 rounded-xl bg-purple-900/20 border border-purple-500/20 hover:border-accent/40 transition-colors">
-                    <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold shrink-0">1</div>
-                    <p>Find a peaceful place in your home.</p>
+                    <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold shrink-0 mt-1">1</div>
+                    <p>Find a peaceful place & read The Setup & Play Booklet. Setup your Shankara Oracle with loving intention.</p>
                   </div>
                   <div className="flex items-start gap-4 p-4 rounded-xl bg-purple-900/20 border border-purple-500/20 hover:border-accent/40 transition-colors">
-                    <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold shrink-0">2</div>
-                    <p>Open The Shankara Setup & Play Booklet.</p>
+                    <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold shrink-0 mt-1">2</div>
+                    <p>Place your stones in the pouch and meditate on a question. Pull two stones and drop them on the board.</p>
                   </div>
                   <div className="flex items-start gap-4 p-4 rounded-xl bg-purple-900/20 border border-purple-500/20 hover:border-accent/40 transition-colors">
-                    <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold shrink-0">3</div>
-                    <p>Setup your Shankara Oracle Board.</p>
+                    <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold shrink-0 mt-1">3</div>
+                    <p>Explore your arrow trajectories, stone symbols, and cards in the arrows path for your guidance.</p>
+                  </div>
+                  <div className="flex items-start gap-4 p-4 rounded-xl bg-purple-900/20 border border-purple-500/20 hover:border-accent/40 transition-colors">
+                    <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold shrink-0 mt-1">4</div>
+                    <p>Read each card and The Book Of Meanings to learn about each aspect that emerged.</p>
+                  </div>
+                  <div className="flex items-start gap-4 p-4 rounded-xl bg-purple-900/20 border border-purple-500/20 hover:border-accent/40 transition-colors">
+                    <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold shrink-0 mt-1">5</div>
+                    <p>Form your own summary of your understandings and apply them to your question. Be grateful.</p>
                   </div>
 
                 </div>
@@ -178,7 +192,7 @@ export default function How() {
                       <h3 className="text-xl font-bold text-white">Cast the Stones</h3>
                     </div>
                     <p className="text-purple-200/80 leading-relaxed">
-                      Hold your questions in your heart, intuitively select a few stones from the pouch, then drop them in the center of the board. Some stones will give you specific messages through their symbols, while the arrows on other stones will point to elements on the board or cards from the three The Sacred Oracle Decks.
+                      Hold your questions in your heart, intuitively select a few stones from the pouch, then drop them in the center of the board. Some stones will give you specific messages through their symbols, while the arrows on other stones will point to elements on the board or cards from the three The Shankara Oracle Decks.
                     </p>
                   </div>
                 </div>
@@ -217,6 +231,46 @@ export default function How() {
 
               </div>
             </div>
+
+            {/* NEW VIDEO ROW */}
+            <div className="mt-24 grid md:grid-cols-3 gap-8">
+               <div 
+                  className="aspect-video bg-black/40 rounded-2xl border border-white/10 flex items-center justify-center relative overflow-hidden group cursor-pointer shadow-[0_0_40px_rgba(168,85,247,0.2)]"
+                  onClick={() => openVideo("https://vimeo.com/818723938")}
+                >
+                  <div className="absolute inset-0 bg-accent/10 group-hover:bg-accent/20 transition-colors" />
+                  <img src="https://vumbnail.com/818723938.jpg" alt="Testimonials" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" />
+                  <Play className="w-16 h-16 text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] z-10" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 to-transparent">
+                    <p className="text-white font-bold text-lg">Testimonials</p>
+                  </div>
+                </div>
+
+                <div 
+                  className="aspect-video bg-black/40 rounded-2xl border border-white/10 flex items-center justify-center relative overflow-hidden group cursor-pointer shadow-[0_0_40px_rgba(168,85,247,0.2)]"
+                  onClick={() => openVideo("https://vimeo.com/819081252")}
+                >
+                  <div className="absolute inset-0 bg-accent/10 group-hover:bg-accent/20 transition-colors" />
+                  <img src="https://vumbnail.com/819081252.jpg" alt="How It Works" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" />
+                  <Play className="w-16 h-16 text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] z-10" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 to-transparent">
+                    <p className="text-white font-bold text-lg">The Experience</p>
+                  </div>
+                </div>
+
+                <div 
+                  className="aspect-video bg-black/40 rounded-2xl border border-white/10 flex items-center justify-center relative overflow-hidden group cursor-pointer shadow-[0_0_40px_rgba(168,85,247,0.2)]"
+                  onClick={() => openVideo("https://vimeo.com/1157965783")}
+                >
+                  <div className="absolute inset-0 bg-accent/10 group-hover:bg-accent/20 transition-colors" />
+                  <img src="https://vumbnail.com/1157965783.jpg" alt="Deep Dive" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" />
+                  <Play className="w-16 h-16 text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] z-10" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 to-transparent">
+                    <p className="text-white font-bold text-lg">Deep Dive</p>
+                  </div>
+                </div>
+            </div>
+
           </div>
         </section>
 
@@ -225,7 +279,7 @@ export default function How() {
       <VideoModal 
         isOpen={isVideoOpen} 
         onClose={() => setIsVideoOpen(false)} 
-        videoUrl="https://vimeo.com/833058091" 
+        videoUrl={activeVideo || "https://vimeo.com/1050726877"} 
       />
     </div>
   );
