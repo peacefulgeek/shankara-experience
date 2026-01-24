@@ -149,18 +149,31 @@ export default function StoneGuidance() {
                   onClick={handleStoneClick}
                   className={`relative w-full aspect-square cursor-pointer transition-all duration-700 ${isAnimating ? "scale-95 opacity-0 blur-md" : "scale-100 opacity-100 blur-0 hover:scale-105"}`}
                 >
-                  <div className="relative w-full h-full bg-white/5 backdrop-blur-md rounded-[2rem] border border-white/10 flex items-center justify-center p-12 shadow-[0_0_50px_rgba(139,92,246,0.25)]">
+                  <div className="relative w-full h-full bg-white/5 backdrop-blur-md rounded-[2rem] border border-white/10 flex flex-col items-center justify-center p-12 shadow-[0_0_50px_rgba(139,92,246,0.25)]">
                     {/* Glowing orb behind stone */}
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-accent/20 rounded-full blur-[80px] animate-pulse" />
                     
+                    {/* Stone Name Title */}
+                    <h3 className="text-2xl font-display font-bold text-white mb-6 animate-fade-in-up tracking-wide drop-shadow-lg">
+                      {currentStone.name}
+                    </h3>
+
+                    {/* Stone Image - Reduced Size (25% smaller) */}
                     <img 
                       src={currentStone.image} 
                       alt={currentStone.name}
-                      className="relative z-10 w-full h-full object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)] animate-float"
+                      className="relative z-10 w-36 h-36 object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)] animate-float mb-8"
                     />
                     
-                    <div className="absolute bottom-8 left-0 right-0 text-center z-20">
-                      <span className="text-white/60 text-sm uppercase tracking-[0.2em] font-bold bg-black/30 px-4 py-2 rounded-full backdrop-blur-sm border border-white/10">Click to Reveal Message</span>
+                    {/* Divine Button */}
+                    <div className="relative z-20 animate-fade-in-up delay-300">
+                       <button className="relative px-6 py-3 rounded-full bg-black/40 backdrop-blur-md border border-accent/50 text-white font-medium tracking-[0.15em] text-xs uppercase shadow-[0_0_20px_rgba(255,0,255,0.2)] hover:shadow-[0_0_30px_rgba(255,0,255,0.4)] hover:bg-black/60 hover:border-accent transition-all duration-300 group-hover:scale-105">
+                          <span className="relative z-10 flex items-center gap-2">
+                             <Sparkles className="w-3 h-3 text-accent animate-pulse" />
+                             Click to Reveal Message
+                             <Sparkles className="w-3 h-3 text-accent animate-pulse" />
+                          </span>
+                       </button>
                     </div>
                   </div>
                 </div>

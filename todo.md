@@ -152,3 +152,8 @@
   - [x] **Mobile Carousel:** Convert deck list to a horizontal scroll snap container (carousel) on mobile (`md:hidden`).
   - [x] **Desktop Consistency:** Maintain vertical stack layout on desktop (`hidden md:flex`).
   - [ ] **PUSH:** Force push changes to GitHub upon completion.
+- [x] **Stone Box Redesign**
+  - [x] **Image Resize:** Scale down stone image by 25% (`w-48` -> `w-36` approx).
+  - [x] **Divine Button:** Replace plain text trigger with a styled button (gradient border, glow, elegant font).
+  - [x] **Stone Name:** Add prominent text above the stone (2pt larger than button text).
+  - [ ] **PUSH:** Force push changes to GitHub upon completion.
