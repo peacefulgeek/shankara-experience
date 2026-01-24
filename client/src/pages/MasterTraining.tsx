@@ -94,9 +94,7 @@ export default function MasterTraining() {
             </h1>
             
             <p className="text-xl md:text-2xl text-purple-100/90 max-w-3xl mx-auto mb-10 leading-relaxed">
-              <span className="font-semibold text-white">Finally break free from the patterns holding you back</span> and awaken the intuitive healer within you.
-              <br className="hidden md:block" />
-              <span className="text-[#ffd700]">Join thousands who have transformed their lives</span> with this proven spiritual mastery system.
+              <span className="font-semibold text-white">Finally break free from the patterns holding you back</span> and awaken the intuitive healer within you. <span className="text-[#ffd700]">Join thousands who have transformed their lives</span> with this proven spiritual mastery system.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
