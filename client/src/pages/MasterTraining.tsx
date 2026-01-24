@@ -190,7 +190,7 @@ export default function MasterTraining() {
             </div>
             
             {/* WHO THIS IS FOR - Section Header */}
-            <div className="text-center mb-16 mt-8">
+            <div className="text-center mb-16 mt-24 pt-16">
               <div className="inline-flex items-center gap-2 mb-4 px-5 py-2 rounded-full border border-purple-400/40 bg-purple-900/30 backdrop-blur-sm">
                 <Users className="w-4 h-4 text-[#ff00ff]" />
                 <span className="text-[#ff00ff] font-bold tracking-widest uppercase text-sm">Who This Is For</span>
