@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Check, Star, Play, Lock, BookOpen, Users, Lightbulb, Zap, ArrowRight, Sparkles, Crown, Heart, Sun, Compass } from "lucide-react";
+import { Check, Star, Play, Lock, BookOpen, Users, Lightbulb, Zap, ArrowRight, Sparkles, Crown, Heart, Sun, Compass, ChevronDown, HelpCircle } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -377,6 +377,76 @@ export default function MasterTraining() {
                   </Link>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ SECTION */}
+        <section className="py-24 relative">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-purple-500/5 rounded-full blur-[100px] pointer-events-none" />
+          
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center gap-2 mb-6 px-6 py-2 rounded-full border border-purple-400/40 bg-purple-900/30 backdrop-blur-sm">
+                <HelpCircle className="w-4 h-4 text-purple-300" />
+                <span className="text-purple-200 font-bold tracking-widest uppercase text-sm">Common Questions</span>
+              </div>
+              
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
+                Frequently Asked Questions
+              </h2>
+              <p className="text-xl text-purple-200/70 max-w-2xl mx-auto">
+                Everything you need to know before beginning your transformational journey.
+              </p>
+            </div>
+            
+            <div className="max-w-3xl mx-auto space-y-4">
+              {[
+                {
+                  question: "I'm new to spiritual practices – will I benefit from this course?",
+                  answer: "Absolutely. The Shankara Master Course is designed for seekers at all levels. You don't need any prior knowledge or experience to benefit from these teachings. Each person's journey is unique, and the course meets you exactly where you are. All practices and concepts are explained clearly so you can implement them immediately."
+                },
+                {
+                  question: "I'm an experienced healer – is this course still valuable for me?",
+                  answer: "Yes. Shri Krishna Kalesh is a highly experienced spiritual teacher whose wisdom has helped practitioners at all levels, including seasoned healers. The course offers advanced insights, ancient techniques, and fresh perspectives that will deepen your practice and enhance your ability to serve others. If you find it's not the right fit, simply reach out – we want everyone to feel supported."
+                },
+                {
+                  question: "Do I need to purchase the Shankara Oracle separately?",
+                  answer: "Yes, the Shankara Oracle is a separate purchase. However, as a Master Course student, you'll receive an exclusive discount when you purchase the Oracle. The course teaches you how to use the Oracle at the deepest level, so having one will greatly enhance your experience."
+                },
+                {
+                  question: "Will I have lifetime access to the course videos?",
+                  answer: "The course videos are available with indefinite access, allowing you to learn at your own pace and revisit teachings whenever you need them. While access is designed to be long-term, it is subject to our Terms & Conditions – in rare cases like business changes, you would receive ample notice."
+                },
+                {
+                  question: "Is there a time limit to complete the course?",
+                  answer: "The Master Course is self-paced, so you can move through the material at your own rhythm. We recommend completing it within 90 days to maintain momentum, but there's no strict deadline. For those pursuing Certification, the 12-week timeline applies due to private sessions with Shri Krishna Kalesh – though extensions can be granted on an individual basis."
+                },
+                {
+                  question: "Do I need to practice between sessions?",
+                  answer: "To experience the full transformation this course offers, we encourage practicing mindfulness and self-awareness between sessions. These practices aren't just for the course – they become valuable tools that support every area of your life. The more you engage, the deeper your results."
+                }
+              ].map((faq, i) => (
+                <details key={i} className="group bg-purple-900/20 border border-purple-400/20 rounded-2xl overflow-hidden hover:border-purple-400/40 transition-all">
+                  <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
+                    <span className="text-lg font-semibold text-white pr-4">{faq.question}</span>
+                    <ChevronDown className="w-5 h-5 text-purple-300 flex-shrink-0 group-open:rotate-180 transition-transform duration-300" />
+                  </summary>
+                  <div className="px-6 pb-6 pt-2">
+                    <p className="text-purple-200/80 leading-relaxed">{faq.answer}</p>
+                  </div>
+                </details>
+              ))}
+            </div>
+            
+            {/* Final CTA after FAQ */}
+            <div className="mt-16 text-center">
+              <p className="text-xl text-purple-100/80 mb-6">Ready to begin your transformation?</p>
+              <a href="https://shankara.thrivecart.com/shankara-master-course-training-main/" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="bg-[#ff00ff] hover:bg-[#d900d9] text-white px-12 py-6 text-xl rounded-full font-bold shadow-[0_0_30px_rgba(255,0,255,0.4)] hover:shadow-[0_0_50px_rgba(255,0,255,0.6)] transition-all transform hover:-translate-y-1">
+                  Enroll Now for $197
+                </Button>
+              </a>
             </div>
           </div>
         </section>

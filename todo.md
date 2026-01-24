@@ -201,3 +201,7 @@
 - [x] Videos page: Change "Latest Teachings" to "Shankara Readings & Reviews"
 - [x] Videos page: Move Excerpts section below the Shankara Readings & Reviews videos
 - [x] Training page: Add Excerpts block above "What You Will Master" section
+
+## Training Page Improvements
+- [x] Review Training page flow for conversion and SEO
+- [x] Add FAQ section to Training page with curated questions
