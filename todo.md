@@ -53,3 +53,14 @@
 - [x] **How Page Updates**
   - [x] Remove header button.
   - [x] Add description: "Awakening you to your divine nature and the deepest truths within." (expanded to 8-10 words).
+- [ ] **Popup Redesign**
+  - [x] **Image Processing**
+    - [x] Move 3 card back images to `client/public/images/` and convert to WebP.
+    - [x] Receive and process card front images (convert to WebP).
+  - [x] **Design Update**
+    - [x] Change popup container to landscape layout.
+    - [x] Position card image on the left.
+  - [x] **Logic Implementation**
+    - [x] Implement random deck selection (Alchemy, Master, Release).
+    - [x] Display corresponding Card Back.
+    - [x] Implement flip animation to reveal a random Card Front *from the same deck*.
