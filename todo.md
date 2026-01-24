@@ -185,3 +185,9 @@
   - [x] **PUSH:** Force push changes to GitHub upon completion.
 - [x] **MANUAL PUSH REQUEST**
   - [x] **Action:** Execute git push command to ensure remote is up to date.
+
+## Contact Form
+- [x] Add simple contact form to Contact page
+- [x] Implement honeypot spam protection
+- [x] Create server API route for SMTP2GO email sending
+- [x] Send emails to paul@creativelab.tv from paul@paulwagner.one
