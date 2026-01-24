@@ -72,3 +72,8 @@
     - [ ] Locate and remove the "1G main video" file
     - [ ] Verify disk usage is significantly reduced
     - [ ] Retry checkpoint save on clean state
+- [ ] **Git History Pruning**
+    - [ ] Run `git reflog expire --expire=now --all`
+    - [ ] Run `git gc --prune=now --aggressive` again
+    - [ ] Verify final size reduction
+    - [ ] Save checkpoint
