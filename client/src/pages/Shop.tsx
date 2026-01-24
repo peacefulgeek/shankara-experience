@@ -12,7 +12,7 @@ export default function Shop() {
     <div className="min-h-screen text-foreground font-sans selection:bg-primary selection:text-white overflow-x-hidden relative">
       <SEO 
         title="Shop The Shankara Oracle" 
-        description="Purchase the complete Shankara Oracle System, including the board, cards, stones, and guidebook."
+        description="Purchase the complete Shankara Oracle System, including the board, 4 decks, stones, and guidebook."
       />
       
       {/* Background */}
@@ -79,7 +79,8 @@ export default function Shop() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {[
                       "The Sacred Geometry Oracle Board",
-                      "3 Oracle Decks (300+ Cards)",
+                      "4 Oracle Decks (300+ Cards)",
+                      "The Sacred Action Cards",
                       "18 Engraved Obsidian Stones",
                       "Shakti's Cube (Guidance Die)",
                       "Comprehensive Guidebook",
@@ -115,12 +116,13 @@ export default function Shop() {
                   <Layers className="w-16 h-16 text-white/20 group-hover:scale-110 transition-transform duration-500" />
                 </div>
                 <CardContent className="p-8 relative z-20">
-                  <h3 className="text-2xl font-bold text-white mb-2">3 Sacred Decks</h3>
-                  <p className="text-white/60 text-sm mb-6">Over 300 cards across three distinct decks.</p>
+                  <h3 className="text-2xl font-bold text-white mb-2">4 Sacred Decks</h3>
+                  <p className="text-white/60 text-sm mb-6">Over 300 cards across four distinct decks.</p>
                   <ul className="space-y-3 text-white/80 text-sm">
                     <li className="flex gap-2"><span className="text-accent">•</span> <strong>The Master Deck:</strong> Core life themes & archetypes.</li>
                     <li className="flex gap-2"><span className="text-accent">•</span> <strong>The Alchemy Deck:</strong> Tools for transformation.</li>
                     <li className="flex gap-2"><span className="text-accent">•</span> <strong>The Release Deck:</strong> What to let go of now.</li>
+                    <li className="flex gap-2"><span className="text-accent">•</span> <strong>Sacred Action Cards:</strong> Steps to take.</li>
                   </ul>
                 </CardContent>
               </Card>

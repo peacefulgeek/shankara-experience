@@ -78,12 +78,18 @@
     - [ ] Verify final size reduction
     - [ ] Save checkpoint
 - [ ] **Unboxing Page Refinement**
-    - [ ] Resize "Stones & Cube" and "Board & Books" images to be smaller and balanced
-    - [ ] Ensure side-by-side layout matches the width of the "4 Decks" image
+    - [x] Resize "Stones & Cube" and "Board & Books" images to be smaller and balanced
+    - [x] Ensure side-by-side layout matches the width of the "4 Decks" image
 - [ ] **Article Page Navigation**
-    - [ ] Add `<Navigation />` component to `ArticlePage.tsx`
+    - [x] Add `<Navigation />` component to `ArticlePage.tsx`
 - [ ] **How-To Page Overhaul**
-    - [ ] Remove "Sacred Elements" icon section
-    - [ ] Generate "Ancient Illuminated Sanskrit Text" image
-    - [ ] Create "Ancient Wisdom & Sanskrit" section with new copy
-    - [ ] Upload new image to Bunny CDN
+    - [x] Remove "Sacred Elements" icon section
+    - [x] Generate "Ancient Illuminated Sanskrit Text" image
+    - [x] Create "Ancient Wisdom & Sanskrit" section with new copy
+    - [x] Upload new image to Bunny CDN
+- [ ] **Menu Visibility Fixes**
+    - [ ] **Wisdom Page**: Fix white menu on white background (change text color or background)
+    - [ ] **Article Page**: Fix white menu on white background (change text color or background)
+- [ ] **Content Corrections**
+    - [ ] **Shop Page**: Update product description to "4 Decks" and add "Sacred Action Cards"
+    - [ ] **Unboxing Page**: Verify "4 Decks" and "Sacred Action Cards" are explicitly listed

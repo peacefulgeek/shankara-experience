@@ -9,6 +9,9 @@ export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  // Check if we are on a "light mode" page (Wisdom or Article pages)
+  const isLightPage = location === "/wisdom" || location.startsWith("/article/");
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -30,26 +33,63 @@ export default function Navigation() {
     { href: "/shop", label: "Shop" },
   ];
 
+  // Determine text color based on page type and scroll state
+  // On light pages (Wisdom/Article): Dark text initially, White text when scrolled (if bg becomes dark) 
+  // OR keep consistent background. 
+  // Strategy: 
+  // - Default (Dark pages): Text White, Scrolled Bg Dark Purple
+  // - Light Pages: Text Dark Purple, Scrolled Bg White/Light
+  
+  const getNavTextColor = () => {
+    if (isLightPage && !scrolled) return "text-[#1a0b2e]"; // Dark text on light bg
+    if (isLightPage && scrolled) return "text-[#1a0b2e]"; // Dark text on scrolled light bg (if we keep it light)
+    return "text-white/80"; // Default white text
+  };
+
+  const getNavBgColor = () => {
+    if (scrolled) {
+      if (isLightPage) return "bg-white/90 backdrop-blur-xl shadow-lg border-b border-gray-200";
+      return "bg-[#1a0b2e]/90 backdrop-blur-xl shadow-lg border-b border-purple-500/30";
+    }
+    return "bg-transparent";
+  };
+
+  const getLogoColor = () => {
+     if (isLightPage && !scrolled) return "text-[#ff00ff]"; // Keep pink logo
+     return "text-[#ff00ff]";
+  };
+
+  const getButtonStyles = () => {
+    if (isLightPage && !scrolled) {
+      return "bg-[#1a0b2e] text-white hover:bg-[#1a0b2e]/80 border-transparent";
+    }
+    if (isLightPage && scrolled) {
+      return "bg-[#1a0b2e] text-white hover:bg-[#1a0b2e]/80 border-transparent";
+    }
+    return "bg-white/10 backdrop-blur-md text-white hover:bg-white/20 hover:border-accent border-white/20";
+  };
+
   return (
     <nav
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out py-6",
-        scrolled 
-          ? "bg-[#1a0b2e]/90 backdrop-blur-xl shadow-lg py-4 border-b border-purple-500/30" 
-          : "bg-transparent"
+        scrolled ? "py-4" : "",
+        getNavBgColor()
       )}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
-        {/* Logo - Updated to be 2x larger and Neon Pink */}
+        {/* Logo */}
         <Link href="/">
           <div className="flex items-center gap-4 cursor-pointer group">
+            {/* Image Logo - Only show if not on light page or handle differently? Keeping consistent for now */}
             <img 
               src="https://shankara-pull.b-cdn.net/images/logo.svg" 
               alt="Shankara Logo" 
               className={cn(
                 "transition-all duration-500",
                 scrolled ? "h-16 w-auto" : "h-20 w-auto",
-                "hidden md:block drop-shadow-[0_0_10px_rgba(255,0,255,0.4)]" 
+                "hidden md:block",
+                !isLightPage && "drop-shadow-[0_0_10px_rgba(255,0,255,0.4)]"
               )}
               onError={(e) => {
                 e.currentTarget.style.display = 'none';
@@ -59,12 +99,17 @@ export default function Navigation() {
             {/* Fallback Text Logo */}
             <span className={cn(
               "hidden md:block font-display font-bold text-4xl tracking-wider transition-colors",
-              "text-[#ff00ff] drop-shadow-[0_0_15px_rgba(255,0,255,0.6)]"
+              getLogoColor(),
+              !isLightPage && "drop-shadow-[0_0_15px_rgba(255,0,255,0.6)]"
             )}>
               SHANKARA
             </span>
             {/* Mobile Logo Text */}
-            <span className="md:hidden font-display font-bold text-2xl tracking-wider text-[#ff00ff] drop-shadow-[0_0_10px_rgba(255,0,255,0.6)]">
+            <span className={cn(
+              "md:hidden font-display font-bold text-2xl tracking-wider",
+              getLogoColor(),
+              !isLightPage && "drop-shadow-[0_0_10px_rgba(255,0,255,0.6)]"
+            )}>
               SHANKARA
             </span>
           </div>
@@ -77,8 +122,8 @@ export default function Navigation() {
               <span 
                 className={cn(
                   "text-[12px] font-bold tracking-[0.15em] uppercase hover:text-accent transition-all duration-300 cursor-pointer relative group",
-                  scrolled ? "text-white/80" : "text-white/80",
-                  location === link.href ? "text-[#ff00ff] drop-shadow-[0_0_8px_rgba(255,0,255,0.8)]" : ""
+                  getNavTextColor(),
+                  location === link.href ? "text-[#ff00ff]" : ""
                 )}
               >
                 {link.label}
@@ -92,10 +137,8 @@ export default function Navigation() {
           <Link href="/shop">
             <Button 
               className={cn(
-                "rounded-full px-6 py-5 transition-all shadow-md hover:shadow-lg text-sm font-bold border border-white/20",
-                scrolled 
-                  ? "bg-white/10 backdrop-blur-md text-white hover:bg-white/20 hover:border-accent" 
-                  : "bg-white/10 backdrop-blur-md text-white hover:bg-white/20 hover:border-accent"
+                "rounded-full px-6 py-5 transition-all shadow-md hover:shadow-lg text-sm font-bold border",
+                getButtonStyles()
               )}
             >
               Buy Oracle
@@ -107,7 +150,10 @@ export default function Navigation() {
         <div className="xl:hidden">
           <button 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="text-white p-2 hover:text-accent transition-colors"
+            className={cn(
+              "p-2 hover:text-accent transition-colors",
+              isLightPage && !mobileMenuOpen ? "text-[#1a0b2e]" : "text-white"
+            )}
           >
             {mobileMenuOpen ? <X size={32} /> : <Menu size={32} />}
           </button>

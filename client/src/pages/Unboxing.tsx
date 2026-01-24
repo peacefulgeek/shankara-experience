@@ -72,7 +72,7 @@ export default function Unboxing() {
                   </li>
                   <li className="flex items-center text-purple-900 font-medium p-3 bg-yellow-50 rounded-lg">
                     <span className="w-2 h-2 bg-yellow-500 rounded-full mr-3" />
-                    The Sacred Action Cards: Practical Steps
+                    Sacred Action Cards: Practical Steps
                   </li>
                 </ul>
               </div>
