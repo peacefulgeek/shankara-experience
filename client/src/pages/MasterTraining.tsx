@@ -189,6 +189,20 @@ export default function MasterTraining() {
               </div>
             </div>
             
+            {/* WHO THIS IS FOR - Section Header */}
+            <div className="text-center mb-16 mt-8">
+              <div className="inline-flex items-center gap-2 mb-4 px-5 py-2 rounded-full border border-purple-400/40 bg-purple-900/30 backdrop-blur-sm">
+                <Users className="w-4 h-4 text-[#ff00ff]" />
+                <span className="text-[#ff00ff] font-bold tracking-widest uppercase text-sm">Who This Is For</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
+                Transform Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff00ff] to-[#ffd700]">Life's Purpose</span>
+              </h2>
+              <p className="text-xl text-purple-200/80 max-w-2xl mx-auto">
+                Whether you're just beginning your spiritual journey or deepening an existing practice, this course meets you exactly where you are.
+              </p>
+            </div>
+
             {/* Cards with gold outlines and neon accents */}
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
               {programDesignedFor.map((item, i) => (

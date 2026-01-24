@@ -208,3 +208,4 @@
 - [x] Add testimonial quotes section between Value Stack and Meet Your Guide
 - [x] Add "Still have questions?" contact link below FAQ
 - [x] Add heart-shaped collage image under Training page header (compress and upload to Bunny CDN)
+- [x] Add header title and subtitle above "Who This Is For" cards section
