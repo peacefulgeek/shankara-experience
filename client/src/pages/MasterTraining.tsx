@@ -231,51 +231,75 @@ export default function MasterTraining() {
           </div>
         </section>
 
-        {/* VALUE STACK - MYSTICAL CARD */}
+        {/* VALUE STACK - VIBRANT REDESIGN */}
         <section className="py-24 relative overflow-hidden">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto bg-gradient-to-br from-[#2a1b4e] to-[#1a0b2e] border border-purple-500/30 rounded-3xl p-8 md:p-12 relative text-white shadow-[0_0_80px_rgba(139,92,246,0.2)]">
-              <div className="absolute top-0 right-0 p-4 opacity-10">
-                <Sparkles className="w-32 h-32 text-white" />
+          {/* Background glow effects */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#ff00ff]/15 rounded-full blur-[120px] pointer-events-none" />
+          <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#ffd700]/10 rounded-full blur-[100px] pointer-events-none" />
+          
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="max-w-4xl mx-auto bg-gradient-to-br from-[#1a0b2e] via-[#2d1b4e] to-[#1a0b2e] border-2 border-[#ffd700]/40 rounded-3xl p-8 md:p-12 relative text-white shadow-[0_0_100px_rgba(255,0,255,0.3),0_0_40px_rgba(255,215,0,0.2)]">
+              {/* Decorative sparkles */}
+              <div className="absolute top-4 right-4 opacity-30">
+                <Sparkles className="w-24 h-24 text-[#ffd700]" />
+              </div>
+              <div className="absolute bottom-4 left-4 opacity-20">
+                <Sparkles className="w-16 h-16 text-[#ff00ff]" />
               </div>
               
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-10 text-center">Total Course Value: <span className="line-through text-white/40">$2,500+</span></h2>
+              <h2 className="text-4xl md:text-6xl font-bold text-white mb-12 text-center">
+                Total Course Value: <span className="line-through text-white/30">$2,500+</span>
+              </h2>
               
-              <div className="space-y-6 mb-10">
-                <div className="flex items-center gap-4 bg-white/5 p-5 rounded-xl border border-white/5">
-                  <div className="bg-purple-500/20 p-3 rounded-full"><Play className="w-6 h-6 text-purple-200" /></div>
+              <div className="space-y-6 mb-12">
+                {/* Video Lessons */}
+                <div className="flex items-center gap-5 bg-gradient-to-r from-[#ff00ff]/10 to-transparent p-6 rounded-2xl border border-[#ff00ff]/30 hover:border-[#ff00ff]/50 transition-all group">
+                  <div className="bg-[#ff00ff]/30 p-4 rounded-full border border-[#ff00ff]/50 shadow-[0_0_20px_rgba(255,0,255,0.4)] group-hover:shadow-[0_0_30px_rgba(255,0,255,0.6)] transition-all">
+                    <Play className="w-7 h-7 text-[#ff00ff] drop-shadow-[0_0_8px_rgba(255,0,255,0.8)]" />
+                  </div>
                   <div>
-                    <h4 className="text-white font-bold text-lg">100 Pre-recorded Video Lessons</h4>
-                    <p className="text-purple-300/60 text-base">A $2,000 Value</p>
+                    <h4 className="text-white font-bold text-xl">100 Pre-recorded Video Lessons</h4>
+                    <p className="text-[#ff00ff]/80 text-lg font-semibold">A $2,000 Value</p>
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-4 bg-white/5 p-5 rounded-xl border border-white/5">
-                  <div className="bg-blue-500/20 p-3 rounded-full"><BookOpen className="w-6 h-6 text-blue-200" /></div>
+                {/* Worksheets */}
+                <div className="flex items-center gap-5 bg-gradient-to-r from-purple-500/10 to-transparent p-6 rounded-2xl border border-purple-400/30 hover:border-purple-400/50 transition-all group">
+                  <div className="bg-purple-500/30 p-4 rounded-full border border-purple-400/50 shadow-[0_0_20px_rgba(168,85,247,0.4)] group-hover:shadow-[0_0_30px_rgba(168,85,247,0.6)] transition-all">
+                    <BookOpen className="w-7 h-7 text-purple-300 drop-shadow-[0_0_8px_rgba(168,85,247,0.8)]" />
+                  </div>
                   <div>
-                    <h4 className="text-white font-bold text-lg">Worksheets & Spiritual Resources</h4>
-                    <p className="text-purple-300/60 text-base">A $500 Value</p>
+                    <h4 className="text-white font-bold text-xl">Worksheets & Spiritual Resources</h4>
+                    <p className="text-purple-300/80 text-lg font-semibold">A $500 Value</p>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4 bg-white/5 p-5 rounded-xl border border-yellow-500/30">
-                  <div className="bg-yellow-500/20 p-3 rounded-full"><Star className="w-6 h-6 text-yellow-200" /></div>
+                {/* Bonus - Gold highlight */}
+                <div className="flex items-center gap-5 bg-gradient-to-r from-[#ffd700]/15 to-transparent p-6 rounded-2xl border-2 border-[#ffd700]/50 hover:border-[#ffd700]/70 transition-all group shadow-[0_0_30px_rgba(255,215,0,0.2)]">
+                  <div className="bg-[#ffd700]/30 p-4 rounded-full border border-[#ffd700]/60 shadow-[0_0_25px_rgba(255,215,0,0.5)] group-hover:shadow-[0_0_35px_rgba(255,215,0,0.7)] transition-all">
+                    <Star className="w-7 h-7 text-[#ffd700] drop-shadow-[0_0_8px_rgba(255,215,0,0.8)]" />
+                  </div>
                   <div>
-                    <h4 className="text-yellow-200 font-bold text-lg">BONUS: Transformational Training Manual</h4>
-                    <p className="text-purple-300/60 text-base">Exclusive eBook Guide (A $108 Value)</p>
+                    <h4 className="text-[#ffd700] font-bold text-xl">BONUS: Transformational Training Manual</h4>
+                    <p className="text-[#ffd700]/70 text-lg font-semibold">Exclusive eBook Guide (A $108 Value)</p>
                   </div>
                 </div>
               </div>
 
-              <div className="text-center">
-                <div className="text-sm text-purple-300/60 uppercase tracking-widest mb-2">Get Instant Access Today For Only</div>
-                <div className="text-6xl font-bold text-white mb-8 drop-shadow-lg">$197</div>
-                <a href="https://shankara.thrivecart.com/shankara-master-course-training-main/" target="_blank" rel="noopener noreferrer" className="w-full md:w-auto">
-                  <Button size="lg" className="w-full md:w-auto bg-white text-purple-900 hover:bg-gray-100 px-12 py-8 text-xl rounded-full font-bold shadow-lg transition-transform hover:-translate-y-1">
+              {/* CTA Section */}
+              <div className="text-center pt-4">
+                <div className="inline-block mb-4 px-6 py-2 rounded-full border border-[#ffd700]/40 bg-[#ffd700]/10">
+                  <span className="text-[#ffd700] font-bold tracking-widest uppercase text-sm">Get Instant Access Today For Only</span>
+                </div>
+                <div className="text-7xl font-bold text-white mb-8 drop-shadow-[0_0_30px_rgba(255,255,255,0.3)]">
+                  $197
+                </div>
+                <a href="https://shankara.thrivecart.com/shankara-master-course-training-main/" target="_blank" rel="noopener noreferrer" className="inline-block">
+                  <Button size="lg" className="bg-[#ff00ff] hover:bg-[#d900d9] text-white px-16 py-8 text-2xl rounded-full font-bold shadow-[0_0_40px_rgba(255,0,255,0.5)] hover:shadow-[0_0_60px_rgba(255,0,255,0.7)] transition-all transform hover:-translate-y-1 hover:scale-105">
                     Join The Master Course
                   </Button>
                 </a>
-                <p className="mt-4 text-purple-300/40 text-sm">Lifetime access • 30-day money-back guarantee</p>
+                <p className="mt-6 text-purple-200/60 text-base">Lifetime access • 30-day money-back guarantee</p>
               </div>
             </div>
           </div>
