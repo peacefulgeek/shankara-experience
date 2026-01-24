@@ -24,7 +24,7 @@ export default function HowTo() {
 
       <main className="relative z-10 pt-24">
         
-        {/* HERO SECTION - OVERHAULED */}
+        {/* HERO SECTION */}
         <section className="relative min-h-[90vh] flex items-center overflow-hidden">
           {/* Background Glow */}
           <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[800px] h-[800px] bg-purple-900/20 rounded-full blur-[120px] pointer-events-none" />
@@ -78,12 +78,12 @@ export default function HowTo() {
           </div>
         </section>
 
-        {/* ANCIENT WISDOM & SANSKRIT SECTION */}
-        <section className="py-32 relative">
+        {/* ANCIENT WISDOM SECTION - REPLACING THE HATED CIRCLES */}
+        <section className="py-32 relative border-y border-white/5 bg-white/5 backdrop-blur-sm">
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               
-              {/* Left Side - Image */}
+              {/* Left Side - The Ancient Sanskrit Image */}
               <div className="relative group">
                 <div className="absolute -inset-4 bg-gradient-to-r from-yellow-500/20 to-purple-600/20 rounded-2xl blur-xl opacity-75 group-hover:opacity-100 transition duration-1000"></div>
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10">
@@ -95,34 +95,34 @@ export default function HowTo() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                   <div className="absolute bottom-6 left-6 right-6">
                     <p className="text-yellow-200 font-display text-lg italic tracking-wide">
-                      "Knowledge that transcends time..."
+                      "The frequency of the divine..."
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* Right Side - Content */}
+              {/* Right Side - Content about 5000 Years, Egyptology, Sanskrit */}
               <div className="space-y-8">
                 <Badge className="bg-yellow-900/30 text-yellow-200 border border-yellow-500/30 px-4 py-1 text-sm tracking-widest uppercase backdrop-blur-md">
                   <Star className="w-3 h-3 mr-2 fill-current" /> 5,000 Year Lineage
                 </Badge>
 
                 <h2 className="text-4xl md:text-5xl font-display font-bold text-white leading-tight">
-                  Ancient Wisdom, <br />
+                  Ancient Divination & <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-orange-200 to-yellow-400">
-                    Sanskrit, And More
+                    The Power of Sanskrit
                   </span>
                 </h2>
 
                 <div className="space-y-6 text-lg text-purple-100/80 font-light leading-relaxed">
                   <p>
-                    The Shankara Oracle is deeply rooted in the 5,000-year-old traditions of Vedic wisdom and ancient Egyptology. It is not merely a divination tool but a sacred technology designed to align your consciousness with universal truths.
+                    This is how they did it 5,000 years ago. The Shankara Oracle is not a modern invention but a resurrection of sacred technologies used in <strong className="text-yellow-200 font-medium">Ancient Egypt and Vedic India</strong> to commune with the divine.
                   </p>
                   <p>
-                    Every card and symbol is infused with the vibrational power of <strong className="text-yellow-200 font-medium">Sanskrit mantras and sutras</strong>. These ancient sounds are keys that unlock dormant emotions, clear energetic blockages, and elevate your personal frequency.
+                    At the heart of this system lies the frequency-changing beauty of <strong className="text-yellow-200 font-medium">Sanskrit</strong>. Known as the "language of the gods," Sanskrit vibrations have the power to restructure consciousness, clear karmic debris, and elevate your energetic frequency instantly.
                   </p>
                   <p>
-                    Drawing from the esoteric knowledge of Egypt and India, this system bridges the gap between the mystic and the practical. It invites you to participate in a timeless lineage of seekers, connecting directly to the source of divine knowledge that has guided humanity for millennia.
+                    By engaging with these sacred symbols and sounds, you are not just "playing a game"—you are stepping into a timeless stream of wisdom, accessing the same profound depth and clarity that guided pharaohs and rishis millennia ago.
                   </p>
                 </div>
 
@@ -137,7 +137,7 @@ export default function HowTo() {
           </div>
         </section>
 
-        {/* TIPS & SWAPS - BEAUTIFIED & ENLARGED */}
+        {/* TIPS & SWAPS */}
         <section className="py-40 relative overflow-hidden">
           {/* Background Decor */}
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/10 to-transparent" />
