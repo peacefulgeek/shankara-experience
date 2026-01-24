@@ -93,10 +93,10 @@ export default function MasterTraining() {
               </span>
             </h1>
             
-            <p className="text-xl text-purple-200/80 max-w-3xl mx-auto mb-10 leading-relaxed font-light">
-              Elevate your intuitive abilities, discover the pathways to self-mastery, and immerse yourself in divine wisdom.
+            <p className="text-xl md:text-2xl text-purple-100/90 max-w-3xl mx-auto mb-10 leading-relaxed">
+              <span className="font-semibold text-white">Finally break free from the patterns holding you back</span> and awaken the intuitive healer within you.
               <br className="hidden md:block" />
-              A complete system to sharpen your clairsentience and live in alignment with your higher purpose.
+              <span className="text-[#ffd700]">Join thousands who have transformed their lives</span> with this proven spiritual mastery system.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
