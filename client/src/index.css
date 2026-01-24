@@ -119,3 +119,19 @@
     transform: rotateY(180deg);
   }
 }
+
+@layer utilities {
+  @keyframes divine-pulse {
+    0%, 100% {
+      opacity: 0.8;
+      box-shadow: 0 0 15px rgba(252, 211, 77, 0.6);
+    }
+    50% {
+      opacity: 1;
+      box-shadow: 0 0 25px rgba(252, 211, 77, 1);
+    }
+  }
+  .animate-divine-pulse {
+    animation: divine-pulse 3s ease-in-out infinite;
+  }
+}

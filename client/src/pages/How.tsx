@@ -57,8 +57,8 @@ export default function How() {
           </div>
 
           {/* Illuminating Golden Line */}
-          <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-amber-300 to-transparent shadow-[0_0_15px_rgba(252,211,77,0.8)] opacity-90 z-20" />
-          <div className="absolute bottom-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-amber-500/50 to-transparent blur-[2px] z-20" />
+          <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-amber-300 to-transparent animate-divine-pulse z-20" />
+          <div className="absolute bottom-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-amber-500/50 to-transparent blur-[2px] animate-pulse z-20" />
         </section>
 
         {/* IMAGE GALLERY STRIP */}
