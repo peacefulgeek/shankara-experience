@@ -2,13 +2,14 @@ import { useState, useEffect, useRef } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Sparkles, Mail, X, RefreshCw, Lock } from "lucide-react";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { Sparkles, Mail, X, RefreshCw, Lock, Info } from "lucide-react";
 import { toast } from "sonner";
 
 // Define Decks and Cards
 type DeckType = "alchemy" | "master" | "release";
 
-const DECKS: Record<DeckType, { back: string; fronts: string[]; name: string; description: string; color: string }> = {
+const DECKS: Record<DeckType, { back: string; fronts: string[]; name: string; description: string; specialty: string; color: string }> = {
   alchemy: {
     back: "/images/cards/alchemy-back-landscape.webp",
     fronts: [
@@ -19,6 +20,7 @@ const DECKS: Record<DeckType, { back: string; fronts: string[]; name: string; de
     ],
     name: "Alchemy",
     description: "Transformation & Magic",
+    specialty: "Connects you with the elemental forces of change. Best for when you seek to transform a situation or understand the magical currents at play in your life.",
     color: "from-amber-400 to-orange-500"
   },
   master: {
@@ -31,6 +33,7 @@ const DECKS: Record<DeckType, { back: string; fronts: string[]; name: string; de
     ],
     name: "Master",
     description: "Wisdom & Presence",
+    specialty: "Offers deep, grounding guidance for self-mastery. Perfect for moments when you need to reclaim your power, set boundaries, or find your center.",
     color: "from-red-500 to-rose-600"
   },
   release: {
@@ -43,6 +46,7 @@ const DECKS: Record<DeckType, { back: string; fronts: string[]; name: string; de
     ],
     name: "Release",
     description: "Freedom & Letting Go",
+    specialty: "Helps you identify and shed what no longer serves you. Choose this deck when you feel stuck, burdened, or ready to move forward with a lighter heart.",
     color: "from-cyan-400 to-blue-500"
   }
 };
@@ -61,6 +65,19 @@ export default function ExitIntentPopup() {
   const [timeLeft, setTimeLeft] = useState("");
   
   const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  // Sound Preloading Logic
+  useEffect(() => {
+    if (isOpen) {
+      // Preload all deck sounds
+      const sounds = ["alchemy", "master", "release"];
+      sounds.forEach(sound => {
+        const audio = new Audio(`/sounds/${sound}.mp3`);
+        audio.preload = "auto";
+        audio.load(); // Force load
+      });
+    }
+  }, [isOpen]);
 
   // Check daily limit
   useEffect(() => {
@@ -207,11 +224,6 @@ export default function ExitIntentPopup() {
             {stage === "DECK_SELECTION" && (
               <div className="relative z-10 w-full max-w-sm md:max-w-none">
                 <div className="grid grid-cols-1 gap-4 place-items-center">
-                  {/* We only show a placeholder or single deck back here to represent choice, 
-                      the actual choice happens in the right panel or we can put choice here.
-                      Let's put the choice VISUALLY here for better UX if space permits, 
-                      but given layout, let's keep selection buttons on right and show generic 'Choose' visual on left.
-                   */}
                    <div className="text-center space-y-4">
                       <div className="relative w-48 aspect-[1.45/1] mx-auto perspective-1000">
                         {/* Stacked cards effect */}
@@ -302,32 +314,42 @@ export default function ExitIntentPopup() {
                 </div>
 
                 <div className="grid grid-cols-1 gap-3">
-                  {(Object.keys(DECKS) as DeckType[]).map((deckKey) => (
-                    <button
-                      key={deckKey}
-                      onClick={() => handleSelectDeck(deckKey)}
-                      className="group relative flex items-center p-3 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all hover:scale-[1.02] text-left overflow-hidden"
-                    >
-                      <div className={`absolute inset-0 bg-gradient-to-r ${DECKS[deckKey].color} opacity-0 group-hover:opacity-10 transition-opacity`} />
-                      
-                      <div className="relative w-24 aspect-[1.45/1] rounded-lg overflow-hidden shadow-lg mr-4 shrink-0 border border-white/10">
-                         <img 
-                          src={DECKS[deckKey].back} 
-                          alt={DECKS[deckKey].name}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      
-                      <div className="flex-1">
-                        <h3 className="text-lg font-bold text-white group-hover:text-[#ff00ff] transition-colors">
-                          {DECKS[deckKey].name}
-                        </h3>
-                        <p className="text-xs text-purple-200/60">
-                          {DECKS[deckKey].description}
-                        </p>
-                      </div>
-                    </button>
-                  ))}
+                  <TooltipProvider delayDuration={0}>
+                    {(Object.keys(DECKS) as DeckType[]).map((deckKey) => (
+                      <Tooltip key={deckKey}>
+                        <TooltipTrigger asChild>
+                          <button
+                            onClick={() => handleSelectDeck(deckKey)}
+                            className="group relative flex items-center p-3 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all hover:scale-[1.02] text-left overflow-hidden w-full"
+                          >
+                            <div className={`absolute inset-0 bg-gradient-to-r ${DECKS[deckKey].color} opacity-0 group-hover:opacity-10 transition-opacity`} />
+                            
+                            <div className="relative w-24 aspect-[1.45/1] rounded-lg overflow-hidden shadow-lg mr-4 shrink-0 border border-white/10">
+                               <img 
+                                src={DECKS[deckKey].back} 
+                                alt={DECKS[deckKey].name}
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                            
+                            <div className="flex-1 min-w-0">
+                              <h3 className="text-lg font-bold text-white group-hover:text-[#ff00ff] transition-colors flex items-center gap-2">
+                                {DECKS[deckKey].name}
+                                <Info className="w-4 h-4 text-white/30" />
+                              </h3>
+                              <p className="text-xs text-purple-200/60 truncate">
+                                {DECKS[deckKey].description}
+                              </p>
+                            </div>
+                          </button>
+                        </TooltipTrigger>
+                        <TooltipContent side="right" className="bg-[#2a1b4e] border-purple-500/30 text-white max-w-xs p-4 shadow-xl">
+                          <p className="font-bold text-[#ff00ff] mb-1">{DECKS[deckKey].name} Deck</p>
+                          <p className="text-sm leading-relaxed">{DECKS[deckKey].specialty}</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    ))}
+                  </TooltipProvider>
                 </div>
               </div>
             )}

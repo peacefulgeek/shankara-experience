@@ -134,3 +134,7 @@
   - [x] **Selection UI:** Change Deck Selection to show 3 large vertical Card Back images side-by-side (or stacked on mobile) for direct selection.
   - [x] **Flow Check:** Verify Invite -> Select -> Back (Wait) -> Flip (Reveal) sequence.
   - [ ] **PUSH:** Force push changes to GitHub upon completion.
+- [x] **Popup Enhancements II**
+  - [x] **Tooltips:** Add hover tooltips to deck selection buttons with detailed descriptions.
+  - [x] **Sound Preload:** Implement `Audio` preloading for all 3 deck sounds when popup mounts.
+  - [ ] **PUSH:** Force push changes to GitHub upon completion.
