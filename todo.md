@@ -43,3 +43,7 @@
     - [ ] Update file extensions in code (e.g., `.png` -> `.webp`) where optimization occurred
     - [ ] Delete local `client/public/images` folder to free up space
     - [ ] Verify site functionality with CDN assets
+- [ ] **Final Verification**
+    - [ ] Scan all source files for remaining `/images/` or `client/public` references
+    - [ ] Manually check critical pages (Home, Unboxing, Readers, How-To) for broken images
+    - [ ] Ensure `logo.svg` is handled correctly (CDN or inline)
