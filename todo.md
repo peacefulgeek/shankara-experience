@@ -157,3 +157,15 @@
   - [x] **Divine Button:** Replace plain text trigger with a styled button (gradient border, glow, elegant font).
   - [x] **Stone Name:** Add prominent text above the stone (2pt larger than button text).
   - [ ] **PUSH:** Force push changes to GitHub upon completion.
+- [ ] **Popup Left Panel Overhaul**
+  - [ ] **Remove Image:** Delete the "blank card box" image/container entirely.
+  - [ ] **CSS Energy Vortex:** Create a large, colorful, animated radial gradient/vortex using pure CSS.
+  - [ ] **Massive Text:** Increase "Select a deck" text size by 3x, make it bright white (`text-white font-bold`).
+  - [ ] **Divine Arrow:** Add a huge, pulsing SVG arrow pointing right (`w-16 h-16` or larger).
+  - [ ] **PUSH:** Force push changes to GitHub upon completion.
+- [x] **URGENT UI OVERHAUL**
+  - [x] **Delete Image:** Remove `cosmic-flower.png` and its container from the left panel.
+  - [x] **CSS Explosion:** Implement a complex radial gradient animation (`conic-gradient` + `blur`) to create a "nebula" effect.
+  - [x] **Text Scale:** Increase font size to `text-4xl` or `text-5xl` for "Awaits You".
+  - [x] **Arrow:** Add a massive `ArrowRight` icon (`w-24 h-24`) with a pulse animation.
+  - [ ] **PUSH:** Force push changes to GitHub upon completion.

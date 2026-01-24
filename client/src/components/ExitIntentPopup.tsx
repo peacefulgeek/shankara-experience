@@ -195,51 +195,57 @@ export default function ExitIntentPopup() {
             <X size={20} />
           </button>
 
-          {/* LEFT SIDE: Card Display Area (Top on Mobile) */}
-          <div className="w-full md:w-1/2 relative bg-gradient-to-br from-[#2a1b4e] to-[#1a0b2e] flex items-center justify-center p-6 md:p-8 overflow-hidden min-h-[300px] md:min-h-auto">
-             {/* Cosmic Background Elements */}
-            <div className="absolute inset-0 bg-[url('https://shankara-pull.b-cdn.net/images/stars-pattern.webp')] opacity-30 mix-blend-screen" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 md:w-64 md:h-64 bg-purple-500/20 rounded-full blur-[60px] md:blur-[80px]" />
+          {/* LEFT SIDE: Visual/Interactive Area */}
+          <div className="w-full md:w-1/2 relative bg-gradient-to-br from-[#2a1b4e] to-[#0d041a] flex items-center justify-center p-6 md:p-8 overflow-hidden min-h-[300px] md:min-h-auto group">
+             {/* Dynamic CSS Energy Vortex Background */}
+            <div className="absolute inset-0 opacity-40">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] h-[200%] bg-[conic-gradient(from_90deg_at_50%_50%,#00000000_50%,#ff00ff_100%)] animate-spin-slower blur-[80px]" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-[conic-gradient(from_270deg_at_50%_50%,#00000000_50%,#00ffff_100%)] animate-spin-reverse-slower blur-[60px] mix-blend-screen" />
+            </div>
             
-            {/* STAGE 1 & 5: INVITE / LIMIT (Generic Symbol) */}
+            {/* STAGE 1 & 5: INVITE / LIMIT (Pure CSS Energy) */}
             {(stage === "INVITE" || stage === "LIMIT_REACHED") && (
-              <div className="text-center space-y-4 md:space-y-6 animate-fade-in relative z-10">
-                <div className="w-24 h-24 md:w-32 md:h-32 bg-white/5 rounded-full flex items-center justify-center mx-auto border border-white/10 shadow-[0_0_40px_rgba(139,92,246,0.3)]">
-                  <img src="/images/cosmic-flower.png" alt="Cosmic Lotus" className="w-24 h-24 md:w-32 md:h-32 object-contain drop-shadow-[0_0_15px_rgba(255,0,255,0.5)] animate-pulse-slow" />
+              <div className="text-center space-y-8 relative z-10 flex flex-col items-center">
+                {/* CSS Energy Orb */}
+                <div className="relative w-40 h-40 flex items-center justify-center">
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[#ff00ff] via-[#aa00ff] to-[#00ffff] blur-xl animate-pulse-slow opacity-60"></div>
+                    <div className="absolute inset-4 rounded-full bg-[#1a0b2e] z-10 flex items-center justify-center border border-white/20">
+                        <Sparkles className="w-16 h-16 text-white animate-spin-slow duration-[10s]" />
+                    </div>
+                    <div className="absolute inset-0 rounded-full border-2 border-white/10 animate-ping-slow"></div>
                 </div>
+
                 <div className="space-y-2">
-                  <h3 className="text-xl md:text-2xl font-display font-bold text-white/90">
-                    {stage === "LIMIT_REACHED" ? "Daily Guidance Limit" : 
-                     "Your Shankara Oracle\nCard Guidance"}
+                  <h3 className="text-3xl md:text-5xl font-display font-bold text-white tracking-tight drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">
+                    {stage === "LIMIT_REACHED" ? "Daily Limit" : "Guidance"}
                   </h3>
-                  <p className="text-xs md:text-sm text-purple-200/60 uppercase tracking-widest">
-                    {stage === "LIMIT_REACHED" ? "Return Tomorrow" : 
-                     "Awaits You"}
+                  <p className="text-xl md:text-2xl text-purple-200 font-light uppercase tracking-[0.2em] animate-pulse">
+                    {stage === "LIMIT_REACHED" ? "Reached" : "Awaits You"}
                   </p>
                 </div>
               </div>
             )}
 
-            {/* STAGE 2: DECK SELECTION (VISUAL CARDS) */}
+            {/* STAGE 2: DECK SELECTION (MASSIVE TEXT & ARROW) */}
             {stage === "DECK_SELECTION" && (
-              <div className="relative z-10 w-full max-w-sm md:max-w-none">
-                <div className="grid grid-cols-1 gap-4 place-items-center">
-                   <div className="text-center space-y-4">
-                      <div className="relative w-48 aspect-[1.45/1] mx-auto perspective-1000 opacity-50 grayscale transition-all duration-500">
-                        {/* Stacked cards effect */}
-                        <div className="absolute top-0 left-0 w-full h-full bg-white/5 rounded-xl rotate-[-6deg] scale-90 border border-white/10"></div>
-                        <div className="absolute top-0 left-0 w-full h-full bg-white/10 rounded-xl rotate-[6deg] scale-95 border border-white/10"></div>
-                        <div className="relative w-full h-full bg-[#1a0b2e] rounded-xl border border-white/20 flex items-center justify-center shadow-none">
-                           <div className="text-center p-4">
-                              <Sparkles className="w-8 h-8 text-white/30 mx-auto mb-2" />
-                              <p className="text-xs text-white/30 uppercase tracking-widest">Awaiting Selection</p>
-                           </div>
-                        </div>
-                      </div>
-                      <p className="text-sm text-purple-200/40 font-medium animate-pulse hidden md:block">Select a deck on the right to begin &rarr;</p>
-                      <p className="text-sm text-purple-200/40 font-medium animate-pulse md:hidden">Swipe below to choose your deck &darr;</p>
-                   </div>
+              <div className="relative z-10 w-full h-full flex flex-col items-center justify-center text-center space-y-8 animate-in zoom-in duration-500">
+                
+                {/* Massive Text */}
+                <h2 className="text-4xl md:text-6xl font-display font-bold text-white leading-tight drop-shadow-[0_0_25px_rgba(255,0,255,0.6)]">
+                  CHOOSE<br/>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff00ff] to-[#00ffff]">YOUR PATH</span>
+                </h2>
+
+                {/* Giant Divine Arrow */}
+                <div className="relative">
+                    <div className="absolute inset-0 bg-white/20 blur-xl rounded-full animate-pulse"></div>
+                    <ArrowRight className="relative z-10 w-24 h-24 text-white animate-pulse-subtle drop-shadow-[0_0_15px_rgba(255,255,255,0.8)]" />
                 </div>
+
+                <p className="text-xl text-white/80 font-medium tracking-wide uppercase">
+                  Select on the Right
+                </p>
+
               </div>
             )}
 
