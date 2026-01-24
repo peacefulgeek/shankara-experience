@@ -54,6 +54,23 @@ export default function Videos() {
         </p>
       </section>
 
+      {/* Featured Video: The Shankara Oracle Board */}
+      <section className="pb-16 container mx-auto px-4">
+        <div className="max-w-4xl mx-auto rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(168,85,247,0.2)] bg-black/40 backdrop-blur-sm">
+          <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
+            <iframe 
+              src="https://player.vimeo.com/video/1127562653?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+              frameBorder="0" 
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+              referrerPolicy="strict-origin-when-cross-origin" 
+              style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }} 
+              title="The Shankara Oracle Board" 
+            />
+          </div>
+          <script src="https://player.vimeo.com/api/player.js"></script>
+        </div>
+      </section>
+
       <section className="pb-24">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8">
