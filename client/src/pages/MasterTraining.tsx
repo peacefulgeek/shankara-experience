@@ -172,8 +172,8 @@ export default function MasterTraining() {
         <section className="py-16 relative">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto mb-8 text-center">
-              <h3 className="text-3xl font-display font-bold text-white mb-2">Excerpts From The Shankara Master Course</h3>
-              <p className="text-purple-200/80 italic">Just A Few Selections From The 100+ Videos & Worksheets</p>
+              <h3 className="text-4xl font-display font-bold text-white mb-2">Excerpts From The Shankara Master Course</h3>
+              <p className="text-lg text-purple-200/80 italic">Just A Few Selections From The 100+ Videos & Worksheets</p>
             </div>
             
             <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -192,8 +192,8 @@ export default function MasterTraining() {
                       />
                       <Play className="w-12 h-12 text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] z-10" />
                     </div>
-                    <h4 className="text-white font-bold text-xl text-center group-hover:text-accent transition-colors">{video.title}</h4>
-                    <p className="text-purple-200/60 text-base text-center leading-relaxed">{video.description}</p>
+                    <h4 className="text-white font-bold text-2xl text-center group-hover:text-accent transition-colors">{video.title}</h4>
+                    <p className="text-purple-200/60 text-lg text-center leading-relaxed">{video.description}</p>
                  </div>
               ))}
             </div>
