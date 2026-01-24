@@ -51,3 +51,24 @@
     - [ ] Increase base font size (1pt larger)
     - [ ] Style section headers: +3pt larger, Bold, 2 lines above, 1 line below
     - [ ] Add "Book Session / Buy Oracle" CTA box at end of every article
+- [ ] **Video Optimization**
+    - [ ] Locate large video files (e.g., in `client/public/videos` or similar)
+    - [ ] Compress videos to 720p using `ffmpeg`
+    - [ ] Upload compressed videos to Bunny CDN
+    - [ ] Update code to reference CDN video URLs
+    - [ ] Delete local video files
+- [ ] **System Recovery**
+    - [ ] Restart dev server immediately
+    - [ ] Verify preview is working
+- [ ] **Final Site Verification**
+    - [ ] Confirm Article page typography changes (font size, headers, CTA)
+    - [ ] Confirm How-To page images are loading from CDN
+    - [ ] Confirm Exit Intent Popup behavior
+    - [ ] Confirm no local assets remain
+- [ ] **Final Save**
+    - [ ] Attempt checkpoint save with max timeout one last time
+- [ ] **Deep Cleanup**
+    - [ ] Locate and remove the "4G site" zip/folder
+    - [ ] Locate and remove the "1G main video" file
+    - [ ] Verify disk usage is significantly reduced
+    - [ ] Retry checkpoint save on clean state
