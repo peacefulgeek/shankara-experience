@@ -46,12 +46,12 @@ export default function MasterTraining() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-[#ff00ff] hover:bg-[#d900d9] text-white px-8 py-6 text-lg rounded-full font-bold shadow-[0_0_30px_rgba(255,0,255,0.4)] hover:shadow-[0_0_50px_rgba(255,0,255,0.6)] transition-all">
+              <Button size="lg" className="bg-[#ff00ff] hover:bg-[#d900d9] text-white px-8 py-6 text-lg rounded-full font-bold shadow-[0_0_30px_rgba(255,0,255,0.4)] hover:shadow-[0_0_50px_rgba(255,0,255,0.6)] transition-all transform hover:-translate-y-1">
                 Enroll Now for $397
               </Button>
-              <Link href="/certification">
-                <Button variant="outline" size="lg" className="border-purple-400/50 text-purple-200 hover:bg-purple-900/50 px-8 py-6 text-lg rounded-full backdrop-blur-sm hover:text-white transition-all">
-                  View Certification
+              <Link href="/the-ancients">
+                <Button variant="outline" size="lg" className="border-purple-400/50 text-purple-200 hover:bg-purple-900/50 px-8 py-6 text-lg rounded-full backdrop-blur-sm hover:text-white transition-all group">
+                  Explore The Ancients <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
             </div>

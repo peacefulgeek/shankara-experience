@@ -172,12 +172,12 @@ export default function Unboxing() {
                 </p>
                 
                 <div className="pt-8">
-                  <Link href="/how-to-shankara">
+                  <Link href="/how">
                     <Button 
                       size="lg"
                       className="w-full bg-[#ff00ff] hover:bg-[#d900d9] text-white font-bold text-xl py-8 rounded-full shadow-[0_10px_40px_rgba(255,0,255,0.4)] hover:shadow-[0_15px_50px_rgba(255,0,255,0.6)] transition-all transform hover:-translate-y-1 group"
                     >
-                      Learn how to use the board 
+                      Learn How To Use Shankara
                       <ArrowRight className="ml-4 w-6 h-6 group-hover:translate-x-2 transition-transform" />
                     </Button>
                   </Link>

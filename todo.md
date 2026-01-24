@@ -44,3 +44,12 @@
   - [ ] Commit all changes (image resizing, source cleanup).
   - [ ] Push to `main` branch on GitHub.
   - [ ] Verify deployment triggers on Railway.
+- [x] **Unboxing Page Updates**
+  - [x] Change button text to "Learn How To Use Shankara".
+  - [x] Update link to point to `/how`.
+- [x] **Training Page Enhancements**
+  - [x] Add "Explore The Ancients" button linking to `/the-ancients`.
+  - [x] Redesign the card to be more robust and visually appealing (prettier).
+- [x] **How Page Updates**
+  - [x] Remove header button.
+  - [x] Add description: "Awakening you to your divine nature and the deepest truths within." (expanded to 8-10 words).

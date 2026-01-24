@@ -35,12 +35,10 @@ export default function How() {
                 </span>
               </h1>
               
-              <div className="flex justify-center gap-4 pt-4">
-                <Link href="/the-ancients">
-                  <Button variant="outline" size="lg" className="border-purple-400/30 text-purple-200 hover:bg-purple-900/30 px-8 rounded-full backdrop-blur-sm group">
-                    Learn About Ancient Divination <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </Link>
+              <div className="pt-4 max-w-2xl mx-auto">
+                <p className="text-2xl md:text-3xl font-display italic text-purple-200/90 leading-relaxed">
+                  "Awakening you to your divine nature and the deepest truths within."
+                </p>
               </div>
             </div>
           </div>
