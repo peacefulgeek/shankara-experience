@@ -1,4 +1,5 @@
 import { Switch, Route } from "wouter";
+import ScrollToTop from "@/components/ScrollToTop";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import SocialProof from "@/components/SocialProof";
@@ -24,6 +25,7 @@ import Testimonials from "@/pages/Testimonials";
 function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <ScrollToTop />
       <SocialProof />
       <Switch>
         <Route path="/" component={Home} />

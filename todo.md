@@ -1,2 +1,13 @@
 - [ ] **Home Page Layout Update**
     - [ ] Move `DailyCardDraw` component to the bottom of the page, immediately before the `<Footer />`.
+- [ ] **Readers Page Updates**
+    - [ ] Update Andreea Plesea image (`andreea-plesea.png`)
+    - [ ] Update Kristina Jackson image (`kristina-jackson.png`)
+    - [ ] Update Suzanne McMurray image (`suzanne-mcmurray.jpg`)
+    - [ ] Update Paula Londono image (`paula-londono.png`)
+- [ ] **Global UX Improvements**
+    - [ ] Implement "Scroll to Top" behavior on route change
+- [ ] **Unboxing Section Overhaul**
+    - [ ] **Decks**: Update to "4 Sacred Decks", add "The Sacred Action Cards", use `shankara-4-decks.webp`
+    - [ ] **Stones & Cube**: Layout with Stones (`shankara-stones.webp`) on LEFT, Cube (`shaktis-cube.png`) on RIGHT
+    - [ ] **Board & Guide**: Layout with Board (`shankara-board.webp`) on LEFT, Books (`shankara-books.webp`) on RIGHT

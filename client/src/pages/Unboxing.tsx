@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Box, Layers, Gem, ArrowRight, Check } from "lucide-react";
+import { Box, Check, ArrowRight } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -41,21 +41,10 @@ export default function Unboxing() {
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row items-center gap-16">
               
-              {/* Left Side - 4 Square Grid */}
+              {/* Left Side - 4 Decks Image */}
               <div className="w-full md:w-1/2">
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="aspect-square rounded-2xl overflow-hidden shadow-lg transform hover:scale-[1.02] transition-transform duration-500">
-                    <img src="/images/deck-master.webp" alt="Master Deck" className="w-full h-full object-cover" />
-                  </div>
-                  <div className="aspect-square rounded-2xl overflow-hidden shadow-lg transform translate-y-8 hover:translate-y-6 transition-transform duration-500">
-                    <img src="/images/deck-alchemy.webp" alt="Alchemy Deck" className="w-full h-full object-cover" />
-                  </div>
-                  <div className="aspect-square rounded-2xl overflow-hidden shadow-lg transform hover:scale-[1.02] transition-transform duration-500">
-                    <img src="/images/deck-release.webp" alt="Release Deck" className="w-full h-full object-cover" />
-                  </div>
-                  <div className="aspect-square rounded-2xl overflow-hidden shadow-lg transform translate-y-8 hover:translate-y-6 transition-transform duration-500">
-                    <img src="/images/deck-sky.webp" alt="Sky Deck" className="w-full h-full object-cover" />
-                  </div>
+                <div className="rounded-2xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-500 border-4 border-purple-50">
+                  <img src="/images/Shankara4Decks.webp" alt="The 4 Sacred Decks" className="w-full h-full object-cover" />
                 </div>
               </div>
 
@@ -66,7 +55,7 @@ export default function Unboxing() {
                   <h2 className="text-4xl font-display font-bold text-purple-900">The 4 Sacred Decks</h2>
                 </div>
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  Over 300 cards divided into four distinct decks, each serving a unique purpose in your reading. From the Master Deck that sets the theme, to the Alchemy and Release decks that guide your transformation.
+                  Over 300 cards divided into four distinct decks, each serving a unique purpose in your reading. From the Master Deck that sets the theme, to the Alchemy and Release decks that guide your transformation, and the new Sacred Action Cards.
                 </p>
                 <ul className="space-y-4">
                   <li className="flex items-center text-purple-900 font-medium p-3 bg-purple-50 rounded-lg">
@@ -83,7 +72,7 @@ export default function Unboxing() {
                   </li>
                   <li className="flex items-center text-purple-900 font-medium p-3 bg-yellow-50 rounded-lg">
                     <span className="w-2 h-2 bg-yellow-500 rounded-full mr-3" />
-                    Sky Deck: Universal Laws
+                    The Sacred Action Cards: Practical Steps
                   </li>
                 </ul>
               </div>
@@ -91,84 +80,101 @@ export default function Unboxing() {
           </div>
         </section>
 
-        {/* COMPONENT 2: THE STONES - DARK (YIN) */}
+        {/* COMPONENT 2: STONES & CUBE - DARK (YIN) */}
         <section className="py-24 bg-cosmic-dark relative overflow-hidden">
           <div className="container mx-auto px-4">
-            <div className="flex flex-col md:flex-row items-center gap-16">
+            <div className="flex flex-col md:flex-row items-center gap-8">
               
-              {/* Left Side - Text */}
+              {/* Left Side - Stones */}
               <div className="w-full md:w-1/2 space-y-6">
-                <div className="flex items-center gap-4 mb-2">
+                 <div className="flex items-center gap-4 mb-6">
                   <span className="text-6xl font-display font-bold text-purple-900/50">02</span>
-                  <h2 className="text-4xl font-display font-bold text-white">18 Obsidian Stones</h2>
+                  <h2 className="text-4xl font-display font-bold text-white">Stones & Cube</h2>
                 </div>
-                <p className="text-lg text-purple-200/80 leading-relaxed">
-                  Hand-engraved obsidian stones that connect you to deep earth wisdom. Cast them onto the board to receive direct guidance on timing, elements, and planetary influences.
-                </p>
-                <div className="grid grid-cols-2 gap-4 pt-4">
-                   <div className="bg-purple-900/30 p-6 rounded-xl border border-white/10 hover:bg-purple-900/50 transition-colors">
-                      <h4 className="text-accent font-bold mb-2 text-lg">Planetary Stones</h4>
-                      <p className="text-sm text-purple-200/60 leading-relaxed">Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto</p>
-                   </div>
-                   <div className="bg-purple-900/30 p-6 rounded-xl border border-white/10 hover:bg-purple-900/50 transition-colors">
-                      <h4 className="text-accent font-bold mb-2 text-lg">Elemental Stones</h4>
-                      <p className="text-sm text-purple-200/60 leading-relaxed">Earth, Air, Fire, Water, Ether</p>
-                   </div>
-                </div>
-              </div>
-
-              {/* Right Side - Stones Image */}
-              <div className="w-full md:w-1/2">
-                <div className="relative rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(147,51,234,0.3)] border border-white/10 aspect-[4/3] flex items-center justify-center bg-black/40 group">
+                
+                <div className="relative rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(147,51,234,0.3)] border border-white/10 aspect-[4/3] flex items-center justify-center bg-black/40 group mb-6">
                    <img 
-                     src="/images/stones-pile.webp" 
+                     src="/images/ShankaraStones.webp" 
                      alt="18 Obsidian Stones" 
                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                    />
                 </div>
+                
+                <p className="text-lg text-purple-200/80 leading-relaxed">
+                  18 Hand-engraved obsidian stones connect you to deep earth wisdom. Cast them onto the board to receive direct guidance on timing, elements, and planetary influences.
+                </p>
+              </div>
+
+              {/* Right Side - Cube */}
+              <div className="w-full md:w-1/2 space-y-6">
+                 <div className="h-[88px] hidden md:block"></div> {/* Spacer to align with left title */}
+                 
+                <div className="relative rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(255,20,147,0.3)] border border-white/10 aspect-[4/3] flex items-center justify-center bg-black/40 group mb-6">
+                   <img 
+                     src="/images/ShaktisCube.png" 
+                     alt="Shakti's Cube" 
+                     className="w-full h-full object-contain p-8 transform group-hover:scale-105 transition-transform duration-700"
+                   />
+                </div>
+                
+                <p className="text-lg text-purple-200/80 leading-relaxed">
+                  Shakti's Cube adds a dimension of divine feminine power, unlocking deeper layers of intuition and creative force within your readings.
+                </p>
               </div>
 
             </div>
           </div>
         </section>
 
-        {/* COMPONENT 3: THE BOARD - LIGHT (YANG) */}
+        {/* COMPONENT 3: BOARD & BOOKS - LIGHT (YANG) */}
         <section className="py-24 bg-white relative">
           <div className="container mx-auto px-4">
-            <div className="flex flex-col md:flex-row items-center gap-16">
+            <div className="flex flex-col md:flex-row items-center gap-8">
               
-              {/* Left Side - Board Image */}
-              <div className="w-full md:w-1/2">
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white aspect-square flex items-center justify-center p-0 group border-4 border-purple-50">
+              {/* Left Side - Board */}
+              <div className="w-full md:w-1/2 space-y-6">
+                <div className="flex items-center gap-4 mb-6">
+                  <span className="text-6xl font-display font-bold text-purple-100">03</span>
+                  <h2 className="text-4xl font-display font-bold text-purple-900">Board & Wisdom</h2>
+                </div>
+
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white aspect-square flex items-center justify-center p-0 group border-4 border-purple-50 mb-6">
                   <div className="absolute inset-0 bg-gradient-to-tr from-purple-100/50 to-blue-100/50 opacity-50" />
                   <img 
-                    src="/images/board-flat-angle.webp" 
+                    src="/images/ShankaraBoard.webp" 
                     alt="Oracle Board" 
                     className="relative z-10 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 drop-shadow-xl"
                   />
                 </div>
+
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  The Oracle Board is a sacred geometry grid mapping the cosmos. It's an energetic field where your stones land to reveal hidden patterns.
+                </p>
               </div>
 
-              {/* Right Side - Text */}
+              {/* Right Side - Books */}
               <div className="w-full md:w-1/2 space-y-6">
-                <div className="flex items-center gap-4 mb-2">
-                  <span className="text-6xl font-display font-bold text-purple-100">03</span>
-                  <h2 className="text-4xl font-display font-bold text-purple-900">The Oracle Board</h2>
+                <div className="h-[88px] hidden md:block"></div> {/* Spacer */}
+
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white aspect-square flex items-center justify-center p-0 group border-4 border-purple-50 mb-6">
+                  <img 
+                    src="/images/ShankaraBOOKSTWO.webp" 
+                    alt="Shankara Books" 
+                    className="relative z-10 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
                 </div>
+
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  A sacred geometry grid that maps the cosmos. This isn't just a playing surface; it's an energetic field where your stones land to reveal hidden patterns and synchronicities.
+                  Comprehensive guidebooks provide deep insights into every card, stone, and board position, empowering you to interpret messages with clarity and confidence.
                 </p>
-                <ul className="space-y-3 text-gray-700">
-                  <li className="flex gap-3 items-center"><Check className="w-5 h-5 text-accent" /> <strong>The 4 Realms:</strong> Earth, Water, Fire, Air</li>
-                  <li className="flex gap-3 items-center"><Check className="w-5 h-5 text-accent" /> <strong>The 12 Houses:</strong> Zodiacal archetypes</li>
-                  <li className="flex gap-3 items-center"><Check className="w-5 h-5 text-accent" /> <strong>The Central Lotus:</strong> The point of integration</li>
-                </ul>
+                
                 <Link href="/how-to-shankara">
-                  <Button variant="outline" className="border-purple-200 text-purple-700 hover:bg-purple-50 mt-4 rounded-full px-8 h-12">
+                  <Button variant="outline" className="border-purple-200 text-purple-700 hover:bg-purple-50 mt-2 rounded-full px-8 h-12 w-full md:w-auto">
                     Learn how to use the board <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
                 </Link>
               </div>
+
             </div>
           </div>
         </section>
