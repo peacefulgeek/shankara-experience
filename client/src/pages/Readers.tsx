@@ -40,7 +40,7 @@ const readers = [
     location: "Bilingual (English/Spanish)",
     specialty: "Empowerment & Cultural Bridging",
     image: "https://shankara-pull.b-cdn.net/images/PaulaLondonoImage.webp", 
-    bio: "Paula Londoño is a standout bilingual Shankara master, known for her life-changing Shankara Oracle readings. Her ability to empower clients and bridge cultures in both English and Spanish has made her services transformative. Recognized for her profound impact, Paula is a guiding light for those seeking healing and spiritual growth. (Paula Londoño es una destacada maestra bilingüe de Shankara, conocida por sus lecturas transformadoras del Oráculo Shankara. Su habilidad para empoderar a los clientes y unir culturas tanto en inglés como en español ha hecho que sus servicios sean transformadores. Reconocida por su profundo impacto, Paula es una luz guía para aquellos que buscan sanación y crecimiento espiritual.)",
+    bio: "Paula Londoño is a standout bilingual Shankara master, known for her life-changing Shankara Oracle readings. Her ability to empower clients and bridge cultures in both English and Spanish has made her services transformative. Recognized for her profound impact, Paula is a guiding light for those seeking healing and spiritual growth.\n\nPaula Londoño es una destacada maestra bilingüe de Shankara, conocida por sus lecturas transformadoras del Oráculo Shankara. Su habilidad para empoderar a los clientes y unir culturas tanto en inglés como en español ha hecho que sus servicios sean transformadores. Reconocida por su profundo impacto, Paula es una luz guía para aquellos que buscan sanación y crecimiento espiritual.",
     website: "mailto:psusi@me.com", 
     contactType: "email"
   },

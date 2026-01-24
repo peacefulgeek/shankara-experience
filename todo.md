@@ -1,6 +1,2 @@
-- [ ] **Update Readers Page Content**
-  - [ ] Change "Kristina" to "Christina" and update email to `jacksoncm.unk@gmail.com`.
-  - [ ] Update Suzanne's email to `suzanneavision@gmail.com`.
-  - [ ] Update Paula Londono's email to `psusi@me.com`.
-  - [ ] Replace Paula Londono's bio with the provided bilingual text.
-  - [ ] Remove quotation marks from ALL reader bios.
+- [ ] **Correct Bio Text**
+  - [ ] Update Paula Londoño's bio to the exact provided text, removing parentheses and ensuring correct line breaks.
