@@ -266,32 +266,61 @@ export default function MasterTraining() {
           </div>
         </section>
 
-        {/* COURSE MODULES GRID - REDESIGNED ELEGANT GLASSMORPHISM */}
-        <section className="py-24 relative">
-          <div className="container mx-auto px-4">
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-center text-white mb-16 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
-              What You Will Master
-            </h2>
+        {/* COURSE MODULES GRID - VIBRANT REDESIGN */}
+        <section className="py-24 relative overflow-hidden">
+          {/* Background glow effects */}
+          <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#ff00ff]/15 rounded-full blur-[120px] pointer-events-none" />
+          <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[#ffd700]/10 rounded-full blur-[100px] pointer-events-none" />
+          
+          <div className="container mx-auto px-4 relative z-10">
+            {/* Section Header */}
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center gap-2 mb-4 px-5 py-2 rounded-full border border-[#ffd700]/40 bg-[#ffd700]/10 backdrop-blur-sm">
+                <Sparkles className="w-4 h-4 text-[#ffd700]" />
+                <span className="text-[#ffd700] font-bold tracking-widest uppercase text-sm">Your Transformation</span>
+              </div>
+              <h2 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">
+                What You Will <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff00ff] to-[#ffd700]">Master</span>
+              </h2>
+              <p className="text-xl text-purple-200/80 max-w-2xl mx-auto">
+                Six powerful pillars of wisdom to guide your spiritual evolution
+              </p>
+            </div>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
-                { icon: Crown, title: "Awaken Inner Master", desc: "Connect with your inner wisdom and release what no longer serves you." },
-                { icon: Zap, title: "Unlock Intuition", desc: "Replace triggers with profound insight and move beyond limited identity." },
-                { icon: Lightbulb, title: "Become an Alchemist", desc: "Discover transformative alchemy principles that turn challenges into opportunities." },
-                { icon: BookOpen, title: "Ancient Wisdom", desc: "Dive into pure teachings about Karma, Dharma, and Vedic Astrology basics." },
-                { icon: Users, title: "Serve Humanity", desc: "Enhance your abilities to offer new perspectives and guide others toward healing." },
-                { icon: Lock, title: "Lead Rituals", desc: "Uncover the role of rituals and how they can serve you on your path." }
+                { icon: Crown, title: "Awaken Inner Master", desc: "Connect with your inner wisdom and release what no longer serves you.", color: "#ff00ff" },
+                { icon: Zap, title: "Unlock Intuition", desc: "Replace triggers with profound insight and move beyond limited identity.", color: "#ffd700" },
+                { icon: Lightbulb, title: "Become an Alchemist", desc: "Discover transformative alchemy principles that turn challenges into opportunities.", color: "#ff00ff" },
+                { icon: BookOpen, title: "Ancient Wisdom", desc: "Dive into pure teachings about Karma, Dharma, and Vedic Astrology basics.", color: "#ffd700" },
+                { icon: Users, title: "Serve Humanity", desc: "Enhance your abilities to offer new perspectives and guide others toward healing.", color: "#ff00ff" },
+                { icon: Lock, title: "Lead Rituals", desc: "Uncover the role of rituals and how they can serve you on your path.", color: "#ffd700" }
               ].map((feature, i) => (
-                <div key={i} className="group relative p-8 rounded-3xl bg-purple-900/10 border border-white/5 hover:bg-purple-900/20 hover:border-white/10 transition-all duration-500 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div key={i} className="group relative p-8 rounded-3xl bg-gradient-to-br from-[#1a0b2e] to-[#2d1b4e] border-2 border-[#ffd700]/30 hover:border-[#ffd700]/60 transition-all duration-500 overflow-hidden shadow-[0_0_40px_rgba(255,215,0,0.1)] hover:shadow-[0_0_60px_rgba(255,0,255,0.2)]">
+                  {/* Neon glow on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#ff00ff]/10 to-[#ffd700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   
                   <div className="relative z-10">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500/20 to-blue-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 border border-white/10">
-                      <feature.icon className="w-7 h-7 text-purple-200" />
+                    {/* Icon with neon ring */}
+                    <div 
+                      className="w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 border-2"
+                      style={{ 
+                        backgroundColor: `${feature.color}30`,
+                        borderColor: `${feature.color}60`,
+                        boxShadow: `0 0 25px ${feature.color}40`
+                      }}
+                    >
+                      <feature.icon 
+                        className="w-8 h-8" 
+                        style={{ 
+                          color: feature.color,
+                          filter: `drop-shadow(0 0 8px ${feature.color})`
+                        }} 
+                      />
                     </div>
                     
-                    <h3 className="text-xl font-bold text-white mb-3 tracking-wide">{feature.title}</h3>
-                    <p className="text-purple-200/60 leading-relaxed font-light text-sm">{feature.desc}</p>
+                    <h3 className="text-2xl font-bold text-white mb-4 tracking-wide drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]">{feature.title}</h3>
+                    <p className="text-purple-100/80 leading-relaxed text-base">{feature.desc}</p>
                   </div>
                 </div>
               ))}
