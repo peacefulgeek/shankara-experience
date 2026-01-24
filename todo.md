@@ -176,3 +176,6 @@
     - [x] **Style:** Neon pink background (`bg-[#ff00ff]`), Gold border (`border-amber-400`), Glow effect.
     - [x] **Action:** Opens the same `VideoModal`.
   - [ ] **PUSH:** Force push changes to GitHub upon completion.
+- [x] **HOW Page Design Detail**
+  - [x] **Golden Line:** Add a `h-px` div with `bg-gradient-to-r from-transparent via-amber-400 to-transparent` and a shadow glow at the bottom of the Hero section.
+  - [ ] **PUSH:** Force push changes to GitHub upon completion.
