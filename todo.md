@@ -47,3 +47,7 @@
     - [ ] Scan all source files for remaining `/images/` or `client/public` references
     - [ ] Manually check critical pages (Home, Unboxing, Readers, How-To) for broken images
     - [ ] Ensure `logo.svg` is handled correctly (CDN or inline)
+- [ ] **Article Page Refinements**
+    - [ ] Increase base font size (1pt larger)
+    - [ ] Style section headers: +3pt larger, Bold, 2 lines above, 1 line below
+    - [ ] Add "Book Session / Buy Oracle" CTA box at end of every article
