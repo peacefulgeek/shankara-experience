@@ -1,2 +1,7 @@
 - [ ] **Update Ana's Bio**
   - [ ] Replace Ana Andreea Guidance's bio with the new English/Romanian text, ensuring correct formatting and line breaks.
+- [ ] **Redesign How It Works Page**
+  - [ ] Analyze current `HowShankaraWorks.tsx` and `TheAncients.tsx` (formerly HowTo) to understand current state.
+  - [ ] Re-implement "lovely card headers with various colors" design pattern.
+  - [ ] Add a prominent button/section linking to "The Ancients" page.
+  - [ ] Ensure the page has the premium, mystical aesthetic requested.
