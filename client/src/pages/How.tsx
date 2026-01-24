@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Play, Sparkles, ArrowRight, BookOpen, Gem, Star, Heart, Layers, Compass, Zap } from "lucide-react";
@@ -5,8 +6,11 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { Link } from "wouter";
+import VideoModal from "@/components/VideoModal";
 
 export default function How() {
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+
   return (
     <div className="min-h-screen font-sans selection:bg-accent selection:text-white overflow-x-hidden relative bg-[#2a1b3d]">
       <SEO 
@@ -35,10 +39,19 @@ export default function How() {
                 </span>
               </h1>
               
-              <div className="pt-4 max-w-2xl mx-auto">
+              <div className="pt-4 max-w-2xl mx-auto space-y-8">
                 <p className="text-2xl md:text-3xl font-display italic text-purple-200/90 leading-relaxed">
                   "Awakening you to your divine nature and the deepest truths within."
                 </p>
+
+                {/* NEW STYLED BUTTON */}
+                <Button 
+                  onClick={() => setIsVideoOpen(true)}
+                  className="bg-[#ff00ff] hover:bg-[#d900d9] text-white border-2 border-amber-400 px-8 py-6 h-auto text-lg rounded-full font-bold shadow-[0_0_20px_rgba(255,0,255,0.4)] hover:shadow-[0_0_30px_rgba(255,0,255,0.6)] transition-all group animate-pulse-slow"
+                >
+                  <Play className="w-5 h-5 mr-3 fill-current" />
+                  Watch The Trailer
+                </Button>
               </div>
             </div>
           </div>
@@ -113,7 +126,10 @@ export default function How() {
                   </div>
                 </div>
 
-                <div className="aspect-video bg-black/40 rounded-2xl border border-white/10 flex items-center justify-center relative overflow-hidden group cursor-pointer shadow-[0_0_40px_rgba(168,85,247,0.2)]">
+                <div 
+                  className="aspect-video bg-black/40 rounded-2xl border border-white/10 flex items-center justify-center relative overflow-hidden group cursor-pointer shadow-[0_0_40px_rgba(168,85,247,0.2)]"
+                  onClick={() => setIsVideoOpen(true)}
+                >
                   <div className="absolute inset-0 bg-accent/10 group-hover:bg-accent/20 transition-colors" />
                   <Play className="w-16 h-16 text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]" />
                   <span className="absolute bottom-4 right-4 text-xs font-mono text-white/60 bg-black/50 px-2 py-1 rounded">04:44</span>
@@ -182,202 +198,30 @@ export default function How() {
                       <div className="p-2 bg-amber-500/20 rounded-lg text-amber-300">
                         <BookOpen size={20} />
                       </div>
-                      <h3 className="text-xl font-bold text-white">Interpret & Integrate</h3>
+                      <h3 className="text-xl font-bold text-white">Interpret the Message</h3>
                     </div>
-                    <p className="text-purple-200/80 leading-relaxed mb-4">
-                      Look up the elements in The Book of Meanings. Use your own spiritual vocabulary to interpret all that emerges. As you connect the many messages and cards together, you will earn the answer to your questions. Pick a Sacred Action Card, too!
-                    </p>
-                    <p className="font-medium text-white italic border-l-2 border-accent pl-4">
-                      "Make Shankara your own and enjoy it!"
+                    <p className="text-purple-200/80 leading-relaxed">
+                      Consult the comprehensive Guidebooks to interpret the messages. The system is designed to bypass the analytical mind and speak directly to your soul, offering clarity, healing, and actionable guidance for your life's path.
                     </p>
                   </div>
                 </div>
 
-              </div>
-
-            </div>
-          </div>
-        </section>
-
-        {/* THE GUIDANCE SYSTEM (Arrows) */}
-        <section className="py-24 bg-[#2a1b3d] relative">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-16 items-center">
-               <div className="order-2 md:order-1">
-                <Badge variant="outline" className="border-cyan-400 text-cyan-200 px-4 py-1 text-sm tracking-[0.2em] uppercase bg-cyan-900/30 backdrop-blur-md mb-6">
-                  <Compass className="w-3 h-3 mr-2 text-cyan-400" /> Direct Guidance
-                </Badge>
-                <h2 className="text-4xl font-display font-bold text-white mb-6">Follow the Arrows</h2>
-                <p className="text-lg text-purple-200/80 leading-relaxed mb-6">
-                  The Shankara Stones are not just static symbols—they are directional guides. When a stone lands, check its arrows. They point precisely to specific areas on the board or to the Sacred Decks, revealing the exact energies and wisdom you need to focus on right now.
-                </p>
-                <ul className="space-y-4 text-purple-200/80">
-                  <li className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 mt-1">
-                      <ArrowRight size={14} />
+                 {/* Card 4: The Integration */}
+                 <div className="bg-[#2a1b3d] rounded-2xl overflow-hidden shadow-lg border border-white/10 group hover:border-accent/30 transition-all duration-500">
+                  <div className="h-2 bg-gradient-to-r from-purple-500 via-indigo-500 to-violet-500" />
+                  <div className="p-8">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="p-2 bg-purple-500/20 rounded-lg text-purple-300">
+                        <Zap size={20} />
+                      </div>
+                      <h3 className="text-xl font-bold text-white">Integrate & Act</h3>
                     </div>
-                    <span>Arrows pointing to a House illuminate that area of your life.</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 mt-1">
-                      <ArrowRight size={14} />
-                    </div>
-                    <span>Arrows pointing to a Deck invite you to draw a card for deeper insight.</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="order-1 md:order-2 rounded-2xl overflow-hidden shadow-[0_0_60px_rgba(34,211,238,0.2)] border border-white/10">
-                <img 
-                  src="/images/board-guidance-arrows.webp" 
-                  loading="lazy" 
-                  alt="Shankara Board Guidance Arrows" 
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* THE THREE SACRED DECKS */}
-        <section className="py-24 bg-[#1a0b2e] relative overflow-hidden">
-           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-purple-500/5 rounded-full blur-[120px] pointer-events-none" />
-           
-           <div className="container mx-auto px-4 relative z-10">
-             <div className="text-center mb-16 max-w-3xl mx-auto">
-                <Badge variant="outline" className="border-pink-400 text-pink-200 px-4 py-1 text-sm tracking-[0.2em] uppercase bg-pink-900/30 backdrop-blur-md mb-6">
-                  <Layers className="w-3 h-3 mr-2 text-pink-400" /> The Trinity of Wisdom
-                </Badge>
-                <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">The Three Sacred Decks</h2>
-                <p className="text-lg text-purple-200/80">
-                  Three distinct decks work in harmony to guide your journey from releasing the old to mastering your highest potential.
-                </p>
-             </div>
-
-             <div className="mb-16 rounded-3xl overflow-hidden shadow-2xl border border-white/10 max-w-[80%] mx-auto">
-               <img 
-                 src="/images/decks-overview.webp" 
-                 loading="lazy" 
-                 alt="The Master, Alchemy, and Release Decks" 
-                 className="w-full h-auto"
-               />
-             </div>
-
-             <div className="grid md:grid-cols-3 gap-8">
-               {/* Master Deck */}
-               <div className="bg-[#2a1b3d] p-8 rounded-2xl border border-white/10 hover:border-pink-500/50 transition-colors group">
-                 <div className="h-1 w-20 bg-gradient-to-r from-pink-500 to-purple-500 mb-6 group-hover:w-full transition-all duration-500" />
-                 <h3 className="text-2xl font-bold text-white mb-4">Master Deck</h3>
-                 <p className="text-purple-200/80 leading-relaxed">
-                   Connects you with Ascended Masters and higher consciousness. This deck provides the ultimate guidance for mastering your spiritual path and aligning with your soul's highest purpose.
-                 </p>
-               </div>
-
-               {/* Alchemy Deck */}
-               <div className="bg-[#2a1b3d] p-8 rounded-2xl border border-white/10 hover:border-blue-500/50 transition-colors group">
-                 <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-cyan-500 mb-6 group-hover:w-full transition-all duration-500" />
-                 <h3 className="text-2xl font-bold text-white mb-4">Alchemy Deck</h3>
-                 <p className="text-purple-200/80 leading-relaxed">
-                   The bridge between release and mastery. These cards facilitate profound transformation, turning the lead of your challenges into the gold of wisdom and new possibilities.
-                 </p>
-               </div>
-
-               {/* Release Deck */}
-               <div className="bg-[#2a1b3d] p-8 rounded-2xl border border-white/10 hover:border-amber-500/50 transition-colors group">
-                 <div className="h-1 w-20 bg-gradient-to-r from-amber-500 to-orange-500 mb-6 group-hover:w-full transition-all duration-500" />
-                 <h3 className="text-2xl font-bold text-white mb-4">Release Deck</h3>
-                 <p className="text-purple-200/80 leading-relaxed">
-                   Identifies what is ready to leave your life. From old patterns to limiting beliefs, this deck gently guides you to let go, creating space for the new to enter.
-                 </p>
-               </div>
-             </div>
-           </div>
-        </section>
-
-        {/* SACRED ACTION CARDS */}
-        <section className="py-24 bg-[#2a1b3d] relative">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-16 items-center">
-              <div className="rounded-2xl overflow-hidden shadow-[0_0_60px_rgba(236,72,153,0.2)] border border-white/10">
-                <img 
-                  src="/images/sacred-action-cards.webp" 
-                  loading="lazy" 
-                  alt="Sacred Action Cards" 
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-              <div>
-                <Badge variant="outline" className="border-pink-400 text-pink-200 px-4 py-1 text-sm tracking-[0.2em] uppercase bg-pink-900/30 backdrop-blur-md mb-6">
-                  <Zap className="w-3 h-3 mr-2 text-pink-400" /> Embodied Wisdom
-                </Badge>
-                <h2 className="text-4xl font-display font-bold text-white mb-6">Sacred Action Cards</h2>
-                <p className="text-lg text-purple-200/80 leading-relaxed mb-6">
-                  Insight without action is just a dream. The Sacred Action Cards bridge the gap between spiritual realization and daily life. They offer simple, powerful habits and virtues to practice.
-                </p>
-                <p className="text-lg text-purple-200/80 leading-relaxed">
-                  By integrating these small, consistent actions, you cultivate virtue and raise your vibration. This is how we truly improve our lives—not just by knowing the path, but by walking it with love and discipline every single day.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* GUIDANCE & INTEGRATION (Original Bottom Section) */}
-        <section className="py-24 bg-[#1a0b2e] relative overflow-hidden">
-           {/* Background decorative elements */}
-           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[100px] pointer-events-none" />
-           <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-pink-500/5 rounded-full blur-[100px] pointer-events-none" />
-
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="max-w-5xl mx-auto">
-              <div className="text-center mb-16">
-                <Badge variant="outline" className="border-blue-400 text-blue-200 px-4 py-1 text-sm tracking-[0.2em] uppercase bg-blue-900/30 backdrop-blur-md mb-6">
-                  <Star className="w-3 h-3 mr-2 text-blue-400" /> Deepening the Connection
-                </Badge>
-                <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">Guidance & Integration</h2>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:bg-white/10 transition-colors">
-                  <h3 className="text-xl font-bold text-accent mb-4">The Book of Meanings</h3>
-                  <p className="text-purple-200/80 leading-relaxed">
-                    The Shankara Book of Meanings contains all of the channeled guidance for the Shankara Sacred Stones, words, and symbols on the board.
-                  </p>
+                    <p className="text-purple-200/80 leading-relaxed">
+                      Take the wisdom you've received and apply it to your daily life. The Oracle empowers you to make decisions aligned with your highest self, transforming challenges into opportunities for growth.
+                    </p>
+                  </div>
                 </div>
 
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:bg-white/10 transition-colors">
-                  <h3 className="text-xl font-bold text-accent mb-4">Flexible Practice</h3>
-                  <p className="text-purple-200/80 leading-relaxed">
-                    You can do your Shankara session using The Shankara Oracle Decks or you can use your favorite Tarot and Oracle Decks.
-                  </p>
-                </div>
-
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:bg-white/10 transition-colors">
-                  <h3 className="text-xl font-bold text-accent mb-4">Shakti's Cube</h3>
-                  <p className="text-purple-200/80 leading-relaxed">
-                    You may roll Shakti’s Cube at any point during your session, especially when you need clarity, insight, or a loving nudge.
-                  </p>
-                </div>
-
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:bg-white/10 transition-colors">
-                  <h3 className="text-xl font-bold text-accent mb-4">Sourcing Answers</h3>
-                  <p className="text-purple-200/80 leading-relaxed">
-                    Integrating the various messages that emerge during your session, you can source the answers to all of your questions.
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-16 text-center max-w-3xl mx-auto">
-                <p className="font-display text-2xl md:text-3xl text-white leading-relaxed drop-shadow-lg">
-                  "Invite your spirit guides, ancestors, and all parts of you into your Shankara sessions to gain the most insight and to transcend all that has blocked your illumination."
-                </p>
-                
-                <div className="mt-12">
-                   <Link href="/the-ancients">
-                    <Button className="bg-gradient-to-r from-accent to-purple-600 hover:from-accent/90 hover:to-purple-600/90 text-white font-bold text-lg px-10 py-6 h-auto rounded-full shadow-[0_0_30px_rgba(168,85,247,0.4)] hover:shadow-[0_0_50px_rgba(168,85,247,0.6)] transition-all transform hover:-translate-y-1">
-                      Explore The Ancients Lineage <ArrowRight className="ml-2 w-5 h-5" />
-                    </Button>
-                  </Link>
-                </div>
               </div>
             </div>
           </div>
@@ -385,6 +229,11 @@ export default function How() {
 
       </main>
       <Footer />
+      <VideoModal 
+        isOpen={isVideoOpen} 
+        onClose={() => setIsVideoOpen(false)} 
+        videoUrl="https://vimeo.com/833058091" 
+      />
     </div>
   );
 }

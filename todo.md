@@ -169,3 +169,10 @@
   - [x] **Text Scale:** Increase font size to `text-4xl` or `text-5xl` for "Awaits You".
   - [x] **Arrow:** Add a massive `ArrowRight` icon (`w-24 h-24`) with a pulse animation.
   - [ ] **PUSH:** Force push changes to GitHub upon completion.
+- [x] **Video Popup Integration**
+  - [x] **Component:** Create `VideoModal.tsx` using Dialog component to host the Vimeo embed (`https://vimeo.com/833058091`).
+  - [x] **Home Page:** Connect existing "Watch Trailer" button in header/hero to open `VideoModal`.
+  - [x] **HOW Page:** Add new button under "Awaken" subtitle:
+    - [x] **Style:** Neon pink background (`bg-[#ff00ff]`), Gold border (`border-amber-400`), Glow effect.
+    - [x] **Action:** Opens the same `VideoModal`.
+  - [ ] **PUSH:** Force push changes to GitHub upon completion.

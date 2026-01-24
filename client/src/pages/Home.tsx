@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Play, Sparkles, ArrowRight } from "lucide-react";
@@ -7,8 +8,11 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { Link } from "wouter";
+import VideoModal from "@/components/VideoModal";
 
 export default function Home() {
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+
   return (
     <div className="min-h-screen font-sans selection:bg-accent selection:text-white overflow-x-hidden relative home-page-v2">
       <SEO 
@@ -55,7 +59,12 @@ export default function Home() {
                     Get the Oracle
                   </Button>
                 </Link>
-                <Button variant="outline" size="lg" className="border-purple-500/50 text-purple-200 hover:bg-purple-900/50 px-10 h-14 text-lg rounded-full backdrop-blur-sm hover:text-white transition-all">
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="border-purple-500/50 text-purple-200 hover:bg-purple-900/50 px-10 h-14 text-lg rounded-full backdrop-blur-sm hover:text-white transition-all"
+                  onClick={() => setIsVideoOpen(true)}
+                >
                   <Play className="w-5 h-5 mr-2 fill-current" /> Watch Trailer
                 </Button>
               </div>
@@ -235,6 +244,11 @@ export default function Home() {
 
       </main>
       <Footer />
+      <VideoModal 
+        isOpen={isVideoOpen} 
+        onClose={() => setIsVideoOpen(false)} 
+        videoUrl="https://vimeo.com/833058091" 
+      />
     </div>
   );
 }
