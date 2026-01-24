@@ -233,54 +233,62 @@ export default function How() {
             </div>
 
             {/* NEW VIDEO ROW */}
-            <div className="mt-24 grid md:grid-cols-2 gap-8">
-               <div 
-                  className="aspect-video bg-black/40 rounded-2xl border border-white/10 flex items-center justify-center relative overflow-hidden group cursor-pointer shadow-[0_0_40px_rgba(168,85,247,0.2)]"
-                  onClick={() => openVideo("https://vimeo.com/818723938")}
-                >
-                  <div className="absolute inset-0 bg-accent/10 group-hover:bg-accent/20 transition-colors" />
-                  <img src="https://vumbnail.com/818723938.jpg" alt="Testimonials" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" />
-                  <Play className="w-16 h-16 text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] z-10" />
-                  <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 to-transparent">
-                    <p className="text-white font-bold text-lg">Testimonials</p>
-                  </div>
-                </div>
+            <div className="mt-24">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="h-[1px] bg-white/20 flex-grow" />
+                <h3 className="text-2xl font-display font-bold text-white text-center uppercase tracking-widest">Watch & Learn</h3>
+                <div className="h-[1px] bg-white/20 flex-grow" />
+              </div>
 
-                <div 
-                  className="aspect-video bg-black/40 rounded-2xl border border-white/10 flex items-center justify-center relative overflow-hidden group cursor-pointer shadow-[0_0_40px_rgba(168,85,247,0.2)]"
-                  onClick={() => openVideo("https://vimeo.com/819081252")}
-                >
-                  <div className="absolute inset-0 bg-accent/10 group-hover:bg-accent/20 transition-colors" />
-                  <img src="https://vumbnail.com/819081252.jpg" alt="How It Works" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" />
-                  <Play className="w-16 h-16 text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] z-10" />
-                  <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 to-transparent">
-                    <p className="text-white font-bold text-lg">The Experience</p>
+              <div className="grid grid-cols-2 gap-4 md:gap-8">
+                 <div 
+                    className="aspect-video bg-black/40 rounded-2xl border border-white/10 flex items-center justify-center relative overflow-hidden group cursor-pointer shadow-[0_0_40px_rgba(168,85,247,0.2)]"
+                    onClick={() => openVideo("https://vimeo.com/818723938")}
+                  >
+                    <div className="absolute inset-0 bg-accent/10 group-hover:bg-accent/20 transition-colors" />
+                    <img src="https://vumbnail.com/818723938.jpg" loading="lazy" alt="Testimonials" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" />
+                    <Play className="w-12 h-12 md:w-16 md:h-16 text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] z-10" />
+                    <div className="absolute bottom-0 left-0 right-0 p-2 md:p-4 bg-gradient-to-t from-black/90 to-transparent">
+                      <p className="text-white font-bold text-sm md:text-lg truncate">Testimonials</p>
+                    </div>
                   </div>
-                </div>
 
-                <div 
-                  className="aspect-video bg-black/40 rounded-2xl border border-white/10 flex items-center justify-center relative overflow-hidden group cursor-pointer shadow-[0_0_40px_rgba(168,85,247,0.2)]"
-                  onClick={() => openVideo("https://vimeo.com/1157965783")}
-                >
-                  <div className="absolute inset-0 bg-accent/10 group-hover:bg-accent/20 transition-colors" />
-                  <img src="https://vumbnail.com/1157965783.jpg" alt="Deep Dive" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" />
-                  <Play className="w-16 h-16 text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] z-10" />
-                  <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 to-transparent">
-                    <p className="text-white font-bold text-lg">Deep Dive</p>
+                  <div 
+                    className="aspect-video bg-black/40 rounded-2xl border border-white/10 flex items-center justify-center relative overflow-hidden group cursor-pointer shadow-[0_0_40px_rgba(168,85,247,0.2)]"
+                    onClick={() => openVideo("https://vimeo.com/819081252")}
+                  >
+                    <div className="absolute inset-0 bg-accent/10 group-hover:bg-accent/20 transition-colors" />
+                    <img src="https://vumbnail.com/819081252.jpg" loading="lazy" alt="How It Works" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" />
+                    <Play className="w-12 h-12 md:w-16 md:h-16 text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] z-10" />
+                    <div className="absolute bottom-0 left-0 right-0 p-2 md:p-4 bg-gradient-to-t from-black/90 to-transparent">
+                      <p className="text-white font-bold text-sm md:text-lg truncate">The Experience</p>
+                    </div>
                   </div>
-                </div>
 
-                <div 
-                  className="aspect-video bg-black/40 rounded-2xl border border-white/10 flex items-center justify-center relative overflow-hidden group cursor-pointer shadow-[0_0_40px_rgba(168,85,247,0.2)]"
-                  onClick={() => openVideo("https://vimeo.com/1157965175")}
-                >
-                  <div className="absolute inset-0 bg-accent/10 group-hover:bg-accent/20 transition-colors" />
-                  <img src="https://vumbnail.com/1157965175.jpg" alt="Shankara Reading" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" />
-                  <Play className="w-16 h-16 text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] z-10" />
-                  <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 to-transparent">
-                    <p className="text-white font-bold text-lg">Shankara Reading</p>
+                  <div 
+                    className="aspect-video bg-black/40 rounded-2xl border border-white/10 flex items-center justify-center relative overflow-hidden group cursor-pointer shadow-[0_0_40px_rgba(168,85,247,0.2)]"
+                    onClick={() => openVideo("https://vimeo.com/1157965783")}
+                  >
+                    <div className="absolute inset-0 bg-accent/10 group-hover:bg-accent/20 transition-colors" />
+                    <img src="https://vumbnail.com/1157965783.jpg" loading="lazy" alt="Deep Dive" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" />
+                    <Play className="w-12 h-12 md:w-16 md:h-16 text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] z-10" />
+                    <div className="absolute bottom-0 left-0 right-0 p-2 md:p-4 bg-gradient-to-t from-black/90 to-transparent">
+                      <p className="text-white font-bold text-sm md:text-lg truncate">Deep Dive</p>
+                    </div>
                   </div>
-                </div>
+
+                  <div 
+                    className="aspect-video bg-black/40 rounded-2xl border border-white/10 flex items-center justify-center relative overflow-hidden group cursor-pointer shadow-[0_0_40px_rgba(168,85,247,0.2)]"
+                    onClick={() => openVideo("https://vimeo.com/1157965175")}
+                  >
+                    <div className="absolute inset-0 bg-accent/10 group-hover:bg-accent/20 transition-colors" />
+                    <img src="https://vumbnail.com/1157965175.jpg" loading="lazy" alt="Shankara Reading" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" />
+                    <Play className="w-12 h-12 md:w-16 md:h-16 text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] z-10" />
+                    <div className="absolute bottom-0 left-0 right-0 p-2 md:p-4 bg-gradient-to-t from-black/90 to-transparent">
+                      <p className="text-white font-bold text-sm md:text-lg truncate">Shankara Reading</p>
+                    </div>
+                  </div>
+              </div>
             </div>
 
           </div>
