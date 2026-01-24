@@ -40,16 +40,16 @@ export default function Navigation() {
       )}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
-        {/* Logo */}
+        {/* Logo - Updated to be 2x larger and Neon Pink */}
         <Link href="/">
-          <div className="flex items-center gap-3 cursor-pointer group">
+          <div className="flex items-center gap-4 cursor-pointer group">
             <img 
               src="/images/logo.svg" 
               alt="Shankara Logo" 
               className={cn(
                 "transition-all duration-500",
-                scrolled ? "h-12 w-auto" : "h-16 w-auto",
-                "hidden md:block" 
+                scrolled ? "h-16 w-auto" : "h-20 w-auto",
+                "hidden md:block drop-shadow-[0_0_10px_rgba(255,0,255,0.4)]" 
               )}
               onError={(e) => {
                 e.currentTarget.style.display = 'none';
@@ -58,13 +58,13 @@ export default function Navigation() {
             />
             {/* Fallback Text Logo */}
             <span className={cn(
-              "hidden md:block font-display font-bold text-2xl tracking-wider transition-colors",
-              scrolled ? "text-white" : "text-purple-300 group-hover:text-white"
+              "hidden md:block font-display font-bold text-4xl tracking-wider transition-colors",
+              "text-[#ff00ff] drop-shadow-[0_0_15px_rgba(255,0,255,0.6)]"
             )}>
               SHANKARA
             </span>
             {/* Mobile Logo Text */}
-            <span className="md:hidden font-display font-bold text-xl tracking-wider text-white">
+            <span className="md:hidden font-display font-bold text-2xl tracking-wider text-[#ff00ff] drop-shadow-[0_0_10px_rgba(255,0,255,0.6)]">
               SHANKARA
             </span>
           </div>

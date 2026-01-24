@@ -1,27 +1,14 @@
-- [ ] **Design Recovery (Yin Yang Balance)**
-    - [x] **Fix 404**: Add `/unboxing` route to `App.tsx`.
-    - [x] **Theme Restoration**: Update `index.css` to bring back deep purples (`#1a0b2e`) and neon pinks (`#ff00ff`) while keeping white sections for clarity.
-    - [x] **Home Page Fix**: Remove boxy containers in `Home.tsx`, use full-width sections with balanced backgrounds.
-    - [x] **Unboxing Page Polish**: Ensure `Unboxing.tsx` follows the new balanced theme.
-- [ ] **User Feedback Updates (Jan 24 - Part 1)**
-    - [x] **Header Image**: Replace hero image with `170323-Andreea-Plesea-027-1-scaled.webp`
-    - [x] **Navigation**:
-        - [x] Increase text size by 2pts
-        - [x] Default color: White
-        - [x] Active color: Neon Pink
-    - [x] **System Section**: Place `170323-Andreea-Plesea-016-scaled.webp` to the left of "More than a deck" text
-- [ ] **User Feedback Updates (Jan 24 - Part 2)**
-    - [ ] **Home Page - Master Training**:
-        - [ ] Flush text left.
-        - [ ] Add 4-square image grid to the right (using new uploads).
-    - [ ] **How To Page Overhaul**:
-        - [ ] **Header**: Remove gray box, make board image 4x larger (filling left space).
-        - [ ] **Typography**: Fix "Discover the symbolism" text (mysterious & light, readable).
-        - [ ] **Elements Section**:
-            - [ ] Remove tech icons and gray backgrounds.
-            - [ ] Use ancient-feeling circular images for each element.
-            - [ ] Center text under each circle.
-            - [ ] Lighten up the section ("add the love").
-        - [ ] **Tips & Swaps**:
-            - [ ] Make section larger and more beautiful.
-            - [ ] Add `ShankaraPujaMay23-2023.jpg` to the right.
+- [ ] **User Feedback Updates (Jan 24 - Part 3)**
+    - [ ] **Global Styling**:
+        - [ ] **Logo**: Make "Shankara" text 2x larger and Neon Pink (`#ff00ff`).
+    - [ ] **Unboxing Page**:
+        - [ ] **4 Sacred Decks**: Add 4-square image grid (using new deck uploads) to the *left* of the text.
+        - [ ] **18 Obsidian Stones**: Place stones image (`170323-Andreea-Plesea-176-scaled.webp`) to the *right* of the text.
+        - [ ] **Oracle Board**: Place board image (`170323-Andreea-Plesea-041-scaled.webp`) to the *left* of the text (replacing broken image).
+    - [ ] **Training Page**:
+        - [ ] **Header/Bio**: Lighten background (mysterious, not dark). Use purple background from Readers/Videos pages.
+        - [ ] **What You Will Master**: Clean up to match "Ancient Mystical" style (circular images, centered text, no gray).
+    - [ ] **Certification Page**:
+        - [ ] Apply same updates as Training page (Lighten header, "Ancient Mystical" features, background fix).
+    - [ ] **Shop Page**:
+        - [ ] Update Price: **$167** (Sale: **$99**).

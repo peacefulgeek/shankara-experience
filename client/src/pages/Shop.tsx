@@ -47,7 +47,11 @@ export default function Shop() {
                     The Shankara Oracle
                   </h1>
                   <div className="flex items-center gap-4 mb-6">
-                    <span className="text-3xl font-bold text-accent">$65.00</span>
+                    <span className="text-3xl font-bold text-white/50 line-through decoration-white/50">$167.00</span>
+                    <span className="text-4xl font-bold text-accent">$99.00</span>
+                    <Badge className="bg-accent text-white ml-2">SALE</Badge>
+                  </div>
+                  <div className="flex items-center gap-2 mb-6">
                     <div className="flex text-yellow-400">
                       <Star className="w-5 h-5 fill-current" />
                       <Star className="w-5 h-5 fill-current" />
@@ -169,7 +173,7 @@ export default function Shop() {
                   Unlock the full potential of your Oracle with our Master Course and Certification Program.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link href="/training">
+                  <Link href="/master-training">
                     <Button variant="outline" className="border-white text-white hover:bg-white hover:text-primary rounded-full px-8">
                       View Master Course
                     </Button>

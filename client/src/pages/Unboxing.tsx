@@ -40,12 +40,26 @@ export default function Unboxing() {
         <section className="py-24 bg-white relative">
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row items-center gap-16">
+              
+              {/* Left Side - 4 Square Grid */}
               <div className="w-full md:w-1/2">
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-purple-50 aspect-[4/3] flex items-center justify-center group">
-                   <Layers className="w-32 h-32 text-purple-200 group-hover:scale-110 transition-transform duration-500" />
-                   <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-pink-500/10" />
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="aspect-square rounded-2xl overflow-hidden shadow-lg transform hover:scale-[1.02] transition-transform duration-500">
+                    <img src="/images/deck-master.webp" alt="Master Deck" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="aspect-square rounded-2xl overflow-hidden shadow-lg transform translate-y-8 hover:translate-y-6 transition-transform duration-500">
+                    <img src="/images/deck-alchemy.webp" alt="Alchemy Deck" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="aspect-square rounded-2xl overflow-hidden shadow-lg transform hover:scale-[1.02] transition-transform duration-500">
+                    <img src="/images/deck-release.webp" alt="Release Deck" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="aspect-square rounded-2xl overflow-hidden shadow-lg transform translate-y-8 hover:translate-y-6 transition-transform duration-500">
+                    <img src="/images/deck-sky.webp" alt="Sky Deck" className="w-full h-full object-cover" />
+                  </div>
                 </div>
               </div>
+
+              {/* Right Side - Text */}
               <div className="w-full md:w-1/2 space-y-6">
                 <div className="flex items-center gap-4 mb-2">
                   <span className="text-6xl font-display font-bold text-purple-100">01</span>
@@ -69,7 +83,7 @@ export default function Unboxing() {
                   </li>
                   <li className="flex items-center text-purple-900 font-medium p-3 bg-yellow-50 rounded-lg">
                     <span className="w-2 h-2 bg-yellow-500 rounded-full mr-3" />
-                    Cosmic Deck: Universal Laws
+                    Sky Deck: Universal Laws
                   </li>
                 </ul>
               </div>
@@ -80,12 +94,9 @@ export default function Unboxing() {
         {/* COMPONENT 2: THE STONES - DARK (YIN) */}
         <section className="py-24 bg-cosmic-dark relative overflow-hidden">
           <div className="container mx-auto px-4">
-            <div className="flex flex-col md:flex-row-reverse items-center gap-16">
-              <div className="w-full md:w-1/2">
-                <div className="relative rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(147,51,234,0.3)] border border-white/10 aspect-[4/3] flex items-center justify-center bg-black/40 group">
-                   <Gem className="w-32 h-32 text-purple-500/50 group-hover:scale-110 transition-transform duration-500" />
-                </div>
-              </div>
+            <div className="flex flex-col md:flex-row items-center gap-16">
+              
+              {/* Left Side - Text */}
               <div className="w-full md:w-1/2 space-y-6">
                 <div className="flex items-center gap-4 mb-2">
                   <span className="text-6xl font-display font-bold text-purple-900/50">02</span>
@@ -105,6 +116,18 @@ export default function Unboxing() {
                    </div>
                 </div>
               </div>
+
+              {/* Right Side - Stones Image */}
+              <div className="w-full md:w-1/2">
+                <div className="relative rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(147,51,234,0.3)] border border-white/10 aspect-[4/3] flex items-center justify-center bg-black/40 group">
+                   <img 
+                     src="/images/stones-pile.webp" 
+                     alt="18 Obsidian Stones" 
+                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                   />
+                </div>
+              </div>
+
             </div>
           </div>
         </section>
@@ -113,16 +136,20 @@ export default function Unboxing() {
         <section className="py-24 bg-white relative">
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row items-center gap-16">
+              
+              {/* Left Side - Board Image */}
               <div className="w-full md:w-1/2">
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white aspect-square flex items-center justify-center p-8 group border-4 border-purple-50">
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white aspect-square flex items-center justify-center p-0 group border-4 border-purple-50">
                   <div className="absolute inset-0 bg-gradient-to-tr from-purple-100/50 to-blue-100/50 opacity-50" />
                   <img 
-                    src="/images/oracle-board-clean.png" 
+                    src="/images/board-flat-angle.webp" 
                     alt="Oracle Board" 
-                    className="relative z-10 w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 drop-shadow-xl"
+                    className="relative z-10 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 drop-shadow-xl"
                   />
                 </div>
               </div>
+
+              {/* Right Side - Text */}
               <div className="w-full md:w-1/2 space-y-6">
                 <div className="flex items-center gap-4 mb-2">
                   <span className="text-6xl font-display font-bold text-purple-100">03</span>
