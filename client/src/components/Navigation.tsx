@@ -22,8 +22,7 @@ export default function Navigation() {
 
   const navLinks = [
     { href: "/", label: "Home" },
-    { href: "/how-shankara-works", label: "How Shankara Works" },
-    { href: "/the-ancients", label: "The Ancients" },
+    { href: "/how", label: "HOW" },
     { href: "/unboxing", label: "Unboxing" },
     { href: "/master-training", label: "Training" },
     { href: "/certification", label: "Certification" },

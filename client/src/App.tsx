@@ -10,7 +10,7 @@ import Certification from "@/pages/Certification";
 import Readers from "@/pages/Readers";
 import Shop from "@/pages/Shop";
 import TheAncients from "@/pages/TheAncients";
-import HowShankaraWorks from "@/pages/HowShankaraWorks";
+import How from "@/pages/How";
 import Unboxing from "@/pages/Unboxing";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
@@ -37,7 +37,7 @@ function App() {
         <Route path="/readers" component={Readers} />
         <Route path="/shop" component={Shop} />
         <Route path="/the-ancients" component={TheAncients} />
-        <Route path="/how-shankara-works" component={HowShankaraWorks} />
+        <Route path="/how" component={How} />
         <Route path="/unboxing" component={Unboxing} />
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />
