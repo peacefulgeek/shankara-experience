@@ -132,7 +132,7 @@ export default function Home() {
                 />
               </div>
               
-              <div className="w-full md:w-1/2 space-y-10">
+              <div className="w-full md:w-1/2 space-y-12">
                 <h2 className="text-5xl md:text-7xl font-display font-bold text-white leading-tight">
                   More Than a Deck. <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-400 glow-text">
@@ -144,30 +144,36 @@ export default function Home() {
                   The Shankara Oracle is a complete cosmological system designed to bridge the gap between your human experience and your divine nature.
                 </p>
                 
-                <div className="grid grid-cols-2 gap-8">
-                  <div>
-                    <div className="text-4xl font-bold text-accent mb-2">4</div>
+                <div className="grid grid-cols-2 gap-y-10 gap-x-12">
+                  <div className="border-l-4 border-accent pl-6">
+                    <div className="text-5xl font-display font-bold text-white mb-1">4</div>
                     <div className="text-sm text-purple-300 font-bold uppercase tracking-widest">Sacred Decks</div>
                   </div>
-                  <div>
-                    <div className="text-4xl font-bold text-accent mb-2">300+</div>
+                  <div className="border-l-4 border-purple-500 pl-6">
+                    <div className="text-5xl font-display font-bold text-white mb-1">300+</div>
                     <div className="text-sm text-purple-300 font-bold uppercase tracking-widest">Cards</div>
                   </div>
-                  <div>
-                    <div className="text-4xl font-bold text-accent mb-2">18</div>
+                  <div className="border-l-4 border-blue-500 pl-6">
+                    <div className="text-5xl font-display font-bold text-white mb-1">18</div>
                     <div className="text-sm text-purple-300 font-bold uppercase tracking-widest">Obsidian Stones</div>
                   </div>
-                  <div>
-                    <div className="text-4xl font-bold text-accent mb-2">∞</div>
+                  <div className="border-l-4 border-pink-500 pl-6">
+                    <div className="text-5xl font-display font-bold text-white mb-1">∞</div>
                     <div className="text-sm text-purple-300 font-bold uppercase tracking-widest">Possibilities</div>
                   </div>
                 </div>
 
-                <Link href="/unboxing">
-                  <Button variant="link" className="text-white font-bold text-lg p-0 h-auto hover:text-accent mt-6 group">
-                    See what's inside the box <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </Link>
+                <div className="pt-4">
+                  <Link href="/unboxing">
+                    <Button 
+                      size="lg" 
+                      className="bg-white text-purple-900 hover:bg-purple-50 px-8 py-6 h-auto text-lg rounded-full font-bold shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] transition-all group"
+                    >
+                      See what's inside the box 
+                      <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
