@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Play, Sparkles, ArrowRight } from "lucide-react";
-import DailyCardDraw from "@/components/DailyCardDraw";
+import StoneGuidance from "@/components/StoneGuidance";
 import MysticalBackground from "@/components/MysticalBackground";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -230,8 +230,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* DAILY CARD DRAW - MOVED TO BOTTOM */}
-        <DailyCardDraw />
+        {/* STONE GUIDANCE SECTION */}
+        <StoneGuidance />
 
       </main>
       <Footer />

@@ -64,3 +64,16 @@
     - [x] Implement random deck selection (Alchemy, Master, Release).
     - [x] Display corresponding Card Back.
     - [x] Implement flip animation to reveal a random Card Front *from the same deck*.
+- [ ] **Home Page - Receive Guidance From The Stones**
+  - [x] **Content Extraction**
+    - [x] Read `pasted_content_2.txt` to map stone names to descriptions.
+    - [x] Create a structured JSON/Object for Stone data (name, image, description).
+  - [x] **Image Processing**
+    - [x] Create `client/public/images/stones/` directory.
+    - [x] Process uploaded stone images: Remove background (if needed/possible with PIL), resize, and convert to WebP.
+  - [x] **Feature Implementation**
+    - [x] Update Home page section title to "Receive Guidance From The Stones".
+    - [x] Implement random stone selection logic.
+    - [x] Update UI to display Stone Image initially.
+    - [x] Add interaction (click/flip) to reveal the Stone Description.
+    - [x] Ensure responsive design and correct aspect ratio.
