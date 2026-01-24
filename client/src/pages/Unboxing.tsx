@@ -43,7 +43,7 @@ export default function Unboxing() {
               
               {/* Left Side - 4 Decks Image */}
               <div className="w-full md:w-1/2">
-                <div className="rounded-2xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-500 border-4 border-purple-50">
+                <div className="rounded-2xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-500 border-4 border-purple-50 aspect-[4/3]">
                   <img src="https://shankara-pull.b-cdn.net/images/Shankara4Decks.webp" alt="The 4 Sacred Decks" className="w-full h-full object-cover" />
                 </div>
               </div>
@@ -83,43 +83,40 @@ export default function Unboxing() {
         {/* COMPONENT 2: STONES & CUBE - DARK (YIN) */}
         <section className="py-24 bg-cosmic-dark relative overflow-hidden">
           <div className="container mx-auto px-4">
-            <div className="flex flex-col md:flex-row items-center gap-8">
+             <div className="flex items-center gap-4 mb-12">
+               <span className="text-6xl font-display font-bold text-purple-900/50">02</span>
+               <h2 className="text-4xl font-display font-bold text-white">Stones & Cube</h2>
+             </div>
+            <div className="grid md:grid-cols-2 gap-8 items-start">
               
               {/* Left Side - Stones */}
-              <div className="w-full md:w-1/2 space-y-6">
-                 <div className="flex items-center gap-4 mb-6">
-                  <span className="text-6xl font-display font-bold text-purple-900/50">02</span>
-                  <h2 className="text-4xl font-display font-bold text-white">Stones & Cube</h2>
-                </div>
-                
-                {/* Updated: Smaller container to match visual weight */}
-                <div className="relative rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(147,51,234,0.3)] border border-white/10 aspect-video w-full max-w-lg mx-auto flex items-center justify-center bg-black/40 group mb-6">
+              <div className="space-y-6">
+                {/* STRICTLY UNIFORM CONTAINER */}
+                <div className="relative rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(147,51,234,0.3)] border border-white/10 aspect-[4/3] w-full bg-black/40 group">
                    <img 
                      src="https://shankara-pull.b-cdn.net/images/ShankaraStones.webp" 
                      alt="18 Obsidian Stones" 
-                     className="w-full h-full object-contain p-4 transform group-hover:scale-105 transition-transform duration-700"
+                     className="w-full h-full object-contain p-8 transform group-hover:scale-105 transition-transform duration-700"
                    />
                 </div>
                 
-                <p className="text-lg text-purple-200/80 leading-relaxed text-center md:text-left">
+                <p className="text-lg text-purple-200/80 leading-relaxed">
                   18 Hand-engraved obsidian stones connect you to deep earth wisdom. Cast them onto the board to receive direct guidance on timing, elements, and planetary influences.
                 </p>
               </div>
 
               {/* Right Side - Cube */}
-              <div className="w-full md:w-1/2 space-y-6">
-                 <div className="h-[88px] hidden md:block"></div> {/* Spacer to align with left title */}
-                 
-                {/* Updated: Smaller container to match visual weight */}
-                <div className="relative rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(255,20,147,0.3)] border border-white/10 aspect-video w-full max-w-lg mx-auto flex items-center justify-center bg-black/40 group mb-6">
+              <div className="space-y-6">
+                {/* STRICTLY UNIFORM CONTAINER */}
+                <div className="relative rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(255,20,147,0.3)] border border-white/10 aspect-[4/3] w-full bg-black/40 group">
                    <img 
                      src="https://shankara-pull.b-cdn.net/images/ShaktisCube.webp" 
                      alt="Shakti's Cube" 
-                     className="w-full h-full object-contain p-8 transform group-hover:scale-105 transition-transform duration-700"
+                     className="w-full h-full object-contain p-12 transform group-hover:scale-105 transition-transform duration-700"
                    />
                 </div>
                 
-                <p className="text-lg text-purple-200/80 leading-relaxed text-center md:text-left">
+                <p className="text-lg text-purple-200/80 leading-relaxed">
                   Shakti's Cube adds a dimension of divine feminine power, unlocking deeper layers of intuition and creative force within your readings.
                 </p>
               </div>
@@ -131,17 +128,16 @@ export default function Unboxing() {
         {/* COMPONENT 3: BOARD & BOOKS - LIGHT (YANG) */}
         <section className="py-24 bg-white relative">
           <div className="container mx-auto px-4">
-            <div className="flex flex-col md:flex-row items-center gap-8">
+            <div className="flex items-center gap-4 mb-12">
+               <span className="text-6xl font-display font-bold text-purple-100">03</span>
+               <h2 className="text-4xl font-display font-bold text-purple-900">Board & Wisdom</h2>
+             </div>
+            <div className="grid md:grid-cols-2 gap-8 items-start">
               
               {/* Left Side - Board */}
-              <div className="w-full md:w-1/2 space-y-6">
-                <div className="flex items-center gap-4 mb-6">
-                  <span className="text-6xl font-display font-bold text-purple-100">03</span>
-                  <h2 className="text-4xl font-display font-bold text-purple-900">Board & Wisdom</h2>
-                </div>
-
-                {/* Updated: Smaller container to match visual weight */}
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white aspect-video w-full max-w-lg mx-auto flex items-center justify-center p-0 group border-4 border-purple-50 mb-6">
+              <div className="space-y-6">
+                {/* STRICTLY UNIFORM CONTAINER */}
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white aspect-[4/3] w-full group border-4 border-purple-50">
                   <div className="absolute inset-0 bg-gradient-to-tr from-purple-100/50 to-blue-100/50 opacity-50" />
                   <img 
                     src="https://shankara-pull.b-cdn.net/images/ShankaraBoard.webp" 
@@ -150,17 +146,15 @@ export default function Unboxing() {
                   />
                 </div>
 
-                <p className="text-lg text-gray-600 leading-relaxed text-center md:text-left">
+                <p className="text-lg text-gray-600 leading-relaxed">
                   The Oracle Board is a sacred geometry grid mapping the cosmos. It's an energetic field where your stones land to reveal hidden patterns.
                 </p>
               </div>
 
               {/* Right Side - Books */}
-              <div className="w-full md:w-1/2 space-y-6">
-                <div className="h-[88px] hidden md:block"></div> {/* Spacer */}
-
-                {/* Updated: Smaller container to match visual weight */}
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white aspect-video w-full max-w-lg mx-auto flex items-center justify-center p-0 group border-4 border-purple-50 mb-6">
+              <div className="space-y-6">
+                {/* STRICTLY UNIFORM CONTAINER */}
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white aspect-[4/3] w-full group border-4 border-purple-50">
                   <img 
                     src="https://shankara-pull.b-cdn.net/images/ShankaraBOOKSTWO.webp" 
                     alt="Shankara Books" 
@@ -168,12 +162,12 @@ export default function Unboxing() {
                   />
                 </div>
 
-                <p className="text-lg text-gray-600 leading-relaxed text-center md:text-left">
+                <p className="text-lg text-gray-600 leading-relaxed">
                   Comprehensive guidebooks provide deep insights into every card, stone, and board position, empowering you to interpret messages with clarity and confidence.
                 </p>
                 
                 <Link href="/how-to-shankara">
-                  <Button variant="outline" className="border-purple-200 text-purple-700 hover:bg-purple-50 mt-2 rounded-full px-8 h-12 w-full md:w-auto mx-auto md:mx-0 block">
+                  <Button variant="outline" className="border-purple-200 text-purple-700 hover:bg-purple-50 mt-2 rounded-full px-8 h-12 w-full block">
                     Learn how to use the board <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
                 </Link>

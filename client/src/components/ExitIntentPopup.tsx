@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { X, Sparkles, Mail } from "lucide-react";
+import { Sparkles, Mail } from "lucide-react";
 import { toast } from "sonner";
 
 export default function ExitIntentPopup() {
@@ -10,6 +10,9 @@ export default function ExitIntentPopup() {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [hasShown, setHasShown] = useState(false);
+
+  // CONFIGURATION: Replace this URL with the actual "Back of Card" image URL
+  const CARD_BACK_IMAGE_URL = "https://shankara-pull.b-cdn.net/images/card-back-placeholder.webp"; 
 
   useEffect(() => {
     // Check if we've already shown the popup in this session or recently
@@ -59,35 +62,47 @@ export default function ExitIntentPopup() {
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
+      {/* Removed the default Close button from DialogContent by adding specific CSS or relying on the DialogPrimitive if needed. 
+          The shadcn DialogContent usually includes a Close button by default. 
+          We will hide it via CSS class [&>button]:hidden if we want to completely control it, 
+          OR we rely on the default one and remove our custom one. 
+          User complained about "Double Xs", so likely the default one + our custom one were both showing.
+          I will remove OUR custom X button and let the Dialog's default one handle it, 
+          OR hide the default one and keep ours. 
+          Let's keep the default accessible one provided by Radix/Shadcn and remove our manual one.
+      */}
       <DialogContent className="sm:max-w-[800px] p-0 overflow-hidden bg-cosmic-dark border-purple-500/30 text-white">
         <div className="flex flex-col md:flex-row h-full">
           
-          {/* Image Side */}
-          <div className="w-full md:w-1/2 relative min-h-[200px] md:min-h-[400px]">
-            <div className="absolute inset-0 bg-accent/20 mix-blend-overlay z-10" />
-            <img 
-              src="https://shankara-pull.b-cdn.net/images/master-card-spread.webp" 
-              alt="Shankara Card Spread" 
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:to-cosmic-dark z-20" />
+          {/* Image Side - Card Back */}
+          <div className="w-full md:w-1/2 relative min-h-[300px] md:min-h-[400px] bg-black/20 flex items-center justify-center p-8">
+             {/* Background glow */}
+            <div className="absolute inset-0 bg-accent/10 blur-3xl" />
             
-            <div className="absolute bottom-6 left-6 z-30 md:hidden">
-              <h3 className="text-2xl font-display font-bold text-white drop-shadow-lg">
-                Unlock Your Destiny
+            {/* The Card Back Image */}
+            <div className="relative z-10 w-48 md:w-56 aspect-[2/3] rounded-xl shadow-[0_0_30px_rgba(255,20,147,0.3)] transition-transform duration-700 hover:scale-105 hover:rotate-1">
+               <img 
+                 src={CARD_BACK_IMAGE_URL}
+                 alt="Shankara Oracle Card Back" 
+                 className="w-full h-full object-cover rounded-xl border border-white/10"
+                 onError={(e) => {
+                   // Fallback if image fails
+                   e.currentTarget.src = "https://placehold.co/400x600/1a0b2e/ff00ff?text=Card+Back";
+                 }}
+               />
+            </div>
+
+            <div className="absolute bottom-6 left-0 right-0 text-center z-30 md:hidden">
+              <h3 className="text-xl font-display font-bold text-white drop-shadow-lg">
+                Your Card Awaits...
               </h3>
             </div>
           </div>
 
           {/* Content Side */}
           <div className="w-full md:w-1/2 p-8 md:p-10 flex flex-col justify-center relative bg-cosmic-dark">
-            <button 
-              onClick={() => setIsOpen(false)}
-              className="absolute top-4 right-4 text-white/50 hover:text-white transition-colors"
-            >
-              <X size={24} />
-            </button>
-
+            {/* Removed manual X button to avoid double X issue */}
+            
             <div className="space-y-6">
               <div className="space-y-2">
                 <div className="flex items-center gap-2 text-accent font-medium text-sm tracking-wider uppercase">

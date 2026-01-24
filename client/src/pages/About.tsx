@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import { Sparkles, Zap, Star, User, Unlock, Heart } from "lucide-react";
 
 export default function About() {
   return (
@@ -58,6 +59,40 @@ export default function About() {
                 "Shankara is my heart's offering to your awakening. It is designed to mirror your soul's journey and provide the precise guidance you need in every moment."
               </p>
             </div>
+          </div>
+
+          {/* ELEGANT 6 PILLARS SECTION - REDESIGNED */}
+          <div className="py-16">
+             <h2 className="text-3xl md:text-4xl font-display font-bold text-white text-center mb-16 drop-shadow-md">
+                Awaken Your Inner Master
+             </h2>
+             
+             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {[
+                  { icon: Star, title: "Awaken Inner Master", desc: "Connect with your inner wisdom and release what no longer serves you." },
+                  { icon: Zap, title: "Unlock Intuition", desc: "Replace triggers with profound insight and move beyond limited identity." },
+                  { icon: User, title: "Become an Alchemist", desc: "Discover transformative alchemy principles that turn challenges into opportunities." },
+                  { icon: Unlock, title: "Lead Rituals", desc: "Learn to hold sacred space for yourself and others with confidence." },
+                  { icon: Heart, title: "Serve Humanity", desc: "Use your gifts to bring healing and light to the world around you." },
+                  { icon: Sparkles, title: "Master Your Destiny", desc: "Align with your soul's blueprint and create a life of purpose and joy." }
+                ].map((item, i) => (
+                  <div key={i} className="group relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 p-8 hover:bg-white/10 transition-all duration-500 hover:-translate-y-1">
+                    <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    
+                    <div className="relative z-10 flex items-start gap-6">
+                      <div className="p-4 rounded-full bg-black/30 border border-white/10 group-hover:border-accent/50 transition-colors">
+                        <item.icon className="w-8 h-8 text-accent group-hover:text-white transition-colors" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors">{item.title}</h3>
+                        <p className="text-white/60 text-base leading-relaxed group-hover:text-white/80 transition-colors">
+                          {item.desc}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+             </div>
           </div>
 
           <div>

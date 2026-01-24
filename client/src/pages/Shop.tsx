@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { ShoppingBag, Star, Package, Check, ArrowRight, Layers, BookOpen, Hexagon } from "lucide-react";
+import { ShoppingBag, Star, Package, Check, ArrowRight } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -113,7 +113,12 @@ export default function Shop() {
               <Card className="bg-white/5 border-white/10 overflow-hidden hover:bg-white/10 transition-all group">
                 <div className="h-48 bg-purple-900/20 flex items-center justify-center relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
-                  <Layers className="w-16 h-16 text-white/20 group-hover:scale-110 transition-transform duration-500" />
+                  {/* Replaced Icon with Image */}
+                  <img 
+                    src="https://shankara-pull.b-cdn.net/images/Shankara4Decks.webp" 
+                    alt="4 Sacred Decks" 
+                    className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"
+                  />
                 </div>
                 <CardContent className="p-8 relative z-20">
                   <h3 className="text-2xl font-bold text-white mb-2">4 Sacred Decks</h3>
@@ -131,7 +136,12 @@ export default function Shop() {
               <Card className="bg-white/5 border-white/10 overflow-hidden hover:bg-white/10 transition-all group">
                 <div className="h-48 bg-blue-900/20 flex items-center justify-center relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
-                  <Hexagon className="w-16 h-16 text-white/20 group-hover:scale-110 transition-transform duration-500" />
+                   {/* Replaced Icon with Image */}
+                  <img 
+                    src="https://shankara-pull.b-cdn.net/images/ShankaraStones.webp" 
+                    alt="Stones & Cube" 
+                    className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500 p-4"
+                  />
                 </div>
                 <CardContent className="p-8 relative z-20">
                   <h3 className="text-2xl font-bold text-white mb-2">Stones & Cube</h3>
@@ -148,7 +158,12 @@ export default function Shop() {
               <Card className="bg-white/5 border-white/10 overflow-hidden hover:bg-white/10 transition-all group">
                 <div className="h-48 bg-pink-900/20 flex items-center justify-center relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
-                  <BookOpen className="w-16 h-16 text-white/20 group-hover:scale-110 transition-transform duration-500" />
+                   {/* Replaced Icon with Image */}
+                  <img 
+                    src="https://shankara-pull.b-cdn.net/images/ShankaraBoard.webp" 
+                    alt="Board & Guide" 
+                    className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"
+                  />
                 </div>
                 <CardContent className="p-8 relative z-20">
                   <h3 className="text-2xl font-bold text-white mb-2">Board & Guide</h3>

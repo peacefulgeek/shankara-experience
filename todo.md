@@ -12,11 +12,9 @@
     - [x] **Stones & Cube**: Layout with Stones (`shankara-stones.webp`) on LEFT, Cube (`shaktis-cube.png`) on RIGHT
     - [x] **Board & Guide**: Layout with Board (`shankara-board.webp`) on LEFT, Books (`shankara-books.webp`) on RIGHT
 - [ ] **Marketing & Lead Gen**
-    - [ ] Implement `ExitIntentPopup` component
-        - [ ] Detect mouse leave (desktop) or time delay (mobile/desktop fallback)
-        - [ ] Create "Digital Card Draw" offer design
-        - [ ] Add email capture form
-        - [ ] Use local storage to prevent showing too frequently
+    - [ ] **Exit Intent Popup Fixes**
+        - [ ] Remove double 'X' close button (top right)
+        - [ ] Update image source to be "back of card" placeholder (prepare code for user swap)
 - [ ] **Fix Critical Regressions**
     - [ ] **How To Page**: Fix broken element images (restore or replace with available assets)
     - [ ] **Article Page**: Fix "crammed" layout and broken author image
@@ -80,6 +78,7 @@
 - [ ] **Unboxing Page Refinement**
     - [x] Resize "Stones & Cube" and "Board & Books" images to be smaller and balanced
     - [x] Ensure side-by-side layout matches the width of the "4 Decks" image
+    - [ ] **Alignment Fix**: Ensure "Stones & Cube" and "Board & Wisdom" image containers are strictly uniform in size/alignment.
 - [ ] **Article Page Navigation**
     - [x] Add `<Navigation />` component to `ArticlePage.tsx`
 - [ ] **How-To Page Overhaul**
@@ -87,9 +86,15 @@
     - [x] Generate "Ancient Illuminated Sanskrit Text" image
     - [x] Create "Ancient Wisdom & Sanskrit" section with new copy
     - [x] Upload new image to Bunny CDN
-- [ ] **Menu Visibility Fixes**
-    - [ ] **Wisdom Page**: Fix white menu on white background (change text color or background)
-    - [ ] **Article Page**: Fix white menu on white background (change text color or background)
-- [ ] **Content Corrections**
-    - [ ] **Shop Page**: Update product description to "4 Decks" and add "Sacred Action Cards"
-    - [ ] **Unboxing Page**: Verify "4 Decks" and "Sacred Action Cards" are explicitly listed
+- [x] **Menu Visibility Fixes**
+    - [x] **Wisdom Page**: Fix white menu on white background (change text color or background)
+    - [x] **Article Page**: Fix white menu on white background (change text color or background)
+- [x] **Content Corrections**
+    - [x] **Shop Page**: Update product description to "4 Decks" and add "Sacred Action Cards"
+    - [x] **Unboxing Page**: Verify "4 Decks" and "Sacred Action Cards" are explicitly listed
+- [ ] **Footer Color Fix**
+    - [ ] Ensure Footer uses dark purple background on Article and Wisdom pages (fix gray background issue).
+- [ ] **6 Orbs Redesign**
+    - [ ] Redesign "Awaken Inner Master" section (Home/About) to be elegant and high-converting (remove boring circles).
+- [ ] **Shop Page Image Update**
+    - [ ] Replace icons in "Shankara Unboxed" section with actual product images (Decks, Stones, Board).
