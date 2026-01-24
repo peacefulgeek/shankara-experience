@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Check, Star, Play, Lock, BookOpen, Users, Lightbulb, Zap, ArrowRight, Sparkles, Crown, Heart, Sun, Compass, ChevronDown, HelpCircle } from "lucide-react";
+import { Check, Star, Play, Lock, BookOpen, Users, Lightbulb, Zap, ArrowRight, Sparkles, Crown, Heart, Sun, Compass, ChevronDown, HelpCircle, Quote, MessageCircle } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -347,6 +347,71 @@ export default function MasterTraining() {
           </div>
         </section>
 
+        {/* TESTIMONIALS SECTION */}
+        <section className="py-20 relative overflow-hidden">
+          <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-[#ff00ff]/5 rounded-full blur-[100px] pointer-events-none" />
+          <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-[#ffd700]/5 rounded-full blur-[80px] pointer-events-none" />
+          
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 mb-4 px-5 py-2 rounded-full border border-[#ffd700]/30 bg-[#ffd700]/10 backdrop-blur-sm">
+                <Star className="w-4 h-4 text-[#ffd700]" />
+                <span className="text-[#ffd700] font-bold tracking-widest uppercase text-sm">Student Experiences</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-white">
+                What Our Students Say
+              </h2>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              {[
+                {
+                  quote: "The Shankara Master Course completely transformed how I understand myself and my spiritual path. Krishna's teachings are profound yet accessible.",
+                  name: "Sarah M.",
+                  location: "California, USA",
+                  highlight: "Life-changing wisdom"
+                },
+                {
+                  quote: "As an experienced healer, I was skeptical at first. But this course offered depths I hadn't encountered elsewhere. My readings have become so much more powerful.",
+                  name: "David R.",
+                  location: "London, UK",
+                  highlight: "Deepened my practice"
+                },
+                {
+                  quote: "The ancient teachings combined with practical exercises helped me finally break through patterns I'd struggled with for years. Worth every penny.",
+                  name: "Maria L.",
+                  location: "Toronto, Canada",
+                  highlight: "Breakthrough healing"
+                }
+              ].map((testimonial, i) => (
+                <div key={i} className="relative p-8 rounded-2xl bg-gradient-to-br from-purple-900/30 to-[#1a0b2e] border border-purple-400/20 hover:border-purple-400/40 transition-all group">
+                  <Quote className="absolute top-6 right-6 w-10 h-10 text-[#ff00ff]/20" />
+                  
+                  <div className="mb-4">
+                    <span className="inline-block px-3 py-1 rounded-full bg-[#ff00ff]/20 text-[#ff00ff] text-sm font-semibold">
+                      {testimonial.highlight}
+                    </span>
+                  </div>
+                  
+                  <p className="text-purple-100/90 text-lg leading-relaxed mb-6 italic">
+                    "{testimonial.quote}"
+                  </p>
+                  
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#ff00ff] to-purple-600 flex items-center justify-center text-white font-bold">
+                      {testimonial.name.charAt(0)}
+                    </div>
+                    <div>
+                      <p className="text-white font-semibold">{testimonial.name}</p>
+                      <p className="text-purple-300/60 text-sm">{testimonial.location}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* MEET THE GUIDE - LIGHTENED */}
         <section className="py-20 relative">
           <div className="container mx-auto px-4">
@@ -447,6 +512,19 @@ export default function MasterTraining() {
                   Enroll Now for $197
                 </Button>
               </a>
+              
+              {/* Still have questions? */}
+              <div className="mt-10 pt-8 border-t border-purple-400/20">
+                <div className="flex items-center justify-center gap-3 mb-3">
+                  <MessageCircle className="w-5 h-5 text-purple-300" />
+                  <p className="text-lg text-purple-200/80">Still have questions?</p>
+                </div>
+                <Link href="/contact">
+                  <Button variant="link" className="text-[#ffd700] hover:text-[#ffed4a] text-lg font-semibold group">
+                    Get in touch with us <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
         </section>

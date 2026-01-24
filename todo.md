@@ -205,3 +205,5 @@
 ## Training Page Improvements
 - [x] Review Training page flow for conversion and SEO
 - [x] Add FAQ section to Training page with curated questions
+- [x] Add testimonial quotes section between Value Stack and Meet Your Guide
+- [x] Add "Still have questions?" contact link below FAQ
