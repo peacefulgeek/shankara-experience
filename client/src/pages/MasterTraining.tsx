@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Check, Star, Play, Lock, BookOpen, Users, Lightbulb, Zap, ArrowRight, Sparkles, Crown } from "lucide-react";
+import { Check, Star, Play, Lock, BookOpen, Users, Lightbulb, Zap, ArrowRight, Sparkles, Crown, Heart, Sun, Compass } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -21,17 +21,43 @@ export default function MasterTraining() {
     {
       id: "1099419776",
       title: "Mantras & Sanskrit Extract",
-      thumbnail: "https://vumbnail.com/1099419776.jpg"
+      thumbnail: "https://vumbnail.com/1099419776.jpg",
+      description: "Explore the sacred power of ancient mantras and Sanskrit chanting to elevate consciousness and invoke divine energies."
     },
     {
       id: "1099420466",
       title: "Triggers Extract",
-      thumbnail: "https://vumbnail.com/1099420466.jpg"
+      thumbnail: "https://vumbnail.com/1099420466.jpg",
+      description: "Learn to identify and transform emotional triggers into doorways for healing, growth, and deeper self-awareness."
     },
     {
       id: "1099420040",
       title: "Spiritual Bypass Extract",
-      thumbnail: "https://vumbnail.com/1099420040.jpg"
+      thumbnail: "https://vumbnail.com/1099420040.jpg",
+      description: "Understand how to avoid spiritual bypassing and integrate shadow work for authentic, grounded spiritual development."
+    }
+  ];
+
+  const programDesignedFor = [
+    {
+      icon: Crown,
+      title: "Seekers of Self-Mastery",
+      description: "Understand your true Self and unlock your highest potential as you master the Program's insights and tools."
+    },
+    {
+      icon: Sparkles,
+      title: "Spiritually Aware (& Curious) Individuals",
+      description: "Discover a rich tapestry of ancient wisdom + practices to deepen your spirituality and harmony with The Divine."
+    },
+    {
+      icon: Heart,
+      title: "Intuitives & Healers",
+      description: "Enhance your abilities to offer new perspectives when helping others – using transformative techniques to guide your clients toward healing and Self-discovery."
+    },
+    {
+      icon: Sun,
+      title: "Aspiring Light Workers",
+      description: "Be a source of light, guidance, and abundance for others as you connect with your Divinity and illuminate the path for those seeking their own inner truth."
     }
   ];
 
@@ -86,6 +112,43 @@ export default function MasterTraining() {
           </div>
         </section>
 
+        {/* THIS PROGRAM IS DESIGNED FOR - NEW SECTION */}
+        <section className="py-20 relative">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+                This program is designed for…
+              </h2>
+              <p className="text-xl text-purple-200/70 max-w-3xl mx-auto">
+                The Shankara Master Course is designed for individuals ready to embark on a profound journey of Self-discovery, healing, and empowerment.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+              {programDesignedFor.map((item, i) => (
+                <div key={i} className="group relative p-8 rounded-3xl bg-gradient-to-br from-purple-900/30 to-purple-900/10 border border-purple-500/20 hover:border-purple-500/40 transition-all duration-500 overflow-hidden text-center">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#ff00ff]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  <div className="relative z-10">
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#ff00ff]/30 to-purple-500/20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500 border border-purple-400/30">
+                      <item.icon className="w-8 h-8 text-[#ff00ff]" />
+                    </div>
+                    
+                    <h3 className="text-xl font-bold text-white mb-4 leading-tight">{item.title}</h3>
+                    <p className="text-purple-200/70 leading-relaxed text-sm">{item.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-16 max-w-4xl mx-auto text-center">
+              <p className="text-lg text-purple-200/80 leading-relaxed italic">
+                The Shankara Master Course offers a space for growth, learning, and true transformation. It's an invitation to step into your purest potential, illuminate your path, and become a beacon of light in your own life and the lives of others.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* MASTER COURSE EXCERPTS - ABOVE WHAT YOU WILL MASTER */}
         <section className="py-16 relative">
           <div className="container mx-auto px-4">
@@ -94,9 +157,9 @@ export default function MasterTraining() {
               <p className="text-purple-200/80 italic">Just A Few Selections From The 100+ Videos & Worksheets</p>
             </div>
             
-            <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {masterCourseVideos.map((video, i) => (
-                 <div key={i} className="flex flex-col gap-3 group">
+                 <div key={i} className="flex flex-col gap-4 group">
                     <div 
                       className="aspect-video bg-black/40 rounded-xl border border-white/10 flex items-center justify-center relative overflow-hidden cursor-pointer shadow-[0_0_30px_rgba(168,85,247,0.15)] hover:border-accent/50 transition-all"
                       onClick={() => openVideo(`https://vimeo.com/${video.id}`)}
@@ -111,6 +174,7 @@ export default function MasterTraining() {
                       <Play className="w-12 h-12 text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] z-10" />
                     </div>
                     <h4 className="text-white font-bold text-lg text-center group-hover:text-accent transition-colors">{video.title}</h4>
+                    <p className="text-purple-200/60 text-sm text-center leading-relaxed">{video.description}</p>
                  </div>
               ))}
             </div>
@@ -158,30 +222,30 @@ export default function MasterTraining() {
                 <Sparkles className="w-32 h-32 text-white" />
               </div>
               
-              <h2 className="text-3xl font-bold text-white mb-8 text-center">Total Course Value: <span className="line-through text-white/40">$2,500+</span></h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-10 text-center">Total Course Value: <span className="line-through text-white/40">$2,500+</span></h2>
               
               <div className="space-y-6 mb-10">
-                <div className="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/5">
-                  <div className="bg-purple-500/20 p-2 rounded-full"><Play className="w-5 h-5 text-purple-200" /></div>
+                <div className="flex items-center gap-4 bg-white/5 p-5 rounded-xl border border-white/5">
+                  <div className="bg-purple-500/20 p-3 rounded-full"><Play className="w-6 h-6 text-purple-200" /></div>
                   <div>
-                    <h4 className="text-white font-bold">100 Pre-recorded Video Lessons</h4>
-                    <p className="text-purple-300/60 text-sm">A $2,000 Value</p>
+                    <h4 className="text-white font-bold text-lg">100 Pre-recorded Video Lessons</h4>
+                    <p className="text-purple-300/60 text-base">A $2,000 Value</p>
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/5">
-                  <div className="bg-blue-500/20 p-2 rounded-full"><BookOpen className="w-5 h-5 text-blue-200" /></div>
+                <div className="flex items-center gap-4 bg-white/5 p-5 rounded-xl border border-white/5">
+                  <div className="bg-blue-500/20 p-3 rounded-full"><BookOpen className="w-6 h-6 text-blue-200" /></div>
                   <div>
-                    <h4 className="text-white font-bold">Worksheets & Spiritual Resources</h4>
-                    <p className="text-purple-300/60 text-sm">A $500 Value</p>
+                    <h4 className="text-white font-bold text-lg">Worksheets & Spiritual Resources</h4>
+                    <p className="text-purple-300/60 text-base">A $500 Value</p>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-yellow-500/30">
-                  <div className="bg-yellow-500/20 p-2 rounded-full"><Star className="w-5 h-5 text-yellow-200" /></div>
+                <div className="flex items-center gap-4 bg-white/5 p-5 rounded-xl border border-yellow-500/30">
+                  <div className="bg-yellow-500/20 p-3 rounded-full"><Star className="w-6 h-6 text-yellow-200" /></div>
                   <div>
-                    <h4 className="text-yellow-200 font-bold">BONUS: Transformational Training Manual</h4>
-                    <p className="text-purple-300/60 text-sm">Exclusive eBook Guide (A $108 Value)</p>
+                    <h4 className="text-yellow-200 font-bold text-lg">BONUS: Transformational Training Manual</h4>
+                    <p className="text-purple-300/60 text-base">Exclusive eBook Guide (A $108 Value)</p>
                   </div>
                 </div>
               </div>

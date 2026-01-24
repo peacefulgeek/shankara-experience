@@ -20,8 +20,8 @@ export default function Footer() {
             <h4 className="text-lg font-bold mb-8 text-accent tracking-widest uppercase drop-shadow-md">Explore</h4>
             <ul className="space-y-4 text-sm text-white/70 font-medium">
               <li><Link href="/about"><span className="hover:text-primary hover:drop-shadow-[0_0_8px_rgba(255,0,255,0.8)] cursor-pointer transition-all duration-300">About Shankara</span></Link></li>
-              <li><Link href="/master-training"><span className="hover:text-primary hover:drop-shadow-[0_0_8px_rgba(255,0,255,0.8)] cursor-pointer transition-all duration-300">Master Training</span></Link></li>
-              <li><Link href="/certification"><span className="hover:text-primary hover:drop-shadow-[0_0_8px_rgba(255,0,255,0.8)] cursor-pointer transition-all duration-300">Certification</span></Link></li>
+              <li><Link href="/master-training"><span className="hover:text-primary hover:drop-shadow-[0_0_8px_rgba(255,0,255,0.8)] cursor-pointer transition-all duration-300">Training</span></Link></li>
+              <li><Link href="/certification"><span className="hover:text-primary hover:drop-shadow-[0_0_8px_rgba(255,0,255,0.8)] cursor-pointer transition-all duration-300">Master Certification</span></Link></li>
               <li><Link href="/readers"><span className="hover:text-primary hover:drop-shadow-[0_0_8px_rgba(255,0,255,0.8)] cursor-pointer transition-all duration-300">Find a Reader</span></Link></li>
               <li><Link href="/shop"><span className="hover:text-primary hover:drop-shadow-[0_0_8px_rgba(255,0,255,0.8)] cursor-pointer transition-all duration-300">Shop</span></Link></li>
             </ul>
