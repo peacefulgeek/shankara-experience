@@ -1,100 +1,29 @@
-- [ ] **Home Page Layout Update**
-    - [x] Move `DailyCardDraw` component to the bottom of the page, immediately before the `<Footer />`.
-- [x] **Readers Page Updates**
-    - [x] Update Andreea Plesea image (`andreea-plesea.png`)
-    - [x] Update Kristina Jackson image (`kristina-jackson.png`)
-    - [x] Update Suzanne McMurray image (`suzanne-mcmurray.jpg`)
-    - [x] Update Paula Londono image (`paula-londono.png`)
-- [x] **Global UX Improvements**
-    - [x] Implement "Scroll to Top" behavior on route change
-- [x] **Unboxing Section Overhaul**
-    - [x] **Decks**: Update to "4 Sacred Decks", add "The Sacred Action Cards", use `shankara-4-decks.webp`
-    - [x] **Stones & Cube**: Layout with Stones (`shankara-stones.webp`) on LEFT, Cube (`shaktis-cube.png`) on RIGHT
-    - [x] **Board & Guide**: Layout with Board (`shankara-board.webp`) on LEFT, Books (`shankara-books.webp`) on RIGHT
-- [ ] **Marketing & Lead Gen**
-    - [ ] **Exit Intent Popup Fixes**
-        - [ ] Remove double 'X' close button (top right)
-        - [ ] Update image source to be "back of card" placeholder (prepare code for user swap)
-- [ ] **Fix Critical Regressions**
-    - [ ] **How To Page**: Fix broken element images (restore or replace with available assets)
-    - [ ] **Article Page**: Fix "crammed" layout and broken author image
-        - [ ] Update Paul Wagner image source
-        - [ ] Widen content container
-        - [ ] Improve spacing to match "PDF template" style
-    - [ ] **Home Page**: Review and update Hero/Header image based on feedback
-- [ ] **Deployment & Backup**
-    - [ ] Push latest code to existing GitHub repository `shankara-experience`
-- [ ] **GitHub SSH Setup**
-    - [ ] Generate SSH key pair
-    - [ ] Provide public key to user
-    - [ ] Configure git remote to use SSH
-    - [ ] Push code to `shankara-experience` via SSH
-- [ ] **Bunny CDN Migration**
-    - [ ] Wait for GitHub push to complete
-    - [ ] Install `lftp` or `ncftp` for FTP upload (if needed) or use `curl` for API
-    - [ ] Compress/Optimize images before upload (if not already done)
-    - [ ] Upload `client/public/images` to `shankara-assets` storage zone
-    - [ ] Replace local image paths in code with `https://shankara-pull.b-cdn.net/...`
-    - [ ] Verify site loads assets from CDN
-- [ ] **CDN Integration**
-    - [ ] Replace all `/images/` references in code with `https://shankara-pull.b-cdn.net/images/`
-    - [ ] Update file extensions in code (e.g., `.png` -> `.webp`) where optimization occurred
-    - [ ] Delete local `client/public/images` folder to free up space
-    - [ ] Verify site functionality with CDN assets
-- [ ] **Final Verification**
-    - [ ] Scan all source files for remaining `/images/` or `client/public` references
-    - [ ] Manually check critical pages (Home, Unboxing, Readers, How-To) for broken images
-    - [ ] Ensure `logo.svg` is handled correctly (CDN or inline)
-- [ ] **Article Page Refinements**
-    - [ ] Increase base font size (1pt larger)
-    - [ ] Style section headers: +3pt larger, Bold, 2 lines above, 1 line below
-    - [ ] Add "Book Session / Buy Oracle" CTA box at end of every article
-- [ ] **Video Optimization**
-    - [ ] Locate large video files (e.g., in `client/public/videos` or similar)
-    - [ ] Compress videos to 720p using `ffmpeg`
-    - [ ] Upload compressed videos to Bunny CDN
-    - [ ] Update code to reference CDN video URLs
-    - [ ] Delete local video files
-- [ ] **System Recovery**
-    - [ ] Restart dev server immediately
-    - [ ] Verify preview is working
-- [ ] **Final Site Verification**
-    - [ ] Confirm Article page typography changes (font size, headers, CTA)
-    - [ ] Confirm How-To page images are loading from CDN
-    - [ ] Confirm Exit Intent Popup behavior
-    - [ ] Confirm no local assets remain
-- [ ] **Final Save**
-    - [ ] Attempt checkpoint save with max timeout one last time
-- [ ] **Deep Cleanup**
-    - [ ] Locate and remove the "4G site" zip/folder
-    - [ ] Locate and remove the "1G main video" file
-    - [ ] Verify disk usage is significantly reduced
-    - [ ] Retry checkpoint save on clean state
-- [ ] **Git History Pruning**
-    - [ ] Run `git reflog expire --expire=now --all`
-    - [ ] Run `git gc --prune=now --aggressive` again
-    - [ ] Verify final size reduction
-    - [ ] Save checkpoint
-- [ ] **Unboxing Page Refinement**
-    - [x] Resize "Stones & Cube" and "Board & Books" images to be smaller and balanced
-    - [x] Ensure side-by-side layout matches the width of the "4 Decks" image
-    - [ ] **Alignment Fix**: Ensure "Stones & Cube" and "Board & Wisdom" image containers are strictly uniform in size/alignment.
-- [ ] **Article Page Navigation**
-    - [x] Add `<Navigation />` component to `ArticlePage.tsx`
-- [ ] **How-To Page Overhaul**
-    - [x] Remove "Sacred Elements" icon section
-    - [x] Generate "Ancient Illuminated Sanskrit Text" image
-    - [x] Create "Ancient Wisdom & Sanskrit" section with new copy
-    - [x] Upload new image to Bunny CDN
-- [x] **Menu Visibility Fixes**
-    - [x] **Wisdom Page**: Fix white menu on white background (change text color or background)
-    - [x] **Article Page**: Fix white menu on white background (change text color or background)
-- [x] **Content Corrections**
-    - [x] **Shop Page**: Update product description to "4 Decks" and add "Sacred Action Cards"
-    - [x] **Unboxing Page**: Verify "4 Decks" and "Sacred Action Cards" are explicitly listed
-- [ ] **Footer Color Fix**
-    - [ ] Ensure Footer uses dark purple background on Article and Wisdom pages (fix gray background issue).
-- [ ] **6 Orbs Redesign**
-    - [ ] Redesign "Awaken Inner Master" section (Home/About) to be elegant and high-converting (remove boring circles).
-- [ ] **Shop Page Image Update**
-    - [ ] Replace icons in "Shankara Unboxed" section with actual product images (Decks, Stones, Board).
+- [ ] **Home Page Layout Updates**
+    - [x] Reduce the size of the "As Seen In" logo strip to be more subtle (50% opacity, smaller scale).
+    - [x] Ensure the "Shankara Oracle" title and subtitle are perfectly centered and have adequate breathing room.
+    - [x] Add a "Watch Trailer" button next to the "Get the Oracle" button in the hero section.
+
+- [ ] **Unboxing Page Updates**
+    - [x] Fix layout: "Stones & Cube" and "Board & Wisdom" image containers must be uniform in size and alignment.
+    - [x] Update "The Decks" section to explicitly list **4 Sacred Decks** (Master, Alchemy, Release, **Sacred Action Cards**).
+    - [ ] **Redesign "Learn how to use the board" button:** Make it large, neon pink, high-contrast, with a beautiful arrow and proper spacing.
+
+- [ ] **Shop Page Updates**
+    - [x] Update product description to list **4 Decks** (including Sacred Action Cards).
+    - [x] Replace icons in "Shankara Unboxed" section with actual product images (Decks, Stones, Board).
+
+- [ ] **Wisdom & Article Pages**
+    - [x] Fix Navigation Menu: Ensure text is dark/visible on the light background.
+    - [x] Fix Footer: Force dark purple background to match the rest of the site.
+
+- [ ] **Popup Updates**
+    - [x] Remove the double 'X' icon in the top right.
+    - [x] Prepare code to easily swap the image with a "back of card" image.
+
+- [ ] **About/Training Page Updates**
+    - [ ] **Redesign "What You Will Master" (6 Orbs):** Replace flat circles with an elegant, high-converting glassmorphism grid layout.
+
+- [ ] **How To Page Updates**
+    - [x] Replace generic "Sacred Elements" section with **"Ancient Wisdom, Sanskrit, And More"**.
+    - [x] Use the provided `AncietnDevanagari.jpg` image.
+    - [x] Add content about 5,000-year lineage, Sanskrit mantras, and Egyptology roots.

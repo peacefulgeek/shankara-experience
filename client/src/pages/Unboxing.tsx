@@ -166,11 +166,17 @@ export default function Unboxing() {
                   Comprehensive guidebooks provide deep insights into every card, stone, and board position, empowering you to interpret messages with clarity and confidence.
                 </p>
                 
-                <Link href="/how-to-shankara">
-                  <Button variant="outline" className="border-purple-200 text-purple-700 hover:bg-purple-50 mt-2 rounded-full px-8 h-12 w-full block">
-                    Learn how to use the board <ArrowRight className="ml-2 w-4 h-4" />
-                  </Button>
-                </Link>
+                <div className="pt-8">
+                  <Link href="/how-to-shankara">
+                    <Button 
+                      size="lg"
+                      className="w-full bg-[#ff00ff] hover:bg-[#d900d9] text-white font-bold text-xl py-8 rounded-full shadow-[0_10px_40px_rgba(255,0,255,0.4)] hover:shadow-[0_15px_50px_rgba(255,0,255,0.6)] transition-all transform hover:-translate-y-1 group"
+                    >
+                      Learn how to use the board 
+                      <ArrowRight className="ml-4 w-6 h-6 group-hover:translate-x-2 transition-transform" />
+                    </Button>
+                  </Link>
+                </div>
               </div>
 
             </div>
