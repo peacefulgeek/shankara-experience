@@ -88,7 +88,7 @@ export default function HowTo() {
                 <div className="absolute -inset-4 bg-gradient-to-r from-yellow-500/20 to-purple-600/20 rounded-2xl blur-xl opacity-75 group-hover:opacity-100 transition duration-1000"></div>
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10">
                   <img 
-                    src="https://shankara-pull.b-cdn.net/images/sanskrit-wisdom.jpg" 
+                    src="/images/ancient-sanskrit.jpg" 
                     alt="Ancient Illuminated Sanskrit Text" 
                     className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105"
                   />
@@ -116,13 +116,13 @@ export default function HowTo() {
 
                 <div className="space-y-6 text-lg text-purple-100/80 font-light leading-relaxed">
                   <p>
-                    The Shankara Oracle is deeply rooted in the 5,000-year-old traditions of Vedic wisdom. It is not merely a divination tool but a sacred technology designed to align your consciousness with universal truths.
+                    The Shankara Oracle is deeply rooted in the 5,000-year-old traditions of Vedic wisdom and ancient Egyptology. It is not merely a divination tool but a sacred technology designed to align your consciousness with universal truths.
                   </p>
                   <p>
                     Every card and symbol is infused with the vibrational power of <strong className="text-yellow-200 font-medium">Sanskrit mantras and sutras</strong>. These ancient sounds are keys that unlock dormant emotions, clear energetic blockages, and elevate your personal frequency.
                   </p>
                   <p>
-                    By engaging with these sacred texts and symbols, you are participating in a timeless lineage of seekers, connecting directly to the source of divine knowledge that has guided humanity for millennia.
+                    Drawing from the esoteric knowledge of Egypt and India, this system bridges the gap between the mystic and the practical. It invites you to participate in a timeless lineage of seekers, connecting directly to the source of divine knowledge that has guided humanity for millennia.
                   </p>
                 </div>
 
