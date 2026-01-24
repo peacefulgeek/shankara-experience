@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Check, Box, Layers, Grid, Gem, ArrowRight } from "lucide-react";
+import { Box, Layers, Gem, ArrowRight, Check } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -41,9 +41,8 @@ export default function Unboxing() {
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row items-center gap-16">
               <div className="w-full md:w-1/2">
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-purple-50 aspect-[4/3] flex items-center justify-center">
-                   {/* Placeholder for Decks Image */}
-                   <Layers className="w-32 h-32 text-purple-200" />
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-purple-50 aspect-[4/3] flex items-center justify-center group">
+                   <Layers className="w-32 h-32 text-purple-200 group-hover:scale-110 transition-transform duration-500" />
                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-pink-500/10" />
                 </div>
               </div>
@@ -83,9 +82,8 @@ export default function Unboxing() {
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row-reverse items-center gap-16">
               <div className="w-full md:w-1/2">
-                <div className="relative rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(147,51,234,0.3)] border border-white/10 aspect-[4/3] flex items-center justify-center bg-black/40">
-                   {/* Placeholder for Stones Image */}
-                   <Gem className="w-32 h-32 text-purple-500/50" />
+                <div className="relative rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(147,51,234,0.3)] border border-white/10 aspect-[4/3] flex items-center justify-center bg-black/40 group">
+                   <Gem className="w-32 h-32 text-purple-500/50 group-hover:scale-110 transition-transform duration-500" />
                 </div>
               </div>
               <div className="w-full md:w-1/2 space-y-6">
@@ -116,11 +114,14 @@ export default function Unboxing() {
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row items-center gap-16">
               <div className="w-full md:w-1/2">
-                <img 
-                  src="/images/oracle-board-hd.png" 
-                  alt="Oracle Board" 
-                  className="w-full rounded-3xl shadow-2xl hover:scale-[1.02] transition-transform duration-500 border-4 border-white"
-                />
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white aspect-square flex items-center justify-center p-8 group border-4 border-purple-50">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-purple-100/50 to-blue-100/50 opacity-50" />
+                  <img 
+                    src="/images/oracle-board-clean.png" 
+                    alt="Oracle Board" 
+                    className="relative z-10 w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 drop-shadow-xl"
+                  />
+                </div>
               </div>
               <div className="w-full md:w-1/2 space-y-6">
                 <div className="flex items-center gap-4 mb-2">

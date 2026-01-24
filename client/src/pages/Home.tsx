@@ -8,7 +8,7 @@ import { Link } from "wouter";
 
 export default function Home() {
   return (
-    <div className="min-h-screen font-sans selection:bg-accent selection:text-white overflow-x-hidden relative">
+    <div className="min-h-screen font-sans selection:bg-accent selection:text-white overflow-x-hidden relative home-page-v2">
       <SEO 
         title="The Shankara Oracle | Sacred Technology of Consciousness" 
         description="A living technology of consciousness. Awaken your intuition, heal your past, and master your destiny with The Shankara Oracle."
@@ -18,49 +18,62 @@ export default function Home() {
 
       <main>
         {/* HERO SECTION - DARK COSMIC (YIN) */}
-        <section className="bg-cosmic-dark pt-32 pb-24 relative overflow-hidden">
+        <section className="bg-cosmic-dark pt-32 pb-24 relative overflow-hidden min-h-screen flex items-center">
           {/* Neon Glow Effects */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-purple-900/30 rounded-full blur-[120px] pointer-events-none z-0" />
           <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[100px] pointer-events-none z-0" />
           
-          <div className="container mx-auto px-4 text-center relative z-10">
-            <Badge variant="outline" className="mb-8 border-purple-500 text-purple-200 px-4 py-1 text-sm tracking-[0.2em] uppercase bg-purple-900/30 backdrop-blur-md">
-              <Sparkles className="w-3 h-3 mr-2 text-accent" /> The Sacred Oracle System
-            </Badge>
-            
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-display font-bold text-white mb-6 leading-tight glow-text">
-              SHANKARA
-            </h1>
-            
-            <p className="text-2xl md:text-3xl font-light text-purple-200 mb-6 tracking-wide">
-              A living technology of consciousness.
-            </p>
-            
-            <p className="text-xl text-purple-300/80 max-w-2xl mx-auto mb-12 leading-relaxed">
-              <span className="text-accent font-bold">Awaken your intuition</span>, heal your past, and master your destiny.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-20">
-              <Link href="/shop">
-                <Button size="lg" className="bg-accent text-white hover:bg-accent/90 px-12 h-16 text-lg rounded-full font-bold shadow-[0_0_30px_rgba(255,0,255,0.4)] hover:shadow-[0_0_50px_rgba(255,0,255,0.6)] transition-all transform hover:scale-105">
-                  Get the Oracle
+          <div className="container mx-auto px-4 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+            <div className="text-left space-y-8">
+              <Badge variant="outline" className="border-purple-500 text-purple-200 px-4 py-1 text-sm tracking-[0.2em] uppercase bg-purple-900/30 backdrop-blur-md">
+                <Sparkles className="w-3 h-3 mr-2 text-accent" /> The Sacred Oracle System
+              </Badge>
+              
+              <h1 className="text-6xl md:text-8xl font-display font-bold text-white leading-tight glow-text">
+                SHANKARA
+              </h1>
+              
+              <p className="text-2xl md:text-3xl font-light text-purple-200 tracking-wide">
+                A living technology of consciousness.
+              </p>
+              
+              <div className="prose prose-lg prose-invert text-purple-300/80 max-w-xl leading-relaxed">
+                <p>
+                  <span className="text-accent font-bold">Awaken your intuition</span>, heal your past, and master your destiny.
+                </p>
+                <p>
+                  The Shankara Oracle is not just a board game—it is a sacred mirror reflecting the deepest truths of your soul. Through the synergy of cards, stones, and sacred geometry, it reveals the hidden currents shaping your life.
+                </p>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-6 pt-4">
+                <Link href="/shop">
+                  <Button size="lg" className="bg-accent text-white hover:bg-accent/90 px-10 h-14 text-lg rounded-full font-bold shadow-[0_0_30px_rgba(255,0,255,0.4)] hover:shadow-[0_0_50px_rgba(255,0,255,0.6)] transition-all transform hover:scale-105">
+                    Get the Oracle
+                  </Button>
+                </Link>
+                <Button variant="outline" size="lg" className="border-purple-500/50 text-purple-200 hover:bg-purple-900/50 px-10 h-14 text-lg rounded-full backdrop-blur-sm hover:text-white transition-all">
+                  <Play className="w-5 h-5 mr-2 fill-current" /> Watch Trailer
                 </Button>
-              </Link>
-              <Button variant="outline" size="lg" className="border-purple-500/50 text-purple-200 hover:bg-purple-900/50 px-12 h-16 text-lg rounded-full backdrop-blur-sm hover:text-white transition-all">
-                <Play className="w-5 h-5 mr-2 fill-current" /> Watch Trailer
-              </Button>
+              </div>
             </div>
 
-            {/* HERO IMAGE - ORACLE BOARD (Full Width, No Container) */}
-            <div className="relative max-w-6xl mx-auto perspective-1000">
-              <img 
-                src="/images/oracle-board-hd.png" 
-                alt="The Shankara Oracle Board" 
-                className="w-full h-auto object-cover drop-shadow-[0_20px_100px_rgba(147,51,234,0.3)] transform hover:scale-[1.02] transition-transform duration-1000"
-              />
-              
-              {/* Interactive Hotspots (Visual Only) */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 border border-white/20 rounded-full animate-ping opacity-30" />
+            {/* HERO IMAGE - CLEAN ORACLE BOARD ASSET (No Screenshot) */}
+            <div className="relative perspective-1000 flex justify-center lg:justify-end">
+              <div className="relative w-full max-w-xl aspect-square">
+                {/* Rotating glow behind board */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-purple-600/30 to-accent/30 rounded-full blur-[80px] animate-pulse" />
+                
+                <img 
+                  src="/images/oracle-board-clean.png" 
+                  alt="The Shankara Oracle Board" 
+                  className="relative z-10 w-full h-full object-contain drop-shadow-[0_20px_60px_rgba(0,0,0,0.5)] transform hover:scale-[1.02] transition-transform duration-1000"
+                />
+                
+                {/* Floating Elements Animation */}
+                <div className="absolute -top-10 -right-10 w-24 h-24 bg-accent/20 rounded-full blur-xl animate-bounce delay-700" />
+                <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-purple-600/20 rounded-full blur-xl animate-bounce delay-1000" />
+              </div>
             </div>
           </div>
         </section>
@@ -110,9 +123,9 @@ export default function Home() {
               <div className="w-full md:w-1/2 relative">
                 <div className="absolute inset-0 bg-accent/20 blur-[60px] rounded-full animate-pulse" />
                 <img 
-                  src="/images/shakti-cube-transparent.png" 
+                  src="/images/shakti-cube-clean.png" 
                   alt="Shakti Cube" 
-                  className="relative z-10 w-full max-w-lg mx-auto drop-shadow-[0_0_50px_rgba(255,255,255,0.2)]"
+                  className="relative z-10 w-full max-w-lg mx-auto drop-shadow-[0_0_50px_rgba(255,255,255,0.2)] animate-float"
                 />
               </div>
               
@@ -175,7 +188,7 @@ export default function Home() {
               Dive deep into the mysteries of the Shankara Oracle with our comprehensive Master Training. Learn to read the cards, interpret the stones, and navigate the sacred geometry of the board.
             </p>
             
-            <Link href="/master-training">
+            <Link href="/certification">
               <Button size="lg" className="bg-purple-900 text-white hover:bg-purple-800 px-12 h-16 text-lg rounded-full font-bold shadow-xl transition-all hover:-translate-y-1">
                 Explore the Training
               </Button>
