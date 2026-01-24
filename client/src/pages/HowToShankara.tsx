@@ -126,12 +126,6 @@ export default function HowToShankara() {
                     By engaging with these sacred symbols and sounds, you are not just "playing a game"—you are stepping into a timeless stream of wisdom, accessing the same profound depth and clarity that guided pharaohs and rishis millennia ago.
                   </p>
                 </div>
-
-                <div className="pt-4">
-                  <Button variant="outline" className="border-yellow-500/50 text-yellow-200 hover:bg-yellow-500/10 px-8 h-12 rounded-full group">
-                    Explore the Lineage <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </div>
               </div>
 
             </div>
