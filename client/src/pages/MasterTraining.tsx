@@ -114,39 +114,56 @@ export default function MasterTraining() {
           </div>
         </section>
 
-        {/* THIS PROGRAM IS DESIGNED FOR - NEW SECTION */}
-        <section className="py-20 relative">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
-                This program is designed for…
+        {/* TRANSFORM YOUR LIFE - REDESIGNED ENGAGING SECTION */}
+        <section className="py-24 relative overflow-hidden">
+          {/* Background glow effects */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#ff00ff]/10 rounded-full blur-[150px] pointer-events-none" />
+          <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#ffd700]/5 rounded-full blur-[100px] pointer-events-none" />
+          
+          <div className="container mx-auto px-4 relative z-10">
+            {/* Engaging Header */}
+            <div className="text-center mb-20">
+              <div className="inline-block mb-6 px-6 py-2 rounded-full border border-[#ffd700]/40 bg-[#ffd700]/10 backdrop-blur-sm">
+                <span className="text-[#ffd700] font-bold tracking-widest uppercase text-sm">100+ Videos & Workshops</span>
+              </div>
+              
+              <h2 className="text-5xl md:text-6xl font-display font-bold text-white mb-8 leading-tight">
+                Heal To Your Core.<br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff00ff] via-[#ff66ff] to-[#ffd700] drop-shadow-[0_0_30px_rgba(255,0,255,0.5)]">Transform Your Entire Life.</span>
               </h2>
-              <p className="text-xl text-purple-200/70 max-w-3xl mx-auto">
-                The Shankara Master Course is designed for individuals ready to embark on a profound journey of Self-discovery, healing, and empowerment.
+              
+              <p className="text-2xl text-purple-100/90 max-w-4xl mx-auto leading-relaxed">
+                The Shankara Master Course is a <span className="text-[#ff00ff] font-semibold">complete healing journey</span> with over 100 video lessons and transformational worksheets designed to help you release deep wounds, awaken your gifts, and step into your highest Self.
               </p>
             </div>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            {/* Cards with gold outlines and neon accents */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
               {programDesignedFor.map((item, i) => (
-                <div key={i} className="group relative p-8 rounded-3xl bg-gradient-to-br from-purple-900/30 to-purple-900/10 border border-purple-500/20 hover:border-purple-500/40 transition-all duration-500 overflow-hidden text-center">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#ff00ff]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div key={i} className="group relative p-10 rounded-3xl bg-gradient-to-br from-[#1a0b2e] to-[#2d1b4e] border-2 border-[#ffd700]/30 hover:border-[#ffd700]/60 transition-all duration-500 overflow-hidden text-center shadow-[0_0_40px_rgba(255,215,0,0.1)] hover:shadow-[0_0_60px_rgba(255,0,255,0.2)]">
+                  {/* Neon glow on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#ff00ff]/10 to-[#ffd700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   
                   <div className="relative z-10">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#ff00ff]/30 to-purple-500/20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500 border border-purple-400/30">
-                      <item.icon className="w-8 h-8 text-[#ff00ff]" />
+                    {/* Icon with gold ring */}
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#ff00ff]/40 to-purple-500/30 flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-500 border-2 border-[#ffd700]/50 shadow-[0_0_20px_rgba(255,0,255,0.3)]">
+                      <item.icon className="w-10 h-10 text-[#ff00ff] drop-shadow-[0_0_10px_rgba(255,0,255,0.8)]" />
                     </div>
                     
-                    <h3 className="text-xl font-bold text-white mb-4 leading-tight">{item.title}</h3>
-                    <p className="text-purple-200/70 leading-relaxed text-sm">{item.description}</p>
+                    <h3 className="text-2xl font-bold text-white mb-5 leading-tight drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]">{item.title}</h3>
+                    <p className="text-purple-100/80 leading-relaxed text-base">{item.description}</p>
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="mt-16 max-w-4xl mx-auto text-center">
-              <p className="text-lg text-purple-200/80 leading-relaxed italic">
-                The Shankara Master Course offers a space for growth, learning, and true transformation. It's an invitation to step into your purest potential, illuminate your path, and become a beacon of light in your own life and the lives of others.
-              </p>
+            {/* Closing statement with CTA feel */}
+            <div className="mt-20 max-w-4xl mx-auto text-center">
+              <div className="p-8 rounded-2xl bg-gradient-to-r from-[#ff00ff]/10 via-purple-900/20 to-[#ffd700]/10 border border-[#ff00ff]/20">
+                <p className="text-xl text-purple-100/90 leading-relaxed">
+                  This is your invitation to <span className="text-[#ffd700] font-semibold">step into your purest potential</span>, illuminate your path, and become a beacon of light in your own life and the lives of others. The Shankara Master Course offers a sacred space for <span className="text-[#ff00ff] font-semibold">growth, healing, and true transformation</span>.
+                </p>
+              </div>
             </div>
           </div>
         </section>
