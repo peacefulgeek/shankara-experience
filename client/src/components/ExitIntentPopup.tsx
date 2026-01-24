@@ -11,7 +11,7 @@ type DeckType = "alchemy" | "master" | "release";
 
 const DECKS: Record<DeckType, { back: string; fronts: string[]; name: string; description: string; specialty: string; color: string }> = {
   alchemy: {
-    back: "/images/cards/alchemy-back-landscape.webp",
+    back: "https://shankara-pull.b-cdn.net/images/cards/alchemy-back-landscape.webp",
     fronts: [
       "alchemy-gods-hands.webp", "alchemy-frequency.webp", "alchemy-calmness.webp",
       "alchemy-environment.webp", "alchemy-say-yes.webp", "alchemy-sensible.webp",
@@ -24,7 +24,7 @@ const DECKS: Record<DeckType, { back: string; fronts: string[]; name: string; de
     color: "from-amber-400 to-orange-500"
   },
   master: {
-    back: "/images/cards/master-back-landscape.webp",
+    back: "https://shankara-pull.b-cdn.net/images/cards/master-back-landscape.webp",
     fronts: [
       "master-authenticity.webp", "master-opinions.webp", "master-own-your-life.webp",
       "master-comfort.webp", "master-harvest.webp", "master-fear.webp",
@@ -37,7 +37,7 @@ const DECKS: Record<DeckType, { back: string; fronts: string[]; name: string; de
     color: "from-red-500 to-rose-600"
   },
   release: {
-    back: "/images/cards/release-back-landscape.webp",
+    back: "https://shankara-pull.b-cdn.net/images/cards/release-back-landscape.webp",
     fronts: [
       "release-overthinking.webp", "release-mirrors.webp", "release-coping.webp",
       "release-outcome.webp", "release-shadows.webp", "release-sentiment.webp",
@@ -267,7 +267,7 @@ export default function ExitIntentPopup() {
                   <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 group" style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}>
                     <div className="relative w-full h-full overflow-hidden rounded-xl border-2 border-amber-400/50 bg-[#1a0b2e]">
                       <img 
-                        src={`/images/cards/${selectedCardFront}`}
+                        src={`https://shankara-pull.b-cdn.net/images/cards/${selectedCardFront}`}
                         alt="Card Reveal" 
                         className="w-full h-full object-contain shadow-[0_0_50px_rgba(255,255,255,0.3)]"
                       />

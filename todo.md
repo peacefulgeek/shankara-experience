@@ -191,3 +191,8 @@
 - [x] Implement honeypot spam protection
 - [x] Create server API route for SMTP2GO email sending
 - [x] Send emails to paul@creativelab.tv from paul@paulwagner.one
+
+## Image Migration to Bunny CDN
+- [x] Upload all local images from client/public/images/ to Bunny CDN
+- [x] Update all code references to use Bunny URLs
+- [x] Remove local images from GitHub repo

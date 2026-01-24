@@ -20,7 +20,7 @@ export default function Blog() {
       excerpt: "In the journey of spiritual awakening, few tools offer the profound grounding and clarity of obsidian. Discover why this volcanic glass is the heartbeat of the Shankara Oracle.",
       date: "Oct 12, 2025",
       author: "Paul Wagner",
-      authorImage: "/images/authors/paul-wagner.webp",
+      authorImage: "https://shankara-pull.b-cdn.net/images/authors/paul-wagner.webp",
       category: "Tools",
       image: "https://shankara-pull.b-cdn.net/images/obsidian-divination.webp",
       readTime: "5 min read"
@@ -32,7 +32,7 @@ export default function Blog() {
       excerpt: "The Shankara Board is not just a surface—it is a map of the cosmos. A deep dive into how the Sri Yantra and Lotus patterns guide your intuition.",
       date: "Sep 28, 2025",
       author: "Paul Wagner",
-      authorImage: "/images/authors/paul-wagner.webp",
+      authorImage: "https://shankara-pull.b-cdn.net/images/authors/paul-wagner.webp",
       category: "Wisdom",
       image: "https://shankara-pull.b-cdn.net/images/sacred-geometry-grid.webp",
       readTime: "8 min read"
@@ -44,7 +44,7 @@ export default function Blog() {
       excerpt: "Before you ask the Oracle, you must quiet the mind. Learn the essential rituals to clear your energy and open your channel to the Divine.",
       date: "Sep 15, 2025",
       author: "Ana Andreea",
-      authorImage: "/images/authors/ana-andreea.webp",
+      authorImage: "https://shankara-pull.b-cdn.net/images/authors/ana-andreea.webp",
       category: "Practice",
       image: "https://shankara-pull.b-cdn.net/images/reading-preparation.webp",
       readTime: "6 min read"

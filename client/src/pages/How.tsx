@@ -74,7 +74,7 @@ export default function How() {
               <div className="aspect-[4/5] rounded-2xl overflow-hidden relative group">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
                 <img 
-                  src="/images/how-community-4.webp" 
+                  src="https://shankara-pull.b-cdn.net/images/how-community-4.webp" 
                   loading="lazy" 
                   alt="Friends sharing a Shankara moment" 
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
@@ -83,7 +83,7 @@ export default function How() {
               <div className="aspect-[4/5] rounded-2xl overflow-hidden relative group translate-y-8 md:translate-y-12">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
                 <img 
-                  src="/images/how-community-2.webp" 
+                  src="https://shankara-pull.b-cdn.net/images/how-community-2.webp" 
                   loading="lazy" 
                   alt="Deep connection over the board" 
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
@@ -92,7 +92,7 @@ export default function How() {
               <div className="aspect-[4/5] rounded-2xl overflow-hidden relative group">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
                 <img 
-                  src="/images/how-musa-1.webp" 
+                  src="https://shankara-pull.b-cdn.net/images/how-musa-1.webp" 
                   loading="lazy" 
                   alt="Joyful discovery with Shankara" 
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
@@ -101,7 +101,7 @@ export default function How() {
               <div className="aspect-[4/5] rounded-2xl overflow-hidden relative group translate-y-8 md:translate-y-12">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
                 <img 
-                  src="/images/how-layout.webp" 
+                  src="https://shankara-pull.b-cdn.net/images/how-layout.webp" 
                   loading="lazy" 
                   alt="Intimate moment with the Oracle" 
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
@@ -122,7 +122,7 @@ export default function How() {
                 <div className="rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(168,85,247,0.15)] border border-white/10 group relative">
                   <div className="absolute inset-0 bg-gradient-to-tr from-accent/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
                   <img 
-                    src="/images/board-full-setup.webp" 
+                    src="https://shankara-pull.b-cdn.net/images/board-full-setup.webp" 
                     loading="lazy" 
                     alt="The Shankara Oracle Board Full Setup" 
                     className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"

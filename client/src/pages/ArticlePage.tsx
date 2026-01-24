@@ -15,7 +15,7 @@ const articles = {
     readTime: "5 min read",
     author: "Paul Wagner",
     authorBio: "Paul Wagner is the creator of The Shankara Oracle, a spiritual guide, and a 5-time EMMY® Award winner. He has spent decades exploring the intersection of consciousness, ritual, and personal transformation.",
-    authorImage: "/images/authors/paul-wagner.webp",
+    authorImage: "https://shankara-pull.b-cdn.net/images/authors/paul-wagner.webp",
     image: "https://shankara-pull.b-cdn.net/images/obsidian-divination.webp",
     content: (
       <>
@@ -51,7 +51,7 @@ const articles = {
     readTime: "8 min read",
     author: "Paul Wagner",
     authorBio: "Paul Wagner is the creator of The Shankara Oracle, a spiritual guide, and a 5-time EMMY® Award winner. He has spent decades exploring the intersection of consciousness, ritual, and personal transformation.",
-    authorImage: "/images/authors/paul-wagner.webp",
+    authorImage: "https://shankara-pull.b-cdn.net/images/authors/paul-wagner.webp",
     image: "https://shankara-pull.b-cdn.net/images/sacred-geometry-grid.webp",
     content: (
       <>
@@ -87,7 +87,7 @@ const articles = {
     readTime: "6 min read",
     author: "Ana Andreea",
     authorBio: "Ana Andreea is a Shankara Master and intuitive guide. She specializes in creating sacred spaces and helping others connect with their inner wisdom through ritual and meditation.",
-    authorImage: "/images/authors/ana-andreea.webp",
+    authorImage: "https://shankara-pull.b-cdn.net/images/authors/ana-andreea.webp",
     image: "https://shankara-pull.b-cdn.net/images/reading-preparation.webp",
     content: (
       <>

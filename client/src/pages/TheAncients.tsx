@@ -62,7 +62,7 @@ export default function TheAncients() {
                       <div className="rounded-[22px] overflow-hidden bg-[#1a0b2e] relative">
                         <div className="absolute inset-0 bg-gradient-to-tr from-purple-900/20 to-transparent mix-blend-overlay z-10" />
                         <img 
-                          src="/images/ShankaraCosmos.jpg" 
+                          src="https://shankara-pull.b-cdn.net/images/ShankaraCosmos.jpg" 
                           alt="Shankara Cosmos Board" 
                           className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-1000"
                         />
@@ -89,7 +89,7 @@ export default function TheAncients() {
                 <div className="absolute -inset-4 bg-gradient-to-r from-yellow-500/20 to-purple-600/20 rounded-2xl blur-xl opacity-75 group-hover:opacity-100 transition duration-1000"></div>
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10">
                   <img 
-                    src="/images/mystical-stones-cosmos.jpg" 
+                    src="https://shankara-pull.b-cdn.net/images/mystical-stones-cosmos.jpg" 
                     alt="Sacred Stones in the Cosmos" 
                     className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105"
                   />
