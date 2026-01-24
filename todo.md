@@ -147,3 +147,8 @@
   - [x] **UX Improvement:** Add "Awaiting Selection" state to left panel.
   - [x] **Visual Hierarchy:** Increase font size of "Choose Your Path" and add pulsing animation to deck buttons to guide user attention.
   - [ ] **PUSH:** Force push changes to GitHub upon completion.
+- [x] **Advanced Interactivity**
+  - [x] **Shimmer Animation:** Add continuous `shimmer-subtle` animation to card backs in the selection list.
+  - [x] **Mobile Carousel:** Convert deck list to a horizontal scroll snap container (carousel) on mobile (`md:hidden`).
+  - [x] **Desktop Consistency:** Maintain vertical stack layout on desktop (`hidden md:flex`).
+  - [ ] **PUSH:** Force push changes to GitHub upon completion.

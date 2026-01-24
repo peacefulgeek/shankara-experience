@@ -3,7 +3,7 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { Sparkles, Mail, X, RefreshCw, Lock, Info, ArrowRight } from "lucide-react";
+import { Sparkles, Mail, X, RefreshCw, Lock, Info, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { toast } from "sonner";
 
 // Define Decks and Cards
@@ -236,7 +236,8 @@ export default function ExitIntentPopup() {
                            </div>
                         </div>
                       </div>
-                      <p className="text-sm text-purple-200/40 font-medium animate-pulse">Select a deck on the right to begin &rarr;</p>
+                      <p className="text-sm text-purple-200/40 font-medium animate-pulse hidden md:block">Select a deck on the right to begin &rarr;</p>
+                      <p className="text-sm text-purple-200/40 font-medium animate-pulse md:hidden">Swipe below to choose your deck &darr;</p>
                    </div>
                 </div>
               </div>
@@ -317,7 +318,8 @@ export default function ExitIntentPopup() {
                   </p>
                 </div>
 
-                <div className="grid grid-cols-1 gap-4">
+                {/* DESKTOP: Vertical List */}
+                <div className="hidden md:grid grid-cols-1 gap-4">
                   <TooltipProvider delayDuration={0}>
                     {(Object.keys(DECKS) as DeckType[]).map((deckKey) => (
                       <Tooltip key={deckKey}>
@@ -328,12 +330,14 @@ export default function ExitIntentPopup() {
                           >
                             <div className={`absolute inset-0 bg-gradient-to-r ${DECKS[deckKey].color} opacity-0 group-hover:opacity-10 transition-opacity`} />
                             
-                            <div className="relative w-28 aspect-[1.45/1] rounded-lg overflow-hidden shadow-lg mr-5 shrink-0 border-2 border-amber-400/50">
+                            <div className="relative w-28 aspect-[1.45/1] rounded-lg overflow-hidden shadow-lg mr-5 shrink-0 border-2 border-amber-400/50 group-hover:shadow-[0_0_15px_rgba(255,255,255,0.4)] transition-all">
                                <img 
                                 src={DECKS[deckKey].back} 
                                 alt={DECKS[deckKey].name}
                                 className="w-full h-full object-cover"
                               />
+                              {/* Shimmer Effect */}
+                              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent -translate-x-full animate-[shimmer_3s_infinite]" />
                             </div>
                             
                             <div className="flex-1 min-w-0">
@@ -355,6 +359,42 @@ export default function ExitIntentPopup() {
                     ))}
                   </TooltipProvider>
                 </div>
+
+                {/* MOBILE: Horizontal Scroll Snap Carousel */}
+                <div className="md:hidden w-full overflow-x-auto snap-x snap-mandatory pb-4 -mx-6 px-6 scrollbar-hide flex gap-4">
+                  {(Object.keys(DECKS) as DeckType[]).map((deckKey) => (
+                    <button
+                      key={deckKey}
+                      onClick={() => handleSelectDeck(deckKey)}
+                      className="snap-center shrink-0 w-[85%] sm:w-[70%] flex flex-col p-4 rounded-xl border border-white/10 bg-white/5 relative overflow-hidden group"
+                    >
+                      <div className={`absolute inset-0 bg-gradient-to-b ${DECKS[deckKey].color} opacity-5`} />
+                      
+                      <div className="relative w-full aspect-[1.45/1] rounded-lg overflow-hidden shadow-lg mb-4 border-2 border-amber-400/50">
+                         <img 
+                          src={DECKS[deckKey].back} 
+                          alt={DECKS[deckKey].name}
+                          className="w-full h-full object-cover"
+                        />
+                        {/* Shimmer Effect */}
+                        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent -translate-x-full animate-[shimmer_3s_infinite]" />
+                      </div>
+                      
+                      <div className="text-center w-full">
+                        <h3 className="text-xl font-bold text-white mb-1">
+                          {DECKS[deckKey].name}
+                        </h3>
+                        <p className="text-sm text-purple-200/60">
+                          {DECKS[deckKey].description}
+                        </p>
+                        <div className="mt-3 text-xs text-[#ff00ff] font-medium uppercase tracking-wider border border-[#ff00ff]/30 rounded-full py-1 px-3 inline-block">
+                          Tap to Select
+                        </div>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+
               </div>
             )}
 
