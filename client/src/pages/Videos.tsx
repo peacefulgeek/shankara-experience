@@ -47,6 +47,24 @@ export default function Videos() {
     }
   ];
 
+  const masterCourseVideos = [
+    {
+      id: "1099419776",
+      title: "Mantras & Sanskrit Extract",
+      thumbnail: "https://vumbnail.com/1099419776.jpg"
+    },
+    {
+      id: "1099420466",
+      title: "Triggers Extract",
+      thumbnail: "https://vumbnail.com/1099420466.jpg"
+    },
+    {
+      id: "1099420040",
+      title: "Spiritual Bypass Extract",
+      thumbnail: "https://vumbnail.com/1099420040.jpg"
+    }
+  ];
+
   const videos = [
     {
       title: "Unboxing The Shankara Oracle",
@@ -141,6 +159,35 @@ export default function Videos() {
                   <p className="text-white font-bold text-sm truncate">{video.title}</p>
                 </div>
               </div>
+          ))}
+        </div>
+      </section>
+
+      {/* MASTER COURSE EXCERPTS */}
+      <section className="pb-16 container mx-auto px-4">
+        <div className="max-w-6xl mx-auto mb-8 text-center">
+          <h3 className="text-3xl font-display font-bold text-white mb-2">Excerpts From The Shankara Master Course</h3>
+          <p className="text-purple-200/80 italic">Just A Few Selections From The 100+ Videos & Worksheets</p>
+        </div>
+        
+        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {masterCourseVideos.map((video, i) => (
+             <div key={i} className="flex flex-col gap-3 group">
+                <div 
+                  className="aspect-video bg-black/40 rounded-xl border border-white/10 flex items-center justify-center relative overflow-hidden cursor-pointer shadow-[0_0_30px_rgba(168,85,247,0.15)] hover:border-accent/50 transition-all"
+                  onClick={() => openVideo(`https://vimeo.com/${video.id}`)}
+                >
+                  <div className="absolute inset-0 bg-accent/10 group-hover:bg-accent/20 transition-colors" />
+                  <img 
+                    src={video.thumbnail} 
+                    loading="lazy" 
+                    alt={video.title} 
+                    className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" 
+                  />
+                  <Play className="w-12 h-12 text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] z-10" />
+                </div>
+                <h4 className="text-white font-bold text-lg text-center group-hover:text-accent transition-colors">{video.title}</h4>
+             </div>
           ))}
         </div>
       </section>
