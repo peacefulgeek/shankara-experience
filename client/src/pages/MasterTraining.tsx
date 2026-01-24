@@ -115,7 +115,7 @@ export default function MasterTraining() {
               <div className="relative">
                 <div className="absolute inset-0 bg-[#ff00ff]/20 blur-[60px] rounded-full pointer-events-none" />
                 <img 
-                  src="/images/training-hero-collage.webp" 
+                  src="https://shankara-pull.b-cdn.net/images/training-hero-collage.webp" 
                   alt="Transformational journeys - people finding peace, healing, and connection" 
                   className="relative z-10 w-full max-w-md md:max-w-lg drop-shadow-[0_20px_60px_rgba(255,0,255,0.3)]" 
                 />
