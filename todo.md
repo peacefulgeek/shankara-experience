@@ -1,8 +1,4 @@
-- [ ] **CRITICAL FIXES**
-  - [x] **Training Page (`MasterTraining.tsx`):** Replace old "What You Will Master" (6 Orbs) section with new glassmorphism grid.
-  - [x] **How To Page (`HowTo.tsx`):** Replace old "Sacred Elements" section with elegant, high-end feature strip.
-  - [x] **Global:** Verify no other pages contain these outdated sections.
-  - [x] **Popup:** Fixed double X button issue.
-  - [x] **Unboxing:** Verified alignment of Stones/Cube and Board/Wisdom sections.
-  - [x] **Navigation:** Verified white text on light background fix logic.
-  - [x] **Footer:** Verified consistent dark purple background.
+- [ ] **Verify & Insert Full Content on 'HOW' Page**
+  - [ ] Ensure "Find a peaceful place..." through "...embedded in The Dharma" is fully present.
+  - [ ] Ensure "The Shankara Book of Meanings contains..." through "...blocked your illumination" is fully present.
+  - [ ] Verify no sentences are skipped or summarized.
