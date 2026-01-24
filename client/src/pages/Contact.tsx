@@ -19,18 +19,42 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Honeypot check - if filled, silently "succeed" but don't send
+    if (formData.website) {
+      setStatus("success");
+      return;
+    }
+    
     setStatus("sending");
 
     try {
-      const response = await fetch("/api/contact", {
+      // Using SMTP2GO API directly from frontend with CORS
+      const response = await fetch("https://api.smtp2go.com/v3/email/send", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          api_key: "api-1AC5061C983C11EBB10DF23C91C88F4E",
+          to: ["paul@creativelab.tv"],
+          sender: "paul@paulwagner.one",
+          subject: formData.subject || `Contact Form: Message from ${formData.name}`,
+          html_body: `
+            <h2>New Contact Form Submission</h2>
+            <p><strong>From:</strong> ${formData.name}</p>
+            <p><strong>Email:</strong> ${formData.email}</p>
+            <p><strong>Subject:</strong> ${formData.subject || "No subject"}</p>
+            <hr>
+            <p><strong>Message:</strong></p>
+            <p>${formData.message.replace(/\n/g, "<br>")}</p>
+          `,
+          text_body: `New Contact Form Submission\n\nFrom: ${formData.name}\nEmail: ${formData.email}\nSubject: ${formData.subject || "No subject"}\n\nMessage:\n${formData.message}`,
+        }),
       });
 
-      if (response.ok) {
+      const result = await response.json();
+      if (result.data?.succeeded > 0) {
         setStatus("success");
         setFormData({ name: "", email: "", subject: "", message: "", website: "" });
       } else {
