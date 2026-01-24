@@ -62,8 +62,8 @@ export default function HowToShankara() {
                       <div className="rounded-[22px] overflow-hidden bg-[#1a0b2e] relative">
                         <div className="absolute inset-0 bg-gradient-to-tr from-purple-900/20 to-transparent mix-blend-overlay z-10" />
                         <img 
-                          src="https://shankara-pull.b-cdn.net/images/reading-preparation.webp" 
-                          alt="Shankara Board Detail" 
+                          src="/images/ShankaraCosmos.jpg" 
+                          alt="Shankara Cosmos Board" 
                           className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-1000"
                         />
                       </div>
