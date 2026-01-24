@@ -3,10 +3,25 @@
     - [x] **Theme Restoration**: Update `index.css` to bring back deep purples (`#1a0b2e`) and neon pinks (`#ff00ff`) while keeping white sections for clarity.
     - [x] **Home Page Fix**: Remove boxy containers in `Home.tsx`, use full-width sections with balanced backgrounds.
     - [x] **Unboxing Page Polish**: Ensure `Unboxing.tsx` follows the new balanced theme.
-- [ ] **User Feedback Updates (Jan 24)**
-    - [ ] **Header Image**: Replace hero image with `170323-Andreea-Plesea-027-1-scaled.webp`
-    - [ ] **Navigation**:
-        - [ ] Increase text size by 2pts
-        - [ ] Default color: White
-        - [ ] Active color: Neon Pink
-    - [ ] **System Section**: Place `170323-Andreea-Plesea-016-scaled.webp` to the left of "More than a deck" text
+- [ ] **User Feedback Updates (Jan 24 - Part 1)**
+    - [x] **Header Image**: Replace hero image with `170323-Andreea-Plesea-027-1-scaled.webp`
+    - [x] **Navigation**:
+        - [x] Increase text size by 2pts
+        - [x] Default color: White
+        - [x] Active color: Neon Pink
+    - [x] **System Section**: Place `170323-Andreea-Plesea-016-scaled.webp` to the left of "More than a deck" text
+- [ ] **User Feedback Updates (Jan 24 - Part 2)**
+    - [ ] **Home Page - Master Training**:
+        - [ ] Flush text left.
+        - [ ] Add 4-square image grid to the right (using new uploads).
+    - [ ] **How To Page Overhaul**:
+        - [ ] **Header**: Remove gray box, make board image 4x larger (filling left space).
+        - [ ] **Typography**: Fix "Discover the symbolism" text (mysterious & light, readable).
+        - [ ] **Elements Section**:
+            - [ ] Remove tech icons and gray backgrounds.
+            - [ ] Use ancient-feeling circular images for each element.
+            - [ ] Center text under each circle.
+            - [ ] Lighten up the section ("add the love").
+        - [ ] **Tips & Swaps**:
+            - [ ] Make section larger and more beautiful.
+            - [ ] Add `ShankaraPujaMay23-2023.jpg` to the right.

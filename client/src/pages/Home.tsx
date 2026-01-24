@@ -170,29 +170,54 @@ export default function Home() {
           </div>
         </section>
 
-        {/* MASTER TRAINING - LIGHT (YANG) */}
-        <section className="py-32 bg-gray-50 text-center relative overflow-hidden">
+        {/* MASTER TRAINING - LIGHT (YANG) - UPDATED LAYOUT */}
+        <section className="py-32 bg-gray-50 relative overflow-hidden">
           <div className="container mx-auto px-4 relative z-10">
-            <Badge className="bg-purple-900 text-white hover:bg-purple-800 mb-8 px-6 py-2 text-sm font-bold tracking-widest uppercase">
-              The Master Course
-            </Badge>
-            
-            <h2 className="text-5xl md:text-7xl font-display font-bold text-purple-900 mb-8">
-              Master the Art of <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-accent">
-                Divine Communication
-              </span>
-            </h2>
-            
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12 leading-relaxed">
-              Dive deep into the mysteries of the Shankara Oracle with our comprehensive Master Training. Learn to read the cards, interpret the stones, and navigate the sacred geometry of the board.
-            </p>
-            
-            <Link href="/certification">
-              <Button size="lg" className="bg-purple-900 text-white hover:bg-purple-800 px-12 h-16 text-lg rounded-full font-bold shadow-xl transition-all hover:-translate-y-1">
-                Explore the Training
-              </Button>
-            </Link>
+            <div className="flex flex-col lg:flex-row items-center gap-16">
+              
+              {/* Text Content - Flushed Left */}
+              <div className="w-full lg:w-1/2 text-left">
+                <Badge className="bg-purple-900 text-white hover:bg-purple-800 mb-8 px-6 py-2 text-sm font-bold tracking-widest uppercase">
+                  The Master Course
+                </Badge>
+                
+                <h2 className="text-5xl md:text-7xl font-display font-bold text-purple-900 mb-8 leading-tight">
+                  Master the Art of <br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-accent">
+                    Divine Communication
+                  </span>
+                </h2>
+                
+                <p className="text-xl text-gray-600 max-w-xl mb-12 leading-relaxed">
+                  Dive deep into the mysteries of the Shankara Oracle with our comprehensive Master Training. Learn to read the cards, interpret the stones, and navigate the sacred geometry of the board.
+                </p>
+                
+                <Link href="/certification">
+                  <Button size="lg" className="bg-purple-900 text-white hover:bg-purple-800 px-12 h-16 text-lg rounded-full font-bold shadow-xl transition-all hover:-translate-y-1">
+                    Explore the Training
+                  </Button>
+                </Link>
+              </div>
+
+              {/* 4-Square Image Grid - Right Side */}
+              <div className="w-full lg:w-1/2">
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="aspect-square rounded-2xl overflow-hidden shadow-lg transform hover:scale-[1.02] transition-transform duration-500">
+                    <img src="/images/board-full-flat.webp" alt="Oracle Board Flat" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="aspect-square rounded-2xl overflow-hidden shadow-lg transform translate-y-8 hover:translate-y-6 transition-transform duration-500">
+                    <img src="/images/cards-spread.webp" alt="Oracle Cards" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="aspect-square rounded-2xl overflow-hidden shadow-lg transform hover:scale-[1.02] transition-transform duration-500">
+                    <img src="/images/stones-bag.webp" alt="Obsidian Stones" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="aspect-square rounded-2xl overflow-hidden shadow-lg transform translate-y-8 hover:translate-y-6 transition-transform duration-500">
+                    <img src="/images/guidebooks.webp" alt="Guidebooks" className="w-full h-full object-cover" />
+                  </div>
+                </div>
+              </div>
+
+            </div>
           </div>
         </section>
 
