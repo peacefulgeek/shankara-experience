@@ -173,8 +173,8 @@ export default function MasterTraining() {
                       />
                       <Play className="w-12 h-12 text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] z-10" />
                     </div>
-                    <h4 className="text-white font-bold text-lg text-center group-hover:text-accent transition-colors">{video.title}</h4>
-                    <p className="text-purple-200/60 text-sm text-center leading-relaxed">{video.description}</p>
+                    <h4 className="text-white font-bold text-xl text-center group-hover:text-accent transition-colors">{video.title}</h4>
+                    <p className="text-purple-200/60 text-base text-center leading-relaxed">{video.description}</p>
                  </div>
               ))}
             </div>
