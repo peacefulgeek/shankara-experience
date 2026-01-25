@@ -170,14 +170,14 @@ export default function Home() {
               ))}
             </div>
 
-            {/* Bottom CTA */}
-            <div className="text-center mt-16">
-              <p className="text-gray-500 mb-6 text-lg">Join thousands who have transformed their lives through the Oracle</p>
-              <Link href="/shop">
-                <Button size="lg" className="bg-gradient-to-r from-purple-600 to-pink-500 text-white hover:from-purple-700 hover:to-pink-600 px-10 h-14 text-lg rounded-full font-bold shadow-lg hover:shadow-xl transition-all">
-                  Begin Your Journey
-                </Button>
-              </Link>
+            {/* Inspiring Statement */}
+            <div className="text-center mt-20 max-w-3xl mx-auto">
+              <div className="inline-block">
+                <p className="text-2xl md:text-3xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 leading-relaxed">
+                  Enjoy The Deepest And Most Enriching Readings Of Your Life
+                </p>
+                <div className="mt-4 h-px bg-gradient-to-r from-transparent via-purple-300 to-transparent" />
+              </div>
             </div>
           </div>
         </section>
