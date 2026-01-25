@@ -120,10 +120,6 @@ export default function MasterTraining() {
                   className="relative z-10 w-full max-w-md md:max-w-lg drop-shadow-[0_20px_60px_rgba(255,0,255,0.3)]" 
                 />
               </div>
-              {/* Tagline under image */}
-              <p className="mt-8 text-lg md:text-xl text-purple-200/90 italic max-w-2xl mx-auto">
-                <span className="text-[#ffd700] font-semibold not-italic">The Shankara Oracle System</span> — your portal to a dimension within, where every answer already resides.
-              </p>
             </div>
           </div>
         </section>
