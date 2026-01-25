@@ -8,6 +8,7 @@ import { Link } from "wouter";
 import VideoModal from "@/components/VideoModal";
 import AncientsPromoBox from "@/components/AncientsPromoBox";
 import { useState } from "react";
+import MantraSection from "@/components/MantraSection";
 
 export default function MasterTraining() {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
@@ -591,6 +592,9 @@ export default function MasterTraining() {
             </div>
           </div>
         </section>
+
+        {/* MANTRA SECTION */}
+        <MantraSection />
 
       </main>
       <Footer />

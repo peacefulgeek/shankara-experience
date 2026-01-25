@@ -279,3 +279,21 @@
 ## The Ancients Page Fixes
 - [x] Fix broken images on The Ancients page (hero image and stones image)
 - [x] Make interactive timeline more obvious with visual cues (pulsing, "Click to explore" text)
+
+
+## Mantra Sections & Stone Meanings
+- [ ] Generate Sanskrit mantra audio clips (Om, Om Namah Shivaya, Om Lokaha Sumastaha Sukhino Bhavantu, + 3 more)
+- [ ] Upload mantra audio files to Bunny CDN
+- [ ] Add mantra section with audio playback to The Ancients page
+- [ ] Add mantra section with audio playback to Training page
+- [ ] Extract stone meanings from Home page stone guidance component
+- [ ] Add Stone Meanings section to The Ancients page (18 obsidian stones + significance of black obsidian)
+
+## Mantra Sections & Stone Meanings
+- [x] Generate Sanskrit mantra audio clips (Om, Om Namah Shivaya, Lokah Samastah Sukhino Bhavantu, Gayatri, Om Mani Padme Hum, Om Gam Ganapataye Namaha)
+- [x] Upload mantra audio files to Bunny CDN (https://shankara-pull.b-cdn.net/audio/)
+- [x] Create MantraSection component with audio playback functionality
+- [x] Add MantraSection to The Ancients page
+- [x] Add MantraSection to Training page
+- [x] Create StoneMeanings component with all 18 stone meanings and black obsidian significance
+- [x] Add StoneMeanings section to The Ancients page

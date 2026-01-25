@@ -6,6 +6,8 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { Link } from "wouter";
 import { useState } from "react";
+import MantraSection from "@/components/MantraSection";
+import StoneMeanings from "@/components/StoneMeanings";
 
 // Timeline data for the interactive visual
 const timelineData = [
@@ -380,6 +382,12 @@ export default function TheAncients() {
             </div>
           </div>
         </section>
+
+        {/* STONE MEANINGS SECTION */}
+        <StoneMeanings />
+
+        {/* MANTRA SECTION */}
+        <MantraSection />
 
         {/* CTA SECTION */}
         <section className="py-24 bg-gradient-to-b from-[#251836] to-[#1a0b2e] text-center relative overflow-hidden">
