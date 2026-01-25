@@ -86,6 +86,11 @@ export default function Home() {
                 <div className="absolute -top-10 -right-10 w-24 h-24 bg-accent/20 rounded-full blur-xl animate-bounce delay-700" />
                 <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-purple-600/20 rounded-full blur-xl animate-bounce delay-1000" />
               </div>
+              
+              {/* Tagline under image */}
+              <p className="text-center mt-6 text-purple-200/80 italic text-lg">
+                <span className="text-[#ffd700] font-semibold not-italic">The Shankara Oracle System</span> — your portal to a dimension within, where every answer already resides.
+              </p>
             </div>
           </div>
         </section>
