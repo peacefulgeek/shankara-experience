@@ -274,3 +274,8 @@
 - [x] Add Ancients promo box to SHOP page
 - [x] Add Ancients link to footer
 - [x] Add interactive visual timeline to The Ancients page (Egypt, India, Shaman, Pagan to Shankara)
+
+
+## The Ancients Page Fixes
+- [x] Fix broken images on The Ancients page (hero image and stones image)
+- [x] Make interactive timeline more obvious with visual cues (pulsing, "Click to explore" text)

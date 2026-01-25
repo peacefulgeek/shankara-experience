@@ -134,7 +134,7 @@ export default function TheAncients() {
                       <div className="rounded-[22px] overflow-hidden bg-[#1a0b2e] relative">
                         <div className="absolute inset-0 bg-gradient-to-tr from-purple-900/20 to-transparent mix-blend-overlay z-10" />
                         <img 
-                          src="https://shankara-pull.b-cdn.net/images/ShankaraCosmos.jpg" 
+                          src="https://shankara-pull.b-cdn.net/images/hero-board-detail.webp" 
                           alt="Shankara Cosmos Board" 
                           className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-1000"
                         />
@@ -164,9 +164,12 @@ export default function TheAncients() {
               <h2 className="text-4xl md:text-6xl font-display font-bold text-white mb-6">
                 The Sacred <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-accent">Lineage</span>
               </h2>
-              <p className="text-xl text-purple-200/80 max-w-3xl mx-auto">
+              <p className="text-xl text-purple-200/80 max-w-3xl mx-auto mb-4">
                 Click each tradition to explore how ancient wisdom flows through The Shankara Oracle
               </p>
+              <div className="flex items-center justify-center gap-2 animate-pulse">
+                <span className="text-accent font-bold text-lg">👆 Click the icons below to explore</span>
+              </div>
             </div>
 
             {/* Timeline Navigation */}
@@ -279,7 +282,7 @@ export default function TheAncients() {
                 <div className="absolute -inset-4 bg-gradient-to-r from-yellow-500/20 to-purple-600/20 rounded-2xl blur-xl opacity-75 group-hover:opacity-100 transition duration-1000"></div>
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10">
                   <img 
-                    src="https://shankara-pull.b-cdn.net/images/mystical-stones-cosmos.jpg" 
+                    src="https://shankara-pull.b-cdn.net/images/stones-bag.webp" 
                     alt="Sacred Stones in the Cosmos" 
                     className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105"
                   />
