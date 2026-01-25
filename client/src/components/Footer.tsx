@@ -1,10 +1,125 @@
 import { Link } from "wouter";
-import { Instagram, Facebook } from "lucide-react";
+import { Instagram, Facebook, Mail, Loader2, CheckCircle, Sparkles } from "lucide-react";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 export default function Footer() {
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [message, setMessage] = useState("");
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+
+    setIsLoading(true);
+    setMessage("");
+
+    try {
+      const response = await fetch("/api/newsletter/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, name }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setIsSuccess(true);
+        setMessage(data.message);
+        setEmail("");
+        setName("");
+      } else {
+        setIsSuccess(false);
+        setMessage(data.message || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      setIsSuccess(false);
+      setMessage("An error occurred. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <footer className="relative bg-[#0d0417] text-white/80 py-24 border-t border-white/10">
       <div className="container mx-auto px-4">
+        {/* Newsletter Section */}
+        <div className="relative mb-20 p-8 md:p-12 rounded-3xl bg-gradient-to-br from-purple-900/40 to-accent/20 border border-purple-500/20 overflow-hidden">
+          {/* Background Glow */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-[100px] pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-48 h-48 bg-purple-600/20 rounded-full blur-[80px] pointer-events-none" />
+          
+          <div className="relative z-10 flex flex-col md:flex-row items-center gap-8">
+            <div className="flex-1 text-center md:text-left">
+              <div className="flex items-center justify-center md:justify-start gap-2 mb-4">
+                <Sparkles className="w-5 h-5 text-accent" />
+                <span className="text-sm uppercase tracking-widest text-accent font-medium">Sacred Wisdom</span>
+              </div>
+              <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-3">
+                Join Our Spiritual Community
+              </h3>
+              <p className="text-purple-200/80 text-sm md:text-base max-w-md">
+                Receive sacred teachings, exclusive offers, and guidance for your spiritual journey directly in your inbox.
+              </p>
+            </div>
+            
+            <div className="w-full md:w-auto md:min-w-[400px]">
+              {isSuccess ? (
+                <div className="flex items-center gap-3 p-4 bg-green-500/20 border border-green-500/30 rounded-xl">
+                  <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0" />
+                  <p className="text-green-200">{message}</p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubscribe} className="space-y-3">
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <Input
+                      type="text"
+                      placeholder="Your name (optional)"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-accent h-12"
+                    />
+                    <Input
+                      type="email"
+                      placeholder="Your email address"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                      className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-accent h-12"
+                    />
+                  </div>
+                  <Button 
+                    type="submit" 
+                    disabled={isLoading || !email}
+                    className="w-full bg-accent hover:bg-accent/90 text-white h-12 text-base font-semibold rounded-xl shadow-[0_0_20px_rgba(255,0,255,0.3)] hover:shadow-[0_0_30px_rgba(255,0,255,0.5)] transition-all"
+                  >
+                    {isLoading ? (
+                      <>
+                        <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                        Subscribing...
+                      </>
+                    ) : (
+                      <>
+                        <Mail className="w-5 h-5 mr-2" />
+                        Subscribe to Sacred Wisdom
+                      </>
+                    )}
+                  </Button>
+                  {message && !isSuccess && (
+                    <p className="text-red-400 text-sm text-center">{message}</p>
+                  )}
+                </form>
+              )}
+            </div>
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-4 gap-16">
           {/* Brand */}
           <div className="col-span-1 md:col-span-1">

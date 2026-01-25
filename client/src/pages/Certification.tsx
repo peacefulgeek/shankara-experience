@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Check, Star, Calendar, MessageCircle, FileText, Award, Users, HelpCircle, Sparkles, Video, BookOpen, Quote, Heart } from "lucide-react";
 import Navigation from "@/components/Navigation";
+import ShareWidget from "@/components/ShareWidget";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { Link } from "wouter";
@@ -45,11 +46,18 @@ export default function Certification() {
               Help others heal deeply and unlock their potential as a professional intuitive guide.
             </p>
             
-            <a href="https://shankara.thrivecart.com/shankara-platinum-certification/" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="bg-[#ff00ff] hover:bg-[#d900d9] text-white px-10 py-8 text-xl rounded-full font-bold shadow-[0_0_30px_rgba(255,0,255,0.4)] hover:shadow-[0_0_50px_rgba(255,0,255,0.6)] transition-all">
-                Apply for Certification
-              </Button>
-            </a>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a href="https://shankara.thrivecart.com/shankara-platinum-certification/" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="bg-[#ff00ff] hover:bg-[#d900d9] text-white px-10 py-8 text-xl rounded-full font-bold shadow-[0_0_30px_rgba(255,0,255,0.4)] hover:shadow-[0_0_50px_rgba(255,0,255,0.6)] transition-all">
+                  Apply for Certification
+                </Button>
+              </a>
+              <ShareWidget 
+                title="Become a Certified Shankara Master" 
+                description="Work directly with Paul Wagner in private sessions. Help others heal deeply and unlock their potential as a professional intuitive guide."
+                className="h-14 px-6"
+              />
+            </div>
             
             <p className="mt-6 text-purple-300/50 text-sm tracking-widest uppercase">Limited spots available each quarter</p>
             

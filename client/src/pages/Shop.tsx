@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { ShoppingBag, Star, Package, Check, ArrowRight } from "lucide-react";
 import Navigation from "@/components/Navigation";
+import ShareWidget from "@/components/ShareWidget";
 import Footer from "@/components/Footer";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import SEO from "@/components/SEO";
@@ -71,6 +72,11 @@ export default function Shop() {
                   <Button size="lg" className="bg-white text-primary hover:bg-gray-100 px-10 h-14 text-lg rounded-full font-bold shadow-[0_0_30px_rgba(255,255,255,0.3)] flex-1">
                     Add to Cart <ShoppingBag className="ml-2 w-5 h-5" />
                   </Button>
+                  <ShareWidget 
+                    title="The Shankara Oracle - Sacred Divination System" 
+                    description="A living technology of consciousness. Awaken your intuition, heal your past, and master your destiny with The Shankara Oracle."
+                    className="h-14 px-6"
+                  />
                 </div>
 
                 <div className="border-t border-white/10 pt-8">

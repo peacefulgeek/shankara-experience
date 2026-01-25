@@ -245,3 +245,8 @@
 - [x] Add Ana Andreea Plesea tribute section to About page with her photo, bio, quote, and link to AnaGuidance.com
 - [x] Add Instagram and Facebook social links to footer
 - [x] Add Instagram and Facebook social links to About page
+
+## Newsletter & Social Sharing
+- [x] Add MailerLite newsletter signup form to footer
+- [x] Add share widget to Shop page
+- [x] Add share widget to Certification page

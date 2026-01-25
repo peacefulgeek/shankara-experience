@@ -65,26 +65,22 @@ export default function StoneGuidance() {
     
     setIsSubmitting(true);
     
-    // Subscribe to MailerLite
+    // Subscribe to MailerLite via server API
     try {
-      await fetch("https://connect.mailerlite.com/api/subscribers", {
+      await fetch("/api/newsletter/subscribe", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
-          "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiNDc1MTYwZjE1NWEzY2Y1NGJhZTY3MjRjMzM2Mzg5ZmQ0ZTc3YjE2YTAwY2VjYWVmMGQwN2I3Y2Y0ZTk0NjJjMGIwM2QxMThmNTllNzU0MTYiLCJpYXQiOjE3NjkyODQ5MjUuMzc0Nzk3LCJuYmYiOjE3NjkyODQ5MjUuMzc0OCwiZXhwIjo0OTI0OTU4NTI1LjM3MDg3LCJzdWIiOiIyNDUzNDgiLCJzY29wZXMiOltdfQ.kNELlqCRtE3N6t0VEQCutU_uyggCBxl8sj8LKgk4QHwRRMe5Jwmw5PZe1dZpGOpS_u_4cGv_861uWaZYpIm19NxwoW9IztmxqFAgFys_bL9F8f86GwG96wqKQID3YS8n97y2doPZ4XR5pttTzHUp_SrRsH_ha-ZoQ2f__0-UtDwI2I4Ms4hGSLP5kDZtG35odcBOIxp_goPlGTfXBXg_u_N0C8iGZ4qIkKOfBEyETKS17SbrrO60qkNQqhRt27B-T6_NUDld6eS8vr3xGZf31tzlumgT5uhkrcu8GRZygiwqCPPS91jT0TZgg1SLEdFPnBpxVwlAIIeS8qiCkRb5dFRlXmami3L6r-YKvfuRYfB4zmFSRbRrws_au_dEkzpGU_SHLslLpwgRUz6SVHftZ2-61kYlkhlluoiecRu9PZPBYD8qg0wOuZfeUqka7CliIjMwtOxlf_OUIGubTAk3q0w3XJKiMCORniKIHWPNtjbvVqOauYq_ZF4K8gYTMj0qK0D7s_IibNNvTgmHGAFCVckWIkIdY-44EJPt1mGLJjeK4iNilr15fhnUqx53K8L3eHhnP-rvm8eCUi8qEY8NDM6lHAOqTj-bLpMdDDUK3ote_IGyYJ22okSCWBiQR3KAZ2TvU2LyF9lGrJUEB6FSF49cODfFUmO3DI8_X8CgQtU"
+          "Content-Type": "application/json"
         },
         body: JSON.stringify({
           email: email,
-          groups: ["141498498498621498"],
-          fields: {
-            source: "stone_guidance",
-            stone: currentStone.name
-          }
+          name: "",
+          source: "stone_guidance"
         })
       });
       toast.success("Reading saved! Check your inbox.");
     } catch (err) {
-      console.log("MailerLite subscription error:", err);
+      console.log("Newsletter subscription error:", err);
       toast.success("Reading saved! Check your inbox.");
     }
     
@@ -98,26 +94,23 @@ export default function StoneGuidance() {
     
     setIsSubmitting(true);
     
-    // Subscribe to MailerLite
+    // Subscribe to MailerLite via server API
     try {
-      await fetch("https://connect.mailerlite.com/api/subscribers", {
+      await fetch("/api/newsletter/subscribe", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
-          "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiNDc1MTYwZjE1NWEzY2Y1NGJhZTY3MjRjMzM2Mzg5ZmQ0ZTc3YjE2YTAwY2VjYWVmMGQwN2I3Y2Y0ZTk0NjJjMGIwM2QxMThmNTllNzU0MTYiLCJpYXQiOjE3NjkyODQ5MjUuMzc0Nzk3LCJuYmYiOjE3NjkyODQ5MjUuMzc0OCwiZXhwIjo0OTI0OTU4NTI1LjM3MDg3LCJzdWIiOiIyNDUzNDgiLCJzY29wZXMiOltdfQ.kNELlqCRtE3N6t0VEQCutU_uyggCBxl8sj8LKgk4QHwRRMe5Jwmw5PZe1dZpGOpS_u_4cGv_861uWaZYpIm19NxwoW9IztmxqFAgFys_bL9F8f86GwG96wqKQID3YS8n97y2doPZ4XR5pttTzHUp_SrRsH_ha-ZoQ2f__0-UtDwI2I4Ms4hGSLP5kDZtG35odcBOIxp_goPlGTfXBXg_u_N0C8iGZ4qIkKOfBEyETKS17SbrrO60qkNQqhRt27B-T6_NUDld6eS8vr3xGZf31tzlumgT5uhkrcu8GRZygiwqCPPS91jT0TZgg1SLEdFPnBpxVwlAIIeS8qiCkRb5dFRlXmami3L6r-YKvfuRYfB4zmFSRbRrws_au_dEkzpGU_SHLslLpwgRUz6SVHftZ2-61kYlkhlluoiecRu9PZPBYD8qg0wOuZfeUqka7CliIjMwtOxlf_OUIGubTAk3q0w3XJKiMCORniKIHWPNtjbvVqOauYq_ZF4K8gYTMj0qK0D7s_IibNNvTgmHGAFCVckWIkIdY-44EJPt1mGLJjeK4iNilr15fhnUqx53K8L3eHhnP-rvm8eCUi8qEY8NDM6lHAOqTj-bLpMdDDUK3ote_IGyYJ22okSCWBiQR3KAZ2TvU2LyF9lGrJUEB6FSF49cODfFUmO3DI8_X8CgQtU"
+          "Content-Type": "application/json"
         },
         body: JSON.stringify({
           email: email,
-          groups: ["141498498498621498"],
-          fields: {
-            source: "mobile_signup"
-          }
+          name: "",
+          source: "mobile_signup"
         })
       });
       setMobileEmailSubmitted(true);
       toast.success("Welcome to the journey! ✨");
     } catch (err) {
-      console.log("MailerLite subscription error:", err);
+      console.log("Newsletter subscription error:", err);
       setMobileEmailSubmitted(true);
       toast.success("Welcome to the journey! ✨");
     }
