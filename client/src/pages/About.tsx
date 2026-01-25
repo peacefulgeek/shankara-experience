@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
-import { Sparkles, Zap, Star, User, Unlock, Heart, Crown, Eye, Flame, BookOpen, Users, Key, Infinity, Sun, Moon, Compass } from "lucide-react";
+import { Sparkles, Zap, Star, User, Unlock, Heart, Crown, Eye, Flame, BookOpen, Users, Key, Infinity, Sun, Moon, Compass, Instagram, Facebook } from "lucide-react";
 import { Link } from "wouter";
 
 export default function About() {
@@ -86,6 +86,49 @@ export default function About() {
                   "Shankara is my heart's offering to your awakening. It is designed to mirror your soul's journey and provide the precise guidance you need in every moment."
                 </p>
                 <p className="mt-4 text-accent font-medium">— Krishna Kalesh</p>
+              </div>
+              
+              {/* Social Media Links */}
+              <div className="pt-6">
+                <p className="text-sm text-purple-300/70 mb-3 uppercase tracking-wider">Connect with Paul</p>
+                <div className="flex flex-wrap gap-3">
+                  <a 
+                    href="https://www.instagram.com/paulwagner1008/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-accent/20 rounded-lg transition-all duration-300 group border border-white/10"
+                  >
+                    <Instagram className="w-5 h-5 text-accent group-hover:text-white transition-colors" />
+                    <span className="text-sm text-white/80 group-hover:text-white transition-colors">@paulwagner1008</span>
+                  </a>
+                  <a 
+                    href="https://www.instagram.com/shrikrishnakalesh" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-accent/20 rounded-lg transition-all duration-300 group border border-white/10"
+                  >
+                    <Instagram className="w-5 h-5 text-accent group-hover:text-white transition-colors" />
+                    <span className="text-sm text-white/80 group-hover:text-white transition-colors">@shrikrishnakalesh</span>
+                  </a>
+                  <a 
+                    href="https://www.facebook.com/paulwagner1008/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-accent/20 rounded-lg transition-all duration-300 group border border-white/10"
+                  >
+                    <Facebook className="w-5 h-5 text-accent group-hover:text-white transition-colors" />
+                    <span className="text-sm text-white/80 group-hover:text-white transition-colors">Paul Wagner</span>
+                  </a>
+                  <a 
+                    href="https://www.facebook.com/believeinmiracles108" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-accent/20 rounded-lg transition-all duration-300 group border border-white/10"
+                  >
+                    <Facebook className="w-5 h-5 text-accent group-hover:text-white transition-colors" />
+                    <span className="text-sm text-white/80 group-hover:text-white transition-colors">Believe In Miracles</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>

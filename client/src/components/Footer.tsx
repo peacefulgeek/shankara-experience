@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import { Instagram, Facebook } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -10,9 +11,53 @@ export default function Footer() {
             <h3 className="text-2xl font-display font-bold text-white tracking-wide mb-8">
               SHANKARA <span className="text-accent">ORACLE</span>
             </h3>
-            <p className="text-white/60 text-sm leading-relaxed font-light">
+            <p className="text-white/60 text-sm leading-relaxed font-light mb-6">
               The Shankara Oracle is a combination of channeled predictive and healing tools rooted in ancient wisdom. Designed to guide you on your spiritual journey.
             </p>
+            
+            {/* Social Media Links */}
+            <div className="flex flex-wrap gap-3">
+              <a 
+                href="https://www.instagram.com/paulwagner1008/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-3 py-2 bg-white/5 hover:bg-accent/20 rounded-lg transition-all duration-300 group"
+                title="Paul Wagner on Instagram"
+              >
+                <Instagram className="w-4 h-4 text-accent group-hover:text-white transition-colors" />
+                <span className="text-xs text-white/70 group-hover:text-white transition-colors">@paulwagner1008</span>
+              </a>
+              <a 
+                href="https://www.instagram.com/shrikrishnakalesh" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-3 py-2 bg-white/5 hover:bg-accent/20 rounded-lg transition-all duration-300 group"
+                title="Krishna Kalesh on Instagram"
+              >
+                <Instagram className="w-4 h-4 text-accent group-hover:text-white transition-colors" />
+                <span className="text-xs text-white/70 group-hover:text-white transition-colors">@shrikrishnakalesh</span>
+              </a>
+              <a 
+                href="https://www.facebook.com/paulwagner1008/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-3 py-2 bg-white/5 hover:bg-accent/20 rounded-lg transition-all duration-300 group"
+                title="Paul Wagner on Facebook"
+              >
+                <Facebook className="w-4 h-4 text-accent group-hover:text-white transition-colors" />
+                <span className="text-xs text-white/70 group-hover:text-white transition-colors">Paul Wagner</span>
+              </a>
+              <a 
+                href="https://www.facebook.com/believeinmiracles108" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-3 py-2 bg-white/5 hover:bg-accent/20 rounded-lg transition-all duration-300 group"
+                title="Believe In Miracles on Facebook"
+              >
+                <Facebook className="w-4 h-4 text-accent group-hover:text-white transition-colors" />
+                <span className="text-xs text-white/70 group-hover:text-white transition-colors">Believe In Miracles</span>
+              </a>
+            </div>
           </div>
 
           {/* Quick Links */}
