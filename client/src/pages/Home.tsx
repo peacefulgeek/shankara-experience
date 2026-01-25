@@ -250,7 +250,7 @@ export default function Home() {
 
         {/* STONE GUIDANCE SECTION */}
         <StoneGuidance />
-      </main>>
+      </main>
       <Footer />
       <VideoModal 
         isOpen={isVideoOpen} 
