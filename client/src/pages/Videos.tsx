@@ -39,11 +39,6 @@ export default function Videos() {
       id: "1157972228",
       title: "TSE Video page 2",
       thumbnail: "https://vumbnail.com/1157972228.jpg"
-    },
-    {
-      id: "1157972251",
-      title: "TSE Video page 6 (Duplicate)",
-      thumbnail: "https://vumbnail.com/1157972251.jpg"
     }
   ];
 
