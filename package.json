@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
-    "start": "serve dist/public -s -l $PORT",
+    "build": "tsc && vite build && mkdir -p dist && cp server/index.js dist/index.js",
+    "start": "node dist/index.js",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -43,6 +43,7 @@
     "cmdk": "^1.0.0",
     "date-fns": "^3.6.0",
     "embla-carousel-react": "^8.3.0",
+    "express": "^5.2.1",
     "framer-motion": "^12.29.0",
     "input-otp": "^1.2.4",
     "lucide-react": "^0.453.0",
