@@ -9,6 +9,7 @@ import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import SEO from "@/components/SEO";
 import { Link } from "wouter";
 import AncientsPromoBox from "@/components/AncientsPromoBox";
+import MantraPracticePromo from "@/components/MantraPracticePromo";
 
 export default function Shop() {
   return (
@@ -223,6 +224,9 @@ export default function Shop() {
             <AncientsPromoBox />
           </div>
         </section>
+
+        {/* Mantra Practice Promo */}
+        <MantraPracticePromo variant="compact" />
 
       </main>
 

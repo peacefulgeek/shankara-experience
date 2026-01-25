@@ -185,6 +185,7 @@ export default function Footer() {
               <li><Link href="/readers"><span className="hover:text-primary hover:drop-shadow-[0_0_8px_rgba(255,0,255,0.8)] cursor-pointer transition-all duration-300">Find a Reader</span></Link></li>
               <li><Link href="/shop"><span className="hover:text-primary hover:drop-shadow-[0_0_8px_rgba(255,0,255,0.8)] cursor-pointer transition-all duration-300">Shop</span></Link></li>
               <li><Link href="/the-ancients"><span className="hover:text-primary hover:drop-shadow-[0_0_8px_rgba(255,0,255,0.8)] cursor-pointer transition-all duration-300">The Ancients</span></Link></li>
+              <li><Link href="/mantra-practice"><span className="hover:text-primary hover:drop-shadow-[0_0_8px_rgba(255,0,255,0.8)] cursor-pointer transition-all duration-300">Mantra Practice</span></Link></li>
             </ul>
           </div>
 

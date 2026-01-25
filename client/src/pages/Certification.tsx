@@ -6,6 +6,7 @@ import ShareWidget from "@/components/ShareWidget";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { Link } from "wouter";
+import MantraPracticePromo from "@/components/MantraPracticePromo";
 
 export default function Certification() {
   return (
@@ -363,6 +364,9 @@ export default function Certification() {
             </div>
           </div>
         </section>
+
+        {/* Mantra Practice Promo */}
+        <MantraPracticePromo variant="compact" />
 
       </main>
       <Footer />

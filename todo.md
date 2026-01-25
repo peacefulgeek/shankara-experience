@@ -297,3 +297,15 @@
 - [x] Add MantraSection to Training page
 - [x] Create StoneMeanings component with all 18 stone meanings and black obsidian significance
 - [x] Add StoneMeanings section to The Ancients page
+
+## Mantra Practice Page & Stone Card Enhancements
+- [x] Add hover effects (glow/scale) to stone cards in StoneMeanings component
+- [x] Create robust Mantra Practice page with guided meditation sessions
+- [x] Add breathing exercises to Mantra Practice page
+- [x] Add visualization prompts to Mantra Practice page
+- [x] Add Mantra Practice link to footer navigation
+- [x] Add Mantra Practice promotional block to Certification page
+- [x] Add Mantra Practice promotional block to Videos page
+- [x] Add Mantra Practice promotional block to Shop page
+- [x] Add Mantra Practice promotional block to Wisdom page
+- [x] Register Mantra Practice route in App.tsx

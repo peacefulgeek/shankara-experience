@@ -23,6 +23,7 @@ import Blog from "./pages/Blog";
 import ArticlePage from "./pages/ArticlePage";
 import Affiliates from "@/pages/Affiliates";
 import Testimonials from "@/pages/Testimonials";
+import MantraPractice from "@/pages/MantraPractice";
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function App() {
         <Route path="/wisdom/:slug" component={ArticlePage} />
         <Route path="/affiliates" component={Affiliates} />
         <Route path="/testimonials" component={Testimonials} />
+        <Route path="/mantra-practice" component={MantraPractice} />
         <Route>404 Page Not Found</Route>
       </Switch>
       <Toaster />

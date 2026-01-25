@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { useState } from "react";
 import { Link } from "wouter";
+import MantraPracticePromo from "@/components/MantraPracticePromo";
 
 export default function Blog() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -162,6 +163,9 @@ export default function Blog() {
           )}
         </div>
       </main>
+
+      {/* Mantra Practice Promo */}
+      <MantraPracticePromo />
 
       <Footer />
     </div>

@@ -73,19 +73,23 @@ export default function StoneMeanings() {
             <div
               key={stone.id}
               onClick={() => setSelectedStone(selectedStone?.id === stone.id ? null : stone)}
-              className={`group cursor-pointer rounded-2xl p-6 transition-all duration-500 ${
+              className={`group cursor-pointer rounded-2xl p-6 transition-all duration-500 transform ${
                 selectedStone?.id === stone.id
-                  ? 'bg-amber-900/30 border-2 border-amber-500/50 shadow-[0_0_30px_rgba(245,158,11,0.2)]'
-                  : 'bg-purple-900/20 border border-white/10 hover:border-amber-500/30 hover:bg-purple-900/30'
+                  ? 'bg-amber-900/30 border-2 border-amber-500/50 shadow-[0_0_30px_rgba(245,158,11,0.3)] scale-[1.02]'
+                  : 'bg-purple-900/20 border border-white/10 hover:border-amber-500/40 hover:bg-purple-900/40 hover:scale-[1.03] hover:shadow-[0_0_25px_rgba(245,158,11,0.15),0_10px_40px_rgba(0,0,0,0.3)]'
               }`}
             >
               <div className="flex items-center gap-4 mb-4">
                 {/* Stone Image */}
-                <div className="w-16 h-16 rounded-full overflow-hidden bg-gradient-to-br from-gray-800 to-black shadow-lg border border-white/10 shrink-0">
+                <div className={`w-16 h-16 rounded-full overflow-hidden bg-gradient-to-br from-gray-800 to-black shadow-lg border border-white/10 shrink-0 transition-all duration-500 ${
+                  selectedStone?.id === stone.id
+                    ? 'shadow-[0_0_20px_rgba(245,158,11,0.4)] border-amber-500/50'
+                    : 'group-hover:shadow-[0_0_15px_rgba(245,158,11,0.3)] group-hover:border-amber-500/30'
+                }`}>
                   <img 
                     src={stone.image} 
                     alt={stone.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>
                 

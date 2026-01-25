@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import MantraPracticePromo from "@/components/MantraPracticePromo";
 import Footer from "@/components/Footer";
 import { Play } from "lucide-react";
 import SEO from "@/components/SEO";
@@ -159,6 +160,9 @@ export default function Videos() {
           ))}
         </div>
       </section>
+
+      {/* Mantra Practice Promo */}
+      <MantraPracticePromo />
 
       <Footer />
       <VideoModal isOpen={isVideoOpen} onClose={() => setIsVideoOpen(false)} videoUrl={activeVideo || ""} />
