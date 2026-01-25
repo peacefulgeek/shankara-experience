@@ -231,3 +231,5 @@
 
 - [x] Add ThriveCart checkout URL to Register for Certification buttons
 - [x] Direct "Apply to Affiliate Program" button to contact page
+- [x] Copy Privacy Policy from PaulWagner.com to Shankara site
+- [x] Copy Terms & Conditions from PaulWagner.com to Shankara site
