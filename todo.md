@@ -309,3 +309,15 @@
 - [x] Add Mantra Practice promotional block to Shop page
 - [x] Add Mantra Practice promotional block to Wisdom page
 - [x] Register Mantra Practice route in App.tsx
+
+## Mantras And Sutras Updates (Jan 25, 2026)
+- [x] Find/generate new Om Namah Shivaya audio with correct pronunciation
+- [x] Upload new Om Namah Shivaya audio to Bunny CDN
+- [x] Add phonetic spellings to mantra cards on The Ancients page
+- [x] Add phonetic spellings to mantra cards on Mantras page
+- [x] Add 6 sutras to Mantras page (Heart Sutra, Great Compassion Mantra, + 4 more)
+- [x] Add Chinese versions with reveal button for Heart Sutra and Great Compassion Mantra
+- [x] Rename page from "Mantra Practice" to "Mantras And Sutras"
+- [x] Update footer link to reflect new page name
+- [x] Update route in App.tsx if needed
+- [x] Check/fix GitHub CLI authentication

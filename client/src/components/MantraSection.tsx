@@ -9,6 +9,7 @@ interface Mantra {
   id: string;
   name: string;
   sanskrit: string;
+  phonetic: string;
   meaning: string;
   description: string;
   audioUrl: string;
@@ -20,6 +21,7 @@ const mantras: Mantra[] = [
     id: "om",
     name: "Om",
     sanskrit: "ॐ",
+    phonetic: "Ohm (rhymes with 'home')",
     meaning: "The Primordial Sound",
     description: "The cosmic vibration from which all creation emerges. Chanting Om aligns you with the universe's fundamental frequency.",
     audioUrl: `${BUNNY_CDN}/audio/om.mp3`,
@@ -29,6 +31,7 @@ const mantras: Mantra[] = [
     id: "om-namah-shivaya",
     name: "Om Namah Shivaya",
     sanskrit: "ॐ नमः शिवाय",
+    phonetic: "Ohm Nah-mah Shee-vah-yah",
     meaning: "I Bow to Shiva (Pure Consciousness)",
     description: "One of the most powerful mantras for transformation. It dissolves ego and connects you to your highest Self.",
     audioUrl: `${BUNNY_CDN}/audio/om-namah-shivaya.mp3`,
@@ -38,6 +41,7 @@ const mantras: Mantra[] = [
     id: "lokah-samastah",
     name: "Lokah Samastah",
     sanskrit: "ॐ लोकाः समस्ताः सुखिनो भवन्तु",
+    phonetic: "Ohm Loh-kah Sah-mah-stah Soo-khee-noh Bhah-vahn-too",
     meaning: "May All Beings Be Happy & Free",
     description: "Amma's beloved mantra. A prayer for universal peace and the liberation of all beings from suffering.",
     audioUrl: `${BUNNY_CDN}/audio/lokah-samastah.mp3`,
@@ -47,6 +51,7 @@ const mantras: Mantra[] = [
     id: "gayatri",
     name: "Gayatri Mantra",
     sanskrit: "ॐ भूर्भुवः स्वः तत्सवितुर्वरेण्यं",
+    phonetic: "Ohm Bhoor Bhoo-vah Swah-ha, Taht Sah-vee-toor Vah-rehn-yahm, Bhar-goh Deh-vah-syah Dhee-mah-hee, Dhee-yoh Yoh Nah Prah-choh-dah-yaht",
     meaning: "Illumination of the Intellect",
     description: "The most sacred Vedic mantra. It invokes the divine light of the sun to illuminate your mind and guide your path.",
     audioUrl: `${BUNNY_CDN}/audio/gayatri.mp3`,
@@ -56,6 +61,7 @@ const mantras: Mantra[] = [
     id: "om-mani-padme-hum",
     name: "Om Mani Padme Hum",
     sanskrit: "ॐ मणि पद्मे हूँ",
+    phonetic: "Ohm Mah-nee Pahd-meh Hoom",
     meaning: "The Jewel in the Lotus",
     description: "The compassion mantra of Avalokiteshvara. Each syllable purifies a realm of existence and cultivates boundless compassion.",
     audioUrl: `${BUNNY_CDN}/audio/om-mani-padme-hum.mp3`,
@@ -65,6 +71,7 @@ const mantras: Mantra[] = [
     id: "ganesha",
     name: "Om Gam Ganapataye Namaha",
     sanskrit: "ॐ गं गणपतये नमः",
+    phonetic: "Ohm Gahm Gah-nah-pah-tah-yeh Nah-mah-hah",
     meaning: "Salutations to the Remover of Obstacles",
     description: "Invoke Lord Ganesha to clear your path. Perfect for new beginnings, removing blocks, and inviting success.",
     audioUrl: `${BUNNY_CDN}/audio/ganesha.mp3`,
@@ -139,9 +146,14 @@ export default function MantraSection() {
                 </div>
 
                 {/* Mantra Name */}
-                <h3 className="text-xl font-display font-bold text-white text-center mb-2">
+                <h3 className="text-xl font-display font-bold text-white text-center mb-1">
                   {mantra.name}
                 </h3>
+
+                {/* Phonetic Pronunciation */}
+                <p className="text-xs text-purple-300/70 text-center mb-2 italic font-light">
+                  {mantra.phonetic}
+                </p>
 
                 {/* Meaning */}
                 <p className="text-sm text-accent text-center mb-4 font-medium">

@@ -16,7 +16,9 @@ import {
   ChevronUp,
   Moon,
   Sun,
-  Flame
+  Flame,
+  BookOpen,
+  Languages
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -29,6 +31,7 @@ interface Mantra {
   id: string;
   sanskrit: string;
   name: string;
+  phonetic: string;
   translation: string;
   description: string;
   benefits: string[];
@@ -44,6 +47,7 @@ const mantras: Mantra[] = [
     id: "om",
     sanskrit: "ॐ",
     name: "Om",
+    phonetic: "Ohm (rhymes with 'home')",
     translation: "The Primordial Sound",
     description: "Om is the cosmic vibration from which all creation emerges. It represents the union of mind, body, and spirit, and is considered the most sacred syllable in Hinduism and Buddhism.",
     benefits: [
@@ -62,6 +66,7 @@ const mantras: Mantra[] = [
     id: "om-namah-shivaya",
     sanskrit: "ॐ नमः शिवाय",
     name: "Om Namah Shivaya",
+    phonetic: "Ohm Nah-mah Shee-vah-yah",
     translation: "I Bow to Shiva (Pure Consciousness)",
     description: "One of the most powerful Hindu mantras, it honors Shiva as the supreme consciousness. It purifies the mind and removes obstacles on the spiritual path.",
     benefits: [
@@ -80,6 +85,7 @@ const mantras: Mantra[] = [
     id: "lokah-samastah",
     sanskrit: "ॐ लोकाः समस्ताः सुखिनो भवन्तु",
     name: "Lokah Samastah Sukhino Bhavantu",
+    phonetic: "Ohm Loh-kah Sah-mah-stah Soo-khee-noh Bhah-vahn-too",
     translation: "May All Beings Be Happy & Free",
     description: "Known as Amma's Mantra, this blessing prayer radiates love and compassion to all beings. It's a powerful practice for developing universal love and dissolving separation.",
     benefits: [
@@ -98,6 +104,7 @@ const mantras: Mantra[] = [
     id: "gayatri",
     sanskrit: "ॐ भूर्भुवः स्वः तत्सवितुर्वरेण्यं भर्गो देवस्य धीमहि धियो यो नः प्रचोदयात्",
     name: "Gayatri Mantra",
+    phonetic: "Ohm Bhoor Bhoo-vah Swah-ha, Taht Sah-vee-toor Vah-rehn-yahm, Bhar-goh Deh-vah-syah Dhee-mah-hee, Dhee-yoh Yoh Nah Prah-choh-dah-yaht",
     translation: "Illumination of the Intellect",
     description: "The Gayatri is one of the oldest and most powerful Vedic mantras. It invokes the divine light of the sun to illuminate the mind and awaken spiritual wisdom.",
     benefits: [
@@ -116,6 +123,7 @@ const mantras: Mantra[] = [
     id: "om-mani-padme-hum",
     sanskrit: "ॐ मणि पद्मे हूँ",
     name: "Om Mani Padme Hum",
+    phonetic: "Ohm Mah-nee Pahd-meh Hoom",
     translation: "The Jewel in the Lotus",
     description: "The most famous Buddhist mantra, associated with Avalokiteshvara, the Bodhisattva of Compassion. Each syllable purifies a different realm of existence.",
     benefits: [
@@ -134,6 +142,7 @@ const mantras: Mantra[] = [
     id: "ganesha",
     sanskrit: "ॐ गं गणपतये नमः",
     name: "Om Gam Ganapataye Namaha",
+    phonetic: "Ohm Gahm Gah-nah-pah-tah-yeh Nah-mah-hah",
     translation: "Salutations to the Remover of Obstacles",
     description: "This mantra invokes Lord Ganesha, the elephant-headed deity who removes obstacles and brings success. Chant before starting any new venture or when facing challenges.",
     benefits: [
@@ -147,6 +156,116 @@ const mantras: Mantra[] = [
     chakra: "Root (Muladhara)",
     bestTime: "Tuesday or before new ventures",
     repetitions: 108
+  }
+];
+
+interface Sutra {
+  id: string;
+  name: string;
+  tradition: string;
+  description: string;
+  text: string;
+  phonetic?: string;
+  chinese?: string;
+  chineseTitle?: string;
+  benefits: string[];
+  hasChinese: boolean;
+}
+
+const sutras: Sutra[] = [
+  {
+    id: "heart-sutra",
+    name: "Heart Sutra (Prajñāpāramitā Hṛdaya)",
+    tradition: "Mahayana Buddhism",
+    description: "The Heart Sutra is the most widely recited sutra in Mahayana Buddhism. It encapsulates the essence of the Perfection of Wisdom teachings in just 260 Chinese characters, revealing the nature of emptiness (śūnyatā) and the path to liberation.",
+    text: "Gate gate pāragate pārasaṃgate bodhi svāhā",
+    phonetic: "Gah-teh Gah-teh Pah-rah-gah-teh Pah-rah-sahm-gah-teh Boh-dee Svah-hah",
+    chinese: "觀自在菩薩，行深般若波羅蜜多時，照見五蘊皆空，度一切苦厄。舍利子，色不異空，空不異色，色即是空，空即是色，受想行識，亦復如是。舍利子，是諸法空相，不生不滅，不垢不淨，不增不減。是故空中無色，無受想行識，無眼耳鼻舌身意，無色聲香味觸法，無眼界，乃至無意識界，無無明，亦無無明盡，乃至無老死，亦無老死盡。無苦集滅道，無智亦無得。以無所得故，菩提薩埵，依般若波羅蜜多故，心無罣礙，無罣礙故，無有恐怖，遠離顛倒夢想，究竟涅槃。三世諸佛，依般若波羅蜜多故，得阿耨多羅三藐三菩提。故知般若波羅蜜多，是大神咒，是大明咒，是無上咒，是無等等咒，能除一切苦，真實不虛。故說般若波羅蜜多咒，即說咒曰：揭諦揭諦，波羅揭諦，波羅僧揭諦，菩提薩婆訶。",
+    chineseTitle: "般若波羅蜜多心經",
+    benefits: [
+      "Realizes the nature of emptiness",
+      "Liberates from suffering",
+      "Develops wisdom and insight",
+      "Transcends dualistic thinking"
+    ],
+    hasChinese: true
+  },
+  {
+    id: "great-compassion",
+    name: "Great Compassion Mantra (Nīlakaṇṭha Dhāraṇī)",
+    tradition: "Mahayana Buddhism",
+    description: "The Great Compassion Mantra is one of the most important dharani in East Asian Buddhism. Associated with Avalokiteśvara (Guanyin), it invokes the boundless compassion of the Bodhisattva and is believed to have miraculous protective powers.",
+    text: "Namo Ratna Trayāya, Nama Āryāvalokiteśvarāya Bodhisattvāya Mahāsattvāya Mahākāruṇikāya...",
+    phonetic: "Nah-moh Raht-nah Trah-yah-yah, Nah-mah Ahr-yah-vah-loh-kee-tesh-vah-rah-yah Boh-dee-saht-vah-yah Mah-hah-saht-vah-yah Mah-hah-kah-roo-nee-kah-yah",
+    chinese: "南無喝囉怛那哆囉夜耶。南無阿唎耶。婆盧羯帝爍缽囉耶。菩提薩埵婆耶。摩訶薩埵婆耶。摩訶迦盧尼迦耶。唵。薩皤囉罰曳。數怛那怛寫。南無悉吉栗埵伊蒙阿唎耶。婆盧吉帝室佛囉楞馱婆。南無那囉謹墀。醯利摩訶皤哆沙咩。薩婆阿他豆輸朋。阿逝孕。薩婆薩哆那摩婆薩哆那摩婆伽。摩罰特豆。怛姪他。唵。阿婆盧醯。盧迦帝。迦羅帝。夷醯唎。摩訶菩提薩埵。薩婆薩婆。摩囉摩囉。摩醯摩醯唎馱孕。俱盧俱盧羯蒙。度盧度盧罰闍耶帝。摩訶罰闍耶帝。陀囉陀囉。地唎尼。室佛囉耶。遮囉遮囉。摩麼罰摩囉。穆帝隸。伊醯伊醯。室那室那。阿囉參佛囉舍利。罰沙罰參。佛囉舍耶。呼嚧呼嚧摩囉。呼嚧呼嚧醯利。娑囉娑囉。悉唎悉唎。蘇嚧蘇嚧。菩提夜菩提夜。菩馱夜菩馱夜。彌帝唎夜。那囉謹墀。地利瑟尼那。婆夜摩那。娑婆訶。悉陀夜。娑婆訶。摩訶悉陀夜。娑婆訶。悉陀喻藝。室皤囉耶。娑婆訶。那囉謹墀。娑婆訶。摩囉那囉。娑婆訶。悉囉僧阿穆佉耶。娑婆訶。娑婆摩訶阿悉陀夜。娑婆訶。者吉囉阿悉陀夜。娑婆訶。波陀摩羯悉陀夜。娑婆訶。那囉謹墀皤伽囉耶。娑婆訶。摩婆利勝羯囉夜。娑婆訶。南無喝囉怛那哆囉夜耶。南無阿唎耶。婆嚧吉帝。爍皤囉夜。娑婆訶。唵。悉殿都。漫多囉。跋陀耶。娑婆訶。",
+    chineseTitle: "大悲咒",
+    benefits: [
+      "Invokes compassionate protection",
+      "Removes obstacles and negativity",
+      "Heals physical and mental ailments",
+      "Cultivates boundless compassion"
+    ],
+    hasChinese: true
+  },
+  {
+    id: "medicine-buddha",
+    name: "Medicine Buddha Mantra",
+    tradition: "Mahayana Buddhism",
+    description: "The Medicine Buddha Mantra invokes the healing power of Bhaiṣajyaguru, the Buddha of Healing. It is recited for physical and mental healing, and to purify negative karma related to illness.",
+    text: "Tayata Om Bekandze Bekandze Maha Bekandze Radza Samudgate Soha",
+    phonetic: "Tah-yah-tah Ohm Beh-kahn-dzeh Beh-kahn-dzeh Mah-hah Beh-kahn-dzeh Rahd-zah Sah-mood-gah-teh Soh-hah",
+    benefits: [
+      "Promotes physical healing",
+      "Purifies illness-related karma",
+      "Brings mental peace",
+      "Invokes healing blessings"
+    ],
+    hasChinese: false
+  },
+  {
+    id: "green-tara",
+    name: "Green Tara Mantra",
+    tradition: "Tibetan Buddhism",
+    description: "Green Tara is the female Buddha of compassionate action. Her mantra is recited for protection, to overcome fears, and to receive swift assistance in times of need.",
+    text: "Om Tare Tuttare Ture Soha",
+    phonetic: "Ohm Tah-reh Too-tah-reh Too-reh Soh-hah",
+    benefits: [
+      "Provides swift protection",
+      "Overcomes fears and obstacles",
+      "Grants wishes and blessings",
+      "Connects to divine feminine energy"
+    ],
+    hasChinese: false
+  },
+  {
+    id: "vajrasattva",
+    name: "Vajrasattva Mantra (100 Syllable)",
+    tradition: "Vajrayana Buddhism",
+    description: "The Vajrasattva mantra is the most powerful purification practice in Vajrayana Buddhism. It purifies negative karma, broken vows, and obstacles to spiritual progress.",
+    text: "Om Vajrasattva Samayam Anupalaya, Vajrasattva Tvenopatishtha, Dridho Me Bhava, Sutoshyo Me Bhava, Suposhyo Me Bhava, Anurakto Me Bhava, Sarva Siddhim Me Prayaccha, Sarva Karma Sucha Me, Chittam Shriyam Kuru Hum, Ha Ha Ha Ha Ho, Bhagavan Sarva Tathagata, Vajra Ma Me Muncha, Vajri Bhava Maha Samaya Sattva Ah Hum Phat",
+    phonetic: "Ohm Vahj-rah-saht-vah Sah-mah-yahm Ah-noo-pah-lah-yah...",
+    benefits: [
+      "Purifies negative karma",
+      "Restores broken commitments",
+      "Removes spiritual obstacles",
+      "Accelerates enlightenment"
+    ],
+    hasChinese: false
+  },
+  {
+    id: "amitabha",
+    name: "Amitabha Buddha Mantra",
+    tradition: "Pure Land Buddhism",
+    description: "The Amitabha mantra invokes the Buddha of Infinite Light. Recitation with faith is said to ensure rebirth in the Pure Land, a realm where enlightenment is easily attained.",
+    text: "Om Ami Dewa Hrih / Namo Amitabha Buddha",
+    phonetic: "Ohm Ah-mee Deh-wah Hree / Nah-moh Ah-mee-tah-bah Boo-dah",
+    benefits: [
+      "Ensures rebirth in Pure Land",
+      "Invokes infinite light and compassion",
+      "Purifies obstacles to enlightenment",
+      "Brings peace at time of death"
+    ],
+    hasChinese: false
   }
 ];
 
@@ -252,7 +371,9 @@ export default function MantraPractice() {
   const [selectedVisualization, setSelectedVisualization] = useState<Visualization | null>(null);
   const [practiceTimer, setPracticeTimer] = useState(0);
   const [isTimerRunning, setIsTimerRunning] = useState(false);
-  const [selectedDuration, setSelectedDuration] = useState(11); // minutes
+  const [selectedDuration, setSelectedDuration] = useState(11);
+  const [expandedSutra, setExpandedSutra] = useState<string | null>(null);
+  const [showChineseMap, setShowChineseMap] = useState<Record<string, boolean>>({});
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -263,7 +384,6 @@ export default function MantraPractice() {
       }, 1000);
     } else if (practiceTimer === 0 && isTimerRunning) {
       setIsTimerRunning(false);
-      // Play completion sound or notification
     }
     return () => {
       if (timerRef.current) clearTimeout(timerRef.current);
@@ -326,11 +446,18 @@ export default function MantraPractice() {
     setIsPlaying(false);
   };
 
+  const toggleChinese = (sutraId: string) => {
+    setShowChineseMap(prev => ({
+      ...prev,
+      [sutraId]: !prev[sutraId]
+    }));
+  };
+
   return (
     <div className="min-h-screen font-sans selection:bg-accent selection:text-white overflow-x-hidden relative">
       <SEO 
-        title="Mantra Practice | Guided Meditation | The Shankara Experience" 
-        description="Transform your consciousness with sacred Sanskrit mantras. Guided meditation sessions with breathing exercises and visualization prompts for deep spiritual practice."
+        title="Mantras & Sutras | Sacred Sound Practice | The Shankara Experience" 
+        description="Transform your consciousness with sacred Sanskrit mantras and Buddhist sutras. Guided meditation sessions with breathing exercises and visualization prompts for deep spiritual practice."
       />
 
       <Navigation />
@@ -349,11 +476,11 @@ export default function MantraPractice() {
               </Badge>
               
               <h1 className="text-5xl md:text-7xl font-display font-bold text-white mb-6 leading-tight">
-                Mantra <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-accent">Practice</span>
+                Mantras <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-accent">&</span> Sutras
               </h1>
               
               <p className="text-xl md:text-2xl text-purple-200/80 max-w-3xl mx-auto leading-relaxed">
-                Transform your consciousness through the sacred vibrations of Sanskrit mantras. 
+                Transform your consciousness through the sacred vibrations of Sanskrit mantras and Buddhist sutras. 
                 Combine ancient chanting with breathing exercises and visualization for profound spiritual awakening.
               </p>
             </div>
@@ -513,6 +640,7 @@ export default function MantraPractice() {
                   <div className="text-center mb-6">
                     <div className="text-5xl mb-4">{activeMantra.sanskrit}</div>
                     <h3 className="text-2xl font-display font-bold text-white">{activeMantra.name}</h3>
+                    <p className="text-purple-300/70 text-sm italic mt-1">{activeMantra.phonetic}</p>
                     <p className="text-accent">{activeMantra.translation}</p>
                   </div>
                   
@@ -561,7 +689,8 @@ export default function MantraPractice() {
                   <div className="text-center mb-4">
                     <div className="text-4xl mb-2 transition-transform duration-300 group-hover:scale-110">{mantra.sanskrit}</div>
                     <h3 className="text-xl font-display font-bold text-white">{mantra.name}</h3>
-                    <p className="text-accent text-sm">{mantra.translation}</p>
+                    <p className="text-purple-300/60 text-xs italic mt-1">{mantra.phonetic}</p>
+                    <p className="text-accent text-sm mt-1">{mantra.translation}</p>
                   </div>
                   
                   <p className="text-purple-200/70 text-sm mb-4 line-clamp-2">{mantra.description}</p>
@@ -582,6 +711,116 @@ export default function MantraPractice() {
                         </li>
                       ))}
                     </ul>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Sutras Section */}
+        <section className="py-20 bg-[#1a0b2e] relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-600/10 rounded-full blur-[120px] pointer-events-none" />
+          
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="text-center mb-12">
+              <Badge className="bg-emerald-900/50 text-emerald-200 border border-emerald-500/30 px-4 py-1 text-sm tracking-widest uppercase backdrop-blur-md mb-6">
+                <BookOpen className="w-3 h-3 mr-2" /> Sacred Texts
+              </Badge>
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
+                Buddhist <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">Sutras</span>
+              </h2>
+              <p className="text-xl text-purple-200/70 max-w-2xl mx-auto">
+                Explore the profound wisdom of Buddhist sutras and dharanis. These sacred texts carry transformative power when recited with devotion.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+              {sutras.map((sutra) => (
+                <div
+                  key={sutra.id}
+                  className={`rounded-2xl p-6 transition-all duration-500 ${
+                    expandedSutra === sutra.id
+                      ? 'bg-gradient-to-br from-emerald-900/40 to-purple-900/40 border-2 border-emerald-500/40'
+                      : 'bg-purple-900/20 border border-white/10 hover:border-emerald-500/30'
+                  }`}
+                >
+                  <div 
+                    className="cursor-pointer"
+                    onClick={() => setExpandedSutra(expandedSutra === sutra.id ? null : sutra.id)}
+                  >
+                    <div className="flex items-start justify-between mb-4">
+                      <div>
+                        <h3 className="text-xl font-display font-bold text-white">{sutra.name}</h3>
+                        <p className="text-emerald-300/70 text-sm">{sutra.tradition}</p>
+                      </div>
+                      {expandedSutra === sutra.id ? (
+                        <ChevronUp className="w-5 h-5 text-emerald-300 shrink-0" />
+                      ) : (
+                        <ChevronDown className="w-5 h-5 text-emerald-300 shrink-0" />
+                      )}
+                    </div>
+                    
+                    <p className="text-purple-200/80 text-sm mb-4">{sutra.description}</p>
+                  </div>
+                  
+                  <div className={`overflow-hidden transition-all duration-500 ${
+                    expandedSutra === sutra.id ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'
+                  }`}>
+                    <div className="pt-4 border-t border-emerald-500/20 space-y-4">
+                      {/* Sanskrit/Pali Text */}
+                      <div>
+                        <h4 className="text-sm font-bold text-emerald-200 uppercase tracking-wider mb-2">Sacred Text:</h4>
+                        <p className="text-purple-100/90 text-sm italic leading-relaxed bg-black/20 p-4 rounded-lg">
+                          {sutra.text}
+                        </p>
+                        {sutra.phonetic && (
+                          <p className="text-purple-300/60 text-xs mt-2 italic">
+                            Pronunciation: {sutra.phonetic}
+                          </p>
+                        )}
+                      </div>
+                      
+                      {/* Chinese Version Toggle - Only for Heart Sutra and Great Compassion Mantra */}
+                      {sutra.hasChinese && sutra.chinese && (
+                        <div>
+                          <Button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              toggleChinese(sutra.id);
+                            }}
+                            variant="outline"
+                            className="border-emerald-500/50 text-emerald-200 hover:bg-emerald-900/30 mb-3"
+                          >
+                            <Languages className="w-4 h-4 mr-2" />
+                            {showChineseMap[sutra.id] ? 'Hide' : 'Show'} Chinese Version ({sutra.chineseTitle})
+                          </Button>
+                          
+                          <div className={`overflow-hidden transition-all duration-500 ${
+                            showChineseMap[sutra.id] ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'
+                          }`}>
+                            <div className="bg-black/30 p-4 rounded-lg border border-emerald-500/20">
+                              <h5 className="text-lg font-bold text-amber-200 mb-3 text-center">{sutra.chineseTitle}</h5>
+                              <p className="text-purple-100/90 text-sm leading-loose whitespace-pre-wrap font-serif">
+                                {sutra.chinese}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                      
+                      {/* Benefits */}
+                      <div>
+                        <h4 className="text-sm font-bold text-emerald-200 uppercase tracking-wider mb-2">Benefits:</h4>
+                        <ul className="space-y-2">
+                          {sutra.benefits.map((benefit, i) => (
+                            <li key={i} className="text-purple-200/80 text-sm flex items-center gap-2">
+                              <Heart className="w-3 h-3 text-emerald-400 shrink-0" /> {benefit}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
               ))}

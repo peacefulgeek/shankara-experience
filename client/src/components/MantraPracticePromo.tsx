@@ -29,7 +29,7 @@ export default function MantraPracticePromo({ variant = "full" }: MantraPractice
               </div>
             </div>
             
-            <Link href="/mantra-practice">
+            <Link href="/mantras-and-sutras">
               <Button className="bg-accent hover:bg-accent/90 text-white px-8 h-12 rounded-full font-bold shadow-[0_0_20px_rgba(255,0,255,0.3)] whitespace-nowrap">
                 Start Practice <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
@@ -60,11 +60,11 @@ export default function MantraPracticePromo({ variant = "full" }: MantraPractice
                 </Badge>
                 
                 <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
-                  Mantra <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-400">Practice</span>
+                  Mantras <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-400">& Sutras</span>
                 </h2>
                 
                 <p className="text-xl text-purple-200/80 max-w-2xl mx-auto">
-                  Transform your consciousness through the sacred vibrations of Sanskrit mantras combined with breathing exercises and visualization.
+                  Transform your consciousness through the sacred vibrations of Sanskrit mantras and Buddhist sutras combined with breathing exercises and visualization.
                 </p>
               </div>
 
@@ -74,9 +74,9 @@ export default function MantraPracticePromo({ variant = "full" }: MantraPractice
                   <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center mx-auto mb-4">
                     <Volume2 className="w-6 h-6 text-accent" />
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-2">6 Sacred Mantras</h3>
+                  <h3 className="text-lg font-bold text-white mb-2">6 Mantras + 6 Sutras</h3>
                   <p className="text-purple-200/70 text-sm">
-                    Om, Om Namah Shivaya, Gayatri, and more with audio playback
+                    Sanskrit mantras plus Heart Sutra, Great Compassion Mantra & more
                   </p>
                 </div>
                 
@@ -103,7 +103,7 @@ export default function MantraPracticePromo({ variant = "full" }: MantraPractice
 
               {/* CTA */}
               <div className="text-center">
-                <Link href="/mantra-practice">
+                <Link href="/mantras-and-sutras">
                   <Button size="lg" className="bg-accent hover:bg-accent/90 text-white px-10 h-14 text-lg rounded-full font-bold shadow-[0_0_30px_rgba(255,0,255,0.4)] hover:shadow-[0_0_40px_rgba(255,0,255,0.6)] transition-all">
                     Begin Your Practice <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>

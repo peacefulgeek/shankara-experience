@@ -51,7 +51,7 @@ function App() {
         <Route path="/wisdom/:slug" component={ArticlePage} />
         <Route path="/affiliates" component={Affiliates} />
         <Route path="/testimonials" component={Testimonials} />
-        <Route path="/mantra-practice" component={MantraPractice} />
+        <Route path="/mantras-and-sutras" component={MantraPractice} />
         <Route>404 Page Not Found</Route>
       </Switch>
       <Toaster />
