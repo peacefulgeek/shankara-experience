@@ -170,6 +170,8 @@ interface Sutra {
   chineseTitle?: string;
   benefits: string[];
   hasChinese: boolean;
+  audioUrlEnglish?: string;
+  audioUrlChinese?: string;
 }
 
 const sutras: Sutra[] = [
@@ -188,7 +190,9 @@ const sutras: Sutra[] = [
       "Develops wisdom and insight",
       "Transcends dualistic thinking"
     ],
-    hasChinese: true
+    hasChinese: true,
+    audioUrlEnglish: `${BUNNY_CDN}/audio/heart-sutra-english.mp3`,
+    audioUrlChinese: `${BUNNY_CDN}/audio/heart-sutra-chinese.mp3`
   },
   {
     id: "great-compassion",
@@ -205,7 +209,9 @@ const sutras: Sutra[] = [
       "Heals physical and mental ailments",
       "Cultivates boundless compassion"
     ],
-    hasChinese: true
+    hasChinese: true,
+    audioUrlEnglish: `${BUNNY_CDN}/audio/great-compassion-english.mp3`,
+    audioUrlChinese: `${BUNNY_CDN}/audio/great-compassion-chinese.mp3`
   },
   {
     id: "medicine-buddha",
@@ -374,7 +380,9 @@ export default function MantraPractice() {
   const [selectedDuration, setSelectedDuration] = useState(11);
   const [expandedSutra, setExpandedSutra] = useState<string | null>(null);
   const [showChineseMap, setShowChineseMap] = useState<Record<string, boolean>>({});
+  const [playingSutraAudio, setPlayingSutraAudio] = useState<{sutraId: string; language: 'english' | 'chinese'} | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const sutraAudioRef = useRef<HTMLAudioElement | null>(null);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
@@ -451,6 +459,39 @@ export default function MantraPractice() {
       ...prev,
       [sutraId]: !prev[sutraId]
     }));
+  };
+
+  const playSutraAudio = (sutra: Sutra, language: 'english' | 'chinese') => {
+    // Stop any currently playing sutra audio
+    if (sutraAudioRef.current) {
+      sutraAudioRef.current.pause();
+      sutraAudioRef.current = null;
+    }
+
+    const audioUrl = language === 'english' ? sutra.audioUrlEnglish : sutra.audioUrlChinese;
+    if (!audioUrl) return;
+
+    // If clicking the same audio that's playing, stop it
+    if (playingSutraAudio?.sutraId === sutra.id && playingSutraAudio?.language === language) {
+      setPlayingSutraAudio(null);
+      return;
+    }
+
+    sutraAudioRef.current = new Audio(audioUrl);
+    sutraAudioRef.current.play();
+    setPlayingSutraAudio({ sutraId: sutra.id, language });
+
+    sutraAudioRef.current.onended = () => {
+      setPlayingSutraAudio(null);
+    };
+  };
+
+  const stopSutraAudio = () => {
+    if (sutraAudioRef.current) {
+      sutraAudioRef.current.pause();
+      sutraAudioRef.current = null;
+    }
+    setPlayingSutraAudio(null);
   };
 
   return (
@@ -781,6 +822,53 @@ export default function MantraPractice() {
                         )}
                       </div>
                       
+                      {/* Audio Playback - Only for Heart Sutra and Great Compassion Mantra */}
+                      {sutra.audioUrlEnglish && (
+                        <div className="bg-gradient-to-r from-emerald-900/30 to-teal-900/30 rounded-xl p-4 border border-emerald-500/20">
+                          <h4 className="text-sm font-bold text-emerald-200 uppercase tracking-wider mb-3 flex items-center gap-2">
+                            <Volume2 className="w-4 h-4" /> Listen to Recitation
+                          </h4>
+                          <div className="flex flex-wrap gap-3">
+                            <Button
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                playSutraAudio(sutra, 'english');
+                              }}
+                              className={`${
+                                playingSutraAudio?.sutraId === sutra.id && playingSutraAudio?.language === 'english'
+                                  ? 'bg-emerald-600 hover:bg-emerald-700'
+                                  : 'bg-emerald-900/50 hover:bg-emerald-800/50'
+                              } text-white border border-emerald-500/30`}
+                            >
+                              {playingSutraAudio?.sutraId === sutra.id && playingSutraAudio?.language === 'english' ? (
+                                <><Pause className="w-4 h-4 mr-2" /> Stop Sanskrit/English</>
+                              ) : (
+                                <><Play className="w-4 h-4 mr-2" /> Play Sanskrit/English</>
+                              )}
+                            </Button>
+                            {sutra.audioUrlChinese && (
+                              <Button
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  playSutraAudio(sutra, 'chinese');
+                                }}
+                                className={`${
+                                  playingSutraAudio?.sutraId === sutra.id && playingSutraAudio?.language === 'chinese'
+                                    ? 'bg-amber-600 hover:bg-amber-700'
+                                    : 'bg-amber-900/50 hover:bg-amber-800/50'
+                                } text-white border border-amber-500/30`}
+                              >
+                                {playingSutraAudio?.sutraId === sutra.id && playingSutraAudio?.language === 'chinese' ? (
+                                  <><Pause className="w-4 h-4 mr-2" /> Stop Chinese</>
+                                ) : (
+                                  <><Play className="w-4 h-4 mr-2" /> Play Chinese</>
+                                )}
+                              </Button>
+                            )}
+                          </div>
+                        </div>
+                      )}
+
                       {/* Chinese Version Toggle - Only for Heart Sutra and Great Compassion Mantra */}
                       {sutra.hasChinese && sutra.chinese && (
                         <div>

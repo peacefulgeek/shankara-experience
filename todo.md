@@ -321,3 +321,12 @@
 - [x] Update footer link to reflect new page name
 - [x] Update route in App.tsx if needed
 - [x] Check/fix GitHub CLI authentication
+
+
+## Sutra Audio Recordings (Jan 25, 2026)
+- [x] Generate Heart Sutra audio in English
+- [x] Generate Heart Sutra audio in Chinese
+- [x] Generate Great Compassion Mantra audio in English
+- [x] Generate Great Compassion Mantra audio in Chinese
+- [x] Upload all sutra audio files to Bunny CDN
+- [x] Add audio playback functionality to sutras on Mantras & Sutras page
