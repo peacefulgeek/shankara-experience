@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Play, Sparkles, ArrowRight } from "lucide-react";
 import StoneGuidance from "@/components/StoneGuidance";
+import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import MysticalBackground from "@/components/MysticalBackground";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -244,10 +245,12 @@ export default function Home() {
           </div>
         </section>
 
+        {/* TESTIMONIALS CAROUSEL */}
+        <TestimonialsCarousel />
+
         {/* STONE GUIDANCE SECTION */}
         <StoneGuidance />
-
-      </main>
+      </main>>
       <Footer />
       <VideoModal 
         isOpen={isVideoOpen} 

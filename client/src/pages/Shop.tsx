@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ShoppingBag, Star, Package, Check, ArrowRight } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import SEO from "@/components/SEO";
 import { Link } from "wouter";
 
@@ -178,6 +179,9 @@ export default function Shop() {
             </div>
           </div>
         </section>
+
+        {/* TESTIMONIALS CAROUSEL */}
+        <TestimonialsCarousel />
 
         {/* UPSELL COURSES */}
         <section className="py-20">
