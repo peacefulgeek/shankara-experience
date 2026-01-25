@@ -338,3 +338,9 @@
 - [x] Generate Amitabha Buddha Mantra audio
 - [x] Upload all mantra audio files to Bunny CDN
 - [x] Add audio playback functionality to remaining sutras
+
+## Mobile Navigation Fixes (Jan 25, 2026)
+- [x] Fix mobile hamburger menu delay/responsiveness
+- [x] Fix delayed popups blocking mobile navigation
+- [x] Fix lazy load delays on mobile
+- [x] Ensure mobile menu is immediately usable

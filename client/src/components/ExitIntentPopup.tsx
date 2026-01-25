@@ -116,13 +116,17 @@ export default function ExitIntentPopup() {
       }
     };
 
+    // Longer delay on mobile to not interfere with navigation
+    const isMobile = window.innerWidth < 768;
+    const popupDelay = isMobile ? 45000 : 15000; // 45s on mobile, 15s on desktop
+
     const timer = setTimeout(() => {
       if (!hasShown && !sessionStorage.getItem("shankara_exit_popup_session_seen")) {
         setIsOpen(true);
         setHasShown(true);
         sessionStorage.setItem("shankara_exit_popup_session_seen", "true");
       }
-    }, 15000);
+    }, popupDelay);
 
     document.addEventListener("mouseleave", handleMouseLeave);
 
