@@ -73,19 +73,12 @@ export default function Home() {
 
             {/* HERO IMAGE - UPDATED WITH USER PROVIDED ASSET */}
             <div className="relative perspective-1000 flex flex-col items-center lg:items-end">
-              <div className="relative w-full max-w-xl aspect-square">
-                {/* Rotating glow behind board */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-purple-600/30 to-accent/30 rounded-full blur-[80px] animate-pulse" />
-                
+              <div className="relative w-full max-w-xl">
                 <img 
                   src="https://shankara-pull.b-cdn.net/images/hero-board-detail.webp" 
                   alt="The Shankara Oracle Board Detail" 
-                  className="relative z-10 w-full h-full object-contain drop-shadow-[0_20px_60px_rgba(0,0,0,0.5)] transform hover:scale-[1.02] transition-transform duration-1000 rounded-3xl"
+                  className="relative z-10 w-full drop-shadow-[0_20px_60px_rgba(0,0,0,0.5)] transform hover:scale-[1.02] transition-transform duration-1000 rounded-3xl"
                 />
-                
-                {/* Floating Elements Animation */}
-                <div className="absolute -top-10 -right-10 w-24 h-24 bg-accent/20 rounded-full blur-xl animate-bounce delay-700" />
-                <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-purple-600/20 rounded-full blur-xl animate-bounce delay-1000" />
               </div>
               
               {/* Tagline directly under the image */}
