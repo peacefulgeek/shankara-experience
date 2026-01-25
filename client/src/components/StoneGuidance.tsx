@@ -278,7 +278,7 @@ export default function StoneGuidance() {
                     Unlock the full power of the 18 Obsidian Stones and Sacred Geometry board.
                   </p>
                   
-                  <Link href="/shop/oracle-deck">
+                  <Link href="/shop">
                     <Button size="lg" className="w-full bg-white text-purple-900 hover:bg-gray-100 font-bold text-lg h-14 rounded-full shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-all relative z-10">
                       Get The Oracle <ArrowRight className="ml-2 w-5 h-5" />
                     </Button>
