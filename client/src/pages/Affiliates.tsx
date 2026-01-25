@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { DollarSign, Users, Globe } from "lucide-react";
 import SEO from "@/components/SEO";
+import { Link } from "wouter";
 
 export default function Affiliates() {
   return (
@@ -63,9 +64,11 @@ export default function Affiliates() {
             <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
               Apply now to become an official Shankara affiliate. We review every application personally.
             </p>
-            <Button size="lg" className="bg-accent text-black hover:bg-accent/90 font-bold px-10 h-14 rounded-full shadow-[0_0_20px_rgba(255,215,0,0.3)]">
-              Apply to Affiliate Program
-            </Button>
+            <Link href="/contact">
+              <Button size="lg" className="bg-accent text-black hover:bg-accent/90 font-bold px-10 h-14 rounded-full shadow-[0_0_20px_rgba(255,215,0,0.3)]">
+                Apply to Affiliate Program
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

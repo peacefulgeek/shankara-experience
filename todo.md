@@ -230,3 +230,4 @@
 - [x] Create "Meet Your Mentor" section with Paul's bio and credentials
 
 - [x] Add ThriveCart checkout URL to Register for Certification buttons
+- [x] Direct "Apply to Affiliate Program" button to contact page
