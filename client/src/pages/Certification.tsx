@@ -45,9 +45,11 @@ export default function Certification() {
               Help others heal deeply and unlock their potential as a professional intuitive guide.
             </p>
             
-            <Button size="lg" className="bg-[#ff00ff] hover:bg-[#d900d9] text-white px-10 py-8 text-xl rounded-full font-bold shadow-[0_0_30px_rgba(255,0,255,0.4)] hover:shadow-[0_0_50px_rgba(255,0,255,0.6)] transition-all">
-              Apply for Certification
-            </Button>
+            <a href="https://shankara.thrivecart.com/shankara-platinum-certification/" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="bg-[#ff00ff] hover:bg-[#d900d9] text-white px-10 py-8 text-xl rounded-full font-bold shadow-[0_0_30px_rgba(255,0,255,0.4)] hover:shadow-[0_0_50px_rgba(255,0,255,0.6)] transition-all">
+                Apply for Certification
+              </Button>
+            </a>
             
             <p className="mt-6 text-purple-300/50 text-sm tracking-widest uppercase">Limited spots available each quarter</p>
             
@@ -200,9 +202,11 @@ export default function Certification() {
               <div className="border-t border-white/10 pt-8 text-center relative z-10">
                 <div className="text-base text-purple-300/60 uppercase tracking-widest mb-2">Total Value: $4,000+</div>
                 <div className="text-5xl font-bold text-white mb-6 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">$1,500</div>
-                <Button className="w-full max-w-md bg-[#ff00ff] hover:bg-[#d900d9] text-white font-bold h-16 text-xl rounded-xl shadow-[0_0_30px_rgba(255,0,255,0.3)] transition-all">
-                  Register for Certification
-                </Button>
+                <a href="https://shankara.thrivecart.com/shankara-platinum-certification/" target="_blank" rel="noopener noreferrer" className="w-full max-w-md">
+                  <Button className="w-full bg-[#ff00ff] hover:bg-[#d900d9] text-white font-bold h-16 text-xl rounded-xl shadow-[0_0_30px_rgba(255,0,255,0.3)] transition-all">
+                    Register for Certification
+                  </Button>
+                </a>
               </div>
             </div>
           </div>

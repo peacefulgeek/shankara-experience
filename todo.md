@@ -228,3 +228,5 @@
 ## Certification Page Enhancements
 - [x] Add testimonial quote from certified student for social proof
 - [x] Create "Meet Your Mentor" section with Paul's bio and credentials
+
+- [x] Add ThriveCart checkout URL to Register for Certification buttons
