@@ -89,7 +89,7 @@ export default function Home() {
               </div>
               
               {/* Tagline directly under the image */}
-              <p className="text-center mt-8 text-purple-200/80 italic text-lg max-w-xl">
+              <p className="text-center mt-4 text-purple-200/80 italic text-lg max-w-xl">
                 <span className="text-[#ffd700] font-semibold not-italic">The Shankara Oracle System</span> — your portal to a dimension within, where every answer already resides.
               </p>
             </div>
