@@ -50,6 +50,15 @@ export default function Certification() {
             </Button>
             
             <p className="mt-6 text-purple-300/50 text-sm tracking-widest uppercase">Limited spots available each quarter</p>
+            
+            {/* Mandala Community Image */}
+            <div className="mt-16 mb-8">
+              <img 
+                src="https://shankara-pull.b-cdn.net/images/mandala-community.webp" 
+                alt="Shankara Community" 
+                className="mx-auto max-w-md w-full rounded-2xl"
+              />
+            </div>
           </div>
         </section>
 
