@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Check, Star, Calendar, MessageCircle, FileText, Award, Users, HelpCircle, Sparkles, Video, BookOpen } from "lucide-react";
+import { Check, Star, Calendar, MessageCircle, FileText, Award, Users, HelpCircle, Sparkles, Video, BookOpen, Quote, Heart } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -203,6 +203,96 @@ export default function Certification() {
                 <Button className="w-full max-w-md bg-[#ff00ff] hover:bg-[#d900d9] text-white font-bold h-16 text-xl rounded-xl shadow-[0_0_30px_rgba(255,0,255,0.3)] transition-all">
                   Register for Certification
                 </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* TESTIMONIAL QUOTE - Social Proof */}
+        <section className="py-16 relative">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <div className="bg-gradient-to-br from-purple-900/40 to-pink-900/30 border border-purple-400/20 rounded-3xl p-10 md:p-12 relative overflow-hidden">
+              {/* Decorative quote mark */}
+              <div className="absolute top-6 left-6 opacity-10">
+                <Quote className="w-24 h-24 text-white" />
+              </div>
+              
+              <div className="relative z-10 text-center">
+                <div className="flex justify-center mb-6">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-6 h-6 text-yellow-400 fill-yellow-400" />
+                  ))}
+                </div>
+                
+                <blockquote className="text-2xl md:text-3xl text-white font-light leading-relaxed mb-8 italic">
+                  "The Certification program completely transformed my practice. Paul's guidance helped me unlock intuitive abilities I didn't know I had. I now conduct readings with confidence and have built a thriving spiritual practice."
+                </blockquote>
+                
+                <div className="flex items-center justify-center gap-4">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
+                    <Heart className="w-8 h-8 text-white" />
+                  </div>
+                  <div className="text-left">
+                    <p className="text-white font-bold text-lg">Sarah Mitchell</p>
+                    <p className="text-purple-300/70">Certified Shankara Master, California</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* MEET YOUR MENTOR - Paul's Bio */}
+        <section className="py-20 relative">
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+              {/* Paul's Image */}
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/30 to-pink-600/30 blur-[60px] rounded-full" />
+                <img 
+                  src="https://shankara-pull.b-cdn.net/images/paul-wagner.webp" 
+                  alt="Paul Wagner - Krishna Kalesh" 
+                  className="relative z-10 w-full max-w-md mx-auto rounded-2xl shadow-2xl border-2 border-purple-500/30"
+                />
+              </div>
+              
+              {/* Bio Content */}
+              <div className="space-y-6">
+                <Badge variant="outline" className="border-yellow-400/50 text-yellow-200 px-4 py-1 text-sm tracking-widest uppercase bg-yellow-900/20">
+                  <Sparkles className="w-3 h-3 mr-2" /> Your Mentor
+                </Badge>
+                
+                <h2 className="text-4xl md:text-5xl font-display font-bold text-white leading-tight">
+                  Meet <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 to-amber-100">Paul Wagner</span>
+                </h2>
+                <p className="text-purple-300/60 text-lg italic">Shri Krishna Kalesh</p>
+                
+                <div className="space-y-4 text-purple-200/80 text-lg leading-relaxed">
+                  <p>
+                    Paul Wagner is a spiritual teacher, intuitive healer, and the creator of The Shankara Oracle. With over 25 years of experience in consciousness studies, energy healing, and ancient wisdom traditions, Paul has guided thousands of seekers on their path to awakening.
+                  </p>
+                  <p>
+                    His unique approach blends Eastern mysticism with practical Western psychology, creating transformational experiences that help students unlock their innate intuitive gifts and step into their power as healers and guides.
+                  </p>
+                  <p>
+                    As your mentor in the Certification program, Paul provides personalized guidance, deep spiritual insights, and the practical tools you need to build a successful practice as a Shankara Master.
+                  </p>
+                </div>
+                
+                <div className="flex flex-wrap gap-4 pt-4">
+                  <div className="bg-white/5 border border-white/10 rounded-lg px-4 py-2">
+                    <span className="text-white font-bold">25+</span>
+                    <span className="text-purple-300/60 ml-2">Years Experience</span>
+                  </div>
+                  <div className="bg-white/5 border border-white/10 rounded-lg px-4 py-2">
+                    <span className="text-white font-bold">1000+</span>
+                    <span className="text-purple-300/60 ml-2">Students Trained</span>
+                  </div>
+                  <div className="bg-white/5 border border-white/10 rounded-lg px-4 py-2">
+                    <span className="text-white font-bold">4</span>
+                    <span className="text-purple-300/60 ml-2">Books Published</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
