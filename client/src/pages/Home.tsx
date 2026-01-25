@@ -101,7 +101,7 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-5 leading-tight">
                 What Awaits You
               </h2>
-              <p className="text-lg text-purple-200/80 leading-relaxed">
+              <p className="text-xl text-purple-200/80 leading-relaxed">
                 More than divination — a sacred companion for your soul's deepest journey.
               </p>
             </div>
@@ -133,10 +133,10 @@ export default function Home() {
                 <div key={i} className="group">
                   <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 h-full hover:bg-white/10 hover:border-purple-500/30 transition-all duration-300">
                     {/* Gradient Title */}
-                    <h3 className={`text-xl font-display font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r ${benefit.color}`}>
+                    <h3 className={`text-2xl font-display font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r ${benefit.color}`}>
                       {benefit.title}
                     </h3>
-                    <p className="text-purple-100/70 leading-relaxed text-base">
+                    <p className="text-purple-100/70 leading-relaxed text-lg">
                       {benefit.desc}
                     </p>
                   </div>
