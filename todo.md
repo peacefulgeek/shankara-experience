@@ -242,3 +242,4 @@
 - [x] Add new "Core Philosophy & Mission" section after "What You Will Master"
 - [x] Enhance "The Meaning of Shankara" blurb significantly
 - [x] Make the rest of the About page more divine and elevated
+- [x] Add Ana Andreea Plesea tribute section to About page with her photo, bio, quote, and link to AnaGuidance.com

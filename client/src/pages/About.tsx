@@ -289,6 +289,61 @@ export default function About() {
             </div>
           </div>
 
+          {/* Ana Andreea Plesea Tribute Section */}
+          <div className="relative py-16">
+            {/* Background Glow */}
+            <div className="absolute inset-0 bg-gradient-to-b from-purple-900/20 via-transparent to-purple-900/20 rounded-3xl" />
+            
+            <div className="relative z-10 max-w-4xl mx-auto">
+              <div className="text-center mb-12">
+                <p className="text-accent font-medium tracking-[0.2em] uppercase text-sm mb-4">
+                  ✦ With Deep Gratitude ✦
+                </p>
+                <h2 className="text-3xl md:text-4xl font-display font-bold text-white drop-shadow-lg">
+                  A Heart Behind Shankara
+                </h2>
+              </div>
+              
+              <div className="grid md:grid-cols-2 gap-12 items-center">
+                <div className="relative group order-2 md:order-1">
+                  <div className="space-y-6">
+                    <p className="text-lg text-purple-200/90 leading-relaxed">
+                      <span className="text-white font-semibold">Ana Andreea Plesea</span> is a brilliant and loving intuitive reader who helped Shankara come to life with her gifts in editing, marketing, and boundless generosity.
+                    </p>
+                    <p className="text-lg text-purple-200/90 leading-relaxed">
+                      Her warmth, deep intuition, and genuine compassion have touched countless souls. As both a content director and spiritual guide, Ana's presence illuminates the transformative power that flows through empathy and refined intuition.
+                    </p>
+                    <div className="pt-4 border-l-4 border-accent/50 pl-6">
+                      <p className="text-xl italic text-white/90 leading-relaxed">
+                        "Shankara helped me heal to my core. I am deeply grateful it's here!"
+                      </p>
+                      <p className="mt-4 text-accent font-medium">— Ana Andreea Plesea</p>
+                    </div>
+                    <div className="pt-4">
+                      <a 
+                        href="https://anaguidance.com" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-accent hover:text-white transition-colors font-medium"
+                      >
+                        Learn more about Ana at AnaGuidance.com →
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="relative order-1 md:order-2">
+                  <div className="absolute -inset-4 bg-gradient-to-br from-pink-500/20 to-purple-600/20 rounded-3xl blur-2xl" />
+                  <img 
+                    src="https://shankara-pull.b-cdn.net/images/AndreeaPleseaImage.webp" 
+                    alt="Ana Andreea Plesea" 
+                    className="relative rounded-2xl shadow-2xl border border-white/10 hover:scale-[1.02] transition-transform duration-500 w-full max-w-md mx-auto"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Call to Action */}
           <div className="text-center py-16">
             <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-6 drop-shadow-lg">
