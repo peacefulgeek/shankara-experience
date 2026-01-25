@@ -260,3 +260,5 @@
 - [x] Fix image alignment to be flush with top of text in Meet the Creator section
 - [x] Move connect buttons under the picture
 - [x] Change "A Heart Behind Shankara" to "A Beautiful Heart Behind Shankara"
+
+- [x] Remove return policy page and footer link

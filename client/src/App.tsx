@@ -16,7 +16,7 @@ import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import Terms from "@/pages/Terms";
 import Privacy from "@/pages/Privacy";
-import Returns from "@/pages/Returns";
+
 import FAQ from "@/pages/FAQ";
 import Videos from "@/pages/Videos";
 import Blog from "./pages/Blog";
@@ -43,7 +43,7 @@ function App() {
         <Route path="/contact" component={Contact} />
         <Route path="/terms" component={Terms} />
         <Route path="/privacy" component={Privacy} />
-        <Route path="/returns" component={Returns} />
+
         <Route path="/faq" component={FAQ} />
         <Route path="/videos" component={Videos} />
         <Route path="/wisdom" component={Blog} />

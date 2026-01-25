@@ -207,7 +207,7 @@ export default function Footer() {
             <ul className="space-y-4 text-sm text-white/70 font-medium">
               <li><Link href="/privacy"><span className="hover:text-primary hover:drop-shadow-[0_0_8px_rgba(255,0,255,0.8)] cursor-pointer transition-all duration-300">Privacy Policy</span></Link></li>
               <li><Link href="/terms"><span className="hover:text-primary hover:drop-shadow-[0_0_8px_rgba(255,0,255,0.8)] cursor-pointer transition-all duration-300">Terms & Conditions</span></Link></li>
-              <li><Link href="/returns"><span className="hover:text-primary hover:drop-shadow-[0_0_8px_rgba(255,0,255,0.8)] cursor-pointer transition-all duration-300">Return Policy</span></Link></li>
+
             </ul>
           </div>
         </div>
