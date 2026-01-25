@@ -57,12 +57,12 @@ export default function About() {
               The Shankara Oracle was born from a vision to open a divine portal to the infinite wisdom of The Universe—guiding seekers to embody virtue, gain clarity, and walk the path of self-mastery.
             </p>
             <p className="mt-6 text-xl text-purple-200/90 leading-relaxed">
-              This is not merely a set of cards. It is a <span className="text-accent font-semibold">living technology of consciousness</span>—a sacred mirror reflecting the deepest truths of your soul, channeled through decades of devotion and spiritual practice.
+              Shankara is a <span className="text-accent font-semibold">living technology of consciousness</span>—a sacred mirror reflecting the deepest truths of your soul, channeled through decades of devotion and spiritual practice.
             </p>
           </div>
 
           {/* Meet the Creator Section */}
-          <div className="grid md:grid-cols-2 gap-16 items-center max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-16 items-start max-w-5xl mx-auto">
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-br from-accent/20 to-purple-600/20 rounded-3xl blur-2xl" />
               <img 
@@ -70,28 +70,11 @@ export default function About() {
                 alt="Paul Wagner (Krishna Kalesh)" 
                 className="relative rounded-2xl shadow-2xl border border-white/10 hover:scale-[1.02] transition-transform duration-500"
               />
-            </div>
-            <div className="space-y-6">
-              <h3 className="text-3xl md:text-4xl font-display font-bold text-white drop-shadow-lg">
-                Meet the Creator
-              </h3>
-              <p className="text-lg text-purple-200/90 leading-relaxed">
-                <span className="text-white font-semibold">Paul Wagner</span>, also known as <span className="text-accent font-semibold">Krishna Kalesh</span>, has spent over three decades immersed in the sacred traditions of India. As a devoted student of <span className="text-white font-semibold">Amma (Mata Amritanandamayi)</span> for more than 30 years, he has received profound transmissions of love, wisdom, and healing.
-              </p>
-              <p className="text-lg text-purple-200/90 leading-relaxed">
-                His journey has taken him to ashrams, temples, and sacred sites across the world, studying with enlightened masters and absorbing the essence of Advaita Vedanta, Tantra, and the mystical heart of India's spiritual heritage.
-              </p>
-              <div className="pt-4 border-l-4 border-accent/50 pl-6">
-                <p className="text-xl italic text-white/90 leading-relaxed">
-                  "Shankara is my heart's offering to your awakening. It is designed to mirror your soul's journey and provide the precise guidance you need in every moment."
-                </p>
-                <p className="mt-4 text-accent font-medium">— Krishna Kalesh</p>
-              </div>
               
-              {/* Social Media Links */}
-              <div className="pt-6">
-                <p className="text-sm text-purple-300/70 mb-3 uppercase tracking-wider">Connect with Paul</p>
-                <div className="flex flex-wrap gap-3">
+              {/* Social Media Links - Under Photo */}
+              <div className="mt-6">
+                <p className="text-sm text-purple-300/70 mb-3 uppercase tracking-wider text-center">Connect with Paul</p>
+                <div className="flex flex-wrap gap-3 justify-center">
                   <a 
                     href="https://www.instagram.com/paulwagner1008/" 
                     target="_blank" 
@@ -129,6 +112,23 @@ export default function About() {
                     <span className="text-sm text-white/80 group-hover:text-white transition-colors">Believe In Miracles</span>
                   </a>
                 </div>
+              </div>
+            </div>
+            <div className="space-y-6">
+              <h3 className="text-3xl md:text-4xl font-display font-bold text-white drop-shadow-lg">
+                Meet the Creator
+              </h3>
+              <p className="text-lg text-purple-200/90 leading-relaxed">
+                <span className="text-white font-semibold">Paul Wagner</span>, also known as <span className="text-accent font-semibold">Krishna Kalesh</span>, has spent over three decades immersed in the sacred traditions of India. As a devoted student of <span className="text-white font-semibold">Amma (Mata Amritanandamayi)</span> for more than 30 years, he has received profound transmissions of love, wisdom, and healing.
+              </p>
+              <p className="text-lg text-purple-200/90 leading-relaxed">
+                His journey has taken him to ashrams, temples, and sacred sites across the world, studying with enlightened masters and absorbing the essence of Advaita Vedanta, Tantra, and the mystical heart of India's spiritual heritage.
+              </p>
+              <div className="pt-4 border-l-4 border-accent/50 pl-6">
+                <p className="text-xl italic text-white/90 leading-relaxed">
+                  "Shankara is my heart's offering to your awakening. It is designed to mirror your soul's journey and provide the precise guidance you need in every moment."
+                </p>
+                <p className="mt-4 text-accent font-medium">— Krishna Kalesh</p>
               </div>
             </div>
           </div>
@@ -343,7 +343,7 @@ export default function About() {
                   ✦ With Deep Gratitude ✦
                 </p>
                 <h2 className="text-3xl md:text-4xl font-display font-bold text-white drop-shadow-lg">
-                  A Heart Behind Shankara
+                  A Beautiful Heart Behind Shankara
                 </h2>
               </div>
               

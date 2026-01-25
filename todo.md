@@ -250,3 +250,13 @@
 - [x] Add MailerLite newsletter signup form to footer
 - [x] Add share widget to Shop page
 - [x] Add share widget to Certification page
+
+## Welcome Email Sequence
+- [ ] Find The Deepening ebook and upload to Bunny CDN
+- [ ] Create SMTP2GO email sending function on server
+- [ ] Update newsletter signup to send welcome email with ebook download link
+- [ ] Design beautiful HTML email with promotional card for Shankara Oracle
+- [x] Fix "This is not merely a set of cards. It" to "Shankara"
+- [x] Fix image alignment to be flush with top of text in Meet the Creator section
+- [x] Move connect buttons under the picture
+- [x] Change "A Heart Behind Shankara" to "A Beautiful Heart Behind Shankara"
