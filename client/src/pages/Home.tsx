@@ -89,37 +89,95 @@ export default function Home() {
           </div>
         </section>
 
-        {/* FEATURES - LIGHT & CLEAN (YANG) */}
-        <section className="py-32 bg-white relative">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-3 gap-12 lg:gap-20">
+        {/* TRANSFORMATION BENEFITS - RICH & INSPIRING */}
+        <section className="py-24 bg-gradient-to-b from-white via-purple-50/30 to-white relative overflow-hidden">
+          {/* Subtle sacred geometry background */}
+          <div className="absolute inset-0 opacity-[0.03]" style={{backgroundImage: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.4"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")'}} />
+          
+          <div className="container mx-auto px-4 relative z-10">
+            {/* Section Header */}
+            <div className="text-center max-w-4xl mx-auto mb-20">
+              <p className="text-purple-600 font-semibold tracking-widest uppercase text-sm mb-4">The Sacred Journey Awaits</p>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-gray-900 mb-6 leading-tight">
+                Unlock the Wisdom of <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500">Ancient Teachings</span>
+              </h2>
+              <p className="text-xl text-gray-600 leading-relaxed">
+                The Shankara Oracle bridges timeless Vedic wisdom with modern spiritual practice, 
+                offering you a direct pathway to self-realization, divine connection, and profound inner healing.
+              </p>
+            </div>
+
+            {/* 6 Benefits Grid */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
               {[
                 {
-                  title: "Clarify Your Path",
-                  desc: "Cut through confusion and see your life's trajectory with crystal clear vision.",
-                  icon: "text-purple-600"
+                  title: "Access Ancient Vedic Wisdom",
+                  desc: "Receive teachings passed down through sacred lineages for thousands of years. The Shankara Oracle embodies the essence of Advaita Vedanta, Tantra, and the mystical traditions of India.",
+                  icon: "🕉️",
+                  gradient: "from-amber-500 to-orange-600"
                 },
                 {
-                  title: "Heal Deep Patterns",
-                  desc: "Identify and release karmic blocks that have been holding you back for lifetimes.",
-                  icon: "text-accent"
+                  title: "Connect with Divine Beings",
+                  desc: "Open channels to ascended masters, spirit guides, and celestial helpers who await your invitation. Each reading creates a sacred space for divine communion and spiritual guidance.",
+                  icon: "✨",
+                  gradient: "from-purple-500 to-indigo-600"
                 },
                 {
-                  title: "Empower Your Intuition",
-                  desc: "Strengthen your direct connection to Source and trust your inner guidance.",
-                  icon: "text-blue-500"
+                  title: "Heal to Your Core",
+                  desc: "Release karmic patterns, ancestral wounds, and emotional blockages that have held you back for lifetimes. The Oracle reveals the root causes and pathways to deep, lasting transformation.",
+                  icon: "💜",
+                  gradient: "from-pink-500 to-rose-600"
+                },
+                {
+                  title: "Awaken Your Intuition",
+                  desc: "Strengthen your connection to your Higher Self and develop unwavering trust in your inner knowing. The Oracle trains your psychic senses and expands your spiritual perception.",
+                  icon: "👁️",
+                  gradient: "from-blue-500 to-cyan-600"
+                },
+                {
+                  title: "Navigate Life's Crossroads",
+                  desc: "Gain crystal clarity on relationships, career, purpose, and major life decisions. The Oracle illuminates your soul's path and reveals the choices aligned with your highest destiny.",
+                  icon: "🧭",
+                  gradient: "from-emerald-500 to-teal-600"
+                },
+                {
+                  title: "Embody Your Divine Nature",
+                  desc: "Remember who you truly are beyond the illusions of separation. The Shankara Oracle is a mirror reflecting your infinite nature, guiding you home to the Self that was never lost.",
+                  icon: "🌟",
+                  gradient: "from-violet-500 to-purple-600"
                 }
-              ].map((feature, i) => (
-                <div key={i} className="group text-center">
-                  <div className="mb-8 relative inline-block">
-                    <div className={`w-24 h-24 rounded-full bg-gray-50 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500`}>
-                      <Sparkles className={`w-10 h-10 ${feature.icon}`} />
-                    </div>
+              ].map((benefit, i) => (
+                <div key={i} className="group relative">
+                  <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 h-full relative overflow-hidden">
+                    {/* Hover gradient overlay */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${benefit.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
+                    
+                    {/* Icon */}
+                    <div className="text-4xl mb-5">{benefit.icon}</div>
+                    
+                    {/* Content */}
+                    <h3 className="text-xl font-display font-bold text-gray-900 mb-3 group-hover:text-purple-700 transition-colors">
+                      {benefit.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-[15px]">
+                      {benefit.desc}
+                    </p>
+                    
+                    {/* Bottom accent line */}
+                    <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${benefit.gradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`} />
                   </div>
-                  <h3 className="text-3xl font-display font-bold text-gray-900 mb-4">{feature.title}</h3>
-                  <p className="text-lg text-gray-600 leading-relaxed">{feature.desc}</p>
                 </div>
               ))}
+            </div>
+
+            {/* Bottom CTA */}
+            <div className="text-center mt-16">
+              <p className="text-gray-500 mb-6 text-lg">Join thousands who have transformed their lives through the Oracle</p>
+              <Link href="/shop">
+                <Button size="lg" className="bg-gradient-to-r from-purple-600 to-pink-500 text-white hover:from-purple-700 hover:to-pink-600 px-10 h-14 text-lg rounded-full font-bold shadow-lg hover:shadow-xl transition-all">
+                  Begin Your Journey
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
