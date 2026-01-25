@@ -235,3 +235,10 @@
 - [x] Copy Terms & Conditions from PaulWagner.com to Shankara site
 - [x] Replace HOME with ABOUT in top navigation menu (link to /about)
 - [x] Update copyright year to 2024 Believe In Miracles LLC in footer
+
+## About Page Enhancements
+- [x] Compress and upload Paul with Amma photos to Bunny CDN
+- [x] Add two Amma photos above "What You Will Master" section
+- [x] Add new "Core Philosophy & Mission" section after "What You Will Master"
+- [x] Enhance "The Meaning of Shankara" blurb significantly
+- [x] Make the rest of the About page more divine and elevated
