@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { Link } from "wouter";
 import VideoModal from "@/components/VideoModal";
+import AncientsPromoBox from "@/components/AncientsPromoBox";
 import { useState } from "react";
 
 export default function MasterTraining() {
@@ -498,6 +499,13 @@ export default function MasterTraining() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* The Ancients Promo */}
+        <section className="py-16 relative">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <AncientsPromoBox />
           </div>
         </section>
 

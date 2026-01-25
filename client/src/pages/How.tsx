@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { Link } from "wouter";
 import VideoModal from "@/components/VideoModal";
+import AncientsPromoBox from "@/components/AncientsPromoBox";
 
 export default function How() {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
@@ -291,6 +292,13 @@ export default function How() {
               </div>
             </div>
 
+          </div>
+        </section>
+
+        {/* The Ancients Promo */}
+        <section className="py-16 bg-[#1a0b2e]">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <AncientsPromoBox />
           </div>
         </section>
 

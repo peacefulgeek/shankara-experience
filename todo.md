@@ -265,3 +265,12 @@
 
 - [x] Add shipping FAQ question to FAQ page with contact link
 - [x] Update contact form to use SMTP2GO from paul@paulwagner.one to paul@creativelab.tv (already configured)
+
+## The Ancients Feature
+- [x] Create reusable Ancients promo box component
+- [x] Add Ancients promo box to HOW page
+- [x] Add Ancients promo box to UNBOXED page
+- [x] Add Ancients promo box to TRAINING page
+- [x] Add Ancients promo box to SHOP page
+- [x] Add Ancients link to footer
+- [x] Add interactive visual timeline to The Ancients page (Egypt, India, Shaman, Pagan to Shankara)

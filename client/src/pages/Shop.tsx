@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import SEO from "@/components/SEO";
 import { Link } from "wouter";
+import AncientsPromoBox from "@/components/AncientsPromoBox";
 
 export default function Shop() {
   return (
@@ -213,6 +214,13 @@ export default function Shop() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* The Ancients Promo */}
+        <section className="py-16 bg-cosmic-dark">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <AncientsPromoBox />
           </div>
         </section>
 
