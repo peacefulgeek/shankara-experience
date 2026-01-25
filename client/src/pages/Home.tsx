@@ -91,6 +91,14 @@ export default function Home() {
 
         {/* TRANSFORMATION BENEFITS - ELEGANT DARK */}
         <section className="py-20 bg-cosmic-dark relative overflow-hidden">
+          {/* Gold glowing divider - TOP */}
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#ffd700]/50 to-transparent" />
+          <div className="absolute top-0 left-1/4 right-1/4 h-[2px] bg-gradient-to-r from-transparent via-[#ffd700]/30 to-transparent blur-sm" />
+          
+          {/* Gold glowing divider - BOTTOM */}
+          <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#ffd700]/50 to-transparent" />
+          <div className="absolute bottom-0 left-1/4 right-1/4 h-[2px] bg-gradient-to-r from-transparent via-[#ffd700]/30 to-transparent blur-sm" />
+          
           {/* Subtle glow effects */}
           <div className="absolute top-1/2 left-1/4 w-[400px] h-[400px] bg-purple-600/10 rounded-full blur-[100px] pointer-events-none" />
           <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-pink-500/10 rounded-full blur-[80px] pointer-events-none" />
