@@ -72,7 +72,7 @@ export default function Home() {
             </div>
 
             {/* HERO IMAGE - UPDATED WITH USER PROVIDED ASSET */}
-            <div className="relative perspective-1000 flex justify-center lg:justify-end">
+            <div className="relative perspective-1000 flex flex-col items-center lg:items-end">
               <div className="relative w-full max-w-xl aspect-square">
                 {/* Rotating glow behind board */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-purple-600/30 to-accent/30 rounded-full blur-[80px] animate-pulse" />
@@ -87,14 +87,12 @@ export default function Home() {
                 <div className="absolute -top-10 -right-10 w-24 h-24 bg-accent/20 rounded-full blur-xl animate-bounce delay-700" />
                 <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-purple-600/20 rounded-full blur-xl animate-bounce delay-1000" />
               </div>
+              
+              {/* Tagline directly under the image */}
+              <p className="text-center mt-8 text-purple-200/80 italic text-lg max-w-xl">
+                <span className="text-[#ffd700] font-semibold not-italic">The Shankara Oracle System</span> — your portal to a dimension within, where every answer already resides.
+              </p>
             </div>
-          </div>
-          
-          {/* Tagline UNDER the hero image */}
-          <div className="container mx-auto px-4 mt-8 text-center">
-            <p className="text-purple-200/80 italic text-xl max-w-2xl mx-auto">
-              <span className="text-[#ffd700] font-semibold not-italic">The Shankara Oracle System</span> — your portal to a dimension within, where every answer already resides.
-            </p>
           </div>
         </section>
 

@@ -22,7 +22,7 @@ const testimonials = [
   {
     name: "Elena R.",
     role: "Yoga Teacher",
-    text: "The imagery of the cards is so potent. Just looking at them shifts my energy. I use them daily for my own guidance and grounding."
+    text: "The energy of the cards is so potent. Just holding them shifts my vibration. I use them daily for my own guidance and grounding."
   },
   {
     name: "David K.",
