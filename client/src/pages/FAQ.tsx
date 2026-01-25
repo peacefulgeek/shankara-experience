@@ -28,6 +28,10 @@ export default function FAQ() {
       a: "Yes. The Shankara board holds The Master Deck, Alchemy Deck, and Release Deck. These Sacred Oracle decks reflect the three foundational teachings to help you become The Conscious Creator Of Your Reality. If you wish, you can also use your favorite tarot or oracle decks with Shankara, for a customized experience."
     },
     {
+      q: "How is Shankara shipped?",
+      a: "The Shankara Oracle is assembled and hand-packed by Paul Wagner (Krishna Kalesh) for the safety of the 18 black obsidian gemstones. This ensures they arrive unbroken. If they do not arrive in perfect condition, <a href='/contact' class='text-accent hover:underline'>contact us</a> for free broken-stone replacement."
+    },
+    {
       q: "How long does shipping take?",
       a: "We process orders within 1-2 business days. Shipping times vary by location but typically range from 3-7 business days for domestic orders and 10-21 days for international shipments."
     },
@@ -86,12 +90,11 @@ export default function FAQ() {
                   )}
                 </button>
                 
-                <div 
-                  className={`overflow-hidden transition-all duration-300 ease-in-out ${openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
-                >
-                  <div className="p-6 pt-0 text-white/80 leading-relaxed border-t border-white/5 mt-2">
-                    {faq.a}
-                  </div>
+                <div className={`overflow-hidden transition-all duration-300 ease-in-out ${openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+                  <div 
+                    className="p-6 pt-0 text-white/80 leading-relaxed border-t border-white/5 mt-2"
+                    dangerouslySetInnerHTML={{ __html: faq.a }}
+                  />
                 </div>
               </div>
             ))}
