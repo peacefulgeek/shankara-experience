@@ -344,3 +344,14 @@
 - [x] Fix delayed popups blocking mobile navigation
 - [x] Fix lazy load delays on mobile
 - [x] Ensure mobile menu is immediately usable
+
+## Mala Counter & Audio Progress Bar (Jan 25, 2026)
+- [x] Create interactive 108-bead mala counter component
+- [x] Add visual feedback for each bead click (glow/pulse animation)
+- [x] Add completion celebration when reaching 108 beads
+- [x] Add reset functionality for mala counter
+- [x] Create audio progress bar component with seek functionality
+- [x] Show current time and total duration for audio
+- [x] Allow clicking/dragging on progress bar to seek
+- [x] Integrate mala counter into Mantras & Sutras page
+- [x] Integrate audio progress bar into sutra audio players

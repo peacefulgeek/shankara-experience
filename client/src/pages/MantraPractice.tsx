@@ -24,6 +24,8 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { Link } from "wouter";
+import MalaCounter from "@/components/MalaCounter";
+import AudioProgressBar from "@/components/AudioProgressBar";
 
 const BUNNY_CDN = "https://shankara-pull.b-cdn.net";
 
@@ -597,6 +599,28 @@ export default function MantraPractice() {
           </div>
         </section>
 
+        {/* Mala Counter Section */}
+        <section className="py-16 bg-[#1a0b2e] relative">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-8">
+              <Badge className="bg-purple-900/50 text-purple-200 border border-purple-500/30 px-4 py-1 text-sm tracking-widest uppercase backdrop-blur-md mb-4">
+                <Sparkles className="w-3 h-3 mr-2" /> 108 Beads
+              </Badge>
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-3">
+                Digital <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-accent">Mala Counter</span>
+              </h2>
+              <p className="text-purple-200/70 max-w-xl mx-auto">
+                Track your mantra repetitions with our interactive 108-bead counter. 
+                Each tap brings you closer to completion.
+              </p>
+            </div>
+            
+            <div className="max-w-xl mx-auto">
+              <MalaCounter />
+            </div>
+          </div>
+        </section>
+
         {/* Breathing Exercises Section */}
         <section className="py-20 bg-[#1a0b2e] relative overflow-hidden">
           <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-blue-600/10 rounded-full blur-[100px] pointer-events-none" />
@@ -826,50 +850,24 @@ export default function MantraPractice() {
                         )}
                       </div>
                       
-                      {/* Audio Playback - Only for Heart Sutra and Great Compassion Mantra */}
+                      {/* Audio Playback with Progress Bar */}
                       {sutra.audioUrlEnglish && (
-                        <div className="bg-gradient-to-r from-emerald-900/30 to-teal-900/30 rounded-xl p-4 border border-emerald-500/20">
-                          <h4 className="text-sm font-bold text-emerald-200 uppercase tracking-wider mb-3 flex items-center gap-2">
+                        <div onClick={(e) => e.stopPropagation()} className="space-y-3">
+                          <h4 className="text-sm font-bold text-emerald-200 uppercase tracking-wider flex items-center gap-2">
                             <Volume2 className="w-4 h-4" /> Listen to Recitation
                           </h4>
-                          <div className="flex flex-wrap gap-3">
-                            <Button
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                playSutraAudio(sutra, 'english');
-                              }}
-                              className={`${
-                                playingSutraAudio?.sutraId === sutra.id && playingSutraAudio?.language === 'english'
-                                  ? 'bg-emerald-600 hover:bg-emerald-700'
-                                  : 'bg-emerald-900/50 hover:bg-emerald-800/50'
-                              } text-white border border-emerald-500/30`}
-                            >
-                              {playingSutraAudio?.sutraId === sutra.id && playingSutraAudio?.language === 'english' ? (
-                                <><Pause className="w-4 h-4 mr-2" /> Stop Sanskrit/English</>
-                              ) : (
-                                <><Play className="w-4 h-4 mr-2" /> Play Sanskrit/English</>
-                              )}
-                            </Button>
-                            {sutra.audioUrlChinese && (
-                              <Button
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  playSutraAudio(sutra, 'chinese');
-                                }}
-                                className={`${
-                                  playingSutraAudio?.sutraId === sutra.id && playingSutraAudio?.language === 'chinese'
-                                    ? 'bg-amber-600 hover:bg-amber-700'
-                                    : 'bg-amber-900/50 hover:bg-amber-800/50'
-                                } text-white border border-amber-500/30`}
-                              >
-                                {playingSutraAudio?.sutraId === sutra.id && playingSutraAudio?.language === 'chinese' ? (
-                                  <><Pause className="w-4 h-4 mr-2" /> Stop Chinese</>
-                                ) : (
-                                  <><Play className="w-4 h-4 mr-2" /> Play Chinese</>
-                                )}
-                              </Button>
-                            )}
-                          </div>
+                          <AudioProgressBar
+                            src={sutra.audioUrlEnglish}
+                            title="Sanskrit/English Recitation"
+                            className="bg-emerald-900/30 border-emerald-500/30"
+                          />
+                          {sutra.audioUrlChinese && (
+                            <AudioProgressBar
+                              src={sutra.audioUrlChinese}
+                              title="Chinese Recitation"
+                              className="bg-amber-900/30 border-amber-500/30"
+                            />
+                          )}
                         </div>
                       )}
 
