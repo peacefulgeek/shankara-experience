@@ -213,3 +213,14 @@
 ## Testimonials Carousel
 - [x] Add testimonials carousel to Home page
 - [x] Add testimonials carousel to Shop page
+
+## Certification Page Redesign
+- [x] Redesign layout: vertical blocks instead of side-by-side
+- [x] Add board-with-hands image next to "Go Further. Get Certified."
+- [x] Add two dark blue shirt photos between blocks
+- [x] Add three Paul teaching photos below What's Included
+- [x] Update What's Included to mention 100+ videos and worksheets from Shankara Course with link
+- [x] Change 3 sessions to FIVE sessions with Paul Wagner (Krishna Kalesh)
+- [x] Add email and chat support
+- [x] Reduce mandala bottom spacing by 60%
+- [x] Upload and compress 6 new photos to Bunny CDN (all under 250KB)

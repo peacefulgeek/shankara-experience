@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Check, Star, Calendar, MessageCircle, FileText, Award, Users, HelpCircle, Sparkles } from "lucide-react";
+import { Check, Star, Calendar, MessageCircle, FileText, Award, Users, HelpCircle, Sparkles, Video, BookOpen } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -11,7 +11,7 @@ export default function Certification() {
     <div className="min-h-screen text-foreground font-sans selection:bg-primary selection:text-white overflow-x-hidden relative bg-[#1a0b2e]">
       <SEO 
         title="Become a Certified Shankara Master | Professional Certification" 
-        description="A 3-month individual mentorship program with Krishna Kalesh. Become a certified reader and healer."
+        description="A 3-month individual mentorship program with Paul Wagner (Krishna Kalesh). Become a certified reader and healer."
       />
 
       {/* BACKGROUND - Purple style from Readers/Videos */}
@@ -24,7 +24,7 @@ export default function Certification() {
 
       <main className="relative z-10">
         {/* HERO - Lightened & Mystical */}
-        <section className="pt-40 pb-20 relative overflow-hidden">
+        <section className="pt-40 pb-12 relative overflow-hidden">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[800px] bg-purple-500/10 rounded-full blur-[120px] pointer-events-none" />
           
           <div className="container mx-auto px-4 text-center relative z-10">
@@ -40,7 +40,7 @@ export default function Certification() {
             </h1>
             
             <p className="text-xl text-purple-200/80 max-w-3xl mx-auto mb-10 leading-relaxed font-light">
-              Work directly with Shri Krishna Kalesh in private sessions.
+              Work directly with Paul Wagner (Shri Krishna Kalesh) in private sessions.
               <br className="hidden md:block" />
               Help others heal deeply and unlock their potential as a professional intuitive guide.
             </p>
@@ -52,7 +52,7 @@ export default function Certification() {
             <p className="mt-6 text-purple-300/50 text-sm tracking-widest uppercase">Limited spots available each quarter</p>
             
             {/* Mandala Community Image */}
-            <div className="mt-12 mb-3">
+            <div className="mt-12 mb-1">
               <img 
                 src="https://shankara-pull.b-cdn.net/images/mandala-community.webp" 
                 alt="Shankara Community" 
@@ -62,20 +62,20 @@ export default function Certification() {
           </div>
         </section>
 
-        {/* PROGRAM DETAILS - Ancient Mystical Style */}
-        <section className="py-24 relative">
+        {/* BLOCK 1: GO FURTHER GET CERTIFIED - with board image on right */}
+        <section className="py-16 relative">
           <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="space-y-8">
                 <h2 className="text-5xl md:text-6xl font-display font-bold text-white leading-tight">
                   Go Further. <br/>
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 to-amber-100">Get Certified.</span>
                 </h2>
                 <p className="text-xl text-purple-200/80 leading-relaxed font-light">
-                  The Certification is a unique opportunity to dive deeply and take your skills to the next level with the benefit of personal guidance from Shri Krishna Kalesh.
+                  The Certification is a unique opportunity to dive deeply and take your skills to the next level with the benefit of personal guidance from Paul Wagner (Shri Krishna Kalesh).
                 </p>
                 
-                <div className="space-y-6">
+                <div className="space-y-5">
                   {[
                     "Deepen your understanding of spiritual teachings & healing modalities",
                     "Dive deeply into the teachings of the Master course",
@@ -93,64 +93,140 @@ export default function Certification() {
                 </div>
               </div>
 
-              {/* Pricing Card - Mystical Style */}
-              <div className="bg-[#2a1b4e]/80 border border-purple-500/20 rounded-3xl p-8 md:p-10 relative shadow-[0_0_60px_rgba(139,92,246,0.15)] backdrop-blur-md">
-                <div className="absolute top-0 right-0 p-4 opacity-5">
-                  <Award className="w-40 h-40 text-white" />
+              {/* Board with hands image */}
+              <div className="relative">
+                <div className="absolute inset-0 bg-purple-500/20 blur-[60px] rounded-full" />
+                <img 
+                  src="https://shankara-pull.b-cdn.net/images/cert-board-hands.webp" 
+                  alt="Shankara Oracle Board in use" 
+                  className="relative z-10 w-full rounded-2xl shadow-2xl"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* TWO DARK BLUE SHIRT PHOTOS - side by side */}
+        <section className="py-12 relative">
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              <img 
+                src="https://shankara-pull.b-cdn.net/images/cert-krishna-1.webp" 
+                alt="Krishna Kalesh teaching" 
+                className="w-full rounded-2xl shadow-xl hover:scale-[1.02] transition-transform duration-500"
+              />
+              <img 
+                src="https://shankara-pull.b-cdn.net/images/cert-krishna-2.webp" 
+                alt="Krishna Kalesh with dice" 
+                className="w-full rounded-2xl shadow-xl hover:scale-[1.02] transition-transform duration-500"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* BLOCK 2: WHAT'S INCLUDED - Full width, larger, more interesting */}
+        <section className="py-16 relative">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <div className="bg-gradient-to-br from-[#2a1b4e]/90 to-[#1a0b3e]/90 border border-purple-500/30 rounded-3xl p-10 md:p-14 relative shadow-[0_0_80px_rgba(139,92,246,0.2)] backdrop-blur-md overflow-hidden">
+              {/* Decorative background */}
+              <div className="absolute top-0 right-0 p-4 opacity-5">
+                <Award className="w-60 h-60 text-white" />
+              </div>
+              <div className="absolute bottom-0 left-0 w-80 h-80 bg-purple-600/10 rounded-full blur-[80px]" />
+              
+              <h3 className="text-4xl font-display font-bold text-white mb-4 tracking-wide relative z-10">What's Included:</h3>
+              
+              {/* Course Access Highlight */}
+              <div className="bg-gradient-to-r from-purple-600/30 to-pink-600/30 border border-purple-400/40 rounded-2xl p-6 mb-8 relative z-10">
+                <div className="flex items-center gap-4 mb-3">
+                  <div className="bg-yellow-500/30 p-3 rounded-full border border-yellow-400/50">
+                    <Video className="w-7 h-7 text-yellow-200" />
+                  </div>
+                  <div>
+                    <h4 className="text-white font-bold text-xl">Complete Access to The Shankara Course</h4>
+                  </div>
+                </div>
+                <p className="text-purple-200/80 text-lg ml-16">
+                  All <strong className="text-white">100+ videos</strong> plus all worksheets and materials from{" "}
+                  <Link href="/master-training" className="text-yellow-300 hover:text-yellow-200 underline underline-offset-2">
+                    The Shankara Master Course
+                  </Link>
+                  {" "}— PLUS everything listed below.
+                </p>
+              </div>
+              
+              <div className="grid md:grid-cols-2 gap-6 mb-10 relative z-10">
+                <div className="flex items-center gap-4 bg-white/5 rounded-xl p-5 border border-white/10 hover:bg-white/10 transition-colors">
+                  <div className="bg-purple-500/30 p-3 rounded-full border border-purple-400/40">
+                    <Users className="w-6 h-6 text-purple-200" />
+                  </div>
+                  <div>
+                    <h4 className="text-white font-bold text-lg">FIVE Private Live Sessions</h4>
+                    <p className="text-purple-300/70 text-base">Individual mentorship with Paul Wagner (Krishna Kalesh)</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4 bg-white/5 rounded-xl p-5 border border-white/10 hover:bg-white/10 transition-colors">
+                  <div className="bg-blue-500/30 p-3 rounded-full border border-blue-400/40">
+                    <MessageCircle className="w-6 h-6 text-blue-200" />
+                  </div>
+                  <div>
+                    <h4 className="text-white font-bold text-lg">Email & Chat Support</h4>
+                    <p className="text-purple-300/70 text-base">Direct access throughout the entire program</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4 bg-white/5 rounded-xl p-5 border border-white/10 hover:bg-white/10 transition-colors">
+                  <div className="bg-pink-500/30 p-3 rounded-full border border-pink-400/40">
+                    <BookOpen className="w-6 h-6 text-pink-200" />
+                  </div>
+                  <div>
+                    <h4 className="text-white font-bold text-lg">Advanced Materials</h4>
+                    <p className="text-purple-300/70 text-base">Exclusive eBook and deep-dive worksheets</p>
+                  </div>
                 </div>
                 
-                <h3 className="text-3xl font-display font-bold text-white mb-8 tracking-wide">What's Included:</h3>
-                
-                <div className="space-y-6 mb-10">
-                  <div className="flex items-center gap-4">
-                    <div className="bg-purple-500/20 p-3 rounded-full border border-purple-500/30">
-                      <Users className="w-6 h-6 text-purple-200" />
-                    </div>
-                    <div>
-                      <h4 className="text-white font-bold text-lg">3 Private Live Sessions</h4>
-                      <p className="text-purple-300/60 text-base">Individual mentorship with Krishna Kalesh</p>
-                    </div>
+                <div className="flex items-center gap-4 bg-white/5 rounded-xl p-5 border border-white/10 hover:bg-white/10 transition-colors">
+                  <div className="bg-yellow-500/30 p-3 rounded-full border border-yellow-400/40">
+                    <Award className="w-6 h-6 text-yellow-200" />
                   </div>
-
-                  <div className="flex items-center gap-4">
-                    <div className="bg-blue-500/20 p-3 rounded-full border border-blue-500/30">
-                      <MessageCircle className="w-6 h-6 text-blue-200" />
-                    </div>
-                    <div>
-                      <h4 className="text-white font-bold text-lg">Direct Access & Support</h4>
-                      <p className="text-purple-300/60 text-base">Email/Skype support throughout the program</p>
-                    </div>
+                  <div>
+                    <h4 className="text-white font-bold text-lg">Official Certification</h4>
+                    <p className="text-purple-300/70 text-base">Listed on Shankara website as a Certified Master</p>
                   </div>
-
-                  <div className="flex items-center gap-4">
-                    <div className="bg-pink-500/20 p-3 rounded-full border border-pink-500/30">
-                      <FileText className="w-6 h-6 text-pink-200" />
-                    </div>
-                    <div>
-                      <h4 className="text-white font-bold text-lg">Advanced Materials</h4>
-                      <p className="text-purple-300/60 text-base">Exclusive eBook and deep-dive worksheets</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center gap-4">
-                    <div className="bg-yellow-500/20 p-3 rounded-full border border-yellow-500/30">
-                      <Award className="w-6 h-6 text-yellow-200" />
-                    </div>
-                    <div>
-                      <h4 className="text-white font-bold text-lg">Official Certification</h4>
-                      <p className="text-purple-300/60 text-base">Listed on Shankara website as a Master</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="border-t border-white/10 pt-8 text-center">
-                  <div className="text-base text-purple-300/60 uppercase tracking-widest mb-2">Total Value: $4,000+</div>
-                  <div className="text-5xl font-bold text-white mb-6 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">$1,500</div>
-                  <Button className="w-full bg-purple-600 hover:bg-purple-500 text-white font-bold h-14 text-lg rounded-xl shadow-lg transition-all">
-                    Register for Certification
-                  </Button>
                 </div>
               </div>
+
+              <div className="border-t border-white/10 pt-8 text-center relative z-10">
+                <div className="text-base text-purple-300/60 uppercase tracking-widest mb-2">Total Value: $4,000+</div>
+                <div className="text-5xl font-bold text-white mb-6 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">$1,500</div>
+                <Button className="w-full max-w-md bg-[#ff00ff] hover:bg-[#d900d9] text-white font-bold h-16 text-xl rounded-xl shadow-[0_0_30px_rgba(255,0,255,0.3)] transition-all">
+                  Register for Certification
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* THREE ADDITIONAL PHOTOS - Paul teaching */}
+        <section className="py-12 relative">
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              <img 
+                src="https://shankara-pull.b-cdn.net/images/cert-paul-student.webp" 
+                alt="Paul Wagner with student" 
+                className="w-full aspect-square object-cover rounded-2xl shadow-xl hover:scale-[1.02] transition-transform duration-500"
+              />
+              <img 
+                src="https://shankara-pull.b-cdn.net/images/cert-paul-room.webp" 
+                alt="Paul Wagner teaching a room" 
+                className="w-full aspect-square object-cover rounded-2xl shadow-xl hover:scale-[1.02] transition-transform duration-500"
+              />
+              <img 
+                src="https://shankara-pull.b-cdn.net/images/cert-paul-audience.webp" 
+                alt="Paul Wagner with audience" 
+                className="w-full aspect-square object-cover rounded-2xl shadow-xl hover:scale-[1.02] transition-transform duration-500"
+              />
             </div>
           </div>
         </section>
