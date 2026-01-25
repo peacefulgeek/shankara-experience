@@ -226,7 +226,8 @@ const sutras: Sutra[] = [
       "Brings mental peace",
       "Invokes healing blessings"
     ],
-    hasChinese: false
+    hasChinese: false,
+    audioUrlEnglish: `${BUNNY_CDN}/audio/medicine-buddha.mp3`
   },
   {
     id: "green-tara",
@@ -241,7 +242,8 @@ const sutras: Sutra[] = [
       "Grants wishes and blessings",
       "Connects to divine feminine energy"
     ],
-    hasChinese: false
+    hasChinese: false,
+    audioUrlEnglish: `${BUNNY_CDN}/audio/green-tara.mp3`
   },
   {
     id: "vajrasattva",
@@ -256,7 +258,8 @@ const sutras: Sutra[] = [
       "Removes spiritual obstacles",
       "Accelerates enlightenment"
     ],
-    hasChinese: false
+    hasChinese: false,
+    audioUrlEnglish: `${BUNNY_CDN}/audio/vajrasattva.mp3`
   },
   {
     id: "amitabha",
@@ -271,7 +274,8 @@ const sutras: Sutra[] = [
       "Purifies obstacles to enlightenment",
       "Brings peace at time of death"
     ],
-    hasChinese: false
+    hasChinese: false,
+    audioUrlEnglish: `${BUNNY_CDN}/audio/amitabha.mp3`
   }
 ];
 

@@ -330,3 +330,11 @@
 - [x] Generate Great Compassion Mantra audio in Chinese
 - [x] Upload all sutra audio files to Bunny CDN
 - [x] Add audio playback functionality to sutras on Mantras & Sutras page
+
+## Remaining Sutra Audio (Jan 25, 2026)
+- [x] Generate Medicine Buddha Mantra audio
+- [x] Generate Green Tara Mantra audio
+- [x] Generate Vajrasattva Mantra (100 Syllable) audio
+- [x] Generate Amitabha Buddha Mantra audio
+- [x] Upload all mantra audio files to Bunny CDN
+- [x] Add audio playback functionality to remaining sutras
