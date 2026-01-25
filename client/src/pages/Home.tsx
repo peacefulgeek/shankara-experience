@@ -89,95 +89,66 @@ export default function Home() {
           </div>
         </section>
 
-        {/* TRANSFORMATION BENEFITS - RICH & INSPIRING */}
-        <section className="py-24 bg-gradient-to-b from-white via-purple-50/30 to-white relative overflow-hidden">
-          {/* Subtle sacred geometry background */}
-          <div className="absolute inset-0 opacity-[0.03]" style={{backgroundImage: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.4"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")'}} />
+        {/* TRANSFORMATION BENEFITS - ELEGANT DARK */}
+        <section className="py-20 bg-cosmic-dark relative overflow-hidden">
+          {/* Subtle glow effects */}
+          <div className="absolute top-1/2 left-1/4 w-[400px] h-[400px] bg-purple-600/10 rounded-full blur-[100px] pointer-events-none" />
+          <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-pink-500/10 rounded-full blur-[80px] pointer-events-none" />
           
           <div className="container mx-auto px-4 relative z-10">
             {/* Section Header */}
-            <div className="text-center max-w-4xl mx-auto mb-20">
-              <p className="text-purple-600 font-semibold tracking-widest uppercase text-sm mb-4">The Sacred Journey Awaits</p>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-gray-900 mb-6 leading-tight">
-                Unlock the Wisdom of <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500">Ancient Teachings</span>
+            <div className="text-center max-w-3xl mx-auto mb-14">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-5 leading-tight">
+                What Awaits You
               </h2>
-              <p className="text-xl text-gray-600 leading-relaxed">
-                The Shankara Oracle bridges timeless Vedic wisdom with modern spiritual practice, 
-                offering you a direct pathway to self-realization, divine connection, and profound inner healing.
+              <p className="text-lg text-purple-200/80 leading-relaxed">
+                More than divination — a sacred companion for your soul's deepest journey.
               </p>
             </div>
 
-            {/* 6 Benefits Grid */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+            {/* 4 Benefits in One Row */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 {
-                  title: "Access Ancient Vedic Wisdom",
-                  desc: "Receive teachings passed down through sacred lineages for thousands of years. The Shankara Oracle embodies the essence of Advaita Vedanta, Tantra, and the mystical traditions of India.",
-                  icon: "🕉️",
-                  gradient: "from-amber-500 to-orange-600"
+                  title: "Ancient Wisdom",
+                  desc: "Receive teachings from sacred Vedic lineages — Advaita Vedanta, Tantra, and India's mystical heart.",
+                  color: "from-amber-400 to-orange-500"
                 },
                 {
-                  title: "Connect with Divine Beings",
-                  desc: "Open channels to ascended masters, spirit guides, and celestial helpers who await your invitation. Each reading creates a sacred space for divine communion and spiritual guidance.",
-                  icon: "✨",
-                  gradient: "from-purple-500 to-indigo-600"
+                  title: "Divine Connection",
+                  desc: "Open channels to spirit guides and celestial helpers who await your invitation with love.",
+                  color: "from-purple-400 to-indigo-500"
                 },
                 {
-                  title: "Heal to Your Core",
-                  desc: "Release karmic patterns, ancestral wounds, and emotional blockages that have held you back for lifetimes. The Oracle reveals the root causes and pathways to deep, lasting transformation.",
-                  icon: "💜",
-                  gradient: "from-pink-500 to-rose-600"
+                  title: "Deep Healing",
+                  desc: "Release karmic patterns and ancestral wounds. Find the root causes and pathways to lasting peace.",
+                  color: "from-pink-400 to-rose-500"
                 },
                 {
-                  title: "Awaken Your Intuition",
-                  desc: "Strengthen your connection to your Higher Self and develop unwavering trust in your inner knowing. The Oracle trains your psychic senses and expands your spiritual perception.",
-                  icon: "👁️",
-                  gradient: "from-blue-500 to-cyan-600"
-                },
-                {
-                  title: "Navigate Life's Crossroads",
-                  desc: "Gain crystal clarity on relationships, career, purpose, and major life decisions. The Oracle illuminates your soul's path and reveals the choices aligned with your highest destiny.",
-                  icon: "🧭",
-                  gradient: "from-emerald-500 to-teal-600"
-                },
-                {
-                  title: "Embody Your Divine Nature",
-                  desc: "Remember who you truly are beyond the illusions of separation. The Shankara Oracle is a mirror reflecting your infinite nature, guiding you home to the Self that was never lost.",
-                  icon: "🌟",
-                  gradient: "from-violet-500 to-purple-600"
+                  title: "Soul Clarity",
+                  desc: "Navigate relationships, purpose, and life's crossroads with unwavering trust in your path.",
+                  color: "from-cyan-400 to-blue-500"
                 }
               ].map((benefit, i) => (
-                <div key={i} className="group relative">
-                  <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 h-full relative overflow-hidden">
-                    {/* Hover gradient overlay */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${benefit.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
-                    
-                    {/* Icon */}
-                    <div className="text-4xl mb-5">{benefit.icon}</div>
-                    
-                    {/* Content */}
-                    <h3 className="text-xl font-display font-bold text-gray-900 mb-3 group-hover:text-purple-700 transition-colors">
+                <div key={i} className="group">
+                  <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 h-full hover:bg-white/10 hover:border-purple-500/30 transition-all duration-300">
+                    {/* Gradient Title */}
+                    <h3 className={`text-xl font-display font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r ${benefit.color}`}>
                       {benefit.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed text-[15px]">
+                    <p className="text-purple-100/70 leading-relaxed text-base">
                       {benefit.desc}
                     </p>
-                    
-                    {/* Bottom accent line */}
-                    <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${benefit.gradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`} />
                   </div>
                 </div>
               ))}
             </div>
 
             {/* Inspiring Statement */}
-            <div className="text-center mt-20 max-w-3xl mx-auto">
-              <div className="inline-block">
-                <p className="text-2xl md:text-3xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 leading-relaxed">
-                  Enjoy The Deepest And Most Enriching Readings Of Your Life
-                </p>
-                <div className="mt-4 h-px bg-gradient-to-r from-transparent via-purple-300 to-transparent" />
-              </div>
+            <div className="text-center mt-14">
+              <p className="text-2xl md:text-3xl font-display font-light text-white/90 italic">
+                "Enjoy the deepest and most enriching readings of your life."
+              </p>
             </div>
           </div>
         </section>
