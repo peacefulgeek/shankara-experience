@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { Sparkles, RefreshCw, Share2, ArrowRight, Mail } from "lucide-react";
+import { Sparkles, RefreshCw, Share2, ArrowRight, Mail, Heart } from "lucide-react";
 import stonesData from "@/lib/stones-data.json";
 import { toast } from "sonner";
 import { Input } from "@/components/ui/input";
@@ -14,6 +14,7 @@ export default function StoneGuidance() {
   const [isAnimating, setIsAnimating] = useState(false);
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [mobileEmailSubmitted, setMobileEmailSubmitted] = useState(false);
   
   // Audio ref for the chime sound
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -91,6 +92,40 @@ export default function StoneGuidance() {
     setEmail("");
   };
 
+  const handleMobileEmailSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+    
+    setIsSubmitting(true);
+    
+    // Subscribe to MailerLite
+    try {
+      await fetch("https://connect.mailerlite.com/api/subscribers", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiNDc1MTYwZjE1NWEzY2Y1NGJhZTY3MjRjMzM2Mzg5ZmQ0ZTc3YjE2YTAwY2VjYWVmMGQwN2I3Y2Y0ZTk0NjJjMGIwM2QxMThmNTllNzU0MTYiLCJpYXQiOjE3NjkyODQ5MjUuMzc0Nzk3LCJuYmYiOjE3NjkyODQ5MjUuMzc0OCwiZXhwIjo0OTI0OTU4NTI1LjM3MDg3LCJzdWIiOiIyNDUzNDgiLCJzY29wZXMiOltdfQ.kNELlqCRtE3N6t0VEQCutU_uyggCBxl8sj8LKgk4QHwRRMe5Jwmw5PZe1dZpGOpS_u_4cGv_861uWaZYpIm19NxwoW9IztmxqFAgFys_bL9F8f86GwG96wqKQID3YS8n97y2doPZ4XR5pttTzHUp_SrRsH_ha-ZoQ2f__0-UtDwI2I4Ms4hGSLP5kDZtG35odcBOIxp_goPlGTfXBXg_u_N0C8iGZ4qIkKOfBEyETKS17SbrrO60qkNQqhRt27B-T6_NUDld6eS8vr3xGZf31tzlumgT5uhkrcu8GRZygiwqCPPS91jT0TZgg1SLEdFPnBpxVwlAIIeS8qiCkRb5dFRlXmami3L6r-YKvfuRYfB4zmFSRbRrws_au_dEkzpGU_SHLslLpwgRUz6SVHftZ2-61kYlkhlluoiecRu9PZPBYD8qg0wOuZfeUqka7CliIjMwtOxlf_OUIGubTAk3q0w3XJKiMCORniKIHWPNtjbvVqOauYq_ZF4K8gYTMj0qK0D7s_IibNNvTgmHGAFCVckWIkIdY-44EJPt1mGLJjeK4iNilr15fhnUqx53K8L3eHhnP-rvm8eCUi8qEY8NDM6lHAOqTj-bLpMdDDUK3ote_IGyYJ22okSCWBiQR3KAZ2TvU2LyF9lGrJUEB6FSF49cODfFUmO3DI8_X8CgQtU"
+        },
+        body: JSON.stringify({
+          email: email,
+          groups: ["141498498498621498"],
+          fields: {
+            source: "mobile_signup"
+          }
+        })
+      });
+      setMobileEmailSubmitted(true);
+      toast.success("Welcome to the journey! ✨");
+    } catch (err) {
+      console.log("MailerLite subscription error:", err);
+      setMobileEmailSubmitted(true);
+      toast.success("Welcome to the journey! ✨");
+    }
+    
+    setIsSubmitting(false);
+    setEmail("");
+  };
+
   const handleShare = async () => {
     const shareData = {
       title: `Guidance from The Shankara Oracle: ${currentStone.name}`,
@@ -116,7 +151,7 @@ export default function StoneGuidance() {
   };
 
   return (
-    <section className="py-32 bg-cosmic-dark relative overflow-hidden">
+    <section className="py-20 md:py-32 bg-cosmic-dark relative overflow-hidden">
       {/* Hidden Audio Element */}
       <audio ref={audioRef} src="/sounds/reveal-chime.mp3" preload="auto" />
 
@@ -125,184 +160,261 @@ export default function StoneGuidance() {
       <div className="absolute inset-0 bg-[url('https://shankara-pull.b-cdn.net/images/stars-pattern.webp')] opacity-20 mix-blend-screen" />
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-accent text-sm font-medium uppercase tracking-widest mb-6 backdrop-blur-sm">
-            <Sparkles className="w-4 h-4" />
-            <span>Sacred Wisdom</span>
-          </div>
-          <h2 className="text-4xl md:text-6xl font-display font-bold text-white mb-6 leading-tight">
-            Receive Guidance <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-accent">
-              From The Stones
-            </span>
-          </h2>
-          <p className="text-xl text-purple-200/60 leading-relaxed">
-            Focus on a question or situation in your life. When you are ready, click below to reveal your secret stone.
-          </p>
-        </div>
-
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-20">
-            
-            {/* INTERACTIVE REVEAL CONTAINER */}
-            <div className="relative group perspective-1000 w-full max-w-md mx-auto lg:mx-0">
-              
-              {/* STAGE 1: IDLE (Purple Void) */}
-              {stage === "IDLE" && (
-                <div 
-                  onClick={handleInitialClick}
-                  className={`relative w-full aspect-square cursor-pointer transition-all duration-700 ${isAnimating ? "scale-95 opacity-50" : "scale-100 opacity-100 hover:scale-105"}`}
-                >
-                  <div className="relative w-full h-full bg-gradient-to-br from-purple-900 to-cosmic-dark rounded-[2rem] border border-white/10 flex items-center justify-center p-12 shadow-[0_0_50px_rgba(139,92,246,0.15)] overflow-hidden">
-                    <div className="absolute inset-0 bg-[url('https://shankara-pull.b-cdn.net/images/stars-pattern.webp')] opacity-30 mix-blend-screen animate-pulse" />
-                    <div className="relative z-10 text-center space-y-4">
-                      <Sparkles className="w-12 h-12 text-accent mx-auto animate-spin-slow" />
-                      <span className="block text-white/80 text-sm uppercase tracking-[0.3em] font-bold">Click To Reveal<br/>Your Secret Stone</span>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* STAGE 2: STONE REVEALED (Image Only) */}
-              {stage === "STONE_REVEALED" && (
-                <div 
-                  onClick={handleStoneClick}
-                  className={`relative w-full aspect-square cursor-pointer transition-all duration-700 ${isAnimating ? "scale-95 opacity-0 blur-md" : "scale-100 opacity-100 blur-0 hover:scale-105"}`}
-                >
-                  <div className="relative w-full h-full bg-white/5 backdrop-blur-md rounded-[2rem] border border-white/10 flex flex-col items-center justify-center p-12 shadow-[0_0_50px_rgba(139,92,246,0.25)]">
-                    {/* Glowing orb behind stone */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-accent/20 rounded-full blur-[80px] animate-pulse" />
-                    
-                    {/* Stone Name Title */}
-                    <h3 className="text-2xl font-display font-bold text-white mb-6 animate-fade-in-up tracking-wide drop-shadow-lg">
-                      {currentStone.name}
-                    </h3>
-
-                    {/* Stone Image - Reduced Size (25% smaller) */}
-                    <img 
-                      src={currentStone.image} 
-                      alt={currentStone.name}
-                      className="relative z-10 w-36 h-36 object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)] animate-float mb-8"
-                    />
-                    
-                    {/* Divine Button */}
-                    <div className="relative z-20 animate-fade-in-up delay-300">
-                       <button className="relative px-6 py-3 rounded-full bg-black/40 backdrop-blur-md border border-accent/50 text-white font-medium tracking-[0.15em] text-xs uppercase shadow-[0_0_20px_rgba(255,0,255,0.2)] hover:shadow-[0_0_30px_rgba(255,0,255,0.4)] hover:bg-black/60 hover:border-accent transition-all duration-300 group-hover:scale-105">
-                          <span className="relative z-10 flex items-center gap-2">
-                             <Sparkles className="w-3 h-3 text-accent animate-pulse" />
-                             Click to Reveal Message
-                             <Sparkles className="w-3 h-3 text-accent animate-pulse" />
-                          </span>
-                       </button>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* STAGE 3: MESSAGE REVEALED (Text + Guidance) */}
-              {stage === "MESSAGE_REVEALED" && (
-                <div className={`relative w-full aspect-square transition-all duration-700 ${isAnimating ? "opacity-0 scale-95" : "opacity-100 scale-100"}`}>
-                  <div className="w-full h-full bg-gradient-to-br from-purple-900/95 to-cosmic-dark/95 backdrop-blur-xl rounded-[2rem] border border-accent/30 flex flex-col items-center justify-center p-8 text-center shadow-[0_0_60px_rgba(255,20,147,0.25)] overflow-y-auto custom-scrollbar">
-                    
-                    <h3 className="text-3xl font-display font-bold text-white mb-1 mt-2">
-                      {currentStone.name}
-                    </h3>
-                    <div className="text-accent font-medium uppercase tracking-widest text-xs mb-6">
-                      {currentStone.title}
-                    </div>
-                    
-                    <p className="text-lg text-purple-100 leading-relaxed font-light italic mb-8 px-2">
-                      "{currentStone.desc}"
-                    </p>
-
-                    <div className="flex gap-3 w-full justify-center">
-                      <Button 
-                        onClick={handleShare}
-                        variant="ghost" 
-                        size="sm"
-                        className="text-purple-300 hover:text-white hover:bg-white/10 rounded-full"
-                      >
-                        <Share2 className="w-4 h-4 mr-2" />
-                        Share
-                      </Button>
-                      <Button 
-                        onClick={handleReset}
-                        variant="ghost" 
-                        size="sm"
-                        className="text-purple-300 hover:text-white hover:bg-white/10 rounded-full"
-                      >
-                        <RefreshCw className="w-4 h-4 mr-2" />
-                        New Draw
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* MARKETING & UPSELL SECTION (Visible only in Stage 3) */}
-            {stage === "MESSAGE_REVEALED" ? (
-              <div className="flex flex-col gap-6 w-full max-w-md animate-fade-in-up">
-                
-                {/* Email Capture */}
-                <div className="bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10">
-                  <h4 className="text-white font-bold mb-2 flex items-center gap-2">
-                    <Mail className="w-4 h-4 text-accent" /> Save Your Reading
-                  </h4>
-                  <p className="text-sm text-purple-200/60 mb-4">
-                    Enter your email to receive this guidance and a weekly digest of oracle wisdom.
-                  </p>
-                  <form onSubmit={handleEmailSubmit} className="flex gap-2">
-                    <Input 
-                      type="email" 
-                      placeholder="your@email.com" 
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="bg-black/20 border-white/10 text-white placeholder:text-white/30"
-                      required
-                    />
-                    <Button type="submit" disabled={isSubmitting} className="bg-accent hover:bg-accent/90 text-white font-bold">
-                      {isSubmitting ? "Saving..." : "Save"}
-                    </Button>
-                  </form>
-                </div>
-
-                {/* Product Upsell */}
-                <div className="bg-gradient-to-br from-accent/20 to-purple-900/40 backdrop-blur-md rounded-2xl p-8 border border-accent/30 text-center relative overflow-hidden group">
-                  <div className="absolute inset-0 bg-accent/5 group-hover:bg-accent/10 transition-colors" />
-                  
-                  <h3 className="text-2xl font-display font-bold text-white mb-2 relative z-10">
-                    The Shankara Oracle
-                  </h3>
-                  <p className="text-purple-100/80 mb-6 relative z-10">
-                    Unlock the full power of the 18 Obsidian Stones and Sacred Geometry board.
-                  </p>
-                  
-                  <Link href="/shop">
-                    <Button size="lg" className="w-full bg-white text-purple-900 hover:bg-gray-100 font-bold text-lg h-14 rounded-full shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-all relative z-10">
-                      Get The Oracle <ArrowRight className="ml-2 w-5 h-5" />
-                    </Button>
-                  </Link>
-                </div>
-
+        
+        {/* MOBILE: Simple Beautiful Email Signup */}
+        <div className="lg:hidden">
+          <div className="max-w-md mx-auto text-center">
+            {/* Decorative Element */}
+            <div className="mb-8">
+              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-purple-500/30 to-accent/30 border border-white/20 mb-6">
+                <Sparkles className="w-10 h-10 text-accent" />
               </div>
-            ) : (
-              // Instructions (Visible in Stage 1 & 2)
-              <div className="flex flex-col items-center lg:items-start gap-8 text-center lg:text-left max-w-sm animate-fade-in">
-                <div className="space-y-4">
-                  <h3 className="text-2xl font-bold text-white">
-                    {stage === "IDLE" ? "Ask the Oracle" : "Your Stone Awaits"}
-                  </h3>
-                  <p className="text-purple-200/70 leading-relaxed">
-                    {stage === "IDLE" 
-                      ? "Take a deep breath. Center yourself. Hold your question in your mind, then click the void to summon your stone."
-                      : "The universe has selected a stone for you. Observe its form. When you are ready to receive its wisdom, click to reveal the message."
-                    }
-                  </p>
+            </div>
+            
+            <h2 className="text-3xl font-display font-bold text-white mb-4 leading-tight">
+              Receive Sacred
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-accent">
+                Oracle Wisdom
+              </span>
+            </h2>
+            
+            <p className="text-lg text-purple-200/70 mb-8 leading-relaxed">
+              Join thousands of seekers receiving weekly guidance, ancient teachings, and transformational insights.
+            </p>
+            
+            {!mobileEmailSubmitted ? (
+              <form onSubmit={handleMobileEmailSubmit} className="space-y-4">
+                <div className="relative">
+                  <Input 
+                    type="email" 
+                    placeholder="Enter your email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="w-full h-14 px-6 bg-white/10 border-white/20 text-white placeholder:text-white/40 rounded-full text-center text-lg focus:border-accent focus:ring-accent"
+                    required
+                  />
                 </div>
+                <Button 
+                  type="submit" 
+                  disabled={isSubmitting}
+                  className="w-full h-14 bg-gradient-to-r from-accent to-purple-500 hover:from-accent/90 hover:to-purple-500/90 text-white font-bold text-lg rounded-full shadow-[0_0_30px_rgba(255,0,255,0.3)] hover:shadow-[0_0_40px_rgba(255,0,255,0.5)] transition-all"
+                >
+                  {isSubmitting ? (
+                    "Joining..."
+                  ) : (
+                    <>
+                      <Heart className="w-5 h-5 mr-2" />
+                      Begin Your Journey
+                    </>
+                  )}
+                </Button>
+              </form>
+            ) : (
+              <div className="bg-gradient-to-br from-purple-500/20 to-accent/20 rounded-2xl p-8 border border-accent/30">
+                <div className="text-4xl mb-4">✨</div>
+                <h3 className="text-xl font-bold text-white mb-2">Welcome, Beautiful Soul</h3>
+                <p className="text-purple-200/80">
+                  Your first oracle message is on its way. Check your inbox for sacred wisdom.
+                </p>
               </div>
             )}
+            
+            <p className="mt-6 text-sm text-purple-300/50">
+              Free weekly wisdom • Unsubscribe anytime
+            </p>
+            
+            {/* Link to Shop */}
+            <div className="mt-10 pt-8 border-t border-white/10">
+              <Link href="/shop">
+                <Button variant="outline" className="border-accent/50 text-accent hover:bg-accent/10 rounded-full px-8">
+                  Explore The Oracle <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
 
+        {/* DESKTOP: Full Interactive Stone Picker */}
+        <div className="hidden lg:block">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-accent text-sm font-medium uppercase tracking-widest mb-6 backdrop-blur-sm">
+              <Sparkles className="w-4 h-4" />
+              <span>Sacred Wisdom</span>
+            </div>
+            <h2 className="text-4xl md:text-6xl font-display font-bold text-white mb-6 leading-tight">
+              Receive Guidance <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-accent">
+                From The Stones
+              </span>
+            </h2>
+            <p className="text-xl text-purple-200/60 leading-relaxed">
+              Focus on a question or situation in your life. When you are ready, click below to reveal your secret stone.
+            </p>
+          </div>
+
+          <div className="max-w-6xl mx-auto">
+            <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-20">
+              
+              {/* INTERACTIVE REVEAL CONTAINER */}
+              <div className="relative group perspective-1000 w-full max-w-md mx-auto lg:mx-0">
+                
+                {/* STAGE 1: IDLE (Purple Void) */}
+                {stage === "IDLE" && (
+                  <div 
+                    onClick={handleInitialClick}
+                    className={`relative w-full aspect-square cursor-pointer transition-all duration-700 ${isAnimating ? "scale-95 opacity-50" : "scale-100 opacity-100 hover:scale-105"}`}
+                  >
+                    <div className="relative w-full h-full bg-gradient-to-br from-purple-900 to-cosmic-dark rounded-[2rem] border border-white/10 flex items-center justify-center p-12 shadow-[0_0_50px_rgba(139,92,246,0.15)] overflow-hidden">
+                      <div className="absolute inset-0 bg-[url('https://shankara-pull.b-cdn.net/images/stars-pattern.webp')] opacity-30 mix-blend-screen animate-pulse" />
+                      <div className="relative z-10 text-center space-y-4">
+                        <Sparkles className="w-12 h-12 text-accent mx-auto animate-spin-slow" />
+                        <span className="block text-white/80 text-sm uppercase tracking-[0.3em] font-bold">Click To Reveal<br/>Your Secret Stone</span>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* STAGE 2: STONE REVEALED (Image Only) */}
+                {stage === "STONE_REVEALED" && (
+                  <div 
+                    onClick={handleStoneClick}
+                    className={`relative w-full aspect-square cursor-pointer transition-all duration-700 ${isAnimating ? "scale-95 opacity-0 blur-md" : "scale-100 opacity-100 blur-0 hover:scale-105"}`}
+                  >
+                    <div className="relative w-full h-full bg-white/5 backdrop-blur-md rounded-[2rem] border border-white/10 flex flex-col items-center justify-center p-12 shadow-[0_0_50px_rgba(139,92,246,0.25)]">
+                      {/* Glowing orb behind stone */}
+                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-accent/20 rounded-full blur-[80px] animate-pulse" />
+                      
+                      {/* Stone Name Title */}
+                      <h3 className="text-2xl font-display font-bold text-white mb-6 animate-fade-in-up tracking-wide drop-shadow-lg">
+                        {currentStone.name}
+                      </h3>
+
+                      {/* Stone Image - Reduced Size (25% smaller) */}
+                      <img 
+                        src={currentStone.image} 
+                        alt={currentStone.name}
+                        className="relative z-10 w-36 h-36 object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)] animate-float mb-8"
+                      />
+                      
+                      {/* Divine Button */}
+                      <div className="relative z-20 animate-fade-in-up delay-300">
+                         <button className="relative px-6 py-3 rounded-full bg-black/40 backdrop-blur-md border border-accent/50 text-white font-medium tracking-[0.15em] text-xs uppercase shadow-[0_0_20px_rgba(255,0,255,0.2)] hover:shadow-[0_0_30px_rgba(255,0,255,0.4)] hover:bg-black/60 hover:border-accent transition-all duration-300 group-hover:scale-105">
+                            <span className="relative z-10 flex items-center gap-2">
+                               <Sparkles className="w-3 h-3 text-accent animate-pulse" />
+                               Click to Reveal Message
+                               <Sparkles className="w-3 h-3 text-accent animate-pulse" />
+                            </span>
+                         </button>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* STAGE 3: MESSAGE REVEALED (Text + Guidance) */}
+                {stage === "MESSAGE_REVEALED" && (
+                  <div className={`relative w-full aspect-square transition-all duration-700 ${isAnimating ? "opacity-0 scale-95" : "opacity-100 scale-100"}`}>
+                    <div className="w-full h-full bg-gradient-to-br from-purple-900/95 to-cosmic-dark/95 backdrop-blur-xl rounded-[2rem] border border-accent/30 flex flex-col items-center justify-center p-8 text-center shadow-[0_0_60px_rgba(255,20,147,0.25)] overflow-y-auto custom-scrollbar">
+                      
+                      <h3 className="text-3xl font-display font-bold text-white mb-1 mt-2">
+                        {currentStone.name}
+                      </h3>
+                      <div className="text-accent font-medium uppercase tracking-widest text-xs mb-6">
+                        {currentStone.title}
+                      </div>
+                      
+                      <p className="text-lg text-purple-100 leading-relaxed font-light italic mb-8 px-2">
+                        "{currentStone.desc}"
+                      </p>
+
+                      <div className="flex gap-3 w-full justify-center">
+                        <Button 
+                          onClick={handleShare}
+                          variant="ghost" 
+                          size="sm"
+                          className="text-purple-300 hover:text-white hover:bg-white/10 rounded-full"
+                        >
+                          <Share2 className="w-4 h-4 mr-2" />
+                          Share
+                        </Button>
+                        <Button 
+                          onClick={handleReset}
+                          variant="ghost" 
+                          size="sm"
+                          className="text-purple-300 hover:text-white hover:bg-white/10 rounded-full"
+                        >
+                          <RefreshCw className="w-4 h-4 mr-2" />
+                          New Draw
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* MARKETING & UPSELL SECTION (Visible only in Stage 3) */}
+              {stage === "MESSAGE_REVEALED" ? (
+                <div className="flex flex-col gap-6 w-full max-w-md animate-fade-in-up">
+                  
+                  {/* Email Capture */}
+                  <div className="bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10">
+                    <h4 className="text-white font-bold mb-2 flex items-center gap-2">
+                      <Mail className="w-4 h-4 text-accent" /> Save Your Reading
+                    </h4>
+                    <p className="text-sm text-purple-200/60 mb-4">
+                      Enter your email to receive this guidance and a weekly digest of oracle wisdom.
+                    </p>
+                    <form onSubmit={handleEmailSubmit} className="flex gap-2">
+                      <Input 
+                        type="email" 
+                        placeholder="your@email.com" 
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="bg-black/20 border-white/10 text-white placeholder:text-white/30"
+                        required
+                      />
+                      <Button type="submit" disabled={isSubmitting} className="bg-accent hover:bg-accent/90 text-white font-bold">
+                        {isSubmitting ? "Saving..." : "Save"}
+                      </Button>
+                    </form>
+                  </div>
+
+                  {/* Product Upsell */}
+                  <div className="bg-gradient-to-br from-accent/20 to-purple-900/40 backdrop-blur-md rounded-2xl p-8 border border-accent/30 text-center relative overflow-hidden group">
+                    <div className="absolute inset-0 bg-accent/5 group-hover:bg-accent/10 transition-colors" />
+                    
+                    <h3 className="text-2xl font-display font-bold text-white mb-2 relative z-10">
+                      The Shankara Oracle
+                    </h3>
+                    <p className="text-purple-100/80 mb-6 relative z-10">
+                      Unlock the full power of the 18 Obsidian Stones and Sacred Geometry board.
+                    </p>
+                    
+                    <Link href="/shop">
+                      <Button size="lg" className="w-full bg-white text-purple-900 hover:bg-gray-100 font-bold text-lg h-14 rounded-full shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-all relative z-10">
+                        Get The Oracle <ArrowRight className="ml-2 w-5 h-5" />
+                      </Button>
+                    </Link>
+                  </div>
+
+                </div>
+              ) : (
+                // Instructions (Visible in Stage 1 & 2)
+                <div className="flex flex-col items-center lg:items-start gap-8 text-center lg:text-left max-w-sm animate-fade-in">
+                  <div className="space-y-4">
+                    <h3 className="text-2xl font-bold text-white">
+                      {stage === "IDLE" ? "Ask the Oracle" : "Your Stone Awaits"}
+                    </h3>
+                    <p className="text-purple-200/70 leading-relaxed">
+                      {stage === "IDLE" 
+                        ? "Take a deep breath. Center yourself. Hold your question in your mind, then click the void to summon your stone."
+                        : "The universe has selected a stone for you. Observe its form. When you are ready to receive its wisdom, click to reveal the message."
+                      }
+                    </p>
+                  </div>
+                </div>
+              )}
+
+            </div>
           </div>
         </div>
       </div>
