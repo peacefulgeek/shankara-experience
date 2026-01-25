@@ -67,11 +67,11 @@ export default function Certification() {
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <div className="space-y-8">
-                <h2 className="text-4xl md:text-5xl font-display font-bold text-white leading-tight">
+                <h2 className="text-5xl md:text-6xl font-display font-bold text-white leading-tight">
                   Go Further. <br/>
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 to-amber-100">Get Certified.</span>
                 </h2>
-                <p className="text-lg text-purple-200/80 leading-relaxed font-light">
+                <p className="text-xl text-purple-200/80 leading-relaxed font-light">
                   The Certification is a unique opportunity to dive deeply and take your skills to the next level with the benefit of personal guidance from Shri Krishna Kalesh.
                 </p>
                 
@@ -87,7 +87,7 @@ export default function Certification() {
                       <div className="mt-1 bg-purple-500/20 p-2 rounded-full border border-purple-500/30 group-hover:bg-purple-500/40 transition-colors">
                         <Check className="w-4 h-4 text-purple-200" />
                       </div>
-                      <p className="text-purple-100/90 font-light">{item}</p>
+                      <p className="text-purple-100/90 font-light text-lg">{item}</p>
                     </div>
                   ))}
                 </div>
@@ -99,7 +99,7 @@ export default function Certification() {
                   <Award className="w-40 h-40 text-white" />
                 </div>
                 
-                <h3 className="text-2xl font-display font-bold text-white mb-8 tracking-wide">What's Included:</h3>
+                <h3 className="text-3xl font-display font-bold text-white mb-8 tracking-wide">What's Included:</h3>
                 
                 <div className="space-y-6 mb-10">
                   <div className="flex items-center gap-4">
@@ -107,8 +107,8 @@ export default function Certification() {
                       <Users className="w-6 h-6 text-purple-200" />
                     </div>
                     <div>
-                      <h4 className="text-white font-bold">3 Private Live Sessions</h4>
-                      <p className="text-purple-300/60 text-sm">Individual mentorship with Krishna Kalesh</p>
+                      <h4 className="text-white font-bold text-lg">3 Private Live Sessions</h4>
+                      <p className="text-purple-300/60 text-base">Individual mentorship with Krishna Kalesh</p>
                     </div>
                   </div>
 
@@ -117,8 +117,8 @@ export default function Certification() {
                       <MessageCircle className="w-6 h-6 text-blue-200" />
                     </div>
                     <div>
-                      <h4 className="text-white font-bold">Direct Access & Support</h4>
-                      <p className="text-purple-300/60 text-sm">Email/Skype support throughout the program</p>
+                      <h4 className="text-white font-bold text-lg">Direct Access & Support</h4>
+                      <p className="text-purple-300/60 text-base">Email/Skype support throughout the program</p>
                     </div>
                   </div>
 
@@ -127,8 +127,8 @@ export default function Certification() {
                       <FileText className="w-6 h-6 text-pink-200" />
                     </div>
                     <div>
-                      <h4 className="text-white font-bold">Advanced Materials</h4>
-                      <p className="text-purple-300/60 text-sm">Exclusive eBook and deep-dive worksheets</p>
+                      <h4 className="text-white font-bold text-lg">Advanced Materials</h4>
+                      <p className="text-purple-300/60 text-base">Exclusive eBook and deep-dive worksheets</p>
                     </div>
                   </div>
                   
@@ -137,14 +137,14 @@ export default function Certification() {
                       <Award className="w-6 h-6 text-yellow-200" />
                     </div>
                     <div>
-                      <h4 className="text-white font-bold">Official Certification</h4>
-                      <p className="text-purple-300/60 text-sm">Listed on Shankara website as a Master</p>
+                      <h4 className="text-white font-bold text-lg">Official Certification</h4>
+                      <p className="text-purple-300/60 text-base">Listed on Shankara website as a Master</p>
                     </div>
                   </div>
                 </div>
 
                 <div className="border-t border-white/10 pt-8 text-center">
-                  <div className="text-sm text-purple-300/60 uppercase tracking-widest mb-2">Total Value: $4,000+</div>
+                  <div className="text-base text-purple-300/60 uppercase tracking-widest mb-2">Total Value: $4,000+</div>
                   <div className="text-5xl font-bold text-white mb-6 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">$1,500</div>
                   <Button className="w-full bg-purple-600 hover:bg-purple-500 text-white font-bold h-14 text-lg rounded-xl shadow-lg transition-all">
                     Register for Certification
