@@ -233,3 +233,5 @@
 - [x] Direct "Apply to Affiliate Program" button to contact page
 - [x] Copy Privacy Policy from PaulWagner.com to Shankara site
 - [x] Copy Terms & Conditions from PaulWagner.com to Shankara site
+- [x] Replace HOME with ABOUT in top navigation menu (link to /about)
+- [x] Update copyright year to 2024 Believe In Miracles LLC in footer

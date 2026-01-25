@@ -53,7 +53,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 mt-20 pt-10 flex flex-col md:flex-row justify-between items-center text-xs text-white/40 font-medium uppercase tracking-wider">
-          <p>&copy; {new Date().getFullYear()} The Shankara Experience. All rights reserved.</p>
+          <p>&copy; 2024 Believe In Miracles LLC. All rights reserved.</p>
           <p>Created by Krishna Kalesh (Paul Wagner)</p>
         </div>
       </div>
