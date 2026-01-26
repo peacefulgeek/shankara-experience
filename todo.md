@@ -355,3 +355,16 @@
 - [x] Allow clicking/dragging on progress bar to seek
 - [x] Integrate mala counter into Mantras & Sutras page
 - [x] Integrate audio progress bar into sutra audio players
+
+
+## Mantra UI & Audio Fixes (Jan 25, 2026)
+- [x] Redesign mantra section UI - expanded content should be visible (modal or inline expansion)
+- [x] Fix mantra card layout so users can see details when clicking
+- [ ] Source authentic Om mantra audio recording
+- [ ] Source authentic Om Namah Shivaya audio recording (correct pronunciation)
+- [ ] Source authentic Lokah Samastah audio recording
+- [ ] Source authentic Gayatri Mantra audio recording
+- [ ] Source authentic Om Mani Padme Hum audio recording
+- [ ] Source authentic Om Gam Ganapataye Namaha audio recording
+- [ ] Upload all authentic audio to Bunny CDN
+- [ ] Update MantraSection component with new audio URLs

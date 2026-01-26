@@ -58,7 +58,7 @@ const mantras: Mantra[] = [
       "Enhances concentration",
       "Connects you to universal consciousness"
     ],
-    audioUrl: `${BUNNY_CDN}/audio/om.mp3`,
+    audioUrl: `${BUNNY_CDN}/audio/om-authentic.mp3`,
     duration: "3:00",
     chakra: "Crown (Sahasrara)",
     bestTime: "Sunrise or Sunset",
@@ -77,7 +77,7 @@ const mantras: Mantra[] = [
       "Brings peace and clarity",
       "Connects to divine masculine energy"
     ],
-    audioUrl: `${BUNNY_CDN}/audio/om-namah-shivaya.mp3`,
+    audioUrl: `${BUNNY_CDN}/audio/om-namah-shivaya-authentic.mp3`,
     duration: "3:30",
     chakra: "Third Eye (Ajna)",
     bestTime: "Early morning (Brahma Muhurta)",
@@ -96,7 +96,7 @@ const mantras: Mantra[] = [
       "Creates positive karma",
       "Heals relationships"
     ],
-    audioUrl: `${BUNNY_CDN}/audio/lokah-samastah.mp3`,
+    audioUrl: `${BUNNY_CDN}/audio/lokah-samastah-authentic.mp3`,
     duration: "4:00",
     chakra: "Heart (Anahata)",
     bestTime: "Any time, especially before sleep",
@@ -115,7 +115,7 @@ const mantras: Mantra[] = [
       "Protects from negative influences",
       "Accelerates spiritual evolution"
     ],
-    audioUrl: `${BUNNY_CDN}/audio/gayatri.mp3`,
+    audioUrl: "", // Audio coming soon
     duration: "4:30",
     chakra: "Solar Plexus (Manipura)",
     bestTime: "Sunrise (most powerful)",
@@ -134,7 +134,7 @@ const mantras: Mantra[] = [
       "Brings blessings and protection",
       "Leads to enlightenment"
     ],
-    audioUrl: `${BUNNY_CDN}/audio/om-mani-padme-hum.mp3`,
+    audioUrl: "", // Audio coming soon
     duration: "3:45",
     chakra: "Heart (Anahata)",
     bestTime: "Any time",
@@ -153,7 +153,7 @@ const mantras: Mantra[] = [
       "Enhances wisdom",
       "Protects new beginnings"
     ],
-    audioUrl: `${BUNNY_CDN}/audio/ganesha.mp3`,
+    audioUrl: "", // Audio coming soon
     duration: "3:15",
     chakra: "Root (Muladhara)",
     bestTime: "Tuesday or before new ventures",
@@ -193,7 +193,7 @@ const sutras: Sutra[] = [
       "Transcends dualistic thinking"
     ],
     hasChinese: true,
-    audioUrlEnglish: `${BUNNY_CDN}/audio/heart-sutra-english.mp3`,
+    audioUrlEnglish: "", // Audio coming soon
     audioUrlChinese: `${BUNNY_CDN}/audio/heart-sutra-chinese.mp3`
   },
   {
@@ -212,7 +212,7 @@ const sutras: Sutra[] = [
       "Cultivates boundless compassion"
     ],
     hasChinese: true,
-    audioUrlEnglish: `${BUNNY_CDN}/audio/great-compassion-english.mp3`,
+    audioUrlEnglish: "", // Audio coming soon
     audioUrlChinese: `${BUNNY_CDN}/audio/great-compassion-chinese.mp3`
   },
   {
@@ -229,7 +229,7 @@ const sutras: Sutra[] = [
       "Invokes healing blessings"
     ],
     hasChinese: false,
-    audioUrlEnglish: `${BUNNY_CDN}/audio/medicine-buddha.mp3`
+    audioUrlEnglish: "" // Audio coming soon
   },
   {
     id: "green-tara",
@@ -245,7 +245,7 @@ const sutras: Sutra[] = [
       "Connects to divine feminine energy"
     ],
     hasChinese: false,
-    audioUrlEnglish: `${BUNNY_CDN}/audio/green-tara.mp3`
+    audioUrlEnglish: "" // Audio coming soon
   },
   {
     id: "vajrasattva",
@@ -261,7 +261,7 @@ const sutras: Sutra[] = [
       "Accelerates enlightenment"
     ],
     hasChinese: false,
-    audioUrlEnglish: `${BUNNY_CDN}/audio/vajrasattva.mp3`
+    audioUrlEnglish: "" // Audio coming soon
   },
   {
     id: "amitabha",
@@ -277,7 +277,7 @@ const sutras: Sutra[] = [
       "Brings peace at time of death"
     ],
     hasChinese: false,
-    audioUrlEnglish: `${BUNNY_CDN}/audio/amitabha.mp3`
+    audioUrlEnglish: "" // Audio coming soon
   }
 ];
 

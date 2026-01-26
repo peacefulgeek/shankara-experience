@@ -1,7 +1,13 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Play, Pause, Volume2, Sparkles } from "lucide-react";
+import { Play, Pause, Volume2, Sparkles, X } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 const BUNNY_CDN = "https://shankara-pull.b-cdn.net";
 
@@ -12,8 +18,11 @@ interface Mantra {
   phonetic: string;
   meaning: string;
   description: string;
+  benefits: string[];
   audioUrl: string;
   color: string;
+  chakra: string;
+  duration: string;
 }
 
 const mantras: Mantra[] = [
@@ -23,9 +32,12 @@ const mantras: Mantra[] = [
     sanskrit: "ॐ",
     phonetic: "Ohm (rhymes with 'home')",
     meaning: "The Primordial Sound",
-    description: "The cosmic vibration from which all creation emerges. Chanting Om aligns you with the universe's fundamental frequency.",
-    audioUrl: `${BUNNY_CDN}/audio/om.mp3`,
-    color: "from-purple-500 to-indigo-600"
+    description: "Om is the cosmic vibration from which all creation emerges. It represents the union of mind, body, and spirit, and is considered the most sacred syllable in Hinduism and Buddhism.",
+    benefits: ["Calms the nervous system", "Reduces stress and anxiety", "Connects to universal consciousness"],
+    audioUrl: `${BUNNY_CDN}/audio/om-authentic.mp3`,
+    color: "from-purple-500 to-indigo-600",
+    chakra: "Crown (Sahasrara)",
+    duration: "3:00"
   },
   {
     id: "om-namah-shivaya",
@@ -33,29 +45,38 @@ const mantras: Mantra[] = [
     sanskrit: "ॐ नमः शिवाय",
     phonetic: "Ohm Nah-mah Shee-vah-yah",
     meaning: "I Bow to Shiva (Pure Consciousness)",
-    description: "One of the most powerful mantras for transformation. It dissolves ego and connects you to your highest Self.",
-    audioUrl: `${BUNNY_CDN}/audio/om-namah-shivaya.mp3`,
-    color: "from-blue-500 to-cyan-600"
+    description: "One of the most powerful Hindu mantras, it honors Shiva as the supreme consciousness. It purifies the mind and removes obstacles on the spiritual path.",
+    benefits: ["Destroys negative karma", "Awakens inner wisdom", "Dissolves ego attachments"],
+    audioUrl: `${BUNNY_CDN}/audio/om-namah-shivaya-authentic.mp3`,
+    color: "from-blue-500 to-cyan-600",
+    chakra: "Third Eye (Ajna)",
+    duration: "3:30"
   },
   {
     id: "lokah-samastah",
-    name: "Lokah Samastah",
+    name: "Lokah Samastah Sukhino Bhavantu",
     sanskrit: "ॐ लोकाः समस्ताः सुखिनो भवन्तु",
     phonetic: "Ohm Loh-kah Sah-mah-stah Soo-khee-noh Bhah-vahn-too",
     meaning: "May All Beings Be Happy & Free",
-    description: "Amma's beloved mantra. A prayer for universal peace and the liberation of all beings from suffering.",
-    audioUrl: `${BUNNY_CDN}/audio/lokah-samastah.mp3`,
-    color: "from-pink-500 to-rose-600"
+    description: "Known as Amma's Mantra, this blessing prayer radiates love and compassion to all beings. It's a powerful practice for developing universal love and dissolving separation.",
+    benefits: ["Opens the heart chakra", "Cultivates compassion", "Generates positive karma"],
+    audioUrl: `${BUNNY_CDN}/audio/lokah-samastah-authentic.mp3`,
+    color: "from-pink-500 to-rose-600",
+    chakra: "Heart (Anahata)",
+    duration: "4:00"
   },
   {
     id: "gayatri",
     name: "Gayatri Mantra",
-    sanskrit: "ॐ भूर्भुवः स्वः तत्सवितुर्वरेण्यं",
+    sanskrit: "ॐ भूर्भुवः स्वः तत्सवितुर्वरेण्यं भर्गो देवस्य धीमहि धियो यो नः प्रचोदयात्",
     phonetic: "Ohm Bhoor Bhoo-vah Swah-ha, Taht Sah-vee-toor Vah-rehn-yahm, Bhar-goh Deh-vah-syah Dhee-mah-hee, Dhee-yoh Yoh Nah Prah-choh-dah-yaht",
     meaning: "Illumination of the Intellect",
-    description: "The most sacred Vedic mantra. It invokes the divine light of the sun to illuminate your mind and guide your path.",
-    audioUrl: `${BUNNY_CDN}/audio/gayatri.mp3`,
-    color: "from-amber-500 to-yellow-600"
+    description: "The Gayatri is one of the oldest and most powerful Vedic mantras. It invokes the divine light of the sun to illuminate the mind and awaken spiritual wisdom.",
+    benefits: ["Sharpens intellect", "Removes darkness of ignorance", "Purifies the mind"],
+    audioUrl: "", // Audio coming soon
+    color: "from-amber-500 to-yellow-600",
+    chakra: "Solar Plexus (Manipura)",
+    duration: "4:30"
   },
   {
     id: "om-mani-padme-hum",
@@ -63,9 +84,12 @@ const mantras: Mantra[] = [
     sanskrit: "ॐ मणि पद्मे हूँ",
     phonetic: "Ohm Mah-nee Pahd-meh Hoom",
     meaning: "The Jewel in the Lotus",
-    description: "The compassion mantra of Avalokiteshvara. Each syllable purifies a realm of existence and cultivates boundless compassion.",
-    audioUrl: `${BUNNY_CDN}/audio/om-mani-padme-hum.mp3`,
-    color: "from-emerald-500 to-teal-600"
+    description: "The most famous Buddhist mantra, associated with Avalokiteshvara, the Bodhisattva of Compassion. Each syllable purifies a different realm of existence.",
+    benefits: ["Develops compassion", "Purifies negative emotions", "Brings peace of mind"],
+    audioUrl: "", // Audio coming soon
+    color: "from-emerald-500 to-teal-600",
+    chakra: "Heart (Anahata)",
+    duration: "3:45"
   },
   {
     id: "ganesha",
@@ -73,18 +97,34 @@ const mantras: Mantra[] = [
     sanskrit: "ॐ गं गणपतये नमः",
     phonetic: "Ohm Gahm Gah-nah-pah-tah-yeh Nah-mah-hah",
     meaning: "Salutations to the Remover of Obstacles",
-    description: "Invoke Lord Ganesha to clear your path. Perfect for new beginnings, removing blocks, and inviting success.",
-    audioUrl: `${BUNNY_CDN}/audio/ganesha.mp3`,
-    color: "from-orange-500 to-red-600"
+    description: "This mantra invokes Lord Ganesha, the elephant-headed deity who removes obstacles and brings success. Chant before starting any new venture or when facing challenges.",
+    benefits: ["Removes obstacles", "Brings success and prosperity", "Clears the path forward"],
+    audioUrl: "", // Audio coming soon
+    color: "from-orange-500 to-red-600",
+    chakra: "Root (Muladhara)",
+    duration: "3:15"
   }
 ];
 
 export default function MantraSection() {
   const [playingId, setPlayingId] = useState<string | null>(null);
-  const [activeMantra, setActiveMantra] = useState<Mantra>(mantras[0]);
+  const [selectedMantra, setSelectedMantra] = useState<Mantra | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  const handlePlay = (mantra: Mantra) => {
+  // Cleanup audio on unmount
+  useEffect(() => {
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current = null;
+      }
+    };
+  }, []);
+
+  const handlePlay = (mantra: Mantra, e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
+    
     if (playingId === mantra.id) {
       // Pause current
       audioRef.current?.pause();
@@ -99,7 +139,20 @@ export default function MantraSection() {
       audioRef.current.play();
       audioRef.current.onended = () => setPlayingId(null);
       setPlayingId(mantra.id);
-      setActiveMantra(mantra);
+    }
+  };
+
+  const openMantraModal = (mantra: Mantra) => {
+    setSelectedMantra(mantra);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    // Stop audio when closing modal
+    if (audioRef.current) {
+      audioRef.current.pause();
+      setPlayingId(null);
     }
   };
 
@@ -120,7 +173,7 @@ export default function MantraSection() {
             The Power of <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-accent">Mantra</span>
           </h2>
           <p className="text-xl text-purple-200/80 max-w-3xl mx-auto">
-            Sanskrit mantras carry vibrational frequencies that transform consciousness. Click to listen and feel the ancient resonance.
+            Sanskrit mantras carry vibrational frequencies that transform consciousness. Click any mantra to learn more and listen.
           </p>
         </div>
 
@@ -128,17 +181,12 @@ export default function MantraSection() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {mantras.map((mantra) => {
             const isPlaying = playingId === mantra.id;
-            const isActive = activeMantra.id === mantra.id;
             
             return (
               <div
                 key={mantra.id}
-                className={`relative group rounded-2xl p-6 transition-all duration-500 cursor-pointer ${
-                  isActive 
-                    ? 'bg-purple-900/40 border-2 border-accent/50 shadow-[0_0_30px_rgba(255,0,255,0.2)]' 
-                    : 'bg-purple-900/20 border border-white/10 hover:border-purple-500/30'
-                }`}
-                onClick={() => setActiveMantra(mantra)}
+                className="relative group rounded-2xl p-6 transition-all duration-300 cursor-pointer bg-purple-900/20 border border-white/10 hover:border-purple-500/50 hover:bg-purple-900/30 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)] hover:scale-[1.02]"
+                onClick={() => openMantraModal(mantra)}
               >
                 {/* Sanskrit Symbol */}
                 <div className="text-4xl md:text-5xl font-bold text-center mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-purple-200">
@@ -162,23 +210,26 @@ export default function MantraSection() {
 
                 {/* Play Button */}
                 <div className="flex justify-center">
-                  <Button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handlePlay(mantra);
-                    }}
-                    className={`rounded-full w-14 h-14 p-0 transition-all duration-300 ${
-                      isPlaying
-                        ? `bg-gradient-to-r ${mantra.color} shadow-[0_0_20px_rgba(255,255,255,0.3)]`
-                        : 'bg-white/10 hover:bg-white/20 border border-white/20'
-                    }`}
-                  >
-                    {isPlaying ? (
-                      <Pause className="w-6 h-6 text-white" />
-                    ) : (
-                      <Play className="w-6 h-6 text-white ml-1" />
-                    )}
-                  </Button>
+                  {mantra.audioUrl ? (
+                    <Button
+                      onClick={(e) => handlePlay(mantra, e)}
+                      className={`rounded-full w-14 h-14 p-0 transition-all duration-300 ${
+                        isPlaying
+                          ? `bg-gradient-to-r ${mantra.color} shadow-[0_0_20px_rgba(255,255,255,0.3)]`
+                          : 'bg-white/10 hover:bg-white/20 border border-white/20'
+                      }`}
+                    >
+                      {isPlaying ? (
+                        <Pause className="w-6 h-6 text-white" />
+                      ) : (
+                        <Play className="w-6 h-6 text-white ml-1" />
+                      )}
+                    </Button>
+                  ) : (
+                    <div className="rounded-full w-14 h-14 flex items-center justify-center bg-white/5 border border-white/10">
+                      <span className="text-[10px] text-purple-300/50 text-center leading-tight">Audio<br/>Soon</span>
+                    </div>
+                  )}
                 </div>
 
                 {/* Playing Indicator */}
@@ -189,27 +240,121 @@ export default function MantraSection() {
                     <span className="w-1 h-2 bg-accent rounded-full animate-pulse delay-150" />
                   </div>
                 )}
+
+                {/* Click hint */}
+                <p className="text-xs text-purple-400/50 text-center mt-4 group-hover:text-purple-300/70 transition-colors">
+                  Click for details →
+                </p>
               </div>
             );
           })}
         </div>
 
-        {/* Active Mantra Description */}
-        <div className="max-w-3xl mx-auto text-center">
-          <div className={`rounded-2xl p-8 bg-gradient-to-br ${activeMantra.color} bg-opacity-20 border border-white/10`}>
-            <Sparkles className="w-8 h-8 text-white mx-auto mb-4" />
-            <h4 className="text-2xl font-display font-bold text-white mb-2">{activeMantra.name}</h4>
-            <p className="text-lg text-white/90 leading-relaxed">{activeMantra.description}</p>
-          </div>
-        </div>
-
         {/* Tip */}
-        <div className="mt-12 text-center">
+        <div className="text-center">
           <p className="text-purple-300/60 text-sm italic">
             Tip: Chant along with the audio 108 times for maximum benefit. Use mala beads to keep count.
           </p>
         </div>
       </div>
+
+      {/* Mantra Detail Modal */}
+      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+        <DialogContent className="max-w-2xl bg-gradient-to-br from-[#1a0b2e] to-[#251836] border border-purple-500/30 text-white p-0 overflow-hidden">
+          {selectedMantra && (
+            <>
+              {/* Header with gradient */}
+              <div className={`bg-gradient-to-r ${selectedMantra.color} p-6 pb-8`}>
+                <DialogHeader>
+                  <div className="flex items-center justify-between">
+                    <Badge className="bg-white/20 text-white border-0 backdrop-blur-sm">
+                      <Sparkles className="w-3 h-3 mr-1" /> Sacred Mantra
+                    </Badge>
+                    <button 
+                      onClick={closeModal}
+                      className="text-white/80 hover:text-white transition-colors"
+                    >
+                      <X className="w-5 h-5" />
+                    </button>
+                  </div>
+                  <div className="text-center mt-4">
+                    <div className="text-5xl md:text-6xl font-bold mb-3">
+                      {selectedMantra.sanskrit}
+                    </div>
+                    <DialogTitle className="text-2xl md:text-3xl font-display font-bold text-white">
+                      {selectedMantra.name}
+                    </DialogTitle>
+                    <p className="text-white/80 italic mt-2">{selectedMantra.phonetic}</p>
+                    <p className="text-white font-medium mt-1">{selectedMantra.meaning}</p>
+                  </div>
+                </DialogHeader>
+              </div>
+
+              {/* Content */}
+              <div className="p-6 space-y-6">
+                {/* Description */}
+                <p className="text-purple-200/90 leading-relaxed text-center">
+                  {selectedMantra.description}
+                </p>
+
+                {/* Info Grid */}
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="bg-purple-900/30 rounded-xl p-4 text-center">
+                    <p className="text-purple-400 text-xs uppercase tracking-wider mb-1">Duration</p>
+                    <p className="text-white font-bold">{selectedMantra.duration}</p>
+                  </div>
+                  <div className="bg-purple-900/30 rounded-xl p-4 text-center">
+                    <p className="text-purple-400 text-xs uppercase tracking-wider mb-1">Chakra</p>
+                    <p className="text-white font-bold">{selectedMantra.chakra}</p>
+                  </div>
+                </div>
+
+                {/* Benefits */}
+                <div>
+                  <h4 className="text-sm uppercase tracking-wider text-purple-400 mb-3">Benefits</h4>
+                  <ul className="space-y-2">
+                    {selectedMantra.benefits.map((benefit, i) => (
+                      <li key={i} className="flex items-center gap-2 text-purple-200/80">
+                        <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+                        {benefit}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Play Button */}
+                <div className="flex justify-center pt-4">
+                  <Button
+                    onClick={() => handlePlay(selectedMantra)}
+                    className={`rounded-full px-8 py-6 text-lg font-bold transition-all duration-300 ${
+                      playingId === selectedMantra.id
+                        ? `bg-gradient-to-r ${selectedMantra.color} shadow-[0_0_30px_rgba(255,255,255,0.3)]`
+                        : 'bg-white/10 hover:bg-white/20 border border-white/20'
+                    }`}
+                  >
+                    {playingId === selectedMantra.id ? (
+                      <>
+                        <Pause className="w-5 h-5 mr-2" />
+                        Stop Chanting
+                      </>
+                    ) : (
+                      <>
+                        <Play className="w-5 h-5 mr-2" />
+                        Listen & Chant Along
+                      </>
+                    )}
+                  </Button>
+                </div>
+
+                {/* Audio note */}
+                <p className="text-xs text-purple-400/60 text-center italic">
+                  Note: For authentic pronunciation, we recommend learning from a qualified teacher.
+                </p>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 }
