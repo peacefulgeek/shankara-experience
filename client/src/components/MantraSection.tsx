@@ -86,7 +86,7 @@ const mantras: Mantra[] = [
     meaning: "The Jewel in the Lotus",
     description: "The most famous Buddhist mantra, associated with Avalokiteshvara, the Bodhisattva of Compassion. Each syllable purifies a different realm of existence.",
     benefits: ["Develops compassion", "Purifies negative emotions", "Brings peace of mind"],
-    audioUrl: "", // Audio coming soon
+    audioUrl: `${BUNNY_CDN}/audio/om-mani-padme-hum-authentic.mp3`,
     color: "from-emerald-500 to-teal-600",
     chakra: "Heart (Anahata)",
     duration: "3:45"

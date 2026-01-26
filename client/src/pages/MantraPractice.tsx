@@ -134,7 +134,7 @@ const mantras: Mantra[] = [
       "Brings blessings and protection",
       "Leads to enlightenment"
     ],
-    audioUrl: "", // Audio coming soon
+    audioUrl: `${BUNNY_CDN}/audio/om-mani-padme-hum-authentic.mp3`,
     duration: "3:45",
     chakra: "Heart (Anahata)",
     bestTime: "Any time",
