@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Calendar, Clock, Share2, Sparkles, ArrowRight } from "lucide-react";
 import SEO from "@/components/SEO";
+import ArticleSchema from "@/components/ArticleSchema";
 import { Link } from "wouter";
 import { articlesBySlug, allArticles } from "@/data/articles-data";
 
@@ -169,6 +170,18 @@ export default function ArticlePage() {
         title={`${article.title} | Shankara Wisdom`} 
         description={newArticle?.metaDescription || article.subtitle}
         image={article.image}
+      />
+      
+      {/* JSON-LD Structured Data for Rich Snippets */}
+      <ArticleSchema
+        title={article.title}
+        description={newArticle?.metaDescription || article.subtitle}
+        image={article.image}
+        datePublished={article.date}
+        authorName={article.author}
+        authorImage={article.authorImage}
+        url={`https://theshankaraexperience.com/wisdom/${slug}`}
+        category={newArticle?.category || 'Wisdom'}
       />
       
       <Navigation />

@@ -388,3 +388,12 @@
 - [x] Verify author column on right with additional links (share buttons, back to wisdom)
 - [x] Verify "Dive Deeper with Paul Wagner" CTA card at bottom of each article
 - [x] Add SEO meta descriptions to all 30 articles
+
+## JSON-LD Structured Data (Jan 28)
+- [x] Create ArticleSchema component with JSON-LD structured data
+- [x] Include Article type with headline, description, author, datePublished
+- [x] Include author Person schema with name and image
+- [x] Include publisher Organization schema
+- [x] Include article image for rich snippets
+- [x] Integrate schema into ArticlePage component
+- [x] Test structured data in browser (verified working)
