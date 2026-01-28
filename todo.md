@@ -403,3 +403,13 @@
 - [x] Randomize publication dates for all 30 articles
 - [x] Spread dates between Sept 1, 2025 and Dec 31, 2025
 - [x] Ensure natural distribution (not all clustered)
+
+
+## Complete Article Image Audit & Fix (Jan 28)
+- [x] Audit all 30 article featured images
+- [x] Audit author images (Paul Wagner)
+- [x] Generate missing Oracle Cards images (1-10)
+- [x] Generate missing History images (13-18, 20)
+- [x] Compress and upload all new images to Bunny CDN
+- [x] Update articles-data.tsx with correct URLs
+- [x] Verify 100% Bunny CDN - zero local/Manus images (ALL 30 + author = 200 OK)
