@@ -368,3 +368,14 @@
 - [ ] Source authentic Om Gam Ganapataye Namaha audio recording
 - [ ] Upload all authentic audio to Bunny CDN
 - [ ] Update MantraSection component with new audio URLs
+
+
+## 30 Wisdom Articles (Jan 28)
+- [x] Write 10 articles on divination with oracle cards
+- [x] Write 10 articles on history of divination (ancient Egypt, Pagans, etc.)
+- [x] Write 10 articles on psychological benefits of oracle systems for trauma healing
+- [x] Generate 30 unique images (grounded, partially mystical, NOT new-age)
+- [x] Verify each image matches its article title and core message
+- [x] Compress and upload ALL images to Bunny CDN only
+- [x] Add all 30 articles to Wisdom page with Bunny CDN URLs
+- [x] Ensure NO images stored on Manus - only Bunny CDN

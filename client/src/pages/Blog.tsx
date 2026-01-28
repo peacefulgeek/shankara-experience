@@ -1,56 +1,32 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Calendar, User, Clock, Search } from "lucide-react";
+import { ArrowRight, Calendar, Clock } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { useState } from "react";
 import { Link } from "wouter";
 import MantraPracticePromo from "@/components/MantraPracticePromo";
+import { allArticles } from "@/data/articles-data";
 
 export default function Blog() {
   const [activeCategory, setActiveCategory] = useState("All");
 
-  const categories = ["All", "Tools", "Wisdom", "Practice", "Rituals"];
+  const categories = ["All", "Oracle Cards", "History", "Psychology", "Tools", "Wisdom", "Practice", "Rituals"];
 
-  const posts = [
-    {
-      id: 1,
-      slug: "the-power-of-obsidian-in-divination",
-      title: "The Power of Obsidian in Divination",
-      excerpt: "In the journey of spiritual awakening, few tools offer the profound grounding and clarity of obsidian. Discover why this volcanic glass is the heartbeat of the Shankara Oracle.",
-      date: "Oct 12, 2025",
-      author: "Paul Wagner",
-      authorImage: "https://shankara-pull.b-cdn.net/images/authors/paul-wagner.webp",
-      category: "Tools",
-      image: "https://shankara-pull.b-cdn.net/images/obsidian-divination.webp",
-      readTime: "5 min read"
-    },
-    {
-      id: 2,
-      slug: "understanding-the-sacred-geometry-grid",
-      title: "Understanding the Sacred Geometry Grid",
-      excerpt: "The Shankara Board is not just a surface—it is a map of the cosmos. A deep dive into how the Sri Yantra and Lotus patterns guide your intuition.",
-      date: "Sep 28, 2025",
-      author: "Paul Wagner",
-      authorImage: "https://shankara-pull.b-cdn.net/images/authors/paul-wagner.webp",
-      category: "Wisdom",
-      image: "https://shankara-pull.b-cdn.net/images/sacred-geometry-grid.webp",
-      readTime: "8 min read"
-    },
-    {
-      id: 3,
-      slug: "how-to-prepare-for-a-reading",
-      title: "How to Prepare for a Reading",
-      excerpt: "Before you ask the Oracle, you must quiet the mind. Learn the essential rituals to clear your energy and open your channel to the Divine.",
-      date: "Sep 15, 2025",
-      author: "Ana Andreea",
-      authorImage: "https://shankara-pull.b-cdn.net/images/authors/ana-andreea.webp",
-      category: "Practice",
-      image: "https://shankara-pull.b-cdn.net/images/reading-preparation.webp",
-      readTime: "6 min read"
-    }
-  ];
+  // Transform articles data for display
+  const posts = allArticles.map(article => ({
+    id: article.id,
+    slug: article.slug,
+    title: article.title,
+    excerpt: article.excerpt,
+    date: article.date,
+    author: article.author,
+    authorImage: article.authorImage,
+    category: article.category,
+    image: article.image,
+    readTime: article.readTime
+  }));
 
   const filteredPosts = activeCategory === "All" 
     ? posts 
@@ -81,12 +57,12 @@ export default function Blog() {
 
         {/* Categories */}
         <div className="container mx-auto px-4 mb-16 overflow-x-auto">
-          <div className="flex justify-center gap-4 min-w-max">
+          <div className="flex justify-center gap-3 min-w-max flex-wrap">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-6 py-2 rounded-full text-sm font-bold tracking-wide transition-all ${
+                className={`px-5 py-2 rounded-full text-sm font-bold tracking-wide transition-all ${
                   activeCategory === cat
                     ? "bg-[#1a0b2e] text-white shadow-lg"
                     : "bg-white text-gray-500 hover:bg-gray-100 border border-gray-200"
@@ -99,12 +75,12 @@ export default function Blog() {
         </div>
 
         {/* Articles Grid - PDF Style */}
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredPosts.map((post) => (
               <article key={post.id} className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100 flex flex-col h-full">
                 {/* Image Container */}
-                <div className="relative h-64 overflow-hidden">
+                <div className="relative h-56 overflow-hidden">
                   <div className="absolute inset-0 bg-purple-900/10 group-hover:bg-transparent transition-colors z-10" />
                   <img 
                     src={post.image} 
@@ -112,31 +88,31 @@ export default function Blog() {
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute top-4 left-4 z-20">
-                    <Badge className="bg-white/90 text-[#1a0b2e] hover:bg-white font-bold backdrop-blur-sm shadow-sm">
+                    <Badge className="bg-white/90 text-[#1a0b2e] hover:bg-white font-bold backdrop-blur-sm shadow-sm text-xs">
                       {post.category}
                     </Badge>
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="p-8 flex flex-col flex-grow">
-                  <div className="flex items-center gap-4 text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">
-                    <span className="flex items-center gap-1"><Calendar size={12} /> {post.date}</span>
+                <div className="p-6 flex flex-col flex-grow">
+                  <div className="flex items-center gap-3 text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">
+                    <span className="flex items-center gap-1"><Calendar size={11} /> {post.date}</span>
                     <span className="w-1 h-1 bg-gray-300 rounded-full" />
-                    <span className="flex items-center gap-1"><Clock size={12} /> {post.readTime}</span>
+                    <span className="flex items-center gap-1"><Clock size={11} /> {post.readTime}</span>
                   </div>
 
-                  <h3 className="text-2xl font-display font-bold text-[#1a0b2e] mb-4 leading-tight group-hover:text-accent transition-colors">
+                  <h3 className="text-xl font-display font-bold text-[#1a0b2e] mb-3 leading-tight group-hover:text-accent transition-colors line-clamp-2">
                     {post.title}
                   </h3>
                   
-                  <p className="text-gray-600 mb-8 line-clamp-3 leading-relaxed flex-grow font-serif italic text-sm">
+                  <p className="text-gray-600 mb-6 line-clamp-3 leading-relaxed flex-grow font-serif italic text-sm">
                     {post.excerpt}
                   </p>
 
-                  <div className="flex items-center justify-between pt-6 border-t border-gray-100 mt-auto">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-gray-200 overflow-hidden">
+                  <div className="flex items-center justify-between pt-4 border-t border-gray-100 mt-auto">
+                    <div className="flex items-center gap-2">
+                      <div className="w-7 h-7 rounded-full bg-gray-200 overflow-hidden">
                          <img src={post.authorImage} alt={post.author} className="w-full h-full object-cover" />
                       </div>
                       <span className="text-xs font-bold text-gray-700 uppercase tracking-wide">{post.author}</span>

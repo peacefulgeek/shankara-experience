@@ -5,9 +5,20 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Calendar, Clock, Share2, Sparkles, ArrowRight } from "lucide-react";
 import SEO from "@/components/SEO";
 import { Link } from "wouter";
+import { articlesBySlug, allArticles } from "@/data/articles-data";
 
-// This would typically come from a CMS or database
-const articles = {
+// Legacy articles for backwards compatibility (existing articles)
+const legacyArticles: Record<string, {
+  title: string;
+  subtitle: string;
+  date: string;
+  readTime: string;
+  author: string;
+  authorBio: string;
+  authorImage: string;
+  image: string;
+  content: React.ReactNode;
+}> = {
   "the-power-of-obsidian-in-divination": {
     title: "The Power of Obsidian in Divination",
     subtitle: "Why this volcanic glass is the heartbeat of the Shankara Oracle.",
@@ -125,8 +136,14 @@ const articles = {
 
 export default function ArticlePage() {
   const params = useParams();
-  const slug = params.slug;
-  const article = articles[slug as keyof typeof articles];
+  const slug = params.slug as string;
+  
+  // Check both new articles data and legacy articles
+  const newArticle = articlesBySlug[slug];
+  const legacyArticle = legacyArticles[slug];
+  
+  // Use new article if available, otherwise fall back to legacy
+  const article = newArticle || legacyArticle;
 
   if (!article) {
     return (
@@ -141,6 +158,11 @@ export default function ArticlePage() {
     );
   }
 
+  // Get related articles (same category, excluding current)
+  const relatedArticles = allArticles
+    .filter(a => a.slug !== slug && a.category === (newArticle?.category || 'Wisdom'))
+    .slice(0, 3);
+
   return (
     <div className="min-h-screen text-foreground font-sans selection:bg-accent selection:text-white overflow-x-hidden relative bg-[#fcfcfc]">
       <SEO 
@@ -153,10 +175,10 @@ export default function ArticlePage() {
       {/* Clean White Header - PDF Style */}
       <div className="pt-32 pb-12 bg-white">
         <div className="container mx-auto px-4 max-w-4xl text-center">
-          <h1 className="text-5xl md:text-7xl font-display font-bold text-[#1a0b2e] mb-6 leading-tight tracking-tight">
+          <h1 className="text-4xl md:text-6xl font-display font-bold text-[#1a0b2e] mb-6 leading-tight tracking-tight">
             {article.title}
           </h1>
-          <p className="text-2xl text-gray-500 font-serif italic font-light mb-8">
+          <p className="text-xl md:text-2xl text-gray-500 font-serif italic font-light mb-8">
             {article.subtitle}
           </p>
           
@@ -194,14 +216,14 @@ export default function ArticlePage() {
                <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-accent/20 rounded-full blur-[100px] pointer-events-none group-hover:bg-accent/30 transition-colors duration-1000" />
                
                <div className="relative z-10 flex flex-col md:flex-row items-center gap-8 text-center md:text-left">
-                 <div className="flex-1">
+                 <div>
                    <h3 className="text-3xl font-display font-bold text-white mb-4">
                      Dive Deeper with Paul Wagner
                    </h3>
                    <p className="text-purple-200/80 mb-6 text-lg">
                      Join the Shankara Master Training and learn to read the oracle like a professional. Unlock your intuition and start your certification journey today.
                    </p>
-                   <Link href="/training">
+                   <Link href="/certification">
                      <Button size="lg" className="bg-accent text-white hover:bg-accent/90 px-8 rounded-full shadow-[0_0_20px_rgba(255,0,255,0.4)]">
                        Explore Training <ArrowRight className="ml-2 w-5 h-5" />
                      </Button>
@@ -209,6 +231,33 @@ export default function ArticlePage() {
                  </div>
                </div>
              </div>
+
+             {/* Related Articles */}
+             {relatedArticles.length > 0 && (
+               <div className="mt-16">
+                 <h3 className="text-2xl font-display font-bold text-[#1a0b2e] mb-8">Related Articles</h3>
+                 <div className="grid md:grid-cols-3 gap-6">
+                   {relatedArticles.map((related) => (
+                     <Link key={related.slug} href={`/wisdom/${related.slug}`}>
+                       <div className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-gray-100">
+                         <div className="h-32 overflow-hidden">
+                           <img 
+                             src={related.image} 
+                             alt={related.title} 
+                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                           />
+                         </div>
+                         <div className="p-4">
+                           <h4 className="font-display font-bold text-[#1a0b2e] text-sm leading-tight group-hover:text-accent transition-colors line-clamp-2">
+                             {related.title}
+                           </h4>
+                         </div>
+                       </div>
+                     </Link>
+                   ))}
+                 </div>
+               </div>
+             )}
           </article>
 
           {/* Sidebar - ELEGANT & MINIMAL */}
@@ -247,6 +296,15 @@ export default function ArticlePage() {
                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fillRule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clipRule="evenodd" /></svg>
                 </Button>
               </div>
+            </div>
+
+            {/* Back to Wisdom */}
+            <div className="pt-4">
+              <Link href="/wisdom">
+                <Button variant="outline" className="w-full rounded-full">
+                  <ArrowLeft size={16} className="mr-2" /> Back to Wisdom
+                </Button>
+              </Link>
             </div>
 
           </aside>
