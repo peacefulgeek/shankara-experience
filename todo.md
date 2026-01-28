@@ -397,3 +397,9 @@
 - [x] Include article image for rich snippets
 - [x] Integrate schema into ArticlePage component
 - [x] Test structured data in browser (verified working)
+
+
+## Article Date Randomization (Jan 28)
+- [x] Randomize publication dates for all 30 articles
+- [x] Spread dates between Sept 1, 2025 and Dec 31, 2025
+- [x] Ensure natural distribution (not all clustered)
