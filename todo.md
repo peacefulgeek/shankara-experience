@@ -430,3 +430,11 @@
 - [x] Fix navigation on article pages to match all other pages
 - [x] Ensure Buy Oracle button is visible
 - [x] Ensure consistent menu styling across all pages
+
+
+## Share Button Functionality (Jan 28)
+- [x] Add onClick handlers for Facebook share
+- [x] Add onClick handlers for Instagram (copy link since IG doesn't support direct sharing)
+- [x] Add onClick handlers for X (Twitter) share
+- [x] Add onClick handlers for LinkedIn share
+- [x] Show toast notification for Instagram copy action
