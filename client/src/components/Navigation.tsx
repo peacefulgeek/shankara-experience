@@ -10,7 +10,7 @@ export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Check if we are on a "light mode" page (Wisdom or Article pages)
-  const isLightPage = location === "/wisdom" || location.startsWith("/article/");
+  const isLightPage = location === "/wisdom" || location.startsWith("/wisdom/") || location.startsWith("/article/");
 
   useEffect(() => {
     const handleScroll = () => {

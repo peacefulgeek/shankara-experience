@@ -424,3 +424,9 @@
 - [x] Replace Twitter bird icon with X logo
 - [x] Add Instagram share button
 - [x] Fix "Back to Wisdom" button visibility
+
+
+## Article Page Navigation Fix (Jan 28)
+- [x] Fix navigation on article pages to match all other pages
+- [x] Ensure Buy Oracle button is visible
+- [x] Ensure consistent menu styling across all pages
