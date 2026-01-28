@@ -418,3 +418,9 @@
 ## Share Button Icons Fix (Jan 28)
 - [x] Fix invisible share button icons (Facebook, Twitter, LinkedIn)
 - [x] Ensure icons are visible on all article pages
+
+
+## Share Buttons Update (Jan 28)
+- [x] Replace Twitter bird icon with X logo
+- [x] Add Instagram share button
+- [x] Fix "Back to Wisdom" button visibility
