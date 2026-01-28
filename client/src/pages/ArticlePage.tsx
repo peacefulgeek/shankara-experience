@@ -167,7 +167,8 @@ export default function ArticlePage() {
     <div className="min-h-screen text-foreground font-sans selection:bg-accent selection:text-white overflow-x-hidden relative bg-[#fcfcfc]">
       <SEO 
         title={`${article.title} | Shankara Wisdom`} 
-        description={article.subtitle}
+        description={newArticle?.metaDescription || article.subtitle}
+        image={article.image}
       />
       
       <Navigation />

@@ -379,3 +379,12 @@
 - [x] Compress and upload ALL images to Bunny CDN only
 - [x] Add all 30 articles to Wisdom page with Bunny CDN URLs
 - [x] Ensure NO images stored on Manus - only Bunny CDN
+
+
+## Article Template & SEO (Jan 28)
+- [x] Verify all 30 articles use consistent template (spacing, author column, section headers)
+- [x] Confirm all images are from Bunny CDN (https://shankara-pull.b-cdn.net/)
+- [x] Verify section headers are bold and 3pts larger (text-3xl font-bold)
+- [x] Verify author column on right with additional links (share buttons, back to wisdom)
+- [x] Verify "Dive Deeper with Paul Wagner" CTA card at bottom of each article
+- [x] Add SEO meta descriptions to all 30 articles
