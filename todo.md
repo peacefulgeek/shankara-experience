@@ -413,3 +413,8 @@
 - [x] Compress and upload all new images to Bunny CDN
 - [x] Update articles-data.tsx with correct URLs
 - [x] Verify 100% Bunny CDN - zero local/Manus images (ALL 30 + author = 200 OK)
+
+
+## Share Button Icons Fix (Jan 28)
+- [x] Fix invisible share button icons (Facebook, Twitter, LinkedIn)
+- [x] Ensure icons are visible on all article pages
