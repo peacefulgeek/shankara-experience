@@ -92,6 +92,7 @@ export default function DailyCardDraw() {
                 <img 
                   src="https://shankara-pull.b-cdn.net/images/card-back-mystical.webp" 
                   alt="Card Back" 
+                  loading="lazy"
                   className="w-full h-full object-cover rounded-xl border border-white/10"
                 />
                 {!isFlipped && !isShuffling && (

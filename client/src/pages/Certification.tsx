@@ -110,6 +110,7 @@ export default function Certification() {
                 <img 
                   src="https://shankara-pull.b-cdn.net/images/cert-board-hands.webp" 
                   alt="Shankara Oracle Board in use" 
+                  loading="lazy"
                   className="relative z-10 w-full rounded-2xl shadow-2xl"
                 />
               </div>
@@ -124,11 +125,13 @@ export default function Certification() {
               <img 
                 src="https://shankara-pull.b-cdn.net/images/cert-krishna-1.webp" 
                 alt="Krishna Kalesh teaching" 
+                loading="lazy"
                 className="w-full rounded-2xl shadow-xl hover:scale-[1.02] transition-transform duration-500"
               />
               <img 
                 src="https://shankara-pull.b-cdn.net/images/cert-krishna-2.webp" 
                 alt="Krishna Kalesh with dice" 
+                loading="lazy"
                 className="w-full rounded-2xl shadow-xl hover:scale-[1.02] transition-transform duration-500"
               />
             </div>
@@ -265,6 +268,7 @@ export default function Certification() {
                 <img 
                   src="https://shankara-pull.b-cdn.net/images/paul-wagner.webp" 
                   alt="Paul Wagner - Krishna Kalesh" 
+                  loading="lazy"
                   className="relative z-10 w-full max-w-md mx-auto rounded-2xl shadow-2xl border-2 border-purple-500/30"
                 />
               </div>
@@ -318,16 +322,19 @@ export default function Certification() {
               <img 
                 src="https://shankara-pull.b-cdn.net/images/cert-paul-student.webp" 
                 alt="Paul Wagner with student" 
+                loading="lazy"
                 className="w-full aspect-square object-cover rounded-2xl shadow-xl hover:scale-[1.02] transition-transform duration-500"
               />
               <img 
                 src="https://shankara-pull.b-cdn.net/images/cert-paul-room.webp" 
                 alt="Paul Wagner teaching a room" 
+                loading="lazy"
                 className="w-full aspect-square object-cover rounded-2xl shadow-xl hover:scale-[1.02] transition-transform duration-500"
               />
               <img 
                 src="https://shankara-pull.b-cdn.net/images/cert-paul-audience.webp" 
                 alt="Paul Wagner with audience" 
+                loading="lazy"
                 className="w-full aspect-square object-cover rounded-2xl shadow-xl hover:scale-[1.02] transition-transform duration-500"
               />
             </div>

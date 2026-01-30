@@ -280,6 +280,7 @@ export default function ExitIntentPopup() {
                     <img 
                       src={DECKS[selectedDeck].back}
                       alt="Card Back" 
+                      loading="lazy"
                       className="w-full h-full object-contain rounded-xl shadow-[0_0_40px_rgba(139,92,246,0.4)] border-2 border-amber-400/50 bg-[#1a0b2e]"
                     />
                   </div>
@@ -290,6 +291,7 @@ export default function ExitIntentPopup() {
                       <img 
                         src={`https://shankara-pull.b-cdn.net/images/cards/${selectedCardFront}`}
                         alt="Card Reveal" 
+                        loading="lazy"
                         className="w-full h-full object-contain shadow-[0_0_50px_rgba(255,255,255,0.3)]"
                       />
                       {/* Holographic Shimmer Effect */}
@@ -361,6 +363,7 @@ export default function ExitIntentPopup() {
                                <img 
                                 src={DECKS[deckKey].back} 
                                 alt={DECKS[deckKey].name}
+                                loading="lazy"
                                 className="w-full h-full object-cover"
                               />
                               {/* Shimmer Effect */}
@@ -401,6 +404,7 @@ export default function ExitIntentPopup() {
                          <img 
                           src={DECKS[deckKey].back} 
                           alt={DECKS[deckKey].name}
+                          loading="lazy"
                           className="w-full h-full object-cover"
                         />
                         {/* Shimmer Effect */}

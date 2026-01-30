@@ -286,6 +286,7 @@ export default function StoneGuidance() {
                       <img 
                         src={currentStone.image} 
                         alt={currentStone.name}
+                        loading="lazy"
                         className="relative z-10 w-36 h-36 object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)] animate-float mb-8"
                       />
                       

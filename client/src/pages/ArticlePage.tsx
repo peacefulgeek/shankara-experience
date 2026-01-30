@@ -218,7 +218,7 @@ export default function ArticlePage() {
           <article className="lg:w-3/4">
              {/* Featured Image - Clean, no parallax */}
              <div className="rounded-xl overflow-hidden shadow-sm mb-12">
-               <img src={article.image} alt={article.title} className="w-full h-auto" />
+               <img src={article.image} alt={article.title} loading="lazy" className="w-full h-auto" />
              </div>
 
              <div className="prose prose-xl prose-purple max-w-none font-serif text-gray-800 leading-relaxed">
@@ -259,6 +259,7 @@ export default function ArticlePage() {
                            <img 
                              src={related.image} 
                              alt={related.title} 
+                             loading="lazy"
                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                            />
                          </div>
@@ -281,7 +282,7 @@ export default function ArticlePage() {
             {/* Author Widget */}
             <div className="text-center">
               <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-2 border-accent p-1">
-                 <img src={article.authorImage} alt={article.author} className="w-full h-full object-cover rounded-full" />
+                 <img src={article.authorImage} alt={article.author} loading="lazy" className="w-full h-full object-cover rounded-full" />
               </div>
               <h4 className="font-display font-bold text-[#1a0b2e] text-lg">{article.author}</h4>
               <p className="text-xs text-gray-400 uppercase tracking-widest mb-4">Author & Creator</p>

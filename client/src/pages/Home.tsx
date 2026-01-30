@@ -173,6 +173,7 @@ export default function Home() {
                 <img 
                   src="https://shankara-pull.b-cdn.net/images/full-system.webp" 
                   alt="Shankara Oracle Full System" 
+                  loading="lazy"
                   className="relative z-10 w-full max-w-lg mx-auto drop-shadow-[0_0_50px_rgba(255,255,255,0.2)] animate-float rounded-2xl"
                 />
               </div>
@@ -257,16 +258,16 @@ export default function Home() {
               <div className="w-full lg:w-1/2">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="aspect-square rounded-2xl overflow-hidden shadow-lg transform hover:scale-[1.02] transition-transform duration-500">
-                    <img src="https://shankara-pull.b-cdn.net/images/board-full-flat.webp" alt="Oracle Board Flat" className="w-full h-full object-cover" />
+                    <img src="https://shankara-pull.b-cdn.net/images/board-full-flat.webp" alt="Oracle Board Flat" loading="lazy" className="w-full h-full object-cover" />
                   </div>
                   <div className="aspect-square rounded-2xl overflow-hidden shadow-lg transform translate-y-8 hover:translate-y-6 transition-transform duration-500">
-                    <img src="https://shankara-pull.b-cdn.net/images/cards-spread.webp" alt="Oracle Cards" className="w-full h-full object-cover" />
+                    <img src="https://shankara-pull.b-cdn.net/images/cards-spread.webp" alt="Oracle Cards" loading="lazy" className="w-full h-full object-cover" />
                   </div>
                   <div className="aspect-square rounded-2xl overflow-hidden shadow-lg transform hover:scale-[1.02] transition-transform duration-500">
-                    <img src="https://shankara-pull.b-cdn.net/images/stones-bag.webp" alt="Obsidian Stones" className="w-full h-full object-cover" />
+                    <img src="https://shankara-pull.b-cdn.net/images/stones-bag.webp" alt="Obsidian Stones" loading="lazy" className="w-full h-full object-cover" />
                   </div>
                   <div className="aspect-square rounded-2xl overflow-hidden shadow-lg transform translate-y-8 hover:translate-y-6 transition-transform duration-500">
-                    <img src="https://shankara-pull.b-cdn.net/images/guidebooks.webp" alt="Guidebooks" className="w-full h-full object-cover" />
+                    <img src="https://shankara-pull.b-cdn.net/images/guidebooks.webp" alt="Guidebooks" loading="lazy" className="w-full h-full object-cover" />
                   </div>
                 </div>
               </div>

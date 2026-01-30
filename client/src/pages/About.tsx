@@ -157,6 +157,7 @@ export default function About() {
                 <img 
                   src="https://shankara-pull.b-cdn.net/images/paul-amma-hug-1.webp" 
                   alt="Paul receiving Amma's embrace" 
+                  loading="lazy"
                   className="relative rounded-2xl shadow-2xl border border-white/20 w-full aspect-square object-cover hover:scale-[1.02] transition-transform duration-500"
                 />
               </div>
@@ -165,6 +166,7 @@ export default function About() {
                 <img 
                   src="https://shankara-pull.b-cdn.net/images/paul-amma-hug-2.webp" 
                   alt="Paul in Amma's loving embrace" 
+                  loading="lazy"
                   className="relative rounded-2xl shadow-2xl border border-white/20 w-full aspect-square object-cover hover:scale-[1.02] transition-transform duration-500"
                 />
               </div>
@@ -380,6 +382,7 @@ export default function About() {
                   <img 
                     src="https://shankara-pull.b-cdn.net/images/AndreeaPleseaImage.webp" 
                     alt="Ana Andreea Plesea" 
+                    loading="lazy"
                     className="relative rounded-2xl shadow-2xl border border-white/10 hover:scale-[1.02] transition-transform duration-500 w-full max-w-md mx-auto"
                   />
                 </div>

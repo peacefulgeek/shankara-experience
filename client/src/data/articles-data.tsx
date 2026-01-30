@@ -37,7 +37,7 @@ export const oracleCardArticles: Article[] = [
     authorBio: "Paul Wagner is the creator of The Shankara Oracle, a spiritual guide, and a 5-time EMMY® Award winner.",
     authorImage: "https://shankara-pull.b-cdn.net/images/authors/paul-wagner.webp",
     category: "Oracle Cards",
-    image: `${CDN_BASE}/oracle-cards-introduction.jpg`,
+    image: `${CDN_BASE}/oracle-cards-introduction.webp`,
     readTime: "6 min read",
     content: (
       <>
@@ -90,7 +90,7 @@ export const oracleCardArticles: Article[] = [
     authorBio: "Paul Wagner is the creator of The Shankara Oracle, a spiritual guide, and a 5-time EMMY® Award winner.",
     authorImage: "https://shankara-pull.b-cdn.net/images/authors/paul-wagner.webp",
     category: "Oracle Cards",
-    image: `${CDN_BASE}/oracle-vs-tarot.jpg`,
+    image: `${CDN_BASE}/oracle-vs-tarot.webp`,
     readTime: "7 min read",
     content: (
       <>
@@ -140,7 +140,7 @@ export const oracleCardArticles: Article[] = [
     authorBio: "Ana Andreea is a Shankara Master and intuitive guide specializing in creating sacred spaces.",
     authorImage: "https://shankara-pull.b-cdn.net/images/authors/ana-andreea.webp",
     category: "Oracle Cards",
-    image: `${CDN_BASE}/choosing-first-deck.jpg`,
+    image: `${CDN_BASE}/choosing-first-deck.webp`,
     readTime: "5 min read",
     content: (
       <>
@@ -192,7 +192,7 @@ export const oracleCardArticles: Article[] = [
     authorBio: "Paul Wagner is the creator of The Shankara Oracle, a spiritual guide, and a 5-time EMMY® Award winner.",
     authorImage: "https://shankara-pull.b-cdn.net/images/authors/paul-wagner.webp",
     category: "Oracle Cards",
-    image: `${CDN_BASE}/asking-right-questions.jpg`,
+    image: `${CDN_BASE}/asking-right-questions.webp`,
     readTime: "6 min read",
     content: (
       <>
@@ -239,7 +239,7 @@ export const oracleCardArticles: Article[] = [
     authorBio: "Ana Andreea is a Shankara Master and intuitive guide specializing in creating sacred spaces.",
     authorImage: "https://shankara-pull.b-cdn.net/images/authors/ana-andreea.webp",
     category: "Oracle Cards",
-    image: `${CDN_BASE}/sacred-space-reading.jpg`,
+    image: `${CDN_BASE}/sacred-space-reading.webp`,
     readTime: "5 min read",
     content: (
       <>
@@ -289,7 +289,7 @@ export const oracleCardArticles: Article[] = [
     authorBio: "Paul Wagner is the creator of The Shankara Oracle, a spiritual guide, and a 5-time EMMY® Award winner.",
     authorImage: "https://shankara-pull.b-cdn.net/images/authors/paul-wagner.webp",
     category: "Oracle Cards",
-    image: `${CDN_BASE}/card-spreads-layouts.jpg`,
+    image: `${CDN_BASE}/card-spreads-layouts.webp`,
     readTime: "7 min read",
     content: (
       <>
@@ -335,7 +335,7 @@ export const oracleCardArticles: Article[] = [
     authorBio: "Ana Andreea is a Shankara Master and intuitive guide specializing in creating sacred spaces.",
     authorImage: "https://shankara-pull.b-cdn.net/images/authors/ana-andreea.webp",
     category: "Oracle Cards",
-    image: `${CDN_BASE}/daily-card-practice.jpg`,
+    image: `${CDN_BASE}/daily-card-practice.webp`,
     readTime: "5 min read",
     content: (
       <>
@@ -382,7 +382,7 @@ export const oracleCardArticles: Article[] = [
     authorBio: "Paul Wagner is the creator of The Shankara Oracle, a spiritual guide, and a 5-time EMMY® Award winner.",
     authorImage: "https://shankara-pull.b-cdn.net/images/authors/paul-wagner.webp",
     category: "Oracle Cards",
-    image: `${CDN_BASE}/reversed-cards-meaning.jpg`,
+    image: `${CDN_BASE}/reversed-cards-meaning.webp`,
     readTime: "6 min read",
     content: (
       <>
@@ -429,7 +429,7 @@ export const oracleCardArticles: Article[] = [
     authorBio: "Ana Andreea is a Shankara Master and intuitive guide specializing in creating sacred spaces.",
     authorImage: "https://shankara-pull.b-cdn.net/images/authors/ana-andreea.webp",
     category: "Oracle Cards",
-    image: `${CDN_BASE}/oracle-journaling.jpg`,
+    image: `${CDN_BASE}/oracle-journaling.webp`,
     readTime: "5 min read",
     content: (
       <>
@@ -476,7 +476,7 @@ export const oracleCardArticles: Article[] = [
     authorBio: "Paul Wagner is the creator of The Shankara Oracle, a spiritual guide, and a 5-time EMMY® Award winner.",
     authorImage: "https://shankara-pull.b-cdn.net/images/authors/paul-wagner.webp",
     category: "Oracle Cards",
-    image: `${CDN_BASE}/deck-relationship.jpg`,
+    image: `${CDN_BASE}/deck-relationship.webp`,
     readTime: "6 min read",
     content: (
       <>
@@ -530,7 +530,7 @@ export const historyArticles: Article[] = [
     authorBio: "Paul Wagner is the creator of The Shankara Oracle, a spiritual guide, and a 5-time EMMY® Award winner.",
     authorImage: "https://shankara-pull.b-cdn.net/images/authors/paul-wagner.webp",
     category: "History",
-    image: `${CDN_BASE}/ancient-egypt-divination.jpg`,
+    image: `${CDN_BASE}/ancient-egypt-divination.webp`,
     readTime: "8 min read",
     content: (
       <>
@@ -577,7 +577,7 @@ export const historyArticles: Article[] = [
     authorBio: "Paul Wagner is the creator of The Shankara Oracle, a spiritual guide, and a 5-time EMMY® Award winner.",
     authorImage: "https://shankara-pull.b-cdn.net/images/authors/paul-wagner.webp",
     category: "History",
-    image: `${CDN_BASE}/mesopotamian-oracle-priests.jpg`,
+    image: `${CDN_BASE}/mesopotamian-oracle-priests.webp`,
     readTime: "7 min read",
     content: (
       <>
@@ -624,7 +624,7 @@ export const historyArticles: Article[] = [
     authorBio: "Paul Wagner is the creator of The Shankara Oracle, a spiritual guide, and a 5-time EMMY® Award winner.",
     authorImage: "https://shankara-pull.b-cdn.net/images/authors/paul-wagner.webp",
     category: "History",
-    image: `${CDN_BASE}/greek-oracle-delphi.jpg`,
+    image: `${CDN_BASE}/greek-oracle-delphi.webp`,
     readTime: "8 min read",
     content: (
       <>
@@ -671,7 +671,7 @@ export const historyArticles: Article[] = [
     authorBio: "Ana Andreea is a Shankara Master and intuitive guide specializing in creating sacred spaces.",
     authorImage: "https://shankara-pull.b-cdn.net/images/authors/ana-andreea.webp",
     category: "History",
-    image: `${CDN_BASE}/celtic-druid-divination.jpg`,
+    image: `${CDN_BASE}/celtic-druid-divination.webp`,
     readTime: "7 min read",
     content: (
       <>
@@ -718,7 +718,7 @@ export const historyArticles: Article[] = [
     authorBio: "Paul Wagner is the creator of The Shankara Oracle, a spiritual guide, and a 5-time EMMY® Award winner.",
     authorImage: "https://shankara-pull.b-cdn.net/images/authors/paul-wagner.webp",
     category: "History",
-    image: `${CDN_BASE}/chinese-i-ching-origins.jpg`,
+    image: `${CDN_BASE}/chinese-i-ching-origins.webp`,
     readTime: "8 min read",
     content: (
       <>
@@ -765,7 +765,7 @@ export const historyArticles: Article[] = [
     authorBio: "Paul Wagner is the creator of The Shankara Oracle, a spiritual guide, and a 5-time EMMY® Award winner.",
     authorImage: "https://shankara-pull.b-cdn.net/images/authors/paul-wagner.webp",
     category: "History",
-    image: `${CDN_BASE}/norse-rune-casting.jpg`,
+    image: `${CDN_BASE}/norse-rune-casting.webp`,
     readTime: "7 min read",
     content: (
       <>
@@ -812,7 +812,7 @@ export const historyArticles: Article[] = [
     authorBio: "Paul Wagner is the creator of The Shankara Oracle, a spiritual guide, and a 5-time EMMY® Award winner.",
     authorImage: "https://shankara-pull.b-cdn.net/images/authors/paul-wagner.webp",
     category: "History",
-    image: `${CDN_BASE}/african-divination-traditions.jpg`,
+    image: `${CDN_BASE}/african-divination-traditions.webp`,
     readTime: "8 min read",
     content: (
       <>
@@ -859,7 +859,7 @@ export const historyArticles: Article[] = [
     authorBio: "Ana Andreea is a Shankara Master and intuitive guide specializing in creating sacred spaces.",
     authorImage: "https://shankara-pull.b-cdn.net/images/authors/ana-andreea.webp",
     category: "History",
-    image: `${CDN_BASE}/native-american-vision-quest.jpg`,
+    image: `${CDN_BASE}/native-american-vision-quest.webp`,
     readTime: "7 min read",
     content: (
       <>
@@ -906,7 +906,7 @@ export const historyArticles: Article[] = [
     authorBio: "Paul Wagner is the creator of The Shankara Oracle, a spiritual guide, and a 5-time EMMY® Award winner.",
     authorImage: "https://shankara-pull.b-cdn.net/images/authors/paul-wagner.webp",
     category: "History",
-    image: `${CDN_BASE}/medieval-european-divination.jpg`,
+    image: `${CDN_BASE}/medieval-european-divination.webp`,
     readTime: "7 min read",
     content: (
       <>
@@ -953,7 +953,7 @@ export const historyArticles: Article[] = [
     authorBio: "Paul Wagner is the creator of The Shankara Oracle, a spiritual guide, and a 5-time EMMY® Award winner.",
     authorImage: "https://shankara-pull.b-cdn.net/images/authors/paul-wagner.webp",
     category: "History",
-    image: `${CDN_BASE}/modern-divination-revival.jpg`,
+    image: `${CDN_BASE}/modern-divination-revival.webp`,
     readTime: "7 min read",
     content: (
       <>
@@ -1007,7 +1007,7 @@ export const psychologyArticles: Article[] = [
     authorBio: "Paul Wagner is the creator of The Shankara Oracle, a spiritual guide, and a 5-time EMMY® Award winner.",
     authorImage: "https://shankara-pull.b-cdn.net/images/authors/paul-wagner.webp",
     category: "Psychology",
-    image: `${CDN_BASE}/self-reflection-mirror.jpg`,
+    image: `${CDN_BASE}/self-reflection-mirror.webp`,
     readTime: "6 min read",
     content: (
       <>
@@ -1051,7 +1051,7 @@ export const psychologyArticles: Article[] = [
     authorBio: "Ana Andreea is a Shankara Master and intuitive guide specializing in creating sacred spaces.",
     authorImage: "https://shankara-pull.b-cdn.net/images/authors/ana-andreea.webp",
     category: "Psychology",
-    image: `${CDN_BASE}/anxiety-relief-calm.jpg`,
+    image: `${CDN_BASE}/anxiety-relief-calm.webp`,
     readTime: "6 min read",
     content: (
       <>
@@ -1095,7 +1095,7 @@ export const psychologyArticles: Article[] = [
     authorBio: "Paul Wagner is the creator of The Shankara Oracle, a spiritual guide, and a 5-time EMMY® Award winner.",
     authorImage: "https://shankara-pull.b-cdn.net/images/authors/paul-wagner.webp",
     category: "Psychology",
-    image: `${CDN_BASE}/decision-making-clarity.jpg`,
+    image: `${CDN_BASE}/decision-making-clarity.webp`,
     readTime: "6 min read",
     content: (
       <>
@@ -1139,7 +1139,7 @@ export const psychologyArticles: Article[] = [
     authorBio: "Ana Andreea is a Shankara Master and intuitive guide specializing in creating sacred spaces.",
     authorImage: "https://shankara-pull.b-cdn.net/images/authors/ana-andreea.webp",
     category: "Psychology",
-    image: `${CDN_BASE}/emotional-processing-healing.jpg`,
+    image: `${CDN_BASE}/emotional-processing-healing.webp`,
     readTime: "6 min read",
     content: (
       <>
@@ -1183,7 +1183,7 @@ export const psychologyArticles: Article[] = [
     authorBio: "Paul Wagner is the creator of The Shankara Oracle, a spiritual guide, and a 5-time EMMY® Award winner.",
     authorImage: "https://shankara-pull.b-cdn.net/images/authors/paul-wagner.webp",
     category: "Psychology",
-    image: `${CDN_BASE}/mindfulness-present-moment.jpg`,
+    image: `${CDN_BASE}/mindfulness-present-moment.webp`,
     readTime: "5 min read",
     content: (
       <>
@@ -1227,7 +1227,7 @@ export const psychologyArticles: Article[] = [
     authorBio: "Ana Andreea is a Shankara Master and intuitive guide specializing in creating sacred spaces.",
     authorImage: "https://shankara-pull.b-cdn.net/images/authors/ana-andreea.webp",
     category: "Psychology",
-    image: `${CDN_BASE}/trauma-healing-journey.jpg`,
+    image: `${CDN_BASE}/trauma-healing-journey.webp`,
     readTime: "7 min read",
     content: (
       <>
@@ -1274,7 +1274,7 @@ export const psychologyArticles: Article[] = [
     authorBio: "Paul Wagner is the creator of The Shankara Oracle, a spiritual guide, and a 5-time EMMY® Award winner.",
     authorImage: "https://shankara-pull.b-cdn.net/images/authors/paul-wagner.webp",
     category: "Psychology",
-    image: `${CDN_BASE}/inner-wisdom-intuition.jpg`,
+    image: `${CDN_BASE}/inner-wisdom-intuition.webp`,
     readTime: "6 min read",
     content: (
       <>
@@ -1321,7 +1321,7 @@ export const psychologyArticles: Article[] = [
     authorBio: "Paul Wagner is the creator of The Shankara Oracle, a spiritual guide, and a 5-time EMMY® Award winner.",
     authorImage: "https://shankara-pull.b-cdn.net/images/authors/paul-wagner.webp",
     category: "Psychology",
-    image: `${CDN_BASE}/symbolic-thinking-patterns.jpg`,
+    image: `${CDN_BASE}/symbolic-thinking-patterns.webp`,
     readTime: "6 min read",
     content: (
       <>
@@ -1368,7 +1368,7 @@ export const psychologyArticles: Article[] = [
     authorBio: "Ana Andreea is a Shankara Master and intuitive guide specializing in creating sacred spaces.",
     authorImage: "https://shankara-pull.b-cdn.net/images/authors/ana-andreea.webp",
     category: "Psychology",
-    image: `${CDN_BASE}/ritual-practice-daily.jpg`,
+    image: `${CDN_BASE}/ritual-practice-daily.webp`,
     readTime: "5 min read",
     content: (
       <>
@@ -1415,7 +1415,7 @@ export const psychologyArticles: Article[] = [
     authorBio: "Paul Wagner is the creator of The Shankara Oracle, a spiritual guide, and a 5-time EMMY® Award winner.",
     authorImage: "https://shankara-pull.b-cdn.net/images/authors/paul-wagner.webp",
     category: "Psychology",
-    image: `${CDN_BASE}/community-connection-sharing.jpg`,
+    image: `${CDN_BASE}/community-connection-sharing.webp`,
     readTime: "6 min read",
     content: (
       <>

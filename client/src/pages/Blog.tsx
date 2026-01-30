@@ -85,6 +85,7 @@ export default function Blog() {
                   <img 
                     src={post.image} 
                     alt={post.title} 
+                    loading="lazy"
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute top-4 left-4 z-20">
@@ -113,7 +114,7 @@ export default function Blog() {
                   <div className="flex items-center justify-between pt-4 border-t border-gray-100 mt-auto">
                     <div className="flex items-center gap-2">
                       <div className="w-7 h-7 rounded-full bg-gray-200 overflow-hidden">
-                         <img src={post.authorImage} alt={post.author} className="w-full h-full object-cover" />
+                         <img src={post.authorImage} alt={post.author} loading="lazy" className="w-full h-full object-cover" />
                       </div>
                       <span className="text-xs font-bold text-gray-700 uppercase tracking-wide">{post.author}</span>
                     </div>
